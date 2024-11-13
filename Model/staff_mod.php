@@ -3559,7 +3559,7 @@ citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Prie
     }
     public function fetchAddCalendar() {
         $query = "
-            SELECT cal_fullname,cal_Category,cal_description,s.date AS cal_date     FROM 
+            SELECT ec.cal_fullname,ec.cal_Category,ec.cal_description,s.date AS cal_date     FROM 
             schedule s
             JOIN 
             event_calendar ec ON s.schedule_id = ec.schedule_id

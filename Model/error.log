@@ -2045,3 +2045,5 @@ Stack trace:
 #1 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(3): require_once('C:\\xampp\\htdocs...')
 #2 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\Model\db_connection.php on line 10
+[13-Nov-2024 14:32:38 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 14:32:38 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
