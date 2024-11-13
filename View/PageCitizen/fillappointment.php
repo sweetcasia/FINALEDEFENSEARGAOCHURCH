@@ -1,27 +1,40 @@
 <?php
 session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// Redirect based on user type
+switch ($_SESSION['user_type']) {
+    case 'Citizen':
+        // Allow access
+        break;
+    case 'Admin':
+        header("Location: ../PageAdmin/AdminDashboard.php");
+        exit();
+    case 'Staff':
+        header("Location: ../PageStaff/StaffDashboard.php");
+        exit();
+    case 'Priest':
+        header("Location: ../PagePriest/index.php");
+        exit();
+    default:
+        header("Location: ../../index.php");
+        exit();
+}
+
+// Validate specific Citizen data
+if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// Assign session variables
 $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
-$loggedInUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : null;
-$r_status = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : null;
-
-if (!$loggedInUserEmail) {
-  header("Location: ../../index.php");
-  exit();
-}
-
-// Redirect staff users to the staff page, not the citizen page
-if ($r_status === "Staff") {
-  header("Location: ../PageStaff/StaffDashboard.php"); // Change to your staff page
-  exit();
-}
-if ($r_status === "Admin") {
-  header("Location: ../PageStaff/StaffDashboard.php"); // Change to your staff page
-  exit();
-}if ($r_status === "Priest") {
-  header("Location: ../PagePriest/index.php"); // Change to your staff page
-  exit();
-}
 
 ?>
 
