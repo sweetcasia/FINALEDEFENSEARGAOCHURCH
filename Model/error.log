@@ -1878,3 +1878,164 @@ Stack trace:
 [13-Nov-2024 13:01:21 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
 [13-Nov-2024 13:01:25 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
 [13-Nov-2024 13:01:25 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:54:29 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:29 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:30 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:30 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:32 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:32 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:35 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:37 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:37 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:54:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:55:03 Europe/Berlin] PHP Warning:  require(C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:55:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(2): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[13-Nov-2024 13:55:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:55:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:08 Europe/Berlin] Twilio Error: [HTTP 401] Unable to create record: Authenticate
+[13-Nov-2024 13:56:08 Europe/Berlin] SMS failed to send to +639394245345
+[13-Nov-2024 13:56:08 Europe/Berlin] Citizen deleted successfully for ID: 164
+[13-Nov-2024 13:56:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:56:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
