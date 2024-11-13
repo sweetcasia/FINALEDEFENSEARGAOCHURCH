@@ -2039,3 +2039,9 @@ Stack trace:
 [13-Nov-2024 13:56:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
 [13-Nov-2024 13:56:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
 [13-Nov-2024 13:56:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 14:23:06 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\ArgaoChurch\Model\db_connection.php:10
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\db_connection.php(10): mysqli->__construct('', '', Object(SensitiveParameterValue), '', '3306')
+#1 C:\xampp\htdocs\ArgaoChurch\View\PageStaff\StaffCitizenAccounts.php(3): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\db_connection.php on line 10
