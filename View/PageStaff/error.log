@@ -874,3 +874,5 @@ Stack trace:
 [13-Nov-2024 13:18:52 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
 [13-Nov-2024 13:18:52 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
 [13-Nov-2024 13:18:52 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[13-Nov-2024 17:13:48 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 311
+[13-Nov-2024 17:13:52 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 311

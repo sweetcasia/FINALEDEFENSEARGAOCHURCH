@@ -1,12 +1,42 @@
 <?php
-
-
 require_once '../../Model/staff_mod.php';
 require_once '../../Model/db_connection.php';
 require_once '../../Controller/fetchpending_con.php';
 require_once '../../Model/citizen_mod.php';
+// Check if user is logged in
+if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
+    header("Location: ../../index.php");
+    exit();
+}
 
-// Initialize the Staff class
+// Redirect based on user type
+switch ($_SESSION['user_type']) {
+    case 'Staff':
+        // Allow access
+        break;
+    case 'Admin':
+        header("Location: ../PageAdmin/AdminDashboard.php");
+        exit();
+    case 'Priest':
+        header("Location: ../PagePriest/PriestDashboard.php");
+        exit();
+    case 'Citizen':
+        header("Location: ../PageCitizen/CitizenPage.php");
+        exit();
+    default:
+        header("Location: ../../index.php");
+        exit();
+}
+
+// Validate specific Citizen data
+if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// Assign session variables
+$nme = $_SESSION['fullname'];
+$regId = $_SESSION['citizend_id'];
 $staff = new Staff($conn);
 $citizen = new Citizen($conn);
 $weddingffill_id = isset($_GET['id']) ? intval($_GET['id']) : null;
@@ -19,7 +49,6 @@ if (isset($_GET['id'])) {
     $startTime = $scheduleDetails['schedule_start_time'];
     $endTime = $scheduleDetails['schedule_end_time'];
 
-    // Pass $scheduleDate to the function instead of undefined $selectedDate
     $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime);
 } else {
     echo "No baptism ID provided.";
@@ -32,27 +61,6 @@ if ($weddingffill_id) {
     echo "No baptism ID provided.";
     $scheduleId = null;
 }
-$loggedInUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : null;
-$r_status = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : null;
-
-if (!$loggedInUserEmail) {
-  header("Location: ../../index.php");
-  exit();
-}
-
-// Redirect staff users to the staff page, not the citizen page
-if ($r_status === "Citizen") {
-  header("Location: ../PageCitizen/CitizenPage.php"); // Change to your staff page
-  exit();
-}
-if ($r_status === "Admin") {
-  header("Location: ../PageAdmin/AdminDashboard.php"); // Change to your staff page
-  exit();
-}if ($r_status === "Priest") {
-  header("Location: ../PagePriest/index.php"); // Change to your staff page
-  exit();
-}
-
 ?>
 
 <!DOCTYPE html>

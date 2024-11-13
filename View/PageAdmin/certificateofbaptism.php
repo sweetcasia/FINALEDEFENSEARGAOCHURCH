@@ -1,7 +1,42 @@
 <?php
 require_once '../../Model/db_connection.php';
 require_once '../../Model/admin_mod.php';
+session_start();
 
+// Check if user is logged in
+if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// Redirect based on user type
+switch ($_SESSION['user_type']) {
+    case 'Admin':
+        // Allow access
+        break;
+    case 'Staff':
+        header("Location: ../PageStaff/StaffDashboard.php");
+        exit();
+    case 'Priest':
+        header("Location: ../PagePriest/PriestDashboard.php");
+        exit();
+    case 'Citizen':
+        header("Location: ../PageCitizen/CitizenPage.php");
+        exit();
+    default:
+        header("Location: ../../index.php");
+        exit();
+}
+
+// Validate specific Citizen data
+if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
+    header("Location: ../../index.php");
+    exit();
+}
+
+// Assign session variables
+$nme = $_SESSION['fullname'];
+$regId = $_SESSION['citizend_id'];
 if (isset($_GET['id'])) {
     $baptismId = $_GET['id'];
 
@@ -13,29 +48,7 @@ if (isset($_GET['id'])) {
     echo "No ID provided.";
     exit;
 }
-session_start();
-$nme = $_SESSION['fullname'];
-$regId = $_SESSION['citizend_id'];
-$loggedInUserEmail = isset($_SESSION['email']) ? $_SESSION['email'] : null;
-$r_status = isset($_SESSION['user_type']) ? $_SESSION['user_type'] : null;
 
-if (!$loggedInUserEmail) {
-  header("Location: ../../index.php");
-  exit();
-}
-
-// Redirect staff users to the staff page, not the citizen page
-if ($r_status === "Staff") {
-  header("Location: ../PageStaff/StaffDashboard.php"); // Change to your staff page
-  exit();
-}
-if ($r_status === "Citizen") {
-  header("Location: ../PageCitizen/CitizenPage.php"); // Change to your staff page
-  exit();
-}if ($r_status === "Priest") {
-  header("Location: ../PagePriest/index.php"); // Change to your staff page
-  exit();
-}
 ?>
 
 
