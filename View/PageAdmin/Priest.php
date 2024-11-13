@@ -127,10 +127,9 @@ small {
       <?php  require_once 'header.php'?>
         
      
-       
-       
-  <div class="container">
-    <div class="page-inner">
+        <div class="container">
+            <div class="pa
+            ge-inner">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -234,7 +233,11 @@ small {
             </div>
         </div>
         <div class="col-md-6 col-lg-4">
-   
+        <div class="form-group">
+        <label for="validID">Valid ID</label>
+    <input type="file" class="form-control" id="valid_id" name="valid_id" accept="image/*" placeholder="Valid ID">
+    <div class="error" id="valid_id_error"></div>
+            </div>
             <div class="form-group">
                 <label for="parents_residence">Password</label>
                 <input type="password" class="form-control" id="passwords" name="password" placeholder="Password">
@@ -313,7 +316,21 @@ function validateForm() {
         } else if (!email.endsWith("@gmail.com")) {
             showError("email", "Email must end with @gmail.com");
             isValid = false;
-        }
+        }else {
+        // Make an AJAX call to check if email exists
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "../../Controller/check_email.php", false); // Use synchronous request
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (xhr.responseText === "exists") {
+                    showError("email", "Email already exists.");
+                    isValid = false;
+                }
+            }
+        };
+        xhr.send("email=" + encodeURIComponent(email));
+    }
 
         // Validate date of birth
         const month = document.getElementById("month").value;
@@ -343,6 +360,11 @@ function validateForm() {
             showError("confirmpassword", "Passwords do not match");
             isValid = false;
         }
+        const validID = document.getElementById("valid_id").files;
+    if (validID.length === 0) {
+        showError("valid_id", "Valid ID is required");
+        isValid = false;
+    }
 
         return isValid;
     }

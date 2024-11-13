@@ -9,16 +9,15 @@ $nme = $_SESSION['fullname'];
 // Create User object
 $user = new User($conn);
 
-// Handle the approval process
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['citizenId'])) {
     $citizenId = $_POST['citizenId'];
     $action = $_POST['action'] ?? '';
 
     if ($action === 'delete') {
-        $_SESSION['status'] = 'successs';
+      
         $result = $user->deleteCitizen($citizenId); // Call delete method
     } else {
-        $_SESSION['status'] = "success";
+      
         $result = $user->approveCitizen($citizenId); // Default to approve
     }
 

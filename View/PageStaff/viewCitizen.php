@@ -200,8 +200,8 @@ editButton.addEventListener('click', function() {
 });
 
   
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.delete-btn').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.approve-btn').addEventListener('click', function() {
         // Existing approve functionality
     });
 
@@ -243,6 +243,9 @@ editButton.addEventListener('click', function() {
         });
     });
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get all buttons with the 'approve-btn' class

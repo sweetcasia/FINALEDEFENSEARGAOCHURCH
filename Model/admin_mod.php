@@ -5,15 +5,16 @@ class Admin {
     public function __construct($conn) {
         $this->conn = $conn;
     
-    }   public function addDonation($d_name, $amount, $donated_on, $description) {
-        $stmt = $this->conn->prepare("INSERT INTO donation (d_name, amount, donated_on, description) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sdss", $d_name, $amount, $donated_on, $description);
+    }   public function addDonation($d_name, $amount, $description) {
+        $stmt = $this->conn->prepare("INSERT INTO donation (d_name, amount, description) VALUES (?, ?, ?)");
+        $stmt->bind_param("sds", $d_name, $amount, $description);
         if ($stmt->execute()) {
             return true;
         } else {
             return false;
         }
     }
+    
     public function generateDonationReport($dateRange) {
         // Initialize the date condition and end date
         $dateCondition = '';

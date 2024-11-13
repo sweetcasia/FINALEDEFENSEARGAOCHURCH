@@ -1,18 +1,34 @@
 <?php
+// Enable all error reporting
+error_reporting(E_ALL); 
+
+// Hide errors from displaying on the page
+ini_set('display_errors', '0'); 
+
+// Enable error logging
+ini_set('log_errors', '1'); 
+
+// Specify the path to the error log file (ensure this file is writable)
+ini_set('error_log', __DIR__ . '/error.log'); 
+
+use Twilio\Rest\Client;
+require_once __DIR__ . '/../Controller/phpmailer/src/PHPMailer.php';
+require_once __DIR__ . '/../Controller/phpmailer/src/Exception.php'; // Include Exception.php if needed
+require_once __DIR__ . '/../Controller/phpmailer/src/SMTP.php'; // Include Exception.php if needed
+require __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . '/../Controller/twilio-php-main/src/Twilio/autoload.php';
+require_once __DIR__ . '/../Controller/twilio-php-main/src/Twilio/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use Twilio\Rest\Client;
-require_once  __DIR__ . '/../Model/db_connection.php';
-require_once  __DIR__ . '/../Model/staff_mod.php'; // Ensure this uses require_once
-require_once __DIR__ . '/../Controller/phpmailer/src/PHPMailer.php'; // Ensure this uses require_once
-require_once __DIR__ . '/../Controller/twilio-php-main/src/Twilio/autoload.php';
+
 
 class User {
     
     private $conn;
-
+    private $config;
     public function __construct($conn) {
         $this->conn = $conn;
+        $this->config = include(__DIR__ . '/../config.php'); // Load config
     }
     public function updateCitizen($citizenId, $fullname, $gender, $phone, $email, $birthDate, $address) {
         // Prepare the SQL update statement
@@ -85,14 +101,14 @@ class User {
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = $config['smtp']['host'];
             $mail->SMTPAuth = true;
-            $mail->Username = "argaoparishchurch@gmail.com";
-            $mail->Password = "xomoabhlnrlzenur"; // Use your actual email password or app password
-            $mail->SMTPSecure = 'tls';
+            $mail->Username = $config['smtp']['username'];
+            $mail->Password = $config['smtp']['password'];
+            $mail->SMTPSecure = $config['smtp']['secure'];
             $mail->Port = 587;
            
-            $mail->setFrom('argaoparishchurch@gmail.com');
+            $mail->setFrom($config['smtp']['username']);
             $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject = $subject;
@@ -171,7 +187,48 @@ class User {
             return false;
         }
     }
-
+    public function getAdminAccount($statusFilter = '') {
+        // Modify the SQL query to filter by r_status dynamically
+        $sql = "SELECT `citizend_id`, `fullname`, `email`, `gender`, `phone`, `c_date_birth`, `age`, `address`, `valid_id`, `user_type`, `r_status`, `c_current_time`
+                FROM `citizen` 
+                WHERE `user_type` = 'Admin'";
+        
+        // Add condition based on the status filter
+        if ($statusFilter === 'Unactive') {
+            $sql .= " AND `r_status` = 'Unactive'";
+        } else {
+            $sql .= " AND `r_status` = 'Active'";
+        }
+        
+        $sql .= " ORDER BY `c_current_time` ASC";
+        
+        // Prepare the statement
+        $stmt = $this->conn->prepare($sql);
+        
+        if (!$stmt) {
+            die('Prepare failed: ' . $this->conn->error);
+        }
+        
+        // Execute the statement
+        if (!$stmt->execute()) {
+            die('Execute failed: ' . $stmt->error);
+        }
+        
+        // Get the result set
+        $result = $stmt->get_result();
+        
+        // Fetch all results as an associative array
+        $data = [];
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+        
+        // Close the statement
+        $stmt->close();
+        
+        // Return the result
+        return $data;
+    }
     
     
     public function getPriestAccount($statusFilter = '') {
@@ -334,68 +391,66 @@ class User {
         // Return the result
         return $data;
     }
-    public function sendSms($toPhoneNumber, $messageBody) {
-        // Your Twilio credentials (replace with your actual credentials)
-        $accountSid = 'AC7ef9e279eebfda753ed9f67ae1a77710';
-        $authToken = '40464522e94c2cdb6296d701bbe36a51';
-        $twilioPhoneNumber = '+17082776875';
-    
+    public function sendSms($toPhoneNumber, $messageBody, $config) {
         try {
-            // Initialize the Twilio client
-            $client = new Client($accountSid, $authToken);
-    
-            // Send the SMS
-            $client->messages->create(
-                $toPhoneNumber, // Destination phone number
+            $client = new Client($config['twilio']['sid'], $config['twilio']['token']);
+            $message = $client->messages->create(
+                $toPhoneNumber,
                 [
-                    'from' => $twilioPhoneNumber, // Twilio phone number
-                    'body' => $messageBody // SMS body
+                    'from' => $config['twilio']['from'],
+                    'body' => $messageBody
                 ]
             );
     
-            echo "SMS sent successfully to {$toPhoneNumber}.";
-    
-        } catch (Exception $e) {
-            // Log error and display failure message
-            error_log("Failed to send SMS: " . $e->getMessage());
-            echo "Error sending SMS: " . $e->getMessage();
+            if ($message->status == 'failed') {
+                error_log("Failed to send SMS to {$toPhoneNumber}. Twilio Status: {$message->status}");
+                return false;
+            } else {
+                error_log("SMS sent successfully to {$toPhoneNumber}. Status: {$message->status}");
+                return true;
+            }
+        } catch (\Twilio\Exceptions\RestException $e) {
+            error_log("Twilio Error: " . $e->getMessage());
+            return false;
+        } catch (\Exception $e) {
+            error_log("General Error: " . $e->getMessage());
+            return false;
         }
     }
     
-    private function sendEmail($email, $citizen_name, $subject, $body) {
-        
+    
+    
+    public function sendEmail($email, $citizen_name, $subject, $body) {
         try {
-            
             $mail = new PHPMailer(true);
-      
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = $this->config['smtp']['host'];
             $mail->SMTPAuth = true;
-            $mail->Username = "argaoparishchurch@gmail.com";
-            $mail->Password = "xomoabhlnrlzenur";
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
-           
-            $mail->setFrom('argaoparishchurch@gmail.com');
+            $mail->Username = $this->config['smtp']['username'];
+            $mail->Password = $this->config['smtp']['password'];
+            $mail->SMTPSecure = $this->config['smtp']['secure'];
+            $mail->Port = $this->config['smtp']['port'];
+    
+            $mail->setFrom($this->config['smtp']['username']);
             $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body = "<div style='width: 100%; max-width: 400px; margin: auto; background: url(cid:background_img) no-repeat center center; background-size: cover; padding: 20px;'>
-                           <div style='background: rgba(255, 255, 255, 0.8); padding: 20px;width:100%;height:auto;'>
-                               {$body}
-                               <img src='cid:signature_img' style='width: 200px; height: auto;'>
-                           </div>
-                       </div>";
+                               <div style='background: rgba(255, 255, 255, 0.8); padding: 20px;width:100%;height:auto;'>
+                                   {$body}
+                                   <img src='cid:signature_img' style='width: 200px; height: auto;'>
+                               </div>
+                           </div>";
     
-            if (!$mail->send()) {
-                error_log("Email failed: " . $mail->ErrorInfo); // Log error
-                echo "Error sending email notification: " . $mail->ErrorInfo;
+            if ($mail->send()) {
+                return true;
             } else {
-              
+                error_log("Email failed: " . $mail->ErrorInfo);
+                return false;
             }
         } catch (Exception $e) {
-            error_log("Error sending email notification: " . $e->getMessage()); // Log error
-            echo "Error sending email notification: " . $e->getMessage();
+            error_log("Error sending email notification: " . $e->getMessage());
+            return false;
         }
     }
     
@@ -404,56 +459,156 @@ class User {
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $citizenId);
     
-        if ($stmt->execute()) {
-            // Fetch citizen details for sending email
-            $contactInfo = $this->getCitizenDetails($citizenId);
-            if ($contactInfo) {
-                $this->sendEmail($contactInfo['email'], $contactInfo['fullname'], "Your account has been approved.", 
-                    "Dear {$contactInfo['fullname']},<br><br>Your account has been successfully approved.<br>Thank you for your patience.<br>");
-                
-                // Send SMS notification with personalized message
-                $smsMessage = "Dear {$contactInfo['fullname']}, Your account has been successfully approved. Thank you for your patience.";
-                $this->sendSms($contactInfo['phone'], $smsMessage);
-            }
-            
-            return true;
-        } else {
+        // Fetch citizen details for sending email and SMS
+        $contactInfo = $this->getCitizenDetails($citizenId);
+        if (!$contactInfo) {
+            error_log("Citizen not found for ID: {$citizenId}");
             return false;
+        }
+        $_SESSION['status'] = "success";
+        // Send Email notification and proceed if successful
+        $emailSuccess = $this->sendEmail(
+            $contactInfo['email'],
+            $contactInfo['fullname'],
+            "Your account has been approved.",
+            "Dear {$contactInfo['fullname']},<br><br>Your account has been successfully approved.<br>Thank you for your patience.<br>"
+        );
+    
+        if ($emailSuccess) {
+            // Attempt to send SMS notification (not blocking approval if it fails)
+            $smsMessage = "Dear {$contactInfo['fullname']}, Your account has been successfully approved. Thank you for your patience.";
+            $smsSuccess = $this->sendSms($contactInfo['phone'], $smsMessage, $this->config);
+    
+            // Log SMS success or failure without affecting the approval
+            if ($smsSuccess) {
+                error_log("SMS sent successfully to {$contactInfo['phone']}");
+            } else {
+                error_log("SMS failed to send to {$contactInfo['phone']}");
+            }
+    
+            // Proceed with updating approval status in the database
+            if ($stmt->execute()) {
+                error_log("Citizen approved successfully for ID: {$citizenId}");
+                return true; // Approval successful
+            } else {
+                error_log("Failed to update citizen status for ID: {$citizenId}");
+                return false;
+            }
+        } else {
+            error_log("Email failed to send for citizen ID: {$citizenId}");
+            return false; // Approval blocked due to email failure
         }
     }
     
     public function deleteCitizen($citizenId) {
         // Fetch citizen details before deletion
         $contactInfo = $this->getCitizenDetails($citizenId);
-        if ($contactInfo) {
-            $email = $contactInfo['email'];
-            $fullname = $contactInfo['fullname'];
-            $phone = $contactInfo['phone']; // Assuming you have the phone number stored as 'phone'
-        } else {
-            return false; // Citizen not found
+        if (!$contactInfo) {
+            return "Error: Citizen not found"; // Citizen not found
         }
     
+        $email = $contactInfo['email'] ?? null;
+        $fullname = $contactInfo['fullname'];
+        $phone = $contactInfo['phone'] ?? null; // Optional phone field
+    
+        // Validate email format
+        if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return "Error: Invalid email address"; // Invalid email format
+        }
+    
+        // Prepare SQL to delete citizen
         $sql = "DELETE FROM citizen WHERE citizend_id = ?";
         $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            return "Error: SQL statement preparation failed";
+        }
         $stmt->bind_param("i", $citizenId);
+        
+        // Try to send email notification only if the email is valid
+        if ($email) {
+            $emailSuccess = $this->sendEmail(
+                $email,
+                $fullname,
+                "Your account has been approved.",
+                "Dear {$fullname},<br><br>Your account has been successfully deleted.<br>Thank you for your patience.<br>"
+            );
     
-        if ($stmt->execute()) {
-            // Send email after successful deletion
-            $this->sendEmail($email, $fullname, "Your account has been deleted.", 
-                "Dear {$fullname},<br><br>Your account has been deleted.<br>If you have any questions, please contact us.<br>");
-            
-            // Send SMS after successful deletion
-            $smsMessage = "Dear {$fullname}, Your account has been deleted. If you have any questions, please contact us.";
-            $this->sendSms($phone, $smsMessage);
+            if (!$emailSuccess) {
+                error_log("Email failed to send for citizen ID: {$citizenId}");
+                return false; // Approval blocked due to email failure
+            }
+        }
     
-            return true;
+        $_SESSION['status'] = "success";
+    
+        // Attempt to send SMS notification (not blocking approval if it fails)
+        $smsMessage = "Dear {$fullname}, Your account has been successfully deleted. Thank you for your patience.";
+        $smsSuccess = $this->sendSms($phone, $smsMessage, $this->config);
+    
+        // Log SMS success or failure without affecting the approval
+        if ($smsSuccess) {
+            error_log("SMS sent successfully to {$phone}");
         } else {
+            error_log("SMS failed to send to {$phone}");
+        }
+    
+        // Proceed with deleting the citizen record in the database
+        if ($stmt->execute()) {
+            error_log("Citizen deleted successfully for ID: {$citizenId}");
+            return true; // Deletion successful
+        } else {
+            error_log("Failed to delete citizen record for ID: {$citizenId}");
             return false;
         }
     }
     
     
-
+    
+    // Email sending function (no changes)
+    private function sendEmailss($email, $fullname, $subject, $body) {
+        // SMTP configuration
+        $mail = new PHPMailer(true);
+        try {
+            // Server settings
+            $mail->isSMTP();
+            $mail->Host = $this->config['smtp']['host'];
+            $mail->SMTPAuth = true;
+            $mail->Username = $this->config['smtp']['username'];
+            $mail->Password = $this->config['smtp']['password'];
+            $mail->SMTPSecure = $this->config['smtp']['secure'];
+            $mail->Port = $this->config['smtp']['port'];
+    
+            // Recipients
+            $mail->setFrom($this->config['smtp']['username']);
+            $mail->addAddress($email, $fullname);
+    
+            // Content
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body = $body;
+    
+            $mail->send();
+        } catch (Exception $e) {
+            error_log("Email could not be sent. Mailer Error: {$mail->ErrorInfo}");
+        }
+    }
+    
+    // SMS sending function (no changes)
+    private function sendSmss($phone, $message) {
+        // Twilio SMS configuration
+        $client = new Client($config['twilio']['sid'], $config['twilio']['token']);
+    
+        try {
+            $client->messages->create(
+                $phone, [
+                    'from' => $config['twilio']['from'],
+                    'body' => $message
+                ]
+            );
+        } catch (Exception $e) {
+            error_log("SMS could not be sent. Error: {$e->getMessage()}");
+        }
+    }
     
 
     public function login($email, $password) {
@@ -651,7 +806,8 @@ class User {
             // Proceed with file upload if no error
             if ($validIdError === 0) {
                 $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+                $allowedFileTypes = ['*'];  // This means any file type will be allowed.
+
     
                 if (in_array($imageFileType, $allowedFileTypes)) {
                     if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
@@ -841,6 +997,81 @@ if ($stmt->execute()) {
                 } else {
                     return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
                 }
+            } 
+        } 
+        $sanitizedData = $this->sanitizeData($data);
+    
+        // Calculate age
+        $sanitizedData['age'] = $this->calculateAge($sanitizedData['c_date_birth']);
+    
+        // Hash the password
+        $sanitizedData['password'] = password_hash($sanitizedData['password'], PASSWORD_DEFAULT);
+    
+        // Prepare SQL query with placeholders
+        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password,valid_id) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+    
+        // Use prepared statements to prevent SQL injection
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param(
+            'sssssssssss',
+            $sanitizedData['user_type'],
+            $sanitizedData['r_status'],
+            $sanitizedData['fullname'],
+            $sanitizedData['address'],
+            $sanitizedData['gender'],
+            $sanitizedData['c_date_birth'],
+            $sanitizedData['age'],
+            $sanitizedData['email'],
+            $sanitizedData['phone'],
+            $sanitizedData['password'],
+            $sanitizedData['valid_id']
+        );
+    
+        if ($stmt->execute()) {
+            // Return success message without notification
+            return "Registration successful";
+        } else {
+            return "Registration failed";
+        }
+    }
+    
+    public function registerUsersss($data) {
+        // Automatically set user_type to 'Staff'
+        $data['user_type'] = 'Admin';
+        $data['r_status'] = 'Active';
+    
+        // Combine first name, last name, and middle name into a single fullname field
+        $data['fullname'] = trim($data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']);
+    
+        // Create date of birth from year, month, and day
+        $year = intval($data['year']);
+        $month = intval($data['month']);
+        $day = intval($data['day']);
+        
+        $data['c_date_birth'] = "$year-$month-$day";
+    
+        // Sanitize input data
+        if (isset($_FILES['valid_id'])) {
+            $validIdError = $_FILES['valid_id']['error'];
+            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
+            $validIdName = $_FILES['valid_id']['name'];
+            $validIdUploadPath = 'img/' . $validIdName;
+    
+            // Proceed with file upload if no error
+            if ($validIdError === 0) {
+                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
+                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+    
+                if (in_array($imageFileType, $allowedFileTypes)) {
+                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
+                    } else {
+                        return "Failed to upload valid ID image";
+                    }
+                } else {
+                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
+                }
             } else {
                 return "Error uploading valid ID image";
             }
@@ -883,9 +1114,6 @@ if ($stmt->execute()) {
             return "Registration failed";
         }
     }
-    
-    
-    
     private function calculateAge($birthday) {
         $birthDate = new DateTime($birthday);
         $today = new DateTime('today');

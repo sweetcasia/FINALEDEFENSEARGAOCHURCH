@@ -263,25 +263,7 @@ function toggleChapelInput() {
                 <input type="text" class="form-control" id="end_time" name="end_time" placeholder="" readonly />
                   <span class="error" id="endTimeError"></span>
             </div>
-                                   
-                                    <div class="form-group">
-                                        <label for="firstname">Firstname of Person(Pamisahan)</label>
-                                        <input type="text" class="form-control" id="firstnames" name="firstnames" placeholder="Enter Firstname" value="" />
-                                        <span id="firstnamesError" class="error text-danger"></span>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="lastname">Last Name of Person(Pamisahan)</label>
-                                        <input type="text" class="form-control" id="lastnames" name="lastnames" placeholder="Enter Lastname" value="" />
-                                        <span id="lastnamesError" class="error text-danger"></span>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="middlename">Middle Name of Person(Pamisahan)</label>
-                                        <input type="text" class="form-control" id="middlenames" name="middlenames" placeholder="Enter Middlename" value="" />
-                                        <span id="middlenamesError" class="error text-danger"></span>
-                                    </div>
-                                    
+                                                         
                                 </div>
                                 
                             </div>

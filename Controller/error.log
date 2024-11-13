@@ -1,92 +1,166 @@
-[11-Nov-2024 14:27:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:27:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:27:51 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 14:27:51 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 14:27:51 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 14:27:57 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
+[12-Nov-2024 07:38:30 Europe/Berlin] Error sending email notification: Invalid address:  (to): edgardositon90434534534534534534534534535353453453453453453453556@gmail.com
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:38:30 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:38:30 Europe/Berlin] General Error: Credentials are required to create a Client
+[12-Nov-2024 07:38:30 Europe/Berlin] General Error Code: 0
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 390
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 391
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:39:27 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 392
+[12-Nov-2024 07:39:27 Europe/Berlin] General Error: Credentials are required to create a Client
+[12-Nov-2024 07:39:27 Europe/Berlin] General Error Code: 0
+[12-Nov-2024 07:42:24 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 07:43:26 Europe/Berlin] Error sending email notification: Invalid address:  (to): edgardositon90434534534534534534534534535353453453453453453453556@gmail.com
+[12-Nov-2024 07:43:26 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('+639394245345', 'Dear trial, You...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('48')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 07:56:22 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 07:56:22 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('+639394245345', 'Dear Grant Tole...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('34')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:03:35 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 08:03:35 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('+639394245345', 'Dear Grant Tole...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('34')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:05:12 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 08:05:12 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('+639394245345', 'Dear Grant Tole...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('34')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:25:17 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 08:25:17 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('+639394245345', 'Dear Grant Tole...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('34')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:27:19 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 08:27:19 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:41:34 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[12-Nov-2024 08:41:34 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[12-Nov-2024 08:43:05 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(900): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[12-Nov-2024 08:55:16 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 461 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(461): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:57:46 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 08:58:40 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 09:00:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 469 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(469): User->sendSms('09394245345', 'Dear Jameban, Y...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('15')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 09:04:01 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function User::sendSms(), 2 passed in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 462 and exactly 3 expected in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:388
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(462): User->sendSms('09394245345', 'Dear chinchin, ...')
+#1 C:\xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php(22): User->approveCitizen('19')
+#2 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 388
+[12-Nov-2024 16:45:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 16:45:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 16:45:53 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[12-Nov-2024 16:45:53 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[12-Nov-2024 16:45:53 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[12-Nov-2024 16:45:59 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
 Stack trace:
 #0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
 #1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(140): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
+#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(126): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
 #3 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 14:33:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:33:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:33:57 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 14:33:57 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 14:33:57 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 14:34:03 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
+[12-Nov-2024 16:46:43 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 16:46:43 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 16:46:43 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[12-Nov-2024 16:46:43 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[12-Nov-2024 16:46:43 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[12-Nov-2024 16:46:49 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
 Stack trace:
 #0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
 #1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(932): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
+#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(902): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
 #3 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 14:46:01 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:46:01 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:46:01 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 14:46:01 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 14:46:01 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 14:46:09 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
+[12-Nov-2024 17:56:13 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 17:56:13 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[12-Nov-2024 17:56:13 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[12-Nov-2024 17:56:13 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[12-Nov-2024 17:56:13 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[12-Nov-2024 17:56:19 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
 Stack trace:
 #0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
 #1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(375): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
+#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(643): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
 #3 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 14:48:20 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:48:20 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 14:48:20 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 14:48:20 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 14:48:20 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 14:48:26 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
+[13-Nov-2024 13:18:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:18:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[13-Nov-2024 13:18:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[13-Nov-2024 13:18:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[13-Nov-2024 13:18:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[13-Nov-2024 13:18:24 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
 Stack trace:
 #0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
 #1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(572): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
+#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(355): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
 #3 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 15:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 15:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 15:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 15:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 15:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 15:43:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 15:43:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1868
-[11-Nov-2024 15:43:10 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 15:43:10 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 15:43:10 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 16:21:04 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:21:04 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:21:04 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 16:21:04 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 16:21:04 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 16:27:36 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:27:36 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:27:36 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 16:27:36 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 16:27:36 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 16:27:42 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
-Stack trace:
-#0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
-#1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(669): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
-#3 {main}
-  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 16:28:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:28:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1870
-[11-Nov-2024 16:28:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 16:28:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 16:28:18 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
-[11-Nov-2024 16:28:24 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\RestException: [HTTP 401] Unable to create record: Authenticate in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php:88
-Stack trace:
-#0 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php(223): Twilio\Version->exception(Object(Twilio\Http\Response), 'Unable to creat...')
-#1 C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Rest\Api\V2010\Account\MessageList.php(116): Twilio\Version->create('POST', '/Accounts/AC7ef...', Array, Array, Array)
-#2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(766): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
-#3 {main}
-  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
-[11-Nov-2024 17:06:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
-[11-Nov-2024 17:06:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
-[11-Nov-2024 17:06:55 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
-[11-Nov-2024 17:06:55 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
-[11-Nov-2024 17:06:55 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741

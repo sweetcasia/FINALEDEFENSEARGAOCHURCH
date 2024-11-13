@@ -1,7 +1,5 @@
 <?php
-error_reporting(0); // Disable all error reporting
 
-// Alternatively, if you only want to hide errors but log them
 error_reporting(E_ALL); // Report all errors
 ini_set('display_errors', '0'); // Hide errors from displaying on the page
 ini_set('log_errors', '1'); // Enable error logging
@@ -36,137 +34,123 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $weddingffill_id = isset($_POST['marriage_id']) ? $_POST['marriage_id'] : null;
     $massweddingffill_id = isset($_POST['massmarriage_id']) ? $_POST['massmarriage_id'] : null;
     $defuctomfill_id = isset($_POST['defuctom_id']) ? $_POST['defuctom_id'] : null;
-   // Handle Baptism
-   
+$config = include('../config.php'); 
+if ($baptismfill_id) {
+    $sunday = $start_time = $end_time = $priestId = $payableAmount = null;
 
+    if (isset($_POST['sundays'])) {
+        $selected_sunday = explode('|', $_POST['sundays']);
+        if (count($selected_sunday) === 4) {
+            list($schedule_id, $sunday, $start_time, $end_time) = $selected_sunday;
 
-
-    if ($baptismfill_id) {
-        $sunday = $start_time = $end_time = $priestId = $payableAmount = null;
-
-        if (isset($_POST['sundays'])) {
-            $selected_sunday = explode('|', $_POST['sundays']);
-            if (count($selected_sunday) === 4) {
-                list($schedule_id, $sunday, $start_time, $end_time) = $selected_sunday;
-        
-                // Convert start_time and end_time to 24-hour format
-                $start_time = (new DateTime($start_time))->format('H:i:s');
-                $end_time = (new DateTime($end_time))->format('H:i:s');
-                
-                // Now $start_time and $end_time are in 24-hour format
-            } else {
-                die('Error: Expected 4 values, but received fewer.');
-            }
-        }
-        
- 
-        $payableAmount = $_POST['eventTitle'] ?? null;
-        $eventspeaker = $_POST['eventspeaker'] ?? null;
-        $citizen_id = isset($_SESSION['citizen_id']) ? $_SESSION['citizen_id'] : null;
-
-        // Check that all required fields are present
-        if (!$sunday || !$start_time || !$end_time || !$payableAmount|| !$eventspeaker) {
-            die('Error: Missing required form data.');
-        }
-
-        $appointment = new Staff($conn);
-        $scheduleId = $appointment->insertSchedule($sunday, $start_time, $end_time, 'Seminar');
-
-        if ($scheduleId) {
-            $result = $Citizen->insertAppointment($baptismfill_id, $payableAmount,$eventspeaker, $scheduleId);
-            $result = $appointment->approveBaptism($baptismfill_id);
-            if ($result) {
-                $contactInfo = $appointment->getContactInfoAndTitle($baptismfill_id);
-             
-                $email = $contactInfo['email'];
-                $citizen_name = $contactInfo['fullname'];
-                $title = $contactInfo['event_name'];
-                $phone = $contactInfo['phone'];  // Assuming this is the phone number
-                $seminar_date = (new DateTime($contactInfo['seminar_date']))->format('F j, Y');
-                    $seminar_start_time = (new DateTime($contactInfo['seminar_start_time']))->format('g:i A');
-                    $seminar_end_time = (new DateTime($contactInfo['seminar_end_time']))->format('g:i A');
-            
-                // Send email
-                try {
-                    $mail = new PHPMailer(true);
-                    $mail->isSMTP();
-                    $mail->Host = "smtp.gmail.com";
-                    $mail->SMTPAuth = true;
-                    $mail->Username = "argaoparishchurch@gmail.com";
-                    $mail->Password = "xomoabhlnrlzenur";
-                    $mail->SMTPSecure = 'tls';
-                    $mail->Port = 587;
-            
-                    $mail->setFrom('argaoparishchurch@gmail.com');
-                    $mail->addAddress($email);
-                    $mail->addEmbeddedImage('signature.png', 'signature_img');
-                    $mail->addEmbeddedImage('logo.jpg', 'background_img');
-                    $mail->isHTML(true);
-                    $mail->Subject = "Appointment Schedule Confirmation";
-                    $mail->Body = "
-                    <div style='width: 100%; max-width: 400px; margin: auto; background: url(cid:background_img) no-repeat center center; background-size: cover; padding: 20px;'>
-                            <div style='background: rgba(255, 255, 255, 0.8); padding: 20px; width:100%; height:auto;'>
-                                Dear {$citizen_name},<br><br>
-                                We are pleased to confirm your appointment for the event titled '<strong>{$title}</strong>'.<br><br>
-                                <strong>Details of Your Seminar Schedule:</strong><br>
-                                <ul>
-                                    <li><strong>Date:</strong> {$seminar_date}</li>
-                                    <li><strong>Time:</strong> {$seminar_start_time} to {$seminar_end_time}</li>
-                                    <li><strong>Amount Due:</strong> ₱{$payableAmount}.00</li>
-                                </ul>
-                                Please ensure to complete the payment at the church office on or before the day of your appointment or your Seminar.<br><br>
-                                We look forward to your participation and thank you for choosing Argao Parish Church.<br><br>
-                                Best regards,<br>
-                                <img src='cid:signature_img' style='width: 200px; height: auto;'>
-                            </div>
-                        </div>";
-            
-                    if ($mail->send()) {
-                        $_SESSION['status'] = "success";
-                        header('Location: ../View/PageStaff/StaffSoloSched.php');
-                    } else {
-                        echo "Error sending email notification: " . $mail->ErrorInfo;
-                    }
-                } catch (Exception $e) {
-                    echo "Error sending email notification: " . $e->getMessage();
-                }
-            
-                // Send SMS via Twilio
-                try {
-                    $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                    $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                    $twilio = new Twilio\Rest\Client($sid, $token);
-                
-                    $message = $twilio->messages->create(
-                        $phone, // The recipient's phone number
-                        [
-                            'from' => '+17082776875', // Your Twilio phone number
-                            'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
-                        ]
-                    );
-                
-                  
-                
-                    if ($message->sid) {
-                        echo "SMS notification sent successfully.";
-                    } else {
-                        echo "Error sending SMS notification.";
-                    }
-                } catch (Exception $e) {
-                    echo "Error sending SMS notification: " . $e->getMessage();
-                }
-            
-                $_SESSION['status'] = "success";
-                header('Location: ../View/PageStaff/StaffSoloSched.php');
-                exit();
-            
-            } else {
-                echo "Error updating status. Please try again.";
-            }
+            $start_time = (new DateTime($start_time))->format('H:i:s');
+            $end_time = (new DateTime($end_time))->format('H:i:s');
         } else {
-            echo "Error inserting schedule record. Please try again.";
+            die('Error: Expected 4 values, but received fewer.');
         }
     }
+
+    $payableAmount = $_POST['eventTitle'] ?? null;
+    $eventspeaker = $_POST['eventspeaker'] ?? null;
+    $citizen_id = $_SESSION['citizen_id'] ?? null;
+
+    if (!$sunday || !$start_time || !$end_time || !$payableAmount || !$eventspeaker) {
+        die('Error: Missing required form data.');
+    }
+
+    $appointment = new Staff($conn);
+    $scheduleId = $appointment->insertSchedule($sunday, $start_time, $end_time, 'Seminar');
+
+    if ($scheduleId) {
+        $result = $Citizen->insertAppointment($baptismfill_id, $payableAmount, $eventspeaker, $scheduleId);
+        $result = $appointment->approveBaptism($baptismfill_id);
+        if ($result) {
+            $contactInfo = $appointment->getContactInfoAndTitle($baptismfill_id);
+
+            $email = $contactInfo['email'];
+            $citizen_name = $contactInfo['fullname'];
+            $title = $contactInfo['event_name'];
+            $phone = $contactInfo['phone'];
+            $seminar_date = (new DateTime($contactInfo['seminar_date']))->format('F j, Y');
+            $seminar_start_time = (new DateTime($contactInfo['seminar_start_time']))->format('g:i A');
+            $seminar_end_time = (new DateTime($contactInfo['seminar_end_time']))->format('g:i A');
+
+            // Send email
+            try {
+                $mail = new PHPMailer(true);
+                $mail->isSMTP();
+                $mail->Host = $config['smtp']['host'];
+                $mail->SMTPAuth = true;
+                $mail->Username = $config['smtp']['username'];
+                $mail->Password = $config['smtp']['password'];
+                $mail->SMTPSecure = $config['smtp']['secure'];
+                $mail->Port = $config['smtp']['port'];
+
+                $mail->setFrom($config['smtp']['username']);
+                $mail->addAddress($email);
+                $mail->addEmbeddedImage('signature.png', 'signature_img');
+                $mail->addEmbeddedImage('logo.jpg', 'background_img');
+                $mail->isHTML(true);
+                $mail->Subject = "Appointment Schedule Confirmation";
+                $mail->Body = "
+                    <div style='width: 100%; max-width: 400px; margin: auto; background: url(cid:background_img) no-repeat center center; background-size: cover; padding: 20px;'>
+                        <div style='background: rgba(255, 255, 255, 0.8); padding: 20px; width:100%; height:auto;'>
+                            Dear {$citizen_name},<br><br>
+                            We are pleased to confirm your appointment for the event titled '<strong>{$title}</strong>'.<br><br>
+                            <strong>Details of Your Seminar Schedule:</strong><br>
+                            <ul>
+                                <li><strong>Date:</strong> {$seminar_date}</li>
+                                <li><strong>Time:</strong> {$seminar_start_time} to {$seminar_end_time}</li>
+                                <li><strong>Amount Due:</strong> ₱{$payableAmount}.00</li>
+                            </ul>
+                            Please ensure to complete the payment at the church office on or before the day of your appointment or your Seminar.<br><br>
+                            We look forward to your participation and thank you for choosing Argao Parish Church.<br><br>
+                            Best regards,<br>
+                            <img src='cid:signature_img' style='width: 200px; height: auto;'>
+                        </div>
+                    </div>";
+
+                if ($mail->send()) {
+                    $_SESSION['status'] = "success";
+                    header('Location: ../View/PageStaff/StaffSoloSched.php');
+                } else {
+                    echo "Error sending email notification: " . $mail->ErrorInfo;
+                }
+            } catch (Exception $e) {
+                echo "Error sending email notification: " . $e->getMessage();
+            }
+
+            // Send SMS via Twilio
+            try {
+                $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
+                $message = $twilio->messages->create(
+                    $phone,
+                    [
+                        'from' => $config['twilio']['from'],
+                        'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
+                    ]
+                );
+
+                if ($message->sid) {
+                    echo "SMS notification sent successfully.";
+                } else {
+                    echo "Error sending SMS notification.";
+                }
+            } catch (Exception $e) {
+                echo "Error sending SMS notification: " . $e->getMessage();
+            }
+
+            $_SESSION['status'] = "success";
+            header('Location: ../View/PageStaff/StaffSoloSched.php');
+            exit();
+
+        } else {
+            echo "Error updating status. Please try again.";
+        }
+    } else {
+        echo "Error inserting schedule record. Please try again.";
+    }
+}
     // Check if $massbaptismfillId is set, indicating a mass baptism
     if ($massbaptismfillId) {
         $payableAmount = $_POST['eventTitle'] ?? null;
@@ -203,14 +187,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // Set up PHPMailer
                     $mail = new PHPMailer(true);
                     $mail->isSMTP();
-                    $mail->Host = "smtp.gmail.com";
+                    $mail->Host = $config['smtp']['host'];
                     $mail->SMTPAuth = true;
-                    $mail->Username = "argaoparishchurch@gmail.com";
-                    $mail->Password = "xomoabhlnrlzenur";
-                    $mail->SMTPSecure = 'tls';
+                    $mail->Username = $config['smtp']['username'];
+                    $mail->Password = $config['smtp']['password'];
+                    $mail->SMTPSecure = $config['smtp']['secure'];
                     $mail->Port = 587;
     
-                    $mail->setFrom('argaoparishchurch@gmail.com');
+                    $mail->setFrom($config['smtp']['username']);
                     $mail->addAddress($email);
                     $mail->addEmbeddedImage('signature.png', 'signature_img');
                     $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -245,14 +229,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
                 // Send SMS via Twilio
                 try {
-                    $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                    $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                    $twilio = new Twilio\Rest\Client($sid, $token);
-    
+          
+                    $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
                     $message = $twilio->messages->create(
                         $phone, // The recipient's phone number
                         [
-                            'from' => '+17082776875', // Your Twilio phone number
+                            'from' => $config['twilio']['from'],
                             'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                         ]
                     );
@@ -328,14 +310,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     try {
                         $mail = new PHPMailer(true);
                         $mail->isSMTP();
-                        $mail->Host = "smtp.gmail.com";
+                        $mail->Host = $config['smtp']['host'];
                         $mail->SMTPAuth = true;
-                        $mail->Username = "argaoparishchurch@gmail.com";
-                        $mail->Password = "xomoabhlnrlzenur";
-                        $mail->SMTPSecure = 'tls';
+                        $mail->Username = $config['smtp']['username'];
+                        $mail->Password = $config['smtp']['password'];
+                        $mail->SMTPSecure = $config['smtp']['secure'];
                         $mail->Port = 587;
 
-                        $mail->setFrom('argaoparishchurch@gmail.com');
+                        $mail->setFrom($config['smtp']['username']);
                         $mail->addAddress($email);
                         $mail->addEmbeddedImage('signature.png', 'signature_img');
                         $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -368,14 +350,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         echo "Error sending email notification: " . $e->getMessage();
                     }
                     try {
-                        $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                        $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                        $twilio = new Twilio\Rest\Client($sid, $token);
+                        $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
                     
                         $message = $twilio->messages->create(
                             $phone, // The recipient's phone number
                             [
-                                'from' => '+17082776875', // Your Twilio phone number
+                                'from' => $config['twilio']['from'],
                                 'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                             ]
                         );
@@ -435,14 +415,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             try {
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
-                $mail->Host = "smtp.gmail.com";
+                $mail->Host = $config['smtp']['host'];
                 $mail->SMTPAuth = true;
-                $mail->Username = "argaoparishchurch@gmail.com";
-                $mail->Password = "xomoabhlnrlzenur";
-                $mail->SMTPSecure = 'tls';
+                $mail->Username = $config['smtp']['username'];
+                $mail->Password = $config['smtp']['password'];
+                $mail->SMTPSecure = $config['smtp']['secure'];
                 $mail->Port = 587;
 
-                $mail->setFrom('argaoparishchurch@gmail.com');
+                $mail->setFrom($config['smtp']['username']);
                 $mail->addAddress($email);
                 $mail->addEmbeddedImage('signature.png', 'signature_img');
                 $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -473,14 +453,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Send SMS Notification
             try {
-                $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';
-                $token = '40464522e94c2cdb6296d701bbe36a51';
-                $twilio = new Twilio\Rest\Client($sid, $token);
-
+                $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
                 $twilio->messages->create(
                     $phone,
                     [
-                        'from' => '+17082776875',
+                        'from' => $config['twilio']['from'],
                         'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                     ]
                 );
@@ -533,15 +510,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              // Set up PHPMailer
              $mail = new PHPMailer(true);
              $mail->isSMTP();
-             $mail->Host = "smtp.gmail.com";
+             $mail->Host = $config['smtp']['host'];
              $mail->SMTPAuth = true;
-             $mail->Username = "argaoparishchurch@gmail.com";
-             $mail->Password = "xomoabhlnrlzenur";
-             $mail->SMTPSecure = 'tls';
+             $mail->Username = $config['smtp']['username'];
+             $mail->Password = $config['smtp']['password'];
+             $mail->SMTPSecure = $config['smtp']['secure'];
+
              $mail->Port = 587;
  
              // Email settings
-             $mail->setFrom('argaoparishchurch@gmail.com');
+             $mail->setFrom($config['smtp']['username']);
              $mail->addAddress($email);
              $mail->addEmbeddedImage('signature.png', 'signature_img');
              $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -564,14 +542,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              echo "Error sending email notification: " . $e->getMessage();
          }
          try {
-            $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-            $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-            $twilio = new Twilio\Rest\Client($sid, $token);
+            $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
         
             $message = $twilio->messages->create(
                 $phone, // The recipient's phone number
                 [
-                    'from' => '+17082776875', // Your Twilio phone number
+                    'from' => $config['twilio']['from'],
                     'body' => "Dear {$citizen_name}, your appointment for '{$title}' has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                 ]
             );
@@ -631,15 +607,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Set up PHPMailer
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
-                $mail->Host = "smtp.gmail.com";
+                $mail->Host = $config['smtp']['host'];
                 $mail->SMTPAuth = true;
-                $mail->Username = "argaoparishchurch@gmail.com";
-                $mail->Password = "xomoabhlnrlzenur";
-                $mail->SMTPSecure = 'tls';
+                $mail->Username = $config['smtp']['username'];
+                $mail->Password = $config['smtp']['password'];
+                $mail->SMTPSecure = $config['smtp']['secure'];
                 $mail->Port = 587;
     
                 // Email settings
-                $mail->setFrom('argaoparishchurch@gmail.com');
+                $mail->setFrom($config['smtp']['username']);
                 $mail->addAddress($email);
                 $mail->addEmbeddedImage('signature.png', 'signature_img');
                 $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -662,14 +638,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error sending email notification: " . $e->getMessage();
             } 
             try {
-                $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                $twilio = new Twilio\Rest\Client($sid, $token);
+                $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
             
                 $message = $twilio->messages->create(
                     $phone, // The recipient's phone number
                     [
-                        'from' => '+17082776875', // Your Twilio phone number
+                        'from' => $config['twilio']['from'],
                         'body' => "Dear {$citizen_name}, your appointment for '{$title}' has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                     ]
                 );
@@ -728,15 +702,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Set up PHPMailer
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
-                $mail->Host = "smtp.gmail.com";
+                $mail->Host = $config['smtp']['host'];
                 $mail->SMTPAuth = true;
-                $mail->Username = "argaoparishchurch@gmail.com";
-                $mail->Password = "xomoabhlnrlzenur";
-                $mail->SMTPSecure = 'tls';
+                $mail->Username = $config['smtp']['username'];
+                $mail->Password = $config['smtp']['password'];
+                $mail->SMTPSecure = $config['smtp']['secure'];
                 $mail->Port = 587;
     
                 // Email settings
-                $mail->setFrom('argaoparishchurch@gmail.com');
+                $mail->setFrom($config['smtp']['username']);
                 $mail->addAddress($email);
                 $mail->addEmbeddedImage('signature.png', 'signature_img');
                 $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -759,14 +733,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "Error sending email notification: " . $e->getMessage();
             } 
             try {
-                $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                $twilio = new Twilio\Rest\Client($sid, $token);
+                $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
             
                 $message = $twilio->messages->create(
                     $phone, // The recipient's phone number
                     [
-                        'from' => '+17082776875', // Your Twilio phone number
+                        'from' => $config['twilio']['from'],
                         'body' => "Dear {$citizen_name}, your appointment for '{$title}' has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                     ]
                 );
@@ -814,14 +786,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = "smtp.gmail.com";
+            $mail->Host = $config['smtp']['host'];
             $mail->SMTPAuth = true;
-            $mail->Username = "argaoparishchurch@gmail.com";
-            $mail->Password = "xomoabhlnrlzenur";
-            $mail->SMTPSecure = 'tls';
+            $mail->Username = $config['smtp']['username'];
+            $mail->Password = $config['smtp']['password'];
+            $mail->SMTPSecure = $config['smtp']['secure'];
             $mail->Port = 587;
 
-            $mail->setFrom('argaoparishchurch@gmail.com');
+            $mail->setFrom($config['smtp']['username']);
             $mail->addAddress($email);
             $mail->addEmbeddedImage('signature.png', 'signature_img');
             $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -852,14 +824,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Send SMS Notification
         try {
-            $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-            $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-            $twilio = new Twilio\Rest\Client($sid, $token);
+          
+   $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
 
             $message = $twilio->messages->create(
                 $phone, // The recipient's phone number
                 [
-                    'from' => '+17082776875', // Your Twilio phone number
+                    'from' => $config['twilio']['from'],
                     'body' => "Dear {$citizen_name}, your appointment for '{$title}' on {$seminar_date} from {$seminar_start_time} to {$seminar_end_time} has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                          ]
             );
@@ -895,14 +866,15 @@ else if($walkinconfirmationfill_id){
             try {
                 $mail = new PHPMailer(true);
                 $mail->isSMTP();
-                $mail->Host = "smtp.gmail.com";
+                $mail->Host = $config['smtp']['host'];
                 $mail->SMTPAuth = true;
-                $mail->Username = "argaoparishchurch@gmail.com";
-                $mail->Password = "xomoabhlnrlzenur";
-                $mail->SMTPSecure = 'tls';
+                $mail->Username = $config['smtp']['username'];
+                $mail->Password = $config['smtp']['password'];
+                $mail->SMTPSecure = $config['smtp']['secure'];
+
                 $mail->Port = 587;
     
-                $mail->setFrom('argaoparishchurch@gmail.com');
+                $mail->setFrom($config['smtp']['username']);
                 $mail->addAddress($email);
                 $mail->addEmbeddedImage('signature.png', 'signature_img');
                 $mail->addEmbeddedImage('logo.jpg', 'background_img');
@@ -925,14 +897,12 @@ else if($walkinconfirmationfill_id){
                 echo "Error sending email notification: " . $e->getMessage();
             }
             try {
-                $sid = 'AC7ef9e279eebfda753ed9f67ae1a77710';  // Your Twilio Account SID
-                $token = '40464522e94c2cdb6296d701bbe36a51';  // Your Twilio Auth Token
-                $twilio = new Twilio\Rest\Client($sid, $token);
+                $twilio = new Twilio\Rest\Client($config['twilio']['sid'], $config['twilio']['token']);
             
                 $message = $twilio->messages->create(
                     $phone, // The recipient's phone number
                     [
-                        'from' => '+17082776875', // Your Twilio phone number
+                        'from' => $config['twilio']['from'],
                         'body' => "Dear {$citizen_name}, your appointment for '{$title}' has been confirmed. ₱{$payableAmount}.00 is payable on the day of your appointment."
                     ]
                 );

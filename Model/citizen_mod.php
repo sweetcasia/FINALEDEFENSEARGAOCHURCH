@@ -2258,15 +2258,15 @@ private function generateReferenceNumber() {
         }
     }
     
-    public function insertRequestFormFill($scheduleId = null, $selectrequest = null, $fullname = null, $datetofollowup = null, $address = null, $cpnumber = null, $fullnames = null, $chapel = null, $role = null, $event_location = null) {
+    public function insertRequestFormFill($scheduleId = null, $selectrequest = null, $fullname = null, $datetofollowup = null, $address = null, $cpnumber = null,  $chapel = null, $role = null, $event_location = null) {
         // Corrected SQL with schedule_id included
-        $sql = "INSERT INTO req_form (schedule_id, req_category, req_person, cal_date, req_address, req_pnumber, req_name_pamisahan, req_chapel, status, role, event_location, created_at) 
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pending', ?, ?, CURRENT_TIMESTAMP)";
+        $sql = "INSERT INTO req_form (schedule_id, req_category, req_person, cal_date, req_address, req_pnumber,req_chapel, status, role, event_location, created_at) 
+                VALUES (?, ?, ?, ?, ?, ?, ?,  'Pending', ?, ?, CURRENT_TIMESTAMP)";
         
         $stmt = $this->conn->prepare($sql);
         
         // Updated type definition string to match 10 variables
-        $stmt->bind_param("isssssssss", $scheduleId, $selectrequest, $fullname, $datetofollowup, $address, $cpnumber, $fullnames, $chapel, $role, $event_location);
+        $stmt->bind_param("issssssss", $scheduleId, $selectrequest, $fullname, $datetofollowup, $address, $cpnumber, $chapel, $role, $event_location);
         
         if ($stmt->execute()) {
             // Return the last inserted ID

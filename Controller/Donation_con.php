@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     // Get data from AJAX request
     $d_name = $_POST['d_name'];
     $amount = $_POST['amount'];
-    $donated_on = $_POST['donated_on'];
+
     $description = $_POST['description'];
 
     // Call the addDonation method
-    if ($admin->addDonation($d_name, $amount, $donated_on, $description)) {
+    if ($admin->addDonation($d_name, $amount, $description)) {
         // Send JSON response for success
     
         echo json_encode(['status' => 'success']);

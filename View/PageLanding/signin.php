@@ -52,9 +52,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_type'])) {
   }
 }
 
-// If not logged in, show login form below this point
-$staff = new Staff($conn);
-$announcements = $staff->getAnnouncements();
+
 ?>
 
 <!DOCTYPE html>

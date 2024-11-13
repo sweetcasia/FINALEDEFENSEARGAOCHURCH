@@ -30,6 +30,7 @@ if ($r_status === "Admin") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,41 +45,36 @@ if ($r_status === "Admin") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- Fonts and icons -->
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
-    <style>
-      .form-control {
-    width: 150px;
-    padding: 5px;
-}
-body{
-  margin:0!important;
-} .navbar .dropdown-menu {
-    background-color: white!important;
-}
-.dropdown-menu[data-bs-popper] {
-    top: 100%;
-    left: 99px!important;
-    margin-top: .125rem;
-}
-    </style>
-   
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
 
-      <!-- CSS Files -->
-      <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
-
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../css/table.css" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="assets/css/demo.css" />
+<style></style>
   </head>
   <body>
-  <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-      <div class="container">
-       
-      <?php require_once 'header.php'?>
-
-      </div>
-    </div>
-    <!-- Navbar & Hero End -->
-    
-  <?php require_once 'profheader.php'?>
+  <?php  require_once 'sidebar.php'?>
+      <div class="main-panel">
+      <?php  require_once 'profheader.php'?>
 
         <div class="container">
           <div class="page-inner">
@@ -86,19 +82,28 @@ body{
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">My Appointment for Seminar</h4>
+                    <h4 class="card-title">Seminar Appointments</h4>
+                    
+                    <form method="GET" action="StaffSoloSched.php">
+     
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
+                   
                     <table id="multi-filter-select" class="display table table-striped table-hover">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>ID NO.</th>
+            <th>Name of Applicant</th>
             <th>Event Name</th>
-            <th>Event Date</th>
-            <th>Event Time</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
             <th>Seminar Date</th>
             <th>Seminar Time</th>
+            <th>Schedule Type</th>
+            <th>Amount</th>
+      
+          
             <th>View</th>
         </tr>
     </thead>
@@ -167,26 +172,52 @@ body{
               </div>
 
             
+              </div>
+                </div>
+              </div>
 
+              </div>
+                </div>
+              </div>
+
+            
         
       </div>
 
    
     </div>
-      <!-- JavaScript Libraries -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
+ 
+    <script>
+    // Search function to filter the table
+    document.getElementById('searchInput').addEventListener('input', function() {
+        var searchTerm = this.value.toLowerCase(); // Get the search term in lowercase
+        var tableRows = document.querySelectorAll('#appointmentsTable tbody tr'); // Get all rows in the table body
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    <!--   Core JS Files   -->
+        tableRows.forEach(function(row) {
+            var cells = row.getElementsByTagName('td'); // Get all cells of the current row
+            var match = false;
+
+            // Loop through each cell in the row
+            for (var i = 0; i < cells.length; i++) {
+                var cellText = cells[i].textContent.toLowerCase(); // Get the text content of the cell in lowercase
+                if (cellText.indexOf(searchTerm) > -1) { // If the search term matches the cell text
+                    match = true;
+                    break; // If a match is found, no need to check further cells in the row
+                }
+            }
+
+            // Show or hide the row based on whether there is a match
+            if (match) {
+                row.style.display = ''; // Show row
+            } else {
+                row.style.display = 'none'; // Hide row
+            }
+        });
+    });
+</script>
+
+     <!--   Core JS Files   -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
@@ -199,62 +230,101 @@ body{
     <script src="../assets/js/kaiadmin.min.js"></script>
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="../assets/js/setting-demo2.js"></script>
+    
     <script>
-      $(document).ready(function () {
-        $("#basic-datatables").DataTable({});
+    // JavaScript function for search bar
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+        const searchValue = this.value.toLowerCase();
+        const table = document.getElementById('multi-filter-select');
+        const rows = table.querySelectorAll('tbody tr');
 
-        $("#multi-filter-select").DataTable({
-          pageLength: 5,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
+        rows.forEach(row => {
+            const rowText = row.textContent.toLowerCase();
+            if (rowText.includes(searchValue)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+</script>
 
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
-          },
+    <script>
+         // Function to add 'active' class to the clicked link and remove it from others
+    function setActiveLink() {
+        // Get all custom links
+        var links = document.querySelectorAll('.custom-nav-link');
+        
+        // Remove 'active' class from all links
+        links.forEach(function(link) {
+            link.classList.remove('active');
         });
 
-        // Add Row
-        $("#add-row").DataTable({
-          pageLength: 5,
-        });
+        // Add 'active' class to the current link
+        this.classList.add('active');
+    }
 
-        var action =
-          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+    // Attach click event listeners to all custom-nav-link elements
+    var links = document.querySelectorAll('.custom-nav-link');
+    links.forEach(function(link) {
+        link.addEventListener('click', setActiveLink);
+    });
 
-        $("#addRowButton").click(function () {
-          $("#add-row")
-            .dataTable()
-            .fnAddData([
-              $("#addName").val(),
-              $("#addPosition").val(),
-              $("#addOffice").val(),
-              action,
-            ]);
-          $("#addRowModal").modal("hide");
+    // Optionally, set the active class based on the current page when loading the page
+    window.addEventListener('load', function() {
+        // Get the current URL
+        var currentPage = window.location.pathname.split('/').pop();
+
+        // Set the active class based on the current page
+        links.forEach(function(link) {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
         });
-      });
+    });
+          // JavaScript to trigger modal when the link is clicked
+document.getElementById('viewValidID').addEventListener('click', function() {
+    $('#validIDModal').modal('show');
+});
+
+        </script>
+    <script>
+  $(document).ready(function () {
+  $("#multi-filter-select").DataTable({
+    pageLength: 5,
+    columnDefs: [
+      { targets: '_all', orderable: false }  // Disable sorting for all columns
+    ],
+    initComplete: function () {
+      this.api()
+        .columns()
+        .every(function () {
+          var column = this;
+          var select = $('<select class="form-select"><option value=""></option></select>')
+            .appendTo($(column.footer()).empty())
+            .on("change", function () {
+              var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+              column
+                .search(val ? "^" + val + "$" : "", true, false)
+                .draw();
+            });
+
+          column
+            .data()
+            .unique()
+            .sort()
+            .each(function (d, j) {
+              select.append('<option value="' + d + '">' + d + "</option>");
+            });
+        });
+    },
+  });
+});
+
+
     </script>
+      <!-- JavaScript Libraries -->
+     
   </body>
 </html>

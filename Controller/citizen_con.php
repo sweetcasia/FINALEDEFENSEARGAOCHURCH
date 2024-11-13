@@ -1237,14 +1237,14 @@ if ($scheduleId) {
 
    
     $fullname = trim($firstname . ' ' . $middlename . ' ' . $lastname);
-    $fullnames = trim($firstnames . ' ' . $middlenames . ' ' . $lastnames);
+   
     $startTime = convertTo24HourFormat($startTime);
     $endTime = convertTo24HourFormat($endTime);
     $scheduleId = $citizenModel->insertSchedule($userDetails['citizend_id'], $date, $startTime, $endTime);
   
     
     $citizenModel->insertRequestFormFill(
-        $scheduleId ,$selectrequest, $fullname, $datetofollowup, $address, $cpnumber, $fullnames, $chapel,$role,$event_location
+        $scheduleId ,$selectrequest, $fullname, $datetofollowup, $address, $cpnumber,  $chapel,$role,$event_location
     );
 
     $_SESSION['status'] = "success";

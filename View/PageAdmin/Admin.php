@@ -134,28 +134,28 @@ small {
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Staff Registration Account</div>
+                        <div class="card-title">Admin Registration Account</div>
                     </div>
                     <div class="card-body">
                     <form method="POST" action=""  enctype="multipart/form-data" onsubmit="return validateForm()"class="sign-up-form">
                     
-                    <input type="hidden" name="signup_formss" value="3">
+                    <input type="hidden" name="signup_forms" value="1">
     <div class="row">
         <div class="col-md-6 col-lg-4">
 
             <div class="form-group">
-                <label for="firstname">Firstname of Staff:</label>
+                <label for="firstname">Firstname of Admin:</label>
                 <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">  
         
                 <div class="error" id="first_name_error"></div>  
             </div>
             <div class="form-group">
-                <label for="lastname">Last Name of Staff:</label>
+                <label for="lastname">Last Name of Admin:</label>
                 <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
                 <div class="error" id="last_name_error"></div>
             </div>
             <div class="form-group">
-                <label for="middlename">Middle Name of Staff:</label>
+                <label for="middlename">Middle Name of Admin:</label>
                 <input type="text" class="form-control" name="middle_name" id="middle_name" placeholder="Middle Name">
                 <div class="error" id="middle_name_error"></div>
             </div>
@@ -360,11 +360,13 @@ function validateForm() {
             showError("confirmpassword", "Passwords do not match");
             isValid = false;
         }
+
         const validID = document.getElementById("valid_id").files;
     if (validID.length === 0) {
         showError("valid_id", "Valid ID is required");
         isValid = false;
     }
+
 
         return isValid;
     }

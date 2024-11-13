@@ -131,6 +131,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
                         <i class="fa-solid fa-user-group"></i>                        <p>Staff Personnel</p>
                         </a>
                     </li>
+                    <li class="nav-item <?= ($current_page == 'AdminRecords.php') ? 'active' : ''; ?>">
+                        <a href="AdminRecords.php">
+
+                        <i class="fa-solid fa-user-group"></i>                        <p>Admin Personnel</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

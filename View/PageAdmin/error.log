@@ -1,0 +1,15 @@
+[12-Nov-2024 04:56:13 Europe/Berlin] PHP Warning:  require_once(footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 281
+[12-Nov-2024 04:56:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php:281
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 281
+[12-Nov-2024 04:57:36 Europe/Berlin] PHP Warning:  require_once(footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 282
+[12-Nov-2024 04:57:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php:282
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 282
+[12-Nov-2024 04:59:05 Europe/Berlin] PHP Warning:  require_once(footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 281
+[12-Nov-2024 04:59:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php:281
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\View\PageAdmin\profile.php on line 281

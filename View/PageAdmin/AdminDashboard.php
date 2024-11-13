@@ -97,10 +97,7 @@ if ($r_status === "Citizen") {
                         <label for="amount">Amount</label>
                         <input type="tel" class="form-control" id="amount" placeholder="Enter amount" required>
                     </div>
-                    <div class="form-group">
-                        <label for="donatedOn">Donated On</label>
-                        <input type="date" class="form-control" id="donatedOn" required>
-                    </div>
+                   
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="text" class="form-control" id="description" placeholder="Enter description" required>
@@ -196,6 +193,7 @@ if ($r_status === "Citizen") {
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li><a class="dropdown-item" href="Priest.php">Add Priest</a></li>
             <li><a class="dropdown-item" href="Staff.php">Add Staff</a></li>
+            <li><a class="dropdown-item" href="Admin.php">Add Admin</a></li>
         </ul>
    
 
@@ -443,11 +441,11 @@ $(document).ready(function() {
         // Get form data
         var donatorName = $('#donatorName').val();
         var amount = $('#amount').val();
-        var donatedOn = $('#donatedOn').val();
+   
         var description = $('#description').val();
 
         // Validate form inputs
-        if (donatorName === '' || amount === '' || donatedOn === '' || description === '') {
+        if (donatorName === '' || amount === '' || description === '') {
             Swal.fire("Validation Error", "All fields are required!", "error");
             return; // Exit the function if validation fails
         } else if (isNaN(amount) || parseFloat(amount) <= 0) {
@@ -463,7 +461,7 @@ $(document).ready(function() {
                 action: 'add_donation',
                 d_name: donatorName,
                 amount: amount,
-                donated_on: donatedOn,
+            
                 description: description
             },
             success: function(response) {
