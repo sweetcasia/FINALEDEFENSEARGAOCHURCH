@@ -797,26 +797,30 @@ class User {
         }
     
         // Check for valid ID image upload
-        if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
-            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
-            $validIdName = $_FILES['valid_id']['name'];
-            $validIdUploadPath = 'img/' . $validIdName;
-            $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-            $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
-    
-            // Check file type and proceed with file upload
-            if (in_array($imageFileType, $allowedFileTypes)) {
-                if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                    $data['valid_id'] = $validIdUploadPath;
-                } else {
-                    return "Failed to upload valid ID image";
-                }
-            } else {
-                return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
-            }
+      // Check for valid ID image upload
+if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
+    $validIdTmpName = $_FILES['valid_id']['tmp_name'];
+    $validIdName = $_FILES['valid_id']['name'];
+    $validIdUploadPath = 'img/' . $validIdName;
+
+    // Convert the file extension to lowercase
+    $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
+    $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+
+    // Check file type and proceed with file upload
+    if (in_array($imageFileType, $allowedFileTypes)) {
+        if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+            $data['valid_id'] = $validIdUploadPath;
         } else {
-            return "No valid ID image uploaded";
+            return "Failed to upload valid ID image.";
         }
+    } else {
+        return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Uploaded file type: " . strtoupper($imageFileType);
+    }
+} else {
+    return "No valid ID image uploaded or file upload error.";
+}
+
     
         // Sanitize input data
         $sanitizedData = $this->sanitizeData($data);
