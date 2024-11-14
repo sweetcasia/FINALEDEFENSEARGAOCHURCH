@@ -2109,3 +2109,5 @@ Stack trace:
 [14-Nov-2024 03:23:46 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
 [14-Nov-2024 03:24:21 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
 [14-Nov-2024 03:24:25 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[14-Nov-2024 03:55:38 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 886
+[14-Nov-2024 03:56:26 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 886

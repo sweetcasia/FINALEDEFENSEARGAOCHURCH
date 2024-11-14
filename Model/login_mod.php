@@ -800,7 +800,8 @@ class User {
             $validIdError = $_FILES['valid_id']['error'];
             $validIdTmpName = $_FILES['valid_id']['tmp_name'];
             $validIdName = $_FILES['valid_id']['name'];
-            $uploadDir = __DIR__ . 'img/';
+            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/img/';
+
 
         
             // Ensure upload directory exists
