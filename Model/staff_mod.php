@@ -3414,7 +3414,7 @@ citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Prie
                 $scheduleId,  // schedule_id for announcement
                 $seminarId,   // schedule_id for seminar
                 $announcementData['date_created'], 
-                $announcementData['capacity'],
+                $announcementData['capacity'], // capacity can now be NULL if not provided
                 $announcementData['speaker_ann']
             );
             $announcementStmt->execute();
@@ -3443,6 +3443,7 @@ citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Prie
             return false;
         }
     }
+    
     
     public function fetchRequestFormEvents() {
         $query = "
