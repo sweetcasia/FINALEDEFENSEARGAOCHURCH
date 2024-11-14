@@ -799,8 +799,8 @@ class User {
 // Check for valid ID image upload
 if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
     $validIdTmpName = $_FILES['valid_id']['tmp_name'];
-    $validIdName = $_FILES['valid_id']['name'];
-    $validIdUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/img/' . basename($validIdName);
+    $validIdName = basename($_FILES['valid_id']['name']);
+    $validIdUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/img/' . $validIdName;
 
     // Convert the file extension to lowercase
     $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
@@ -809,17 +809,43 @@ if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
     if (in_array($imageFileType, $allowedFileTypes)) {
         // Attempt to move the uploaded file
         if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-            $data['valid_id'] = $validIdUploadPath;
+            $data['valid_id'] = '/img/' . $validIdName; // Use relative path for DB storage
         } else {
-            // Log the reason for failure
-            error_log("Failed to move uploaded file. Check permissions and path. Tmp file: $validIdTmpName, Destination: $validIdUploadPath");
+            // Log detailed error for permission issues
+            error_log("Failed to move uploaded file. Tmp file: $validIdTmpName, Destination: $validIdUploadPath");
+            if (!is_writable(dirname($validIdUploadPath))) {
+                error_log("Directory not writable: " . dirname($validIdUploadPath));
+                return "Upload directory is not writable.";
+            }
             return "Failed to upload valid ID image due to permission or path issue.";
         }
     } else {
         return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Detected file type: " . strtoupper($imageFileType);
     }
 } else {
-    return "No valid ID image uploaded or file upload error. Error code: " . $_FILES['valid_id']['error'];
+    $error_code = $_FILES['valid_id']['error'];
+    error_log("No valid ID image uploaded or file upload error. Error code: $error_code");
+
+    switch ($error_code) {
+        case UPLOAD_ERR_INI_SIZE:
+            return "The uploaded file exceeds the maximum size allowed by the server.";
+        case UPLOAD_ERR_FORM_SIZE:
+            return "The uploaded file exceeds the maximum size specified in the form.";
+        case UPLOAD_ERR_PARTIAL:
+            return "The file was only partially uploaded. Please try again.";
+        case UPLOAD_ERR_NO_FILE:
+            return "No file was uploaded.";
+        case UPLOAD_ERR_NO_TMP_DIR:
+            error_log("Missing temporary folder.");
+            return "Server error: missing a temporary folder.";
+        case UPLOAD_ERR_CANT_WRITE:
+            error_log("Failed to write file to disk.");
+            return "Server error: failed to write file to disk.";
+        case UPLOAD_ERR_EXTENSION:
+            return "File upload stopped by a PHP extension.";
+        default:
+            return "Unknown upload error.";
+    }
 }
 
     
