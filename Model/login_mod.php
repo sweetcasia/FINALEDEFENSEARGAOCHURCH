@@ -796,50 +796,34 @@ class User {
             return "Date of birth is incomplete";
         }
     
+        // Check for valid ID image upload
         if (isset($_FILES['valid_id'])) {
             $validIdError = $_FILES['valid_id']['error'];
             $validIdTmpName = $_FILES['valid_id']['tmp_name'];
             $validIdName = $_FILES['valid_id']['name'];
-            $uploadDir = __DIR__ . '/img/';
+            $validIdUploadPath = 'img/' . $validIdName;
+    
+            // Proceed with file upload if no error
+            if ($validIdError === 0) {
+                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
+                $allowedFileTypes = ['*'];  // This means any file type will be allowed.
 
-            if (!is_dir($uploadDir)) {
-                if (!mkdir($uploadDir, 0755, true)) {
-                    error_log("Failed to create directory: " . $uploadDir);
-                    return "Directory creation failed.";
-                }
-            }
-            
-            $validIdUploadPath = $uploadDir . basename($validIdName);
-        
-            if ($validIdError === UPLOAD_ERR_OK) {
-                // Skip file type check and directly upload the file
-                if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                    $data['valid_id'] = $validIdUploadPath; // Save the image path in data
+    
+                if (in_array($imageFileType, $allowedFileTypes)) {
+                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
+                    } else {
+                        return "Failed to upload valid ID image";
+                    }
                 } else {
-                    return "Failed to upload valid ID image. Check directory permissions.";
+                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
                 }
             } else {
-                // Check for specific errors
-                switch ($validIdError) {
-                    case UPLOAD_ERR_INI_SIZE:
-                    case UPLOAD_ERR_FORM_SIZE:
-                        return "File size exceeds the allowed limit.";
-                    case UPLOAD_ERR_PARTIAL:
-                        return "File was only partially uploaded.";
-                    case UPLOAD_ERR_NO_FILE:
-                        return "No file was uploaded.";
-                    case UPLOAD_ERR_NO_TMP_DIR:
-                        return "Missing temporary folder.";
-                    case UPLOAD_ERR_CANT_WRITE:
-                        return "Failed to write file to disk.";
-                    default:
-                        return "Unknown error occurred during upload.";
-                }
+                return "Error uploading valid ID image";
             }
         } else {
-            return "No valid ID image uploaded.";
+            return "No valid ID image uploaded";
         }
-        
     
         // Sanitize input data
         $sanitizedData = $this->sanitizeData($data);

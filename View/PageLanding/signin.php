@@ -1,5 +1,5 @@
 <?php 
-
+require_once '../../Controller/login_con.php';
 
 // Prevent browser from caching the login page
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0"); // HTTP 1.1.
@@ -480,7 +480,7 @@ i.uil {
           </form>
 
 
-          <form method="POST" action="../../Controller/login_con.php"  enctype="multipart/form-data" onsubmit="return validateForm()"class="sign-up-form">
+          <form method="POST" action=""  enctype="multipart/form-data" onsubmit="return validateForm()"class="sign-up-form">
           <input type="hidden" name="signup_form" value="1">
           <h2 style="text-align:Center;"class="title">Register</h2>
           <div class="input_box">
