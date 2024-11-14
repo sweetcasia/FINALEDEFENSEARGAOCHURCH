@@ -817,7 +817,7 @@ if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
                 error_log("Directory not writable: " . dirname($validIdUploadPath));
                 return "Upload directory is not writable.";
             }
-            return "Failed to upload valid ID image due to permission or path issue.";
+            return "Failed .";
         }
     } else {
         return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Detected file type: " . strtoupper($imageFileType);
