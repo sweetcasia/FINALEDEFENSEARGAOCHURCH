@@ -796,33 +796,27 @@ class User {
             return "Date of birth is incomplete";
         }
     
-        // Check for valid ID image upload
-        if (isset($_FILES['valid_id'])) {
-            $validIdError = $_FILES['valid_id']['error'];
-            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
-            $validIdName = $_FILES['valid_id']['name'];
-            $validIdUploadPath = 'img/' . $validIdName;
-    
-            // Proceed with file upload if no error
-            if ($validIdError === 0) {
-                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['*'];
-    
-                if (in_array($imageFileType, $allowedFileTypes)) {
-                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
-                    } else {
-                        return "Failed to upload valid ID image";
-                    }
-                } else {
-                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
-                }
-            } else {
-                return "Error uploading valid ID image";
-            }
+    // Check for valid ID image upload
+if (isset($_FILES['valid_id'])) {
+    $validIdError = $_FILES['valid_id']['error'];
+    $validIdTmpName = $_FILES['valid_id']['tmp_name'];
+    $validIdName = $_FILES['valid_id']['name'];
+    $validIdUploadPath = 'img/' . $validIdName;
+
+    // Proceed with file upload if no error
+    if ($validIdError === 0) {
+        if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+            $data['valid_id'] = $validIdUploadPath; // Save the file path in data
         } else {
-            return "No valid ID image uploaded";
+            return "Failed to upload valid ID image";
         }
+    } else {
+        return "Error uploading valid ID image";
+    }
+} else {
+    return "No valid ID image uploaded";
+}
+
     
         // Sanitize input data
         $sanitizedData = $this->sanitizeData($data);
