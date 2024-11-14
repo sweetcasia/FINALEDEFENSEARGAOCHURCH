@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if registration was successful
         if (strpos($registrationResult, "successful") !== false) {
             // Redirect to OTP processing page
-            header('Location:../../otp_view.php'); // Adjust path as necessary
+            header('Location:../otp_view.php'); // Adjust path as necessary
             exit();
         } else {
             // Display error message
