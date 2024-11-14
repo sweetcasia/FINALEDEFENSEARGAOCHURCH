@@ -800,21 +800,42 @@ class User {
             $validIdError = $_FILES['valid_id']['error'];
             $validIdTmpName = $_FILES['valid_id']['tmp_name'];
             $validIdName = $_FILES['valid_id']['name'];
-            $validIdUploadPath = 'img/' . $validIdName;
+            $uploadDir = 'img/';
         
-            // Proceed with file upload if no error
-            if ($validIdError === 0) {
+            // Ensure upload directory exists
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+        
+            $validIdUploadPath = $uploadDir . basename($validIdName);
+        
+            if ($validIdError === UPLOAD_ERR_OK) {
                 // Skip file type check and directly upload the file
                 if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
                     $data['valid_id'] = $validIdUploadPath; // Save the image path in data
                 } else {
-                    return "Failed to upload valid ID image";
+                    return "Failed to upload valid ID image. Check directory permissions.";
                 }
             } else {
-                return "Error uploading valid ID image";
+                // Check for specific errors
+                switch ($validIdError) {
+                    case UPLOAD_ERR_INI_SIZE:
+                    case UPLOAD_ERR_FORM_SIZE:
+                        return "File size exceeds the allowed limit.";
+                    case UPLOAD_ERR_PARTIAL:
+                        return "File was only partially uploaded.";
+                    case UPLOAD_ERR_NO_FILE:
+                        return "No file was uploaded.";
+                    case UPLOAD_ERR_NO_TMP_DIR:
+                        return "Missing temporary folder.";
+                    case UPLOAD_ERR_CANT_WRITE:
+                        return "Failed to write file to disk.";
+                    default:
+                        return "Unknown error occurred during upload.";
+                }
             }
         } else {
-            return "No valid ID image uploaded";
+            return "No valid ID image uploaded.";
         }
         
     
