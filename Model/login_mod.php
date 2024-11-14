@@ -800,13 +800,15 @@ class User {
             $validIdError = $_FILES['valid_id']['error'];
             $validIdTmpName = $_FILES['valid_id']['tmp_name'];
             $validIdName = $_FILES['valid_id']['name'];
-            $uploadDir = 'img/';
-        
-            // Ensure upload directory exists
+            $uploadDir = __DIR__ . '/img/';
+
             if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0755, true);
+                if (!mkdir($uploadDir, 0755, true)) {
+                    error_log("Failed to create directory: " . $uploadDir);
+                    return "Directory creation failed.";
+                }
             }
-        
+            
             $validIdUploadPath = $uploadDir . basename($validIdName);
         
             if ($validIdError === UPLOAD_ERR_OK) {
