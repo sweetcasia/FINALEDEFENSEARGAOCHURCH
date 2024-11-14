@@ -796,16 +796,19 @@ class User {
             return "Date of birth is incomplete";
         }
     
-        // Check for valid ID image upload
-      // Check for valid ID image upload
+// Check for valid ID image upload
 if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
     $validIdTmpName = $_FILES['valid_id']['tmp_name'];
     $validIdName = $_FILES['valid_id']['name'];
-    $validIdUploadPath = 'img/' . $validIdName;
+    $validIdUploadPath = 'img/' . basename($validIdName);
 
     // Convert the file extension to lowercase
     $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
     $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+
+    // Debugging output to check the detected file type
+    error_log("Uploaded file name: $validIdName");
+    error_log("Detected file extension: $imageFileType");
 
     // Check file type and proceed with file upload
     if (in_array($imageFileType, $allowedFileTypes)) {
@@ -815,11 +818,12 @@ if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
             return "Failed to upload valid ID image.";
         }
     } else {
-        return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Uploaded file type: " . strtoupper($imageFileType);
+        return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Detected file type: " . strtoupper($imageFileType);
     }
 } else {
-    return "No valid ID image uploaded or file upload error.";
+    return "No valid ID image uploaded or file upload error. Error code: " . $_FILES['valid_id']['error'];
 }
+
 
     
         // Sanitize input data
