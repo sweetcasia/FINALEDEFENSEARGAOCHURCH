@@ -164,3 +164,51 @@ Stack trace:
 #2 C:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(355): Twilio\Rest\Api\V2010\Account\MessageList->create('+639394245345', Object(Twilio\Values))
 #3 {main}
   thrown in C:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Version.php on line 88
+[14-Nov-2024 09:59:29 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
+[14-Nov-2024 09:59:47 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
+[14-Nov-2024 10:00:03 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
+[14-Nov-2024 10:01:59 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
+[14-Nov-2024 10:03:34 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
+[14-Nov-2024 10:03:38 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidPathException: Unable to read any of the environment file(s) at [C:\xampp\htdocs\ArgaoChurch\.env]. in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php:68
+Stack trace:
+#0 C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Store\FileStore->read()
+#1 C:\xampp\htdocs\ArgaoChurch\config.php(8): Dotenv\Dotenv->load()
+#2 C:\xampp\htdocs\ArgaoChurch\Model\login_mod.php(31): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\ArgaoChurch\Controller\check_email.php(16): User->__construct(Object(mysqli))
+#4 {main}
+  thrown in C:\xampp\htdocs\ArgaoChurch\vendor\vlucas\phpdotenv\src\Store\FileStore.php on line 68
