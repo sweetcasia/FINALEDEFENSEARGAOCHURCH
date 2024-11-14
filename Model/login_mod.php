@@ -774,7 +774,7 @@ class User {
     }
     
     
-    public function registerUser($data) {
+    public function registerUser($data) { 
         // Automatically set user_type to 'Citizen'
         $data['user_type'] = 'Citizen';
     
@@ -782,13 +782,13 @@ class User {
         $data['fullname'] = trim($data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name']);
     
         // Ensure c_date_birth is set correctly before proceeding
-        if (isset($data['year']) && isset($data['month']) && isset($data['day'])) {
+        if (isset($data['year'], $data['month'], $data['day'])) {
             $year = intval($data['year']);
             $month = intval($data['month']);
             $day = intval($data['day']);
-            
+    
             if (checkdate($month, $day, $year)) {
-                $data['c_date_birth'] = "$year-$month-$day";
+                $data['c_date_birth'] = sprintf('%04d-%02d-%02d', $year, $month, $day);
             } else {
                 return "Invalid date of birth";
             }
@@ -797,29 +797,22 @@ class User {
         }
     
         // Check for valid ID image upload
-        if (isset($_FILES['valid_id'])) {
-            $validIdError = $_FILES['valid_id']['error'];
+        if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
             $validIdTmpName = $_FILES['valid_id']['tmp_name'];
             $validIdName = $_FILES['valid_id']['name'];
             $validIdUploadPath = 'img/' . $validIdName;
+            $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
+            $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
     
-            // Proceed with file upload if no error
-            if ($validIdError === 0) {
-                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['*'];  // This means any file type will be allowed.
-
-    
-                if (in_array($imageFileType, $allowedFileTypes)) {
-                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
-                    } else {
-                        return "Failed to upload valid ID image";
-                    }
+            // Check file type and proceed with file upload
+            if (in_array($imageFileType, $allowedFileTypes)) {
+                if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+                    $data['valid_id'] = $validIdUploadPath;
                 } else {
-                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
+                    return "Failed to upload valid ID image";
                 }
             } else {
-                return "Error uploading valid ID image";
+                return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
             }
         } else {
             return "No valid ID image uploaded";
@@ -838,47 +831,43 @@ class User {
         $currentTime = date("Y-m-d H:i:s");
     
         // Prepare SQL query with placeholders
-// Prepare SQL query with placeholders
-$query = "INSERT INTO citizen (user_type, fullname, address, gender, c_date_birth, age, email, valid_id, phone, password, r_status, c_current_time, otp_code) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
-
-// Generate and send OTP
-$otp = $this->generateOTP();
-$this->sendOTP($sanitizedData['email'], $otp);
-
-// Use prepared statements to prevent SQL injection
-$stmt = $this->conn->prepare($query);
-$stmt->bind_param(
-    'ssssssssssss', // Change this to match the number of columns
-    $sanitizedData['user_type'],
-    $sanitizedData['fullname'],
-    $sanitizedData['address'],
-    $sanitizedData['gender'],
-    $sanitizedData['c_date_birth'],
-    $sanitizedData['age'],
-    $sanitizedData['email'],
-    $sanitizedData['valid_id'],
-    $sanitizedData['phone'],
-    $sanitizedData['password'],
-    $currentTime,  // Store current time here
-    $otp            // Bind OTP here
-);
-
+        $query = "INSERT INTO citizen (user_type, fullname, address, gender, c_date_birth, age, email, valid_id, phone, password, r_status, c_current_time, otp_code) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
     
-     // Execute the prepared statement
-if ($stmt->execute()) {
-    // On successful registration, set session variables
-    session_start(); // Make sure the session is started
-    $_SESSION['otp_code'] = $otp; // Store the generated OTP in session
-    $_SESSION['user_email'] = $sanitizedData['email']; // Store the user email in session
-    $_SESSION['c_current_time'] = time() + 300; // Set expiry time for OTP (5 minutes)
-
-    // Optionally, you could redirect or return a success message
-    return "Registration successful. An OTP has been sent to your email.";
-} else {
-    return "Error during registration: " . $stmt->error;
-}
-
+        // Generate and send OTP
+        $otp = $this->generateOTP();
+        $this->sendOTP($sanitizedData['email'], $otp);
+    
+        // Use prepared statements to prevent SQL injection
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param(
+            'ssssssssssss', 
+            $sanitizedData['user_type'],
+            $sanitizedData['fullname'],
+            $sanitizedData['address'],
+            $sanitizedData['gender'],
+            $sanitizedData['c_date_birth'],
+            $sanitizedData['age'],
+            $sanitizedData['email'],
+            $sanitizedData['valid_id'],
+            $sanitizedData['phone'],
+            $sanitizedData['password'],
+            $currentTime,
+            $otp
+        );
+    
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            // On successful registration, set session variables
+            session_start();
+            $_SESSION['otp_code'] = $otp;
+            $_SESSION['user_email'] = $sanitizedData['email'];
+            $_SESSION['c_current_time'] = time() + 300; // Set expiry time for OTP (5 minutes)
+    
+            return "Registration successful. An OTP has been sent to your email.";
+        } else {
+            return "Error during registration: " . $stmt->error;
+        }
     }
     
     
