@@ -800,22 +800,20 @@ class User {
 if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
     $validIdTmpName = $_FILES['valid_id']['tmp_name'];
     $validIdName = $_FILES['valid_id']['name'];
-    $validIdUploadPath = 'img/' . basename($validIdName);
+    $validIdUploadPath = $_SERVER['DOCUMENT_ROOT'] . '/img/' . basename($validIdName);
 
     // Convert the file extension to lowercase
     $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
     $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
 
-    // Debugging output to check the detected file type
-    error_log("Uploaded file name: $validIdName");
-    error_log("Detected file extension: $imageFileType");
-
-    // Check file type and proceed with file upload
     if (in_array($imageFileType, $allowedFileTypes)) {
+        // Attempt to move the uploaded file
         if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
             $data['valid_id'] = $validIdUploadPath;
         } else {
-            return "Failed to upload valid ID image.";
+            // Log the reason for failure
+            error_log("Failed to move uploaded file. Check permissions and path. Tmp file: $validIdTmpName, Destination: $validIdUploadPath");
+            return "Failed to upload valid ID image due to permission or path issue.";
         }
     } else {
         return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID. Detected file type: " . strtoupper($imageFileType);
@@ -823,7 +821,6 @@ if (isset($_FILES['valid_id']) && $_FILES['valid_id']['error'] === 0) {
 } else {
     return "No valid ID image uploaded or file upload error. Error code: " . $_FILES['valid_id']['error'];
 }
-
 
     
         // Sanitize input data
