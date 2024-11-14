@@ -3374,8 +3374,8 @@ citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Prie
     public function addAnnouncement($announcementData, $scheduleData, $scheduleDatas, $approvalId) {
         // SQL statements
         $scheduleSql = "INSERT INTO schedule(date, start_time, end_time) VALUES (?, ?, ?)";
-        $priestApprovalSql = "INSERT INTO priest_approval(priest_id, pr_status, assigned_time,pr_reason) VALUES (?, 'Approved', NOW(),'No Comment')";
-        $announcementSql = "INSERT INTO announcement(approval_id, event_type, title, description, schedule_id, seminar_id, date_created, capacity,speaker_ann) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+        $priestApprovalSql = "INSERT INTO priest_approval(priest_id, pr_status, assigned_time, pr_reason) VALUES (?, 'Approved', NOW(), 'No Comment')";
+        $announcementSql = "INSERT INTO announcement(approval_id, event_type, title, description, schedule_id, seminar_id, date_created, capacity, speaker_ann) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
     
         $this->conn->begin_transaction();
     
@@ -3396,9 +3396,9 @@ citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Prie
             // Get the last inserted schedule_id for seminar
             $seminarId = $this->conn->insert_id;
     
-            // Insert into priest_approval
+            // Insert into priest_approval (with pr_reason 'No Comment')
             $priestApprovalStmt = $this->conn->prepare($priestApprovalSql);
-            $priestApprovalStmt->bind_param("i", $approvalId);
+            $priestApprovalStmt->bind_param("i", $approvalId); // Binding approvalId (integer) only
             $priestApprovalStmt->execute();
     
             // Get the last inserted approval_id
