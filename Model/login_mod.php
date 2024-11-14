@@ -806,7 +806,7 @@ class User {
             // Proceed with file upload if no error
             if ($validIdError === 0) {
                 $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+                $allowedFileTypes = ['*'];
     
                 if (in_array($imageFileType, $allowedFileTypes)) {
                     if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
