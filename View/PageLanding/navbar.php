@@ -134,8 +134,8 @@
                         About Us
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <li><a href="history.php" class="dropdown-item">History</a></li>
-                        <li><a href="architecture.php" class="dropdown-item">Architecture</a></li>
+                        <li><a href="History.php" class="dropdown-item">History</a></li>
+                        <li><a href="Architecture.php" class="dropdown-item">Architecture</a></li>
                     </ul>
                 </li>
 
@@ -151,12 +151,12 @@
                         Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a href="baptismal.php" class="dropdown-item">Baptismal</a></li>
+                        <li><a href="Baptismal.php" class="dropdown-item">Baptismal</a></li>
                         <li><a href="Wedding.php" class="dropdown-item">Wedding</a></li>
                         <li><a href="Confirmation.php" class="dropdown-item">Confirmation</a></li>
                         <li><a href="Funeral.php" class="dropdown-item">Funeral</a></li>
                         <li><a href="requestform.php" class="dropdown-item">Request of Masses</a></li>
-                        <li><a href="eucharistic.php" class="dropdown-item">Eucharistic Masses</a></li>
+                        <li><a href="Eucharistic.php" class="dropdown-item">Eucharistic Masses</a></li>
                     </ul>
                 </li>
 

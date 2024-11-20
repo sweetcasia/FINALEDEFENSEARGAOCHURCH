@@ -326,8 +326,8 @@ margin-top:0!important;
                                 <h5 class="text-white" style="font-weight: 700;">Quick Links</h5>
                                 <ul class="mb-0 text-white" style="list-style-type: none; padding-left: 0;">
                                     <li><a href="index.php" class="text-white">Home</a></li>
-                                    <li><a href="View/PageLanding/history.php" class="text-white">History</a></li>
-                                    <li><a href="View/PageLanding/architecture.php" class="text-white">Architecture</a></li>
+                                    <li><a href="View/PageLanding/History.php" class="text-white">History</a></li>
+                                    <li><a href="View/PageLanding/Architecture.php" class="text-white">Architecture</a></li>
                                     <li><a href="View/PageLanding/Baptismal.php" class="text-white">Services</a></li>
                                     <li><a href="View/PageLanding/Map.php" class="text-white">Vicinity Map</a></li>
           
