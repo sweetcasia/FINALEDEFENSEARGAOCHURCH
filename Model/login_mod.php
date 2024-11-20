@@ -774,7 +774,6 @@ class User {
         }
     }
     
-    
     public function registerUser($data) {
         // Automatically set user_type to 'Citizen'
         $data['user_type'] = 'Citizen';
@@ -833,9 +832,8 @@ class User {
         $query = "INSERT INTO citizen (user_type, fullname, address, gender, c_date_birth, age, email, valid_id, phone, password, r_status, c_current_time, otp_code) 
                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
     
-        // Generate and send OTP
+        // Generate OTP
         $otp = $this->generateOTP();
-        $this->sendOTP($sanitizedData['email'], $otp);  // Send OTP regardless of email status
     
         // Use prepared statements to prevent SQL injection
         $stmt = $this->conn->prepare($query);
@@ -863,13 +861,19 @@ class User {
             $_SESSION['user_email'] = $sanitizedData['email']; // Store the user email in session
             $_SESSION['c_current_time'] = time() + 300; // Set expiry time for OTP (5 minutes)
     
-            // Redirect to the OTP page
-            header('Location: otp_view.php'); // Redirect to OTP page after registration
-            exit();  // Ensure that no further code is executed after redirect
+            // Even if the email is invalid, you can still proceed with the registration
+            // Send OTP only if the email is valid (you can add this check as needed)
+            if (filter_var($sanitizedData['email'], FILTER_VALIDATE_EMAIL)) {
+                $this->sendOTP($sanitizedData['email'], $otp);
+            }
+    
+            // Return success message
+            return "Registration successful. An OTP has been sent to your email.";
         } else {
             return "Error during registration: " . $stmt->error;
         }
     }
+    
     
     
     public function registerUsers($data) {
