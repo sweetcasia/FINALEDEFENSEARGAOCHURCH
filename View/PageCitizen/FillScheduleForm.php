@@ -49,6 +49,8 @@ $regId = $_SESSION['citizend_id'];
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
     />
+    <link rel="icon" href="../assets/img/mainlogo.jpg" type="image/x-icon"/>
+
     <!-- Google Web Fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -383,94 +385,86 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .container-cal {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 10px;
-            box-sizing: border-box;
-        }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-        /* Calendar and time selection containers */
-        .calendar, .schedule {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-        }
-
-        /* Calendar specific styles */
-        .calendar h3 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
+  .calendar {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+.schedule{
+  flex: 1;
+ 
+   
+}
+  .calendar h3,
+  .time h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
 .month{
   width:100%;
 }
-        .month ul {
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-            list-style-type: none;
-            margin: 0;
-            padding-top: 10px;
+.month {
+    width: 100%;
+    text-align: center;
+  }
+
+  .month ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    list-style-type: none;
+    margin: 0;
     padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+  }
 
-        }
+  .month ul li {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+  }
 
-        .month ul li {
-            font-size: 18px;
-            cursor: pointer;
-            color: #333;
-        }
 
-        .weekdays, .days {
-            list-style-type: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-    margin-bottom: -10px;
- 
+  .weekdays,
+  .days {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
 
-        }
-
-        .days li {
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            color: #555;
-            border-radius: 5px;
-            cursor: pointer;
-           
-        }
-        .weekdays li {
-    padding: 14px;
+  .days li,
+  .weekdays li {
+    padding: 10px;
     text-align: center;
     font-weight: bold;
     color: #555;
     border-radius: 5px;
-    cursor: pointer;}
+    cursor: pointer;
+  }
 
-        .days li.active, .days li.selected {
-            background-color: #3498db;
-            color: #fff;
-           
-        }
+  .days li.active,
+  .days li.selected {
+    background-color: #3498db;
+    color: #fff;
+  }
 
-        /* Time selection styles */
-        .time h3 {
-            margin-bottom: 20px;
-            font-size: 22px;
-            color: #333;
-            margin-left: 86px;
-        }
-
+  
        
     .time-options {
       display: flex;
@@ -496,40 +490,14 @@ document.addEventListener('DOMContentLoaded', function() {
     .time-selection button:hover {
         background-color: #0056b3;
     }
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container-cal {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .calendar, .time{
-              width: 100%;
-       
-            }
-
-            .weekdays li, .days li {
-                padding: 8px!important;
-                font-size: 14px;
-            }
-
-            .time-options button {
-                font-size: 14px;
-                padding: 8px;
-            }
-            .form-group {
-          margin:0;  
-          }
-
-        }
+      
 /* Style the radio button to be visible */
 .styled-radio {
-  width: 20px;
-  height: 20px;
-  accent-color: #007bff; /* Button color */
-  cursor: pointer;
-}
-
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff;
+    cursor: pointer;
+  }
 
 .radio-wrapper {
   display: flex;
@@ -547,15 +515,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* Style the label with border and background */
 .form-check-label {
-  margin-left: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  color: #333;
- 
-  padding: 8px;  /* Padding for button-like appearance */
-  border-radius: 4px;  /* Rounded corners */
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
 
 
 
@@ -571,13 +538,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* Style for the h6 element beside the label */
 .time-status {
-  font-size: 14px;
-  margin-left: 20px; /* Ensure availability text is spaced properly */
-  white-space: nowrap; /* Prevent the status text from wrapping */
-  color: green;
-  padding: 0;
-  display: inline-block;
-}
+    font-size: 14px;
+    color: green;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
 .form-check input{
   margin-top: 10px;
 }
@@ -603,13 +568,16 @@ document.addEventListener('DOMContentLoaded', function() {
 .form-group{
   background:white;     width: 100%; /* Use full width */
             max-width: 500px;
+            height: 545px;
+
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-           padding-left:100px!important;
+           padding-left:95px!important;
             margin: auto;
+            padding-top: 75px;
             padding-bottom:23px!important;
             padding-right: 20px!important;
 }
@@ -621,7 +589,63 @@ document.addEventListener('DOMContentLoaded', function() {
         display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 11px;
        }
+       @media (max-width: 768px) {
+    .container-cal {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar,
+    .schedule {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .weekdays li,
+    .days li {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .form-check-label {
+      font-size: 14px;
+    }
+
+    .time h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .weekdays li,
+    .days li {
+      font-size: 12px;
+      padding: 6px;
+    }
+
+    .form-check-label {
+      font-size: 12px;
+    }
+
+    .time h3 {
+      font-size: 1.25rem;
+    }
+    .col-sm-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex!important;
+        flex-direction: column!important;
+    }
+
+  }
     </style>
    
 
@@ -644,7 +668,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <form id="scheduleForm">
   <div class="container" style="height: 630px;
-    margin-top: 35px;">
+    margin-top: 35px; margin-left: 165px;">
             <div class="col-sm-12">
                 <div class="calendar-container bg-light rounded p-4" >
         <h3  class="fw-bold mb-3">Select Date</h3>
@@ -679,14 +703,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="schedule">
 
 <div class="time" style="display: flex; flex-direction: column;">
+<h3 style="padding-top: 25px; font-family: 'Public Sans', sans-serif;
+  font-size: 1.75rem;
+    line-height: 1.2;
+    color: #0066a8; font-weight: 700 !important; position: absolute;
+    right: 360px;" class="fw-bold mb-3">Select Time</h3>
 
   <div  class="form-group" >
     
-  <h3 style="padding-top: 20px; font-family: 'Public Sans', sans-serif;
-  font-size: 1.75rem;
-    line-height: 1.2;
-    color: #0066a8; font-weight: 700 !important;" class="fw-bold mb-3">Select Time</h3>
-
+ 
     <div class="d-flex">
      
       <div class="form-check">

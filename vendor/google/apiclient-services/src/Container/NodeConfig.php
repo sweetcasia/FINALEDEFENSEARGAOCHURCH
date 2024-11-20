@@ -74,10 +74,6 @@ class NodeConfig extends \Google\Collection
    * @var int
    */
   public $localSsdCount;
-  /**
-   * @var string
-   */
-  public $localSsdEncryptionMode;
   protected $loggingConfigType = NodePoolLoggingConfig::class;
   protected $loggingConfigDataType = '';
   /**
@@ -410,20 +406,6 @@ class NodeConfig extends \Google\Collection
   public function getLocalSsdCount()
   {
     return $this->localSsdCount;
-  }
-  /**
-   * @param string
-   */
-  public function setLocalSsdEncryptionMode($localSsdEncryptionMode)
-  {
-    $this->localSsdEncryptionMode = $localSsdEncryptionMode;
-  }
-  /**
-   * @return string
-   */
-  public function getLocalSsdEncryptionMode()
-  {
-    return $this->localSsdEncryptionMode;
   }
   /**
    * @param NodePoolLoggingConfig

@@ -157,25 +157,25 @@ $request_ids = isset($_GET['req_id']) ? intval($_GET['req_id']) : null;
 
                                     <div class="form-group">
                                         <label for="chapel">Chapel</label>
-                                        <input type="text" class="form-control" id="chapel" name="chapel" placeholder="Enter Chapel Name" value="<?php echo htmlspecialchars($req_chapel); ?>" />
+                                        <input type="text" class="form-control" id="chapel" name="chapel" placeholder="Enter Chapel Name" value="<?php echo htmlspecialchars($req_chapel); ?>"readonly />
                                         <span class="error" id="chapelError"></span>
                                     </div>
 
                                     <div class="form-group">
     <label for="firstname">Firstname of Person Requesting</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($first_name_req); ?>" />
+    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($first_name_req); ?>" readonly/>
     <span id="firstnameError" class="error text-danger"></span>
 </div>
 
 <div class="form-group">
     <label for="lastname">Last Name of Person Requesting</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($last_name_req); ?>" />
+    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($last_name_req); ?>" readonly/>
     <span id="lastnameError" class="error text-danger"></span>
 </div>
 
 <div class="form-group">
     <label for="middlename">Middle Name of Person Requesting</label>
-    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middle_name_req); ?>" />
+    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middle_name_req); ?>" readonly/>
     <span id="middlenameError" class="error text-danger"></span>
 </div>
 
@@ -186,13 +186,13 @@ $request_ids = isset($_GET['req_id']) ? intval($_GET['req_id']) : null;
 
                                     <div class="form-group">
                                         <label for="address">Address</label>
-                                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="<?php echo htmlspecialchars($req_address); ?>" />
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="<?php echo htmlspecialchars($req_address); ?>" readonly/>
                                         <span class="error" id="addressError"></span>
                                     </div>
 
                                     <div class="form-group">
     <label for="cal_date">Calendar Date</label>
-    <input type="date" class="form-control" id="cal_date" name="cal_date" value="<?php echo htmlspecialchars($cal_date); ?>" />
+    <input type="date" class="form-control" id="cal_date" name="cal_date" value="<?php echo htmlspecialchars($cal_date); ?>" readonly/>
     <span class="error" id="calDateError"></span>
 </div>
 
@@ -200,7 +200,7 @@ $request_ids = isset($_GET['req_id']) ? intval($_GET['req_id']) : null;
                                     <div class="form-group">
                                         <label for="cpnumber">Contact Number</label>
                                         <label for="cpnumber">Ex:09*********</label>
-                                        <input type="number" class="form-control" id="cpnumber" name="cpnumber" placeholder="Enter Contact Number" value="<?php echo htmlspecialchars($req_pnumber); ?>" />
+                                        <input type="number" class="form-control" id="cpnumber" name="cpnumber" placeholder="Enter Contact Number" value="<?php echo htmlspecialchars($req_pnumber); ?>" readonly/>
                                         <span id="cpnumberError" class="error text-danger"></span>
                                     </div>
                                 </div>
@@ -210,19 +210,19 @@ $request_ids = isset($_GET['req_id']) ? intval($_GET['req_id']) : null;
 
                                     <div class="form-group">
     <label for="firstnames">Firstname of Person (Pamisahan)</label>
-    <input type="text" class="form-control" id="firstnames" name="firstnames" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($first_name); ?>" />
+    <input type="text" class="form-control" id="firstnames" name="firstnames" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($first_name); ?>" readonly/>
     <span id="firstnamesError" class="error text-danger"></span>
 </div>
 
 <div class="form-group">
     <label for="lastnames">Last Name of Person (Pamisahan)</label>
-    <input type="text" class="form-control" id="lastnames" name="lastnames" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($last_name); ?>" />
+    <input type="text" class="form-control" id="lastnames" name="lastnames" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($last_name); ?>" readonly/>
     <span id="lastnamesError" class="error text-danger"></span>
 </div>
 
 <div class="form-group">
     <label for="middlenames">Middle Name of Person (Pamisahan)</label>
-    <input type="text" class="form-control" id="middlenames" name="middlenames" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middle_name); ?>" />
+    <input type="text" class="form-control" id="middlenames" name="middlenames" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middle_name); ?>" readonly/>
     <span id="middlenamesError" class="error text-danger"></span>
 </div>
 
@@ -510,7 +510,6 @@ if ($event_name === 'Online') {
 <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Popper.js (required for Bootstrap 4) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
@@ -518,34 +517,17 @@ if ($event_name === 'Online') {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Sweet Alert -->
   <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
+ <!-- jQuery Scrollbar -->
+ <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
     <!-- Datatables -->
     <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
 
 
     <!-- Kaiadmin JS -->
     <script src="../assets/js/kaiadmin.min.js"></script>
-
   </body>
 </html>

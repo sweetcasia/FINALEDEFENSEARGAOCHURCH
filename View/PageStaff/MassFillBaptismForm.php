@@ -199,6 +199,7 @@ document.getElementById('baptismForm').addEventListener('submit', function(event
       </div>
     </div>
     <?php require_once 'sidebar.php'?>
+    <div class="main-panel">
     <?php require_once 'header.php'?>
        
   <div class="container">

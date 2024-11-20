@@ -121,22 +121,32 @@ $pendingAppointments = $citizenController->getPendingCitizenss(null, $regId);
                         <tfoot>
                           
                         <tbody>
-    <?php if (!empty($pendingAppointments)) {
-        foreach ($pendingAppointments as $index => $appointment) {
+                        <?php if (!empty($pendingAppointments)) {
+    foreach ($pendingAppointments as $index => $appointment) {
+        // Check if schedule information is available
+        $hasSchedule = !empty($appointment['schedule_date']) 
+            && !empty($appointment['schedule_start_time']) 
+            && !empty($appointment['schedule_end_time']);
+
+        if ($hasSchedule) {
             // Convert the schedule start and end times to 12-hour format
             $scheduleStart = date('g:i A', strtotime($appointment['schedule_start_time']));
             $scheduleEnd = date('g:i A', strtotime($appointment['schedule_end_time']));
             $scheduleTime = $scheduleStart . ' - ' . $scheduleEnd;
-            
-           
-            ?>
+            $scheduleDate = date('F j, Y', strtotime($appointment['schedule_date']));
+        } else {
+            $scheduleTime = 'Special Masses don\'t have schedule';
+            $scheduleDate = 'Special Masses don\'t have schedule';
+        }
+        ?>
 
             <tr>
                 <td><?= $index + 1; ?></td>
                 <td><?= htmlspecialchars($appointment['citizen_name']); ?></td>
                 <td><?= htmlspecialchars($appointment['type']); ?></td>
-                <td><?= htmlspecialchars(date('F j, Y', strtotime($appointment['schedule_date']))); ?></td>
+                <td><?= htmlspecialchars($scheduleDate); ?></td>
                 <td><?= htmlspecialchars($scheduleTime); ?></td>
+               
                 <td><?= htmlspecialchars($appointment['roles']); ?></td>
                 <td>
                     <?php 
@@ -202,6 +212,7 @@ $pendingAppointments = $citizenController->getPendingCitizenss(null, $regId);
 </script>
      <!--   Core JS Files   -->
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
@@ -234,6 +245,18 @@ $pendingAppointments = $citizenController->getPendingCitizenss(null, $regId);
 </script>
 
     <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+    <?php
+    if (isset($_SESSION['status']) && $_SESSION['status'] == 'success') {
+        echo "Swal.fire({
+            icon: 'success',
+            title: 'Form submitted successfully!',
+            text: 'Waiting for Approval.',
+        });";
+        unset($_SESSION['status']);
+    }
+    ?>
+});
          // Function to add 'active' class to the clicked link and remove it from others
     function setActiveLink() {
         // Get all custom links

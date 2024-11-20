@@ -140,29 +140,39 @@ small {
     <!-- Navbar & Hero End -->
     
     <div class="container">
-  <div class="page-inner">
+    <div class="page-inner">
         <div class="row">
             <div class="col-md-12">
-            <div class="card">
-    <div class="card-header">
-        <div class="card-title">Check your Information </div>
-        <div class="stepper-wrapper">
-            <!-- Step 1 -->
-            <div class="step completed">
-           
-                <div class="step-label">
-                <p>Note please see this in a counter</p>
-                    <p>REFERENCE NUMBER</p>
-                   <p><?php echo $reference_number; ?></p>
-         
-                </div>
-            </div>
-    
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header bg-light border-bottom">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4 class="card-title mb-0">Check Your Information</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card border-light shadow-sm p-4 mb-4">
+                            <div class="stepper-wrapper">
+                                <div class="step-info py-3">
+                                    <div class="alert alert-info text-center">
+                                        <strong>Note:</strong> Present this reference with the reference Code to the staff when you arrive in person to verify and assist with your event.
+                                    </div>
 
-        </div>
-  
-    </div>
- 
+                                    <div class="reference-info text-center mb-3">
+                                        <h5 class="text-uppercase text-muted">Reference Code</h5>
+                                        <p class="text-primary display-6 fw-bold"><?php echo $reference_number; ?></p>
+                                    </div>
+
+                                    <?php if (!empty($speaker_app)) : ?>
+                                        <div class="speaker-info text-center mt-3">
+                                            <p class="text-muted">Speaker for Seminar:</p>
+                                            <p class="text-success fw-bold"><?php echo htmlspecialchars($speaker_app); ?></p>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
     <div class="card-body">
 
 <div class="card-title"><?php echo $pendingItem['event_name'] ?? ''; ?> Funeral View Information Form</div>

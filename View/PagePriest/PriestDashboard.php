@@ -191,15 +191,7 @@ $appointmentSchedule = $appointments->getPriestAppointmentSchedule($priestId);
             <div class="page-inner">
                
     <!-- Date Picker -->
-    <div class="date-picker">
-        <label for="schedule-date">Select Date:</label>
-        <input class="btn btn-info btn-xl" style="  background-color: white !important; 
-            border: none !important;
-            color: black!important; 
-            box-shadow: none;  border-color:#31ce36!important;"
-             type="date" id="schedule-date" name="schedule-date">
-        <button class="btn btn-info btn-xl" style=" border-color:#31ce36!important;" >Load Schedule</button>
-    </div>
+
                 <div class="col-md-6">
                   <div class="card">
                     <div class="card-header">

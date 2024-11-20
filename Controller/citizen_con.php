@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $age // Insert the calculated age
         );
         $_SESSION['status'] = "success";
-        header('Location: ../View/PageCitizen/CitizenPage.php');
+        header('Location: ../View/PageCitizen/eventschedule.php');
         exit();
     } else {
         echo "Failed to insert schedule.";
@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         $_SESSION['status'] = "success";
         
-        header('Location: ../View/PageCitizen/CitizenPage.php');
+        header('Location: ../View/PageCitizen/eventschedule.php');
         exit();
     } else {
         // Handle error in schedule insertion
@@ -248,7 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result) {
             $_SESSION['status'] = "success";
-            header('Location: ../View/PageCitizen/CitizenPage.php');
+            header('Location: ../View/PageCitizen/eventschedule.php');
             exit();
         } else {
             echo "Failed to insert funeral details.";
@@ -334,7 +334,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         if ($result) {
             $_SESSION['status'] = "success";
-            header('Location: ../View/PageCitizen/CitizenPage.php');
+            header('Location: ../View/PageCitizen/eventschedule.php');
             exit();
         } else {
             echo "Failed to insert wedding details.";
@@ -412,7 +412,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
            
            $_SESSION['status'] = "success";
        
-           header('Location: ../View/PageCitizen/CitizenPage.php');
+                   header('Location: ../View/PageCitizen/eventschedule.php');
            exit();
       
    } else {
@@ -575,7 +575,7 @@ else if($weddingannouncement_id){
         );
         $_SESSION['status'] = "success";
         
-        header('Location: ../View/PageCitizen/CitizenPage.php');
+        header('Location: ../View/PageCitizen/eventschedule.php');
            exit();
            
     
@@ -732,7 +732,7 @@ else if($baptismannouncement_id){
   
       $_SESSION['status'] = "success";
       
-      header('Location: ../View/PageCitizen/CitizenPage.php');
+      header('Location: ../View/PageCitizen/eventschedule.php');
       exit();
   
 } else {
@@ -1248,7 +1248,7 @@ if ($scheduleId) {
     );
 
     $_SESSION['status'] = "success";
-    header('Location: ../View/PageCitizen/CitizenPage.php');
+    header('Location: ../View/PageCitizen/eventschedule.php');
     exit();
 }
 else if ($specialrequestform_id) {
@@ -1273,7 +1273,7 @@ else if ($specialrequestform_id) {
     );
 
     $_SESSION['status'] = "success";
-    header('Location: ../View/PageCitizen/CitizenPage.php');
+    header('Location: ../View/PageCitizen/eventschedule.php');
     exit();
 }else if ($requestform_ids) {
     $date = $_POST['date'] ?? '';
@@ -1306,11 +1306,11 @@ else if ($specialrequestform_id) {
   
     
     $citizenModel->insertRequestFormFill(
-        $scheduleId ,$selectrequest, $fullname, $datetofollowup, $address, $cpnumber, $fullnames, $chapel,$role,$event_location
+        $scheduleId ,$selectrequest, $fullname, $datetofollowup, $address, $cpnumber, $fullnames,$role,$event_location
     );
 
     $_SESSION['status'] = "success";
-    header('Location: ../View/PageCitizen/CitizenPage.php');
+    header('Location: ../View/PageCitizen/eventschedule.php');
     exit();
 }
 

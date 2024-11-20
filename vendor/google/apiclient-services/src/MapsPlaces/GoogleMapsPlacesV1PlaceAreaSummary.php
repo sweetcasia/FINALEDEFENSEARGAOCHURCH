@@ -22,10 +22,6 @@ class GoogleMapsPlacesV1PlaceAreaSummary extends \Google\Collection
   protected $collection_key = 'contentBlocks';
   protected $contentBlocksType = GoogleMapsPlacesV1ContentBlock::class;
   protected $contentBlocksDataType = 'array';
-  /**
-   * @var string
-   */
-  public $flagContentUri;
 
   /**
    * @param GoogleMapsPlacesV1ContentBlock[]
@@ -40,20 +36,6 @@ class GoogleMapsPlacesV1PlaceAreaSummary extends \Google\Collection
   public function getContentBlocks()
   {
     return $this->contentBlocks;
-  }
-  /**
-   * @param string
-   */
-  public function setFlagContentUri($flagContentUri)
-  {
-    $this->flagContentUri = $flagContentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getFlagContentUri()
-  {
-    return $this->flagContentUri;
   }
 }
 

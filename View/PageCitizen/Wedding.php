@@ -73,89 +73,234 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-         .text-center p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
-}
+    body {
+        font-family: 'Public Sans', sans-serif;
+    }
+    .text-center p {
+        color: #3b3b3b;
+        text-align: justify;
+        text-justify: inter-word;
+        line-height: 1.6;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
 
+    .gallery {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    .gallery img {
+        width: 40%;
+        max-width: calc(25% - 1rem);
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .back-button {
+        float: right;
+        margin-right: 110px;
+        margin-top: 20px;
+        padding: 0.5rem 1rem;
+        background-color: #0066a8;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    .back-button:hover {
+        background-color: #004a80;
+    }
+    .schedule {
+        float: left;
+        margin-left: 20px;
+        padding: 10px;
+        color: #3b3b3b;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 12px;
+        transition: background-color 0.3s ease;
+    }
+    .schedule:hover {
+        color: wheat !important;
+    }
+    .weddingreq i {
+        font-size: 7px;
+        margin-right: 15px;
+        color: black;
+    }
+    .bg-breadcrumb {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
+        url(../assets/img/wedding3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 60px 0 60px 0;
+        transition: 0.5s;
+    }
+    .bg-breadcrumb .breadcrumb {
+        position: relative;
+    }
+    .bg-breadcrumb .breadcrumb .breadcrumb-item a {
+        color: var(--bs-white);
+    }
+    .baptismalreq p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-indent: 1rem;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
 
-        .gallery {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
+        .baptismalreq p {
+            font-size: 15px;
         }
-        .gallery img {
-            width: 40%;
-            max-width: calc(25% - 1rem);
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .back-button {
-float:right;       
-margin-right:110px;  
-margin-top:20px;  
 
-            padding: 0.5rem 1rem;
-            background-color: #0066a8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #004a80;
-        }
-        .schedule {
-float:left;       
-margin-LEFT:20px;  
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
 
-            padding: 10px;
-            color: #3b3b3b;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 12PX;
-            transition: background-color 0.3s ease;
+        .text-center h1 {
+            font-size: 2rem;
         }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
        
-        .schedule:hover{
-            color:wheat!important;
+        .text-center h1 {
+            font-size: 1.8rem;
         }
-       .baptismalreq i{
-            font-size:16px;
-            margin-right:15px;
-            color:black;
-            font-style: normal;
-        }
-        .fa-circle{
-            font-size:7px;
-            margin-right:15px;
-            color:black;
-            font-style: normal;
-        }
-        .bg-breadcrumb {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/wedding3.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 60px 0 60px 0;
-  transition: 0.5s;
-}
 
-.bg-breadcrumb .breadcrumb {
-  position: relative;
-}
+        .accordion {
+            font-size: 1rem;
+        }
 
-.bg-breadcrumb .breadcrumb .breadcrumb-item a {
-  color: var(--bs-white);
-}
-    </style>
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
+    }
+</style>
     </head>
 
     <body>
@@ -169,8 +314,8 @@ margin-LEFT:20px;
     <!-- Navbar & Hero End -->
       
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+      <!-- Header Start -->
+      <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">WEDDING</h4>
                
@@ -205,25 +350,25 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">REQUIREMENTS</h5>
         <br>
 
-        <P><i class="no">1. </i>
+        <P>&ensp;&ensp;1.
         Book a reservation (preparation must be at least 1 month)</P>
-        <P><i>2. </i>
+        <P>&ensp;&ensp;2.
         Seminar (wait for text/email message for schedule)</P>
-        <P><i>3. </i>
+        <P>&ensp;&ensp;3.
         Baptismal Certificate (with annotation: "For Marriage Purposes")</P>
-        <P><i>4. </i>
+        <P>&ensp;&ensp;4. 
         Confirmation Certificate (with annotation: "For Marriage Purposes")</P>
-        <P><i>5. </i>
+        <P>&ensp;&ensp;5. 
         Wedding Banns for both parties</P>
-        <P><i>6. </i>
+        <P>&ensp;&ensp;6.
         Pre-Cana seminar (1st and 3rd Saturday of the month, 8:00 AM to 12:00 PM)</P>
-        <P><i>7. </i>
+        <P>&ensp;&ensp;7. 
         Marriage license (original and 3 copies of page 2; submit every Friday and Saturday only)</P>
-        <P><i>8. </i>
+        <P>&ensp;&ensp;8.
         Wedding invitation (write your email address and follow the format)</P>
-        <P><i>9. </i>
+        <P>&ensp;&ensp;9.
         Confession (any parish)</P>
-        <P><i>10. </i>
+        <P>&ensp;&ensp;10.
         Officiating priest / license (if needed)</P>
      
     
@@ -234,7 +379,7 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">SCHEDULE ONLINE</h5>
         <br>
 
-        <a class="btn btn-primary rounded-pill py-2 px-4" href="signup.php">Schedule Now</a>
+        &ensp;&ensp;   <a class="btn btn-primary  py-2 px-4" href="FillScheduleForm.php?type=Wedding">Schedule Now</a>
         
     
 </div>
@@ -246,34 +391,34 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">PROCEDURE IN APPLICATION FOR MARRIAGE
 </h5>
        <br>
-        <P><i>1. </i>
+        <P>&ensp;&ensp;1. 
         Fill-up the application forms and submit them.        
         </p>
-        <P><i>2. </i>
+        <P>&ensp;&ensp;2. 
         Wait for the schedule of your Seminar (message will be sent through text/email message)        
         </p>
-        <P><i>3. </i>
+        <P>&ensp;&ensp;3. 
         After the interview, the marriage banns should be submitted to the couples' respective parishes.    
         </p>
-        <P><i>4. </i>
+        <P>&ensp;&ensp;4. 
         Furnish a copy of baptismal and confirmation certificates with annotation: "For Marriage Purposes"     
         </p>
-        <P><i>6. </i>
+        <P>&ensp;&ensp;6. 
         For those over the age of 25, apply and get a Certificate of No Marriage from the Philippine Statistics Authority     
         </p>
-        <P><i>7. </i>
+        <P>&ensp;&ensp;7. 
         After getting the Certificate of No Marriage, proceed to the city hall and apply for a Marriage License      
         </p>
-        <P><i>8. </i>
+        <P>&ensp;&ensp;8. 
         Attend the scheduled Pre-Cana seminar at the parish     
         </p>
-        <P><i>9. </i>
+        <P>&ensp;&ensp;9.
         Send the line-up of your wedding entourage using the format sent to your email address 
         </p>
-        <P><i>10. </i>
+        <P>&ensp;&ensp;10. 
         Settle the payments at the parish office 2 weeks before the wedding.      
         </p>
-        <P><i>11. </i>
+        <P>&ensp;&ensp;11.
         Go to Confession a day before the wedding.     
         </p>
 </div>

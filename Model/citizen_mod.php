@@ -40,7 +40,10 @@ class Citizen {
              
              
             WHERE 
-                r.status IN ( 'Approved') AND c.citizend_id = ?  AND (a.status = 'Completed' OR a.p_status = 'Paid')";
+                r.status IN ( 'Approved') AND c.citizend_id = ?  AND (a.status = 'Completed' OR a.p_status = 'Paid')
+                
+                
+                ";
         
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $regId);
@@ -1112,36 +1115,58 @@ class Citizen {
             return false;
         }
     }
-    
     public function fetchRequestFillss($regId) {
         $query = "
-            SELECT 
-                
-                r.req_person AS citizen_name,
-                s.date AS schedule_date,
-                s.start_time AS schedule_start_time,
-                s.end_time AS schedule_end_time,
-               r.req_category AS event_name,
-                r.status AS approval_status,
-                r.role AS roles,
-                r.req_id AS id,
-                r.req_category AS type
-             
-            FROM 
-                citizen c
-            JOIN 
-                schedule s ON c.citizend_id = s.citizen_id
-            JOIN 
-               req_form r ON s.schedule_id = r.schedule_id
-             
-            WHERE 
-                r.status IN ( 'Pending') AND c.citizend_id = ? ";
+        SELECT 
+            r.req_person AS citizen_name,
+            s.date AS schedule_date,
+            s.start_time AS schedule_start_time,
+            s.end_time AS schedule_end_time,
+            r.req_category AS event_name,
+            r.status AS approval_status,
+            r.role AS roles,
+            r.req_id AS id,
+            r.req_category AS type,
+            r.created_at AS created_at
+        FROM 
+            citizen c
+        LEFT JOIN 
+            schedule s ON c.citizend_id = s.citizen_id
+        JOIN 
+            req_form r ON s.schedule_id = r.schedule_id
+        WHERE 
+            r.status = 'Pending' AND c.citizend_id = ?
+    
+        UNION ALL
+    
+        SELECT 
+            r.req_person AS citizen_name,
+            NULL AS schedule_date,
+            NULL AS schedule_start_time,
+            NULL AS schedule_end_time,
+            r.req_category AS event_name,
+            r.status AS approval_status,
+            r.role AS roles,
+            r.req_id AS id,
+            r.req_category AS type,
+            r.created_at AS created_at
+        FROM 
+            citizen c
+        JOIN 
+            req_form r ON c.citizend_id = r.citizen_id
+        WHERE 
+            r.status = 'Pending' AND c.citizend_id = ?
+    
+
+    ";
+    
         
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $regId);
+        $stmt->bind_param("ii", $regId, $regId);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+    
     public function fetchBaptismFillss($regId) {
         $query = "
             SELECT 
@@ -1164,7 +1189,8 @@ class Citizen {
                 b.gender,
                 b.c_date_birth,
                 b.age,
-                b.address
+                b.address,
+                b.created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1173,10 +1199,47 @@ class Citizen {
                 baptismfill b ON s.schedule_id = b.schedule_id
              
             WHERE 
-                b.status IN ( 'Pending') AND c.citizend_id = ? ";
+                b.status IN ( 'Pending') AND c.citizend_id = ? 
+
+            
+            UNION ALL
+               SELECT 
+                
+                b.fullname AS citizen_name,
+                s.date AS schedule_date,
+                s.start_time AS schedule_start_time,
+                s.end_time AS schedule_end_time,
+                b.event_name AS event_name,
+                b.status AS approval_status,
+                b.role AS roles,
+                b.baptism_id AS id,
+                'Massaptism' AS type,
+                b.father_fullname,
+                b.pbirth,
+                b.mother_fullname,
+                b.religion,
+                b.parent_resident,
+                b.godparent,
+                b.gender,
+                b.c_date_birth,
+                b.age,
+                b.address,
+                b.created_at AS created_at
+           FROM 
+                announcement a
+            JOIN 
+                baptismfill b ON a.announcement_id = b.announcement_id
+            JOIN 
+                schedule s ON a.schedule_id = s.schedule_id
+                JOIN 
+                citizen c ON b.citizen_id = c.citizend_id
+             
+            WHERE 
+                b.status IN ( 'Pending') AND c.citizend_id  = ? 
+              ";
         
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $regId);
+        $stmt->bind_param("ii", $regId,$regId);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
@@ -1203,7 +1266,8 @@ class Citizen {
                 cf.name_of_church,
                 cf.c_gender,
                 cf.c_date_birth,
-                cf.c_address
+                cf.c_address,
+                cf.c_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1213,10 +1277,49 @@ class Citizen {
              
               
             WHERE 
-                cf.status IN ('Pending') AND c.citizend_id = ? ";
+                cf.status IN ('Pending') AND c.citizend_id = ? 
+              
+                UNION ALL 
+                     SELECT 
+   
+                cf.fullname AS citizen_name,
+                s.date AS schedule_date,
+                s.start_time AS schedule_start_time,
+                s.end_time AS schedule_end_time,
+                cf.event_name AS event_name,
+                cf.status AS approval_status,
+                cf.role AS roles,
+                cf.confirmationfill_id AS id,
+                'MassConfirmation' AS type,
+             
+                cf.father_fullname,
+                cf.date_of_baptism,
+                cf.mother_fullname,
+                cf.permission_to_confirm,
+                cf.church_address,
+                cf.name_of_church,
+                cf.c_gender,
+                cf.c_date_birth,
+                cf.c_address,
+                cf.c_created_at AS created_at
+            FROM 
+                confirmationfill cf
+          
+            JOIN 
+                announcement a ON cf.announcement_id = a.announcement_id
+            JOIN 
+                schedule s ON a.schedule_id = s.schedule_id
+JOIN 
+                citizen c ON cf.citizen_id = c.citizend_id
+             
+              
+            WHERE 
+                cf.status IN ('Pending') AND c.citizend_id = ? 
+                
+                ";
         
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $regId);
+        $stmt->bind_param("ii", $regId,$regId);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
@@ -1250,7 +1353,8 @@ class Citizen {
                 mf.bride_citizenship,
                 mf.bride_address,
                 mf.bride_religion,
-                mf.bride_previously_married
+                mf.bride_previously_married,
+                mf.m_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1260,10 +1364,53 @@ class Citizen {
            
        
             WHERE 
-                mf.status IN ( 'Pending') AND c.citizend_id = ? ";
+                mf.status IN ( 'Pending') AND c.citizend_id = ? 
+                 
+                UNION ALL
+                SELECT 
+   
+                mf.groom_name AS citizen_name,
+                s.date AS schedule_date,
+                s.start_time AS schedule_start_time,
+                s.end_time AS schedule_end_time,
+                mf.event_name AS event_name,
+                mf.status AS approval_status,
+                mf.role AS roles,
+                mf.marriagefill_id AS id,
+                'Massmarriage' AS type,
+                mf.groom_name,
+                mf.groom_dob,
+                mf.groom_age,
+                mf.groom_place_of_birth,
+                mf.groom_citizenship,
+                mf.groom_address,
+                mf.groom_religion,
+                mf.groom_previously_married,
+                mf.bride_name,
+                mf.bride_dob,
+                mf.bride_age,
+                mf.bride_place_of_birth,
+                mf.bride_citizenship,
+                mf.bride_address,
+                mf.bride_religion,
+                mf.bride_previously_married,
+                mf.m_created_at AS created_at
+             FROM 
+                marriagefill mf
+           
+            JOIN 
+                announcement a ON mf.announcement_id = a.announcement_id
+            JOIN 
+                schedule s ON a.schedule_id = s.schedule_id
+                JOIN 
+                citizen c ON mf.citizen_id = c.citizend_id
+       
+            WHERE 
+                mf.status IN ( 'Pending') AND c.citizend_id = ? 
+                 ";
         
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $regId);
+        $stmt->bind_param("ii", $regId,$regId);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
@@ -1293,7 +1440,8 @@ class Citizen {
                 df.d_gender,
                 df.date_of_birth,
                 df.date_of_death,
-                df.parents_residence
+                df.parents_residence,
+                df.d_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1303,7 +1451,9 @@ class Citizen {
               
               
             WHERE 
-                df.status IN ( 'Pending') AND c.citizend_id = ? ";
+                df.status IN ( 'Pending') AND c.citizend_id = ? 
+            
+                  ";
         
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $regId);
@@ -1315,7 +1465,7 @@ class Citizen {
         switch ($eventType) {
             case 'Baptism':
                 return $this->fetchBaptismFillss($regId);
-                case 'req_category':
+            case 'req_category':
                 return $this->fetchRequestFillss($regId);
             case 'Confirmation':
                 return $this->fetchConfirmationFillss($regId);
@@ -1324,56 +1474,111 @@ class Citizen {
             case 'Defuctom':
                 return $this->fetchDefuctomFillss($regId);
             default:
-                return array_merge(
+                // Merge all results
+                $mergedResults = array_merge(
                     $this->fetchBaptismFillss($regId),
                     $this->fetchRequestFillss($regId),
                     $this->fetchConfirmationFillss($regId),
                     $this->fetchMarriageFillss($regId),
                     $this->fetchDefuctomFillss($regId)
                 );
+    
+                // Sort merged results by 'created_at' in ascending order
+                usort($mergedResults, function ($a, $b) {
+                    return strtotime($a['created_at']) - strtotime($b['created_at']);
+                });
+    
+                return $mergedResults;
         }
     }
+    
    
-    public function fetchRequestFills($regId) {
-        $query = "
-            SELECT 
-           
+public function fetchRequestFills($regId) {
+    $query = "
+        SELECT 
             a.payable_amount,
             a.status,
-           a.appsched_id AS appointment_id,
-           a.reference_number,
+            a.appsched_id AS appointment_id,
+            a.reference_number,
             r.req_person AS citizen_name,
-                s.date AS schedule_date,
-                s.start_time AS schedule_start_time,
-                s.end_time AS schedule_end_time,
-                'RequestForm' AS event_name,
-                r.status AS approval_status,
-                r.role AS roles,
-                r.req_id AS id,
-                r.req_category AS type,
-                r.req_address, 
-                r.req_person, 
-                r.req_pnumber, 
-                r.cal_date, 
-                r.req_chapel, 
-                r.req_name_pamisahan
+            s.date AS schedule_date,
+            s.start_time AS schedule_start_time,
+            s.end_time AS schedule_end_time,
+            'RequestForm' AS event_name,
+            r.status AS approval_status,
+            r.role AS roles,
+            r.req_id AS id,
+            r.req_category AS type,
+            r.req_address, 
+            r.req_person, 
+            r.req_pnumber, 
+            r.cal_date, 
+            r.req_chapel, 
+            r.req_name_pamisahan,
+              r.created_at AS created_at
+        FROM 
+            citizen c
+        JOIN 
+            schedule s ON c.citizend_id = s.citizen_id
+        JOIN 
+            req_form r ON s.schedule_id = r.schedule_id
+        JOIN 
+            appointment_schedule a ON r.req_id = a.request_id
+        WHERE 
+            r.status IN ('Approved') AND c.citizend_id = ? AND (a.status = 'Process' OR a.p_status = 'Unpaid')
 
-            FROM 
-                citizen c
-            JOIN 
-                schedule s ON c.citizend_id = s.citizen_id
-                JOIN req_form r ON s.schedule_id = r.schedule_id
-                JOIN appointment_schedule a ON r.req_id = a.request_id
-             
-             
-            WHERE 
-                r.status IN ( 'Approved') AND c.citizend_id = ?  AND (a.status = 'Process' OR a.p_status = 'Unpaid')";
-        
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $regId);
-        $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        UNION ALL
+
+        SELECT 
+            a.payable_amount,
+            a.status,
+            a.appsched_id AS appointment_id,
+            a.reference_number,
+            r.req_person AS citizen_name,
+            NULL AS schedule_date,
+            NULL AS schedule_start_time,
+            NULL AS schedule_end_time,
+            'RequestForm' AS event_name,
+            r.status AS approval_status,
+            r.role AS roles,
+            r.req_id AS id,
+            r.req_category AS type,
+            r.req_address, 
+            r.req_person, 
+            r.req_pnumber, 
+            r.cal_date, 
+            r.req_chapel, 
+            r.req_name_pamisahan,
+              r.created_at AS created_at
+        FROM 
+            citizen c
+        JOIN 
+            req_form r ON c.citizend_id = r.citizen_id
+        JOIN 
+            appointment_schedule a ON r.req_id = a.request_id
+        WHERE 
+            r.status IN ('Approved') AND c.citizend_id = ? AND (a.status = 'Process' OR a.p_status = 'Unpaid')
+    ";
+
+    // Debugging: Print the query
+    // echo $query;
+
+    $stmt = $this->conn->prepare($query);
+    if (!$stmt) {
+        die("Prepare failed: " . $this->conn->error);
     }
+
+    $stmt->bind_param("ii", $regId, $regId);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    if ($result === false) {
+        die("Execute failed: " . $stmt->error);
+    }
+
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
     public function fetchBaptismFills($regId) {
         $query = "
             SELECT 
@@ -1403,7 +1608,8 @@ class Citizen {
                 b.gender,
                 b.c_date_birth,
                 b.age,
-                b.address
+                b.address,
+                   b.created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1451,7 +1657,8 @@ class Citizen {
             b.gender,
             b.c_date_birth,
             b.age,
-            b.address
+            b.address,
+               b.created_at AS created_at
             FROM 
                 baptismfill b
                 
@@ -1504,7 +1711,8 @@ class Citizen {
             cf.name_of_church,
             cf.c_gender,
             cf.c_date_birth,
-            cf.c_address
+            cf.c_address,
+  cf.c_created_at AS created_at
             FROM 
           confirmationfill cf
             
@@ -1554,7 +1762,8 @@ class Citizen {
                 cf.name_of_church,
                 cf.c_gender,
                 cf.c_date_birth,
-                cf.c_address
+                cf.c_address,
+                  cf.c_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1609,7 +1818,8 @@ class Citizen {
                 mf.bride_citizenship,
                 mf.bride_address,
                 mf.bride_religion,
-                mf.bride_previously_married
+                mf.bride_previously_married,
+                 mf.m_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1663,7 +1873,8 @@ class Citizen {
             mf.bride_citizenship,
             mf.bride_address,
             mf.bride_religion,
-            mf.bride_previously_married
+            mf.bride_previously_married,
+             mf.m_created_at AS created_at
             FROM 
          marriagefill mf
             
@@ -1717,7 +1928,8 @@ class Citizen {
                 df.d_gender,
                 df.date_of_birth,
                 df.date_of_death,
-                df.parents_residence
+                df.parents_residence,
+                  df.d_created_at AS created_at
             FROM 
                 citizen c
             JOIN 
@@ -1742,34 +1954,44 @@ class Citizen {
         switch ($eventType) {
             case 'Baptism':
                 return $this->fetchBaptismFills($regId);
-                case 'MassBaptism':
+            case 'MassBaptism':
                 return $this->fetchMassBaptismFills($regId);
-                case 'req_category':
-                    return $this->fetchRequestFills($regId);
+            case 'req_category':
+                return $this->fetchRequestFills($regId);
             case 'Confirmation':
                 return $this->fetchConfirmationFills($regId);
-                case 'MassConfirmation':
+            case 'MassConfirmation':
                 return $this->fetchMassConfirmationFills($regId);
             case 'Marriage':
                 return $this->fetchMarriageFills($regId);
-                case 'MassMarriage':
+            case 'MassMarriage':
                 return $this->fetchMassMarriageFills($regId);
             case 'Defuctom':
                 return $this->fetchDefuctomFills($regId);
             default:
-                return array_merge(
+                // Merge all results
+                $mergedResults = array_merge(
                     $this->fetchBaptismFills($regId),
                     $this->fetchMassBaptismFills($regId),
                     $this->fetchRequestFills($regId),
                     $this->fetchConfirmationFills($regId),
-                   $this->fetchMassConfirmationFills($regId),
+                    $this->fetchMassConfirmationFills($regId),
                     $this->fetchMarriageFills($regId),
                     $this->fetchMassMarriageFills($regId),
                     $this->fetchDefuctomFills($regId)
                 );
+    
+                // Sort merged results by 'created_at' in ascending order
+                usort($mergedResults, function ($a, $b) {
+                    $timeA = isset($a['created_at']) ? strtotime($a['created_at']) : PHP_INT_MAX;
+                    $timeB = isset($b['created_at']) ? strtotime($b['created_at']) : PHP_INT_MAX;
+                    return $timeA - $timeB;
+                });
+    
+                return $mergedResults;
         }
     }
-
+    
     
 
     public function insertIntoMassConfirmFill(

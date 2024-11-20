@@ -191,7 +191,6 @@
 
 .navbar .dropdown-toggle::after {
   border: none;
-  content: "\f107";
   font-family: "Font Awesome 5 Free";
   font-weight: 600;
   vertical-align: middle;
@@ -231,7 +230,7 @@
   .navbar .nav-item .dropdown-menu {
     display: block;
     visibility: hidden;
-    top: 100%;
+    top: 60%;
     transform: rotateX(-75deg);
     transform-origin: 0% 0%;
     border: 0;

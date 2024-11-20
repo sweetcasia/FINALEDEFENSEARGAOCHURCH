@@ -22,30 +22,12 @@ class GoogleCloudAiplatformV1GroundingChunkRetrievedContext extends \Google\Mode
   /**
    * @var string
    */
-  public $text;
-  /**
-   * @var string
-   */
   public $title;
   /**
    * @var string
    */
   public $uri;
 
-  /**
-   * @param string
-   */
-  public function setText($text)
-  {
-    $this->text = $text;
-  }
-  /**
-   * @return string
-   */
-  public function getText()
-  {
-    return $this->text;
-  }
   /**
    * @param string
    */

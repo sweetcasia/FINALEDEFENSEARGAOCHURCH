@@ -72,124 +72,318 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-              .bg-breadcrumb {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/baptismal2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 60px 0 60px 0;
-  transition: 0.5s;
-}
-
-.bg-breadcrumb .breadcrumb {
-  position: relative;
-}
-
-.bg-breadcrumb .breadcrumb .breadcrumb-item a {
-  color: var(--bs-white);
-}
-         p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
-}
-
-
-        .gallery {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-        }
-        .gallery img {
-            width: 40%;
-            max-width: calc(25% - 1rem);
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        .back-button {
-float:right;       
-margin-right:110px;  
-margin-top:20px;  
-
-            padding: 0.5rem 1rem;
-            background-color: #0066a8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #004a80;
-        }
-        .schedule {
-float:left;       
-margin-LEFT:20px;  
-
-            padding: 10px;
-            color: #3b3b3b;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 12PX;
-            transition: background-color 0.3s ease;
-        }
+            
+          
+            .schedule {
+    float:left;       
+    margin-LEFT:20px;  
+    
+                padding: 10px;
+                color: #3b3b3b;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 12PX;
+                transition: background-color 0.3s ease;
+            }
+           
+            .schedule:hover{
+                color:wheat!important;
+            }
+            .baptismalreq i{
+                font-size:7px;
+                margin-right:15px;
+                color:black;
+            }
+        
+    .mass-schedule {
+        width: 100%; /* Full width by default */
+        max-width: 600px; /* Limit the width of each table */
+        border-collapse: collapse;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+    }
+    
+    .mass-schedule th {
+        background-color: #003366;
        
-        .schedule:hover{
-            color:wheat!important;
-        }
-        .baptismalreq i{
-            font-size:7px;
-            margin-right:15px;
-            color:black;
+        padding: 12px;
+        font-size: 1.1em;
+        
+    }
+    
+    .mass-schedule td, 
+    .mass-schedule th {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        
+        color:black;    
+    }
+    .mass-schedule td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        background-color: #f2f5f9;
+    color:black;
+    
+    }
+    
+    .mass-schedule tbody tr:nth-child(even) {
+        background-color: #f2f5f9;
+    
+    }
+    
+    
+    
+    .mass-schedule th[colspan="2"] {
+        background-color: #f2f5f9;
+        font-weight: bold;
+        color: #3b3b3b;
+    
+    }
+    .tableflex{
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        gap: 20px; /* Space between tables */
+        justify-content: center; /* Center tables horizontally */
+        margin: 20px auto; /* Add spacing around the container */
+        padding: 10px;
+    }   .text-center p{
+        color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
+    }
+    
+    
+            .gallery {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+            }
+            .gallery img {
+                width: 40%;
+                max-width: calc(25% - 1rem);
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .back-button {
+    float:right;       
+    margin-right:110px;  
+    margin-top:20px;  
+    
+                padding: 0.5rem 1rem;
+                background-color: #0066a8;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: background-color 0.3s ease;
+            }
+            .back-button:hover {
+                background-color: #004a80;
+            }
+            .schedule {
+    float:left;       
+    margin-LEFT:20px;  
+    
+                padding: 10px;
+                color: #3b3b3b;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 12PX;
+                transition: background-color 0.3s ease;
+            }
+           
+            .schedule:hover{
+                color:wheat!important;
+            }
+          .baptismalreq i{
+                font-size:7px;
+                margin-right:15px;
+                color:black;
+            }
+            .bg-breadcrumb {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
+      url(../assets/img/baptismal1.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 60px 0 60px 0;
+      transition: 0.5s;
+    }
+    
+    .bg-breadcrumb .breadcrumb {
+      position: relative;
+    }
+    
+    .bg-breadcrumb .breadcrumb .breadcrumb-item a {
+      color: var(--bs-white);
+    }
+    .baptismalreq p {
+        font-size: 1rem; /* Base font size for text */
+        line-height: 1.6; /* Improved line spacing */
+        text-indent: 1rem; /* Indent the first line */
+        margin-bottom: 10px; /* Space between paragraphs */
+        font-weight: 500;
+    }
+    /* Responsive Design */
+    @media screen and (max-width: 1200px) {
+            .accordion {
+                font-size: 1.1rem;
+            }
+    
+            .baptismalreq p {
+                font-size: 15px;
+            }
+    
+            .container-fluid.service.py-5{
+            padding-top: 0.6rem !important;
+            padding-bottom: 0!important;
+           }
+    
+            .text-center h1 {
+                font-size: 2rem;
+            }
+            .responsive-paragraph{
+                font-size: 15px;
+    
+            }
         }
     
-.mass-schedule {
-    width: 45%;
-    border-collapse: collapse;
-    background-color: #f2f5f9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 20px 0;
-}
-
-.mass-schedule th {
-    background-color: #003366;
-   
-    padding: 12px;
-    font-size: 1.1em;
+        @media screen and (max-width: 992px) {
+            .panel img {
+                width: 100%;
+                max-width: 50%;
+            }
     
-}
-
-.mass-schedule td, 
-.mass-schedule th {
-    border: 1px solid gray;
-    padding: 10px;
-    color: #3b3b3b;
-
-}
-
-.mass-schedule tbody tr:nth-child(even) {
-    background-color:#f2f5f9;
-}
-
-
-
-.mass-schedule th[colspan="2"] {
-    background-color: #f2f5f9;
-    font-weight: bold;
-    color: #3b3b3b;
-
-}
-.tableflex{
-    display: flex;
-    justify-content: space-between;
-}
-    </style>
+           
+            .text-center h1 {
+                font-size: 1.8rem;
+            }
+    
+            .accordion {
+                font-size: 1rem;
+            }
+    
+            .container.py-5 {
+                padding: 20px;
+            }
+        }
+    
+        @media screen and (max-width: 768px) {
+            .mass-schedule {
+            max-width: 100%; /* Take full width on smaller screens */
+        }
+            .panel img {
+                width: 100%;
+                max-width: 80%;
+            }
+    
+            .gallery img {
+                max-width: 90%;
+                margin-bottom: 20px;
+            }
+    
+            .text-center h1 {
+                font-size: 1.5rem;
+            }
+    
+            .accordion {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+    
+            .back-button {
+                font-size: 0.9rem;
+            }
+    
+            .container.py-5 {
+                padding: 15px;
+            }
+        }
+    
+        @media screen and (max-width: 576px) {
+            .mass-schedule th, .mass-schedule td {
+            font-size: 12px; /* Adjust font size for small screens */
+            padding: 8px;
+        }
+            .panel img {
+                width: 100%;
+            }
+    
+            .gallery img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+    
+            .accordion {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+    
+            .text-center h1 {
+                font-size: 1.2rem;
+            }
+    
+            .back-button {
+                font-size: 0.8rem;
+                margin-right: 50px;
+            }
+            @media screen and (max-width: 425px) {
+                .bg-breadcrumb{
+                    padding:0;
+                }
+            .panel img {
+                width: 100%;
+            }
+    
+            .gallery img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+    
+            .accordion {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+    
+            .text-center h1 {
+                font-size: 1.2rem;
+            }
+    
+            .back-button {
+                font-size: 0.8rem;
+                margin-right: 50px;
+            }
+            .text-center p {
+                font-size: 12px;
+            }
+            .baptismalreq p{
+                font-size: 12px;
+            }
+            .container-fluid.service.py-5{
+            padding-top: 0.6rem !important;
+            padding-bottom: 0!important;
+           }
+    
+            .text-center h1 {
+                font-size: 2rem;
+            }
+            .responsive-paragraph{
+                font-size: 12px;
+    
+            }
+            .gallery{
+                margin-bottom:0!important;
+            }
+        }
+    }
+        </style>
     </head>
 
     <body>
@@ -207,7 +401,7 @@ margin-LEFT:20px;
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">EUCHARISTIC MASSES</h4>
-                  
+                   
             </div>
         </div>
         <!-- Header End -->
@@ -221,10 +415,10 @@ margin-LEFT:20px;
 
           <div class="gallery">
             
-          <img src="assets/img/faq.png" alt="Etymology Image" class="float-right"> 
-          <img src="assets/img/faq.png" alt="Etymology Image" class="float-right">
-          <img src="assets/img/faq.png" alt="Etymology Image" class="float-right">
-          <img src="assets/img/faq.png" alt="Etymology Image" class="float-right">
+          <img src="../assets/img/euc1.jpg" alt="Etymology Image" class="float-right"> 
+          <img src="../assets/img/euc2.jpg" alt="Etymology Image" class="float-right">
+          <img src="../assets/img/euc3.jpg" alt="Etymology Image" class="float-right">
+          <img src="../assets/img/euc4.jpg" alt="Etymology Image" class="float-right">
           </div>
             <P>The Catholic Church, as an esteemed institution, upholds the tradition of conducting Eucharistic celebrations on a daily basis, viewing it as the central and most fundamental service within its faith. This profound ritual assumes a pivotal role in all church activities and events, serving as the focal point of Catholic religious practices.
 </P>
@@ -328,7 +522,6 @@ margin-LEFT:20px;
 </div>
         </div>
     </div>
-
 
     <?php require_once 'footer.php'?>
 

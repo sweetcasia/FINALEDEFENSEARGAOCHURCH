@@ -305,22 +305,22 @@ small {
 
             <div class="form-group">
     <label for="firstname">Firstname of person to be confirmation:</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo $firstname; ?>" />
+    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo $firstname; ?>" disabled/>
 </div>
 
 <div class="form-group">
     <label for="lastname">Last Name of person to be confirmation:</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo $lastname; ?>" />
+    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo $lastname; ?>" disabled/>
 </div>
 <div class="form-group">
     <label for="middlename">Middle Name of person to be confirmation:</label>
-    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo $middlename; ?>" />
+    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo $middlename; ?>" disabled/>
 </div>
 
            
             <div class="form-group">
                 <label for="address">Address</label>
-                <textarea class="form-control" id="address" name="c_address" placeholder="Enter Address"><?php echo $pendingItem['c_address'] ?? ''; ?></textarea>
+                <textarea class="form-control" id="address" name="c_address" placeholder="Enter Address"disabled><?php echo $pendingItem['c_address'] ?? ''; ?></textarea>
                
             </div>
 
@@ -328,11 +328,11 @@ small {
                     <label>Gender</label><br />
                     <div class="d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" <?php echo (isset($pendingItem['c_gender']) && $pendingItem['c_gender'] == 'Male') ? 'checked' : ''; ?> />
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" <?php echo (isset($pendingItem['c_gender']) && $pendingItem['c_gender'] == 'Male') ? 'checked' : ''; ?> disabled/>
                             <label class="form-check-label" for="flexRadioDefault1">Male</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" <?php echo (isset($pendingItem['c_gender']) && $pendingItem['c_gender'] == 'Female') ? 'checked' : ''; ?> />
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" <?php echo (isset($pendingItem['c_gender']) && $pendingItem['c_gender'] == 'Female') ? 'checked' : ''; ?>disabled />
                             <label class="form-check-label" for="flexRadioDefault2">Female</label>
                         </div>
                 </div>
@@ -389,7 +389,7 @@ small {
 
             <div class="form-group">
                 <label for="pbirth">Name Of Church</label>
-                <input type="text" class="form-control" id="pbirth" name="name_of_church" placeholder="Enter Name Of Church"value="<?php echo $pendingItem['name_of_church'] ?? ''; ?>"  />
+                <input type="text" class="form-control" id="pbirth" name="name_of_church" placeholder="Enter Name Of Church"value="<?php echo $pendingItem['name_of_church'] ?? ''; ?>"  disabled/>
                 <span class="error" id="pbirthError"></span>
             </div>
             <div class="form-group">
@@ -435,11 +435,11 @@ small {
             </div>
             <div class="form-group">
                     <label for="father_name">Father's Fullname</label>
-                    <input type="text" class="form-control" id="father_name" name="father_fullname" value="<?php echo $pendingItem['father_fullname'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="father_name" name="father_fullname" value="<?php echo $pendingItem['father_fullname'] ?? ''; ?>"disabled />
                 </div>
                 <div class="form-group">
                     <label for="mother_name">Mother's Fullname</label>
-                    <input type="text" class="form-control" id="mother_name" name="mother_fullname" value="<?php echo $pendingItem['mother_fullname'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="mother_name" name="mother_fullname" value="<?php echo $pendingItem['mother_fullname'] ?? ''; ?>" disabled/>
                 </div>
         </div>
 
@@ -451,12 +451,12 @@ small {
 </div>
             <div class="form-group">
                 <label for="parents_residence">Permission to Confirm</label>
-                <textarea class="form-control" id="parents_residence" name="permission_to_confirm" placeholder="Enter Permission to Confirm"><?php echo $pendingItem['permission_to_confirm'] ?? ''; ?></textarea>
+                <textarea class="form-control" id="parents_residence" name="permission_to_confirm" placeholder="Enter Permission to Confirm"disabled><?php echo $pendingItem['permission_to_confirm'] ?? ''; ?></textarea>
                 <span class="error" id="parentsResidenceError"></span>
             </div>
             <div class="form-group">
                 <label for="godparents">Church Address</label>
-                <textarea class="form-control" id="godparents" name="church_address" placeholder="Enter Church Address"><?php echo $pendingItem['church_address'] ?? ''; ?></textarea>
+                <textarea class="form-control" id="godparents" name="church_address" placeholder="Enter Church Address"disabled><?php echo $pendingItem['church_address'] ?? ''; ?></textarea>
                 <span class="error" id="churchAddressError"></span>
             </div>
         </div>
@@ -638,7 +638,6 @@ if ($event_name === 'Online') {
     });
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -649,30 +648,14 @@ if ($event_name === 'Online') {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Sweet Alert -->
   <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
+ <!-- jQuery Scrollbar -->
+ <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
     <!-- Datatables -->
     <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
 
 
     <!-- Kaiadmin JS -->

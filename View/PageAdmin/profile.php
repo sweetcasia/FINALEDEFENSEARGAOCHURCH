@@ -1,4 +1,5 @@
 <?php
+// Include database connection and controller
 require_once '../../Model/db_connection.php';
 require_once '../../Controller/citizen_con.php';
 require_once '../../Model/login_mod.php';
@@ -17,11 +18,11 @@ switch ($_SESSION['user_type']) {
     case 'Staff':
         header("Location: ../PageStaff/StaffDashboard.php");
         exit();
-    case 'Priest':
-        header("Location: ../PagePriest/PriestDashboard.php");
-        exit();
     case 'Citizen':
         header("Location: ../PageCitizen/CitizenPage.php");
+        exit();
+    case 'Priest':
+        header("Location: ../PagePriest/index.php");
         exit();
     default:
         header("Location: ../../index.php");
@@ -39,6 +40,8 @@ $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
 $citizenInfo = new User ($conn);
 $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,254 +49,348 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-    />
-  
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
- <!-- CSS Files -->
- <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Fonts and icons -->
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
-
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/rating.css">
+    <link rel="stylesheet" href="../css/table.css" />
     <style>
-     
-.card {
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+     body{
+      font-family: 'Public Sans', sans-serif;
+
+     }
+
+
+
+
+
+/* Styling for Input Fields */
+.input {
+  padding: 12px 15px;
+    margin: 10px 0;
+    width: 100%;
+    background: transparent;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #16243d;
+    border: none;
+    border-bottom: 1px solid #014ca1;
+
 }
 
-.card {
-    position: relative;
+/* Focus Effect on Input Fields */
+.input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling for Title Text */
+.text-blk.input-title {
+    font-size: 1rem;
+    color: #16243d; 
+}
+
+/* Responsive Flexbox Layout */
+.responsive-container-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 100px;}
+
+.responsive-cell-block {
+    flex: 1 1 48%; /* Makes two items per row */
+    min-width: 280px; /* Minimum width for responsive design */
+}
+
+/* Styling for Each Box (input group) */
+.custom-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Input Group */
+.custom-box:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+  color: #007bff; /* Change text color on hover */
+}
+
+/* Responsive Adjustment for Smaller Screens */
+@media (max-width: 768px) {
+    .responsive-cell-block {
+        flex: 1 1 100%; /* Stacks inputs vertically on small screens */
+    }
+}
+/* Profile Image Container */
+.profile-container {
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid transparent;
-    border-radius: .25rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
-}
-.me-2 {
-    margin-right: .5rem!important;
-}
-.card-body {
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1rem;
+    align-items: center;
+    position: relative;
+    margin-bottom: -145px;
+    margin-top: -20px;
 }
 
-.gutters-sm {
-    margin-right: -8px;
-    margin-left: -8px;
+/* Profile Image Styling */
+.profile-img {
+  width: 278px;
+    height: 281px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2; /* Ensure image stays on top */
+
 }
 
-.gutters-sm>.col, .gutters-sm>[class*=col-] {
-    padding-right: 8px;
-    padding-left: 8px;
-}
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
+.input-link {
+    display: inline-block;
+    padding: 12px 15px;
+    margin: 10px 0;
+    color: #16243d;
+    font-size: 1rem;
+    border-bottom: 1px solid #014ca1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.bg-gray-300 {
-    background-color: #e2e8f0;
+.input-link:hover,
+.input-link:focus {
+  box-shadow: 0 6px 6px -3px rgba(0, 123, 255, 0.5); /* Slightly stronger shadow on focus */
 }
-.h-100 {
-    height: 100%!important;
+/* Account Title Styling */
+/* Flexbox layout for box */
+.box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #014ca1;
+        padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
-.shadow-none {
-    box-shadow: none!important;
+
+
+/* Text container styling */
+.text-container {
+    display: flex;
+    flex-direction: column;
 }
-.list-group-item {
-      transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+
+.text-container h5 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.text-container .text-secondary {
+    font-weight: bold;
+    font-size: 24px;
+    color: #5a5a5a;
+}
+/* Icon wrapper styling */
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ac0727cf; /* Background color for icon */
+    width: 55px;
+    height: 55px;
+    margin-right: 15px; /* Space between icon and text */
+}
+
+.account-title {
+    margin: 0; /* Remove margin */
+    padding-bottom: 5px; /* Optional padding for spacing */
+}
+
+.responsive-container-block {
+    margin-top: 0; /* Ensure no extra space at the top */
+    /* Other existing styles */
+}
+
+  /* Override Bootstrap's default grid styles if necessary */
+  .card-body .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-body .col-md-6 {
+    flex: 1 1 50%; /* Make each column take 50% of the container width */
+    padding: 10px; /* Add padding between columns */
+  }
+
+  /* Optionally, add responsiveness if you want columns to stack on small screens */
+  @media (max-width: 767px) {
+    .card-body .col-md-6 {
+      flex: 1 1 100%; /* Stack columns on smaller screens */
     }
+  }
 
-    .list-group-item:not(.no-hover):hover {
-      background-color: #f0f0f0; /* Change background color on hover */
-      color: #007bff; /* Change text color on hover */
-    }
-    .edit-mode {
-      border: 1px solid #007bff; /* Optional: Highlight editable area */
-      padding: 5px;
-      border-radius: 3px;
-    }
+
     </style>
   </head>
-  <body style="margin-top: 0!important;">
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-      <div class="container">
-       
-      <?php require_once 'header.php'?>
+  <body>
+  <?php require_once 'sidebar.php'; ?>
+  <div class="main-panel">
+    <?php require_once 'header.php'; ?>
 
+    <div class="container">
+      <div class="page-inner">
+      <div class="card">
+  <div class="card-header text-center">
+    
+    <h4 class="card-title mt-3">Account Details</h4>
+  </div>
+
+    <div class="card-body">
+    <div class="row g-4">
+    <!-- Full Name -->
+    <div class="col-md-6">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" 
+            value="<?php echo htmlspecialchars($nme); ?>" disabled>
+    </div>
+
+    <!-- Email -->
+    <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" 
+            value="<?php echo htmlspecialchars($citizenDetails['email']); ?>" disabled>
+    </div>
+
+    <!-- Gender -->
+    <div class="col-md-6">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" 
+            value="<?php echo htmlspecialchars($citizenDetails['gender']); ?>" disabled>
+    </div>
+
+    <!-- Phone -->
+    <div class="col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phone" 
+            value="<?php echo htmlspecialchars($citizenDetails['phone']); ?>" disabled>
+    </div>
+
+    <!-- Address -->
+    <div class="col-md-6">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" 
+            value="<?php echo htmlspecialchars($citizenDetails['address']); ?>" disabled>
+    </div>
+
+    <!-- Valid ID -->
+    <div class="col-md-6">
+
+</div>
+
+    </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="validIDModal" tabindex="-1" aria-labelledby="validIDModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="validIDModalLabel">Valid ID</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="../PageLanding/<?php echo htmlspecialchars($citizenDetails['valid_id']); ?>" alt="Valid ID" class="img-fluid">
+        </div>
       </div>
     </div>
-    <!-- Navbar & Hero End -->
-    <?php require_once 'sidebar.php'?>
+  </div>
 
+  <div class="row g-3 mt-4">
+  <!-- My Event Scheduling -->
+
+
+  <!-- Seminar Appointment -->
+
+  <!-- My Booking History -->
+
+
+  </div>
+    <!--   Core JS Files   -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
     
-        <div class="row gutters-sm" >
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex flex-column align-items-center text-center">
-                  <img
-                    src="assets/img/profile.png"
-                    alt="Citizen"
-                    class="rounded-circle"
-                    width="180"
-                  />
-                  <div class="mb-0">
-                    <h4> <?php echo htmlspecialchars($nme); ?></h4>
-                    <p  class="text-muted font-size-sm">
-                    <?php echo htmlspecialchars($citizenDetails['address']); ?>
-                    </p>
-                   <br>
-                  </div>
-                </div>
-                <hr class="my-4">
-     
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-    <div class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Full Name</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($nme); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-                   
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Email</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($citizenDetails['email']); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-                  
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Gender</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($citizenDetails['gender']); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-                  
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Phone number</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($citizenDetails['phone']); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Date of birth</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($citizenDetails['c_date_birth']); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-                  
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-3">
-                    <h6 class="mb-0">Address</h6>
-                </div>
-                <div class="col-sm-6 text-secondary editable">
-                    <?php echo htmlspecialchars($citizenDetails['address']); ?>
-                </div>
-                <div class="col-sm-3 text-right">
-                 
-                </div>
-            </div>
-            <hr />
-         
-        </div>
-    </div>
-</div>
-            <div class="card mt-3">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap no-hover">
-                  <h4>Account Transaction History</h4>
-                </li>
-             
-                <button
-  class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
-  onclick="window.location.href='history.php';">
-  Booking History <span class="text-secondary">10</span>
-</button>
-
-                  <button  class="list-group-item d-flex justify-content-between align-items-center flex-wrap">Seminar Appointment <span class="text-secondary">12</span></button>
-               
-
-              </ul>
-            </div>
-           
-                </div>
-              </div>
-            </div>
-          </div>
-          
-  <!-- JavaScript Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script>
+         // Function to add 'active' class to the clicked link and remove it from others
+    function setActiveLink() {
+        // Get all custom links
+        var links = document.querySelectorAll('.custom-nav-link');
         
+        // Remove 'active' class from all links
+        links.forEach(function(link) {
+            link.classList.remove('active');
+        });
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        // Add 'active' class to the current link
+        this.classList.add('active');
+    }
+
+    // Attach click event listeners to all custom-nav-link elements
+    var links = document.querySelectorAll('.custom-nav-link');
+    links.forEach(function(link) {
+        link.addEventListener('click', setActiveLink);
+    });
+
+    // Optionally, set the active class based on the current page when loading the page
+    window.addEventListener('load', function() {
+        // Get the current URL
+        var currentPage = window.location.pathname.split('/').pop();
+
+        // Set the active class based on the current page
+        links.forEach(function(link) {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    });
+          // JavaScript to trigger modal when the link is clicked
+document.getElementById('viewValidID').addEventListener('click', function() {
+    $('#validIDModal').modal('show');
+});
+
+        </script>
           <script>
     // Function to toggle contentEditable on the target element
     document.querySelectorAll('.edit-btn').forEach((button) => {
@@ -316,18 +413,6 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
       });
     });
   </script>
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+ 
   </body>
 </html>

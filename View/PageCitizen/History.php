@@ -75,8 +75,9 @@ $regId = $_SESSION['citizend_id'];
         <link href="css/style.css" rel="stylesheet">
         <style>
           body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+           
+            font-family: 'Public Sans', sans-serif;
+                    background-color: #f4f4f9;
             color: #333;
             margin: 0;
             padding: 0;
@@ -232,7 +233,164 @@ margin-top:20px;
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
 }
+.responsive-paragraph {
+    color: #3b3b3b; /* Text color */
+    text-align: justify; /* Justify text */
+    text-justify: inter-word; /* Handle justification for word spacing */
+    font-size: 16px; /* Base font size */
+    line-height: 1.6; /* Line height for better readability */
+    margin-top: 20px; /* Top margin */
+    margin-left: 10px; /* Left margin */
+    margin-right: 10px; /* Add right margin for better spacing */
+}
+.panel p{
+    font-size: 16px; /* Default font size */
+    line-height: 1.6; /* Line height for better readability */
+    color: #3b3b3b; /* Text color */
+    text-align: justify; /* Justify the text */
+}
 
+    /* Responsive Design */
+    @media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .panel p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .panel p {
+            font-size: 12px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+    }
+
+}
 /*** Single Page Hero Header End ***/
 
     </style>
@@ -272,7 +430,7 @@ margin-top:20px;
           <img src="../assets/img/history3.jpg" alt="Etymology Image" class="float-right">
           <img src="../assets/img/history4.jpg" alt="Etymology Image" class="float-right">
           </div>
-            <p class="mb-0" style="color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 16px; line-height: 1.6; margin-top:10px; margin-left: 10px;">
+            <p class="responsive-paragraph">
                 This overview explores the historical journey of the Archdiocesan Shrine of San Miguel Arcangel in Argao, Cebu, from its etymological roots and Spanish colonial origins to its role during the Philippine Revolution, American period, and World War II. It highlights the church's transformation and ongoing significance as a key religious and cultural landmark in the region.
             </p>
         </div>
@@ -280,7 +438,7 @@ margin-top:20px;
                 <button class="accordion" style="font-weight:700;
 ">ETYMOLOGY</button>
                 <div class="panel">
-                    <p style=" font-size: 16px; line-height: 1.6; ">The name "Argao" is believed to be derived from the Spanish word "argayo," meaning "to be angry."               
+                    <p>The name "Argao" is believed to be derived from the Spanish word "argayo," meaning "to be angry."               
 According to local folklore, this name was given due to the frequent disputes or quarrels in the area. Another theory isAccording to local folklore, this name was given due to the frequent disputes or quarrels in the area. Another theory is that it might be derived from "Argao," a name of uncertain origin used in early Spanish documents.According to local folklore, this name was given due to the frequent disputes or quarrels in the area. Another theory is that it might be derived from "Argao," a name of uncertain origin used in early Spanish documents. that it might be derived from "Argao," a name of uncertain origin used in early Spanish documents.</p>
                 </div>
 
@@ -318,31 +476,12 @@ According to local folklore, this name was given due to the frequent disputes or
         </div>
     </div>
 
-
     <?php require_once 'footer.php'?>
 
 
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-</script>
-        <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
@@ -355,6 +494,39 @@ According to local folklore, this name was given due to the frequent disputes or
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+    // Get all accordion buttons
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    // Loop through the accordion buttons and add event listeners
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            // Get the next element (the panel)
+            var panel = this.nextElementSibling;
+
+            // Check if the panel is already open (its display is block)
+            if (panel.style.display === "block") {
+                // If it's already open, close it
+                panel.style.display = "none";
+                this.classList.remove("active");  // Remove active class from button
+            } else {
+                // If it's closed, close all panels first
+                var allPanels = document.querySelectorAll(".panel");
+                for (var j = 0; j < allPanels.length; j++) {
+                    allPanels[j].style.display = "none";  // Hide all panels
+                    acc[j].classList.remove("active");  // Remove active class from all buttons
+                }
+                
+                // Then open the clicked panel
+                panel.style.display = "block";
+                this.classList.add("active");  // Add active class to the clicked button
+            }
+        });
+    }
+</script>
+
+       
           <!-- JavaScript Libraries -->
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

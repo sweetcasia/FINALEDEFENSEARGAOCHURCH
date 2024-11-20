@@ -105,10 +105,6 @@ class EventTicketClass extends \Google\Collection
    */
   public $multipleDevicesAndHoldersAllowedStatus;
   /**
-   * @var string
-   */
-  public $notifyPreference;
-  /**
    * @var string[]
    */
   public $redemptionIssuers;
@@ -584,20 +580,6 @@ class EventTicketClass extends \Google\Collection
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param string[]

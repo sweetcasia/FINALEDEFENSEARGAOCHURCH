@@ -64,44 +64,55 @@ $announcements = $staff->getAnnouncements();
     />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
   
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+  />
+  <!-- Icon Font Stylesheet -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
 
-    <!-- Libraries Stylesheet -->
-    <link rel="stylesheet" href="View/PageLanding/lib/animate/animate.min.css" />
-    <link href="View/PageLanding/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-    <link href="View/PageLanding/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <!-- Libraries Stylesheet -->
+  <link rel="stylesheet" href="View/PageLanding/lib/animate/animate.min.css" />
+  <link href="View/PageLanding/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <link href="View/PageLanding/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="View/PageLanding/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="View/PageLanding/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="View/PageLanding/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="View/PageLanding/css/rating.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <!-- Template Stylesheet -->
+ 
+  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+ <!-- Google Web Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+<!-- CSS Files --> 
 
-    <style>
-      .days li{
+  <!-- Bootstrap CSS -->
+  <link href="View/PageLanding/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="View/PageLanding/css/rating.css">
+
+  <style>
+ 
+   .days li{
         padding: 20px!important;
       }
       
@@ -131,7 +142,13 @@ $announcements = $staff->getAnnouncements();
     transform: rotate(180deg); /* Rotate 180 degrees for open state */
 }
 
-
+.header-carousel .owl-nav .owl-prev {
+    display: none!important; /* This will hide the left navigation arrow */
+}
+.header-carousel .owl-nav .owl-next {
+    display: none!important; /* This will hide the left navigation arrow */
+}
+   
     </style>
   </head>
 
@@ -214,8 +231,8 @@ We invite you to check back regularly to stay updated on the vibrant life of our
         </div>
         
         <!-- FAQs End -->
-  <!-- Service Start -->
-<div class="container-fluid service py-5">
+ <!-- Service Start -->
+ <div class="container-fluid service py-5">
   <div class="container py-5" style="padding-top: 0 !important;padding-top: 0 !important;">
     <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s">
       <h1 class="display-6 mb-6" >WE PROVIDE BEST SERVICES</h1>
@@ -237,7 +254,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="service-content-inner">
               <a href="View/PageLanding/baptismal.php" class="d-inline-block h4 mb-4"><span style="font-weight: bold">Baptism</span></a>
               <p class="mb-4">Baptism holds a significant role within the Christian faith as it formally welcomes a new member into the church... </p>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
+              <a class="btn btn-primary  py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
             </div>
           </div>
         </div>
@@ -251,7 +268,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="service-content-inner">
               <a href="View/PageLanding/confirmation.php" class="d-inline-block h4 mb-4"><span style="font-weight: bold">Confirmation</span></a>
               <p class="mb-4">Confirmation holds a profound and essential place within the Christian faith, marking the deepening of a believer’s...</p>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
+              <a class="btn btn-primary  py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
             </div>
           </div>
         </div>
@@ -265,7 +282,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="service-content-inner">
               <a href="View/PageLanding/wedding.php" class="d-inline-block h4 mb-4"><span style="font-weight: bold">Wedding</span></a>
               <p class="mb-4">The sacrament of matrimony is a sacred union that binds a man and a woman together in the presence of God...</p>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
+              <a class="btn btn-primary  py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
             </div>
           </div>
         </div>
@@ -281,7 +298,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="service-content-inner">
               <a href="View/PageLanding/funeral.php" class="d-inline-block h4 mb-4"><span style="font-weight: bold">Funeral</span></a>
               <p class="mb-4">As a religious institution, the church plays a vital role in offering support and solace to the departed...</p>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
+              <a class="btn btn-primary  py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
             </div>
           </div>
         </div>
@@ -295,7 +312,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="service-content-inner">
               <a href="View/PageLanding/requestform.php" class="d-inline-block h4 mb-4"><span style="font-weight: bold">Request of Masses</span></a>
               <p class="mb-4">The Catholic Church, as an esteemed institution, upholds the tradition of conducting Eucharistic...</p>
-              <a class="btn btn-primary rounded-pill py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
+              <a class="btn btn-primary  py-2 px-4" href="View/PageLanding/signup.php">Schedule Now</a>
             </div>
           </div>
         </div>
@@ -304,6 +321,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
   </div>
 </div>
 <!-- Service End -->
+
 
 
     <!-- Testimonial Start -->
@@ -330,7 +348,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
             <div class="row g-0">
               <div class="col-8 col-lg-8 col-xl-9">
               <div class="d-flex flex-column my-auto text-start p-4" style="align-items: baseline!important;">
-              <div class="small">
+              <div  style="color:black;" class="small">
                     <span class="fa fa-calendar text-primary"></span> 
                     Event Date: <?php 
        $date = htmlspecialchars(date('F j, Y', strtotime($announcement['schedule_date'])));
@@ -339,7 +357,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
         echo "$date - $startTime - $endTime ";
         ?>
                     </div>
-                    <div class="small">
+                    <div  style="color:black;" class="small">
                     <span class="fa fa-calendar text-primary"></span> 
                     Seminar Date:  <?php 
        $date = htmlspecialchars(date('F j, Y', strtotime($announcement['seminar_date'])));
@@ -349,7 +367,7 @@ We invite you to check back regularly to stay updated on the vibrant life of our
         ?>
                     </div>
 
-                  <h4 style="padding-top: 15px;" class="text-dark mb-0">
+                  <h4 style="padding-top: 15px; padding-bottom:10px;" class="text-dark mb-0">
                   <?php echo htmlspecialchars($announcement['title']) ?>
                   </h4>
                   
@@ -436,23 +454,30 @@ We invite you to check back regularly to stay updated on the vibrant life of our
     ></a>
     <script>
 function toggleAccordion(collapseId, button) {
-    // Close all other open accordion items
+    // Get the collapse element by its ID
+    const collapseElement = document.getElementById(collapseId);
+    
+    // Check if the collapse is already open or closed
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle the expanded state for the button
+    button.classList.toggle('collapsed', isExpanded);
+    button.setAttribute('aria-expanded', !isExpanded);
+    
+    // Toggle the visibility of the collapse element
+    collapseElement.classList.toggle('show', !isExpanded);
+    
+    // Close all other accordion items
     document.querySelectorAll('.accordion-button').forEach((btn) => {
         if (btn !== button) {
+            const targetCollapse = document.getElementById(btn.getAttribute('aria-controls'));
+            targetCollapse.classList.remove('show');
             btn.classList.add('collapsed');
             btn.setAttribute('aria-expanded', 'false');
         }
     });
-    
-    // Toggle the clicked button's 'collapsed' class
-    const isExpanded = button.getAttribute('aria-expanded') === 'true';
-    button.classList.toggle('collapsed', isExpanded);
-    button.setAttribute('aria-expanded', !isExpanded);
-
-    // Handle accordion content display
-    const collapseElement = document.getElementById(collapseId);
-    collapseElement.classList.toggle('show', !isExpanded);
 }
+
 </script>
     <script>
             document.addEventListener('DOMContentLoaded', function() {

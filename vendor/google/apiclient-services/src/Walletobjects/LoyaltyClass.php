@@ -98,10 +98,6 @@ class LoyaltyClass extends \Google\Collection
    * @var string
    */
   public $multipleDevicesAndHoldersAllowedStatus;
-  /**
-   * @var string
-   */
-  public $notifyPreference;
   protected $programLogoType = Image::class;
   protected $programLogoDataType = '';
   /**
@@ -558,20 +554,6 @@ class LoyaltyClass extends \Google\Collection
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param Image

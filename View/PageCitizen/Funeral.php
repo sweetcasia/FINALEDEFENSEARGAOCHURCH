@@ -75,8 +75,11 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-        .text-center  p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+  body{
+                font-family: 'Public Sans', sans-serif;
+            }
+         .text-center1 {
+    color:#3b3b3b; text-align: justify; text-justify: inter-word!important;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -135,7 +138,7 @@ margin-LEFT:20px;
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/funeral.jpeg);
+  url(../assets/img/con4.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -149,7 +152,157 @@ margin-LEFT:20px;
 
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
+} 
+.baptismalreq p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-indent: 1rem;
+        margin-bottom: 10px;
+    }@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center1{
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
 }
+
     </style>
     </head>
 
@@ -163,9 +316,8 @@ margin-LEFT:20px;
     </div>
     <!-- Navbar & Hero End -->
       
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+     <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">FUNERAL</h4>
                   
@@ -177,18 +329,27 @@ margin-LEFT:20px;
 <div class="container-fluid service py-5">
   
         <div class="container py-5" style="padding-top:0!important;">
+            
+        <div class="gallery">
+            
+            <img src="../assets/img/funeral1.jpg" alt="Etymology Image" class="float-right"> 
+            <img src="../assets/img/funeral2.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/funeral3.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/funeral4.jpg" alt="Etymology Image" class="float-right">
+            </div>
+            <P class="text-center1">As a religious institution, the church plays a vital role in offering support and solace to the departed and their grieving families through a range of religious services. These services encompass the hosting of wakes, conducting liturgical ceremonies for the deceased, and managing the Barasoain Catholic Cemetery, a sacred resting place for burials.
+            </P>
+            <br>
+        <div class="baptismalreq">
+        <h5 style="font-weight: BOLDER; padding-left:10px;">SCHEDULE ONLINE</h5>
+        <br>
+
+        &ensp;&ensp;  <a class="btn btn-primary py-2 px-4" href="FillScheduleForm.php?type=Funeral">Schedule Now</a>
         
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s">
-
-          <div class="gallery">
-            
-         
-          </div>
-            <P>As a religious institution, the church plays a vital role in offering support and solace to the departed and their grieving families through a range of religious services. These services encompass the hosting of wakes, conducting liturgical ceremonies for the deceased, and managing the Barasoain Catholic Cemetery, a sacred resting place for burials.
-</P>
-            
-
-        </div>
+    
+</div>
+<BR>
+<br>
         <div class="baptismalreq">
         <h5 style="font-weight: BOLDER; padding-left:10px;">WAKES
 

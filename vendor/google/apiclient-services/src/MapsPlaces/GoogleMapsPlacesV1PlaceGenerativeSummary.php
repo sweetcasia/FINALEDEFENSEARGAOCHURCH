@@ -21,16 +21,8 @@ class GoogleMapsPlacesV1PlaceGenerativeSummary extends \Google\Model
 {
   protected $descriptionType = GoogleTypeLocalizedText::class;
   protected $descriptionDataType = '';
-  /**
-   * @var string
-   */
-  public $descriptionFlagContentUri;
   protected $overviewType = GoogleTypeLocalizedText::class;
   protected $overviewDataType = '';
-  /**
-   * @var string
-   */
-  public $overviewFlagContentUri;
   protected $referencesType = GoogleMapsPlacesV1References::class;
   protected $referencesDataType = '';
 
@@ -49,20 +41,6 @@ class GoogleMapsPlacesV1PlaceGenerativeSummary extends \Google\Model
     return $this->description;
   }
   /**
-   * @param string
-   */
-  public function setDescriptionFlagContentUri($descriptionFlagContentUri)
-  {
-    $this->descriptionFlagContentUri = $descriptionFlagContentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getDescriptionFlagContentUri()
-  {
-    return $this->descriptionFlagContentUri;
-  }
-  /**
    * @param GoogleTypeLocalizedText
    */
   public function setOverview(GoogleTypeLocalizedText $overview)
@@ -75,20 +53,6 @@ class GoogleMapsPlacesV1PlaceGenerativeSummary extends \Google\Model
   public function getOverview()
   {
     return $this->overview;
-  }
-  /**
-   * @param string
-   */
-  public function setOverviewFlagContentUri($overviewFlagContentUri)
-  {
-    $this->overviewFlagContentUri = $overviewFlagContentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getOverviewFlagContentUri()
-  {
-    return $this->overviewFlagContentUri;
   }
   /**
    * @param GoogleMapsPlacesV1References

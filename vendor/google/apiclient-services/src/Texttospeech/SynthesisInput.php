@@ -21,8 +21,6 @@ class SynthesisInput extends \Google\Model
 {
   protected $customPronunciationsType = CustomPronunciations::class;
   protected $customPronunciationsDataType = '';
-  protected $multiSpeakerMarkupType = MultiSpeakerMarkup::class;
-  protected $multiSpeakerMarkupDataType = '';
   /**
    * @var string
    */
@@ -45,20 +43,6 @@ class SynthesisInput extends \Google\Model
   public function getCustomPronunciations()
   {
     return $this->customPronunciations;
-  }
-  /**
-   * @param MultiSpeakerMarkup
-   */
-  public function setMultiSpeakerMarkup(MultiSpeakerMarkup $multiSpeakerMarkup)
-  {
-    $this->multiSpeakerMarkup = $multiSpeakerMarkup;
-  }
-  /**
-   * @return MultiSpeakerMarkup
-   */
-  public function getMultiSpeakerMarkup()
-  {
-    return $this->multiSpeakerMarkup;
   }
   /**
    * @param string

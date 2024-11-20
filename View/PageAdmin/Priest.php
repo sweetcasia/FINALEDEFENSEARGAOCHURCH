@@ -137,8 +137,7 @@ small {
         
      
         <div class="container">
-            <div class="pa
-            ge-inner">
+            <div class="page-inner">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -174,15 +173,7 @@ small {
                 <textarea class="form-control" id="address" name="address" placeholder="Enter Address"></textarea>
                 <div class="error" id="address_error"></div>
             </div>
-            <div class="form-group">
-                <label>Gender</label><br />
-                <select class="form-control" name="gender"  class="input_box" id="gender" placeholder="name@example.com">
-            <option value="" disabled selected>Select gender</option>
-            <option>Male</option>
-            <option>Female</option>
-        </select>
-                <div class="error" id="gender_error"></div>
-            </div>
+           
 
         </div>
         <div class="col-md-6 col-lg-4">
@@ -190,7 +181,7 @@ small {
     
             <div class="form-group">
     <div class="birthday-input">
-        <label for="month">Date of Birth</label>
+        <label style="font-weight:500;" for="month">Date of Birth</label>
         <div class="birthday-selectors">
             <select id="month" name="month">
                 <option value="">Month</option>
@@ -236,24 +227,20 @@ small {
                 <div class="error" id="phone_error"></div>
             </div>
             <div class="form-group">
-                <label for="mother_name">GMAIL</label>
+                <label for="mother_name">Gmail</label>
                 <input type="text" class="form-control" name="email" id="emails" placeholder="name@example.com">
                 <div class="error" id="email_error"></div>
             </div>
         </div>
         <div class="col-md-6 col-lg-4">
-        <div class="form-group">
-        <label for="validID">Valid ID</label>
-    <input type="file" class="form-control" id="valid_id" name="valid_id" accept="image/*" placeholder="Valid ID">
-    <div class="error" id="valid_id_error"></div>
-            </div>
+        
             <div class="form-group">
                 <label for="parents_residence">Password</label>
                 <input type="password" class="form-control" id="passwords" name="password" placeholder="Password">
                 <div class="error" id="password_error"></div>
             </div>
             <div class="form-group">
-                <label for="godparents">ConfirmPassword</label>
+                <label for="godparents">Confirm Password</label>
                 <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
                 <div class="error" id="confirmpassword_error"></div>
             </div>
@@ -300,11 +287,7 @@ function validateForm() {
         }
 
         // Validate gender
-        const gender = document.getElementById("gender").value;
-        if (gender === "") {
-            showError("gender", "Gender is required");
-            isValid = false;
-        }
+   
 
         // Validate phone
         const phone = document.getElementById("phone").value.trim();
@@ -369,11 +352,7 @@ function validateForm() {
             showError("confirmpassword", "Passwords do not match");
             isValid = false;
         }
-        const validID = document.getElementById("valid_id").files;
-    if (validID.length === 0) {
-        showError("valid_id", "Valid ID is required");
-        isValid = false;
-    }
+    
 
         return isValid;
     }

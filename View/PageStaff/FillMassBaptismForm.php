@@ -198,38 +198,38 @@ small {
                 </div>
                 <div class="form-group">
     <label for="firstname">Firstname of person to be baptized:</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo $firstname; ?>" />
+    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo $firstname; ?>" readonly/>
 </div>
 <div class="form-group">
     <label for="lastname">Last Name of person to be baptized:</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo $lastname; ?>" />
+    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo $lastname; ?>" readonly/>
 </div>
 <div class="form-group">
     <label for="middlename">Middle Name of person to be baptized:</label>
-    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo $middlename; ?>" />
+    <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo $middlename; ?>" readonly/>
 </div>
 
-                <input type="hidden" id="fullname" name="fullname" value="<?php echo $pendingItem['fullname'] ?? ''; ?>" />
+                <input type="hidden" id="fullname" name="fullname" value="<?php echo $pendingItem['fullname'] ?? ''; ?>" readonly/>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <textarea class="form-control" id="address" name="address"><?php echo $pendingItem['address'] ?? ''; ?></textarea>
+                    <textarea class="form-control" id="address" name="address"readonly><?php echo $pendingItem['address'] ?? ''; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label>Gender</label><br />
                     <div class="d-flex">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" <?php echo (isset($pendingItem['gender']) && $pendingItem['gender'] == 'Male') ? 'checked' : ''; ?> />
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" <?php echo (isset($pendingItem['gender']) && $pendingItem['gender'] == 'Male') ? 'checked' : ''; ?> readonly/>
                             <label class="form-check-label" for="flexRadioDefault1">Male</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" <?php echo (isset($pendingItem['gender']) && $pendingItem['gender'] == 'Female') ? 'checked' : ''; ?> />
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Female" <?php echo (isset($pendingItem['gender']) && $pendingItem['gender'] == 'Female') ? 'checked' : ''; ?> readonly/>
                             <label class="form-check-label" for="flexRadioDefault2">Female</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="religion">Religion</label>
-                    <input type="text" class="form-control" id="religion" name="religion" value="<?php echo $pendingItem['religion'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="religion" name="religion" value="<?php echo $pendingItem['religion'] ?? ''; ?>"readonly />
                 </div>
             </div>
             
@@ -241,7 +241,7 @@ small {
  </div>
                 <div class="form-group">
                     <label for="pbirth">Place of Birth</label>
-                    <input type="text" class="form-control" id="pbirth" name="pbirth" value="<?php echo $pendingItem['pbirth'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="pbirth" name="pbirth" value="<?php echo $pendingItem['pbirth'] ?? ''; ?>"readonly />
                 </div>
                 <div class="form-group">
     <div class="birthday-input">
@@ -288,11 +288,11 @@ small {
 
                 <div class="form-group">
                     <label for="father_name">Father's Fullname</label>
-                    <input type="text" class="form-control" id="father_name" name="father_fullname" value="<?php echo $pendingItem['father_fullname'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="father_name" name="father_fullname" value="<?php echo $pendingItem['father_fullname'] ?? ''; ?>" readonly/>
                 </div>
                 <div class="form-group">
                     <label for="mother_name">Mother's Fullname</label>
-                    <input type="text" class="form-control" id="mother_name" name="mother_fullname" value="<?php echo $pendingItem['mother_fullname'] ?? ''; ?>" />
+                    <input type="text" class="form-control" id="mother_name" name="mother_fullname" value="<?php echo $pendingItem['mother_fullname'] ?? ''; ?>" readonly/>
                 </div>
             </div>
             
@@ -303,11 +303,11 @@ small {
                     <input type="text" class="form-control" id="date" name="date" value="<?php echo $endTime; ?>" readonly /> 
                 <div class="form-group">
                     <label for="parents_residence">Parents Residence</label>
-                    <textarea class="form-control" id="parents_residence" name="parent_resident"><?php echo $pendingItem['parent_resident'] ?? ''; ?></textarea>
+                    <textarea class="form-control" id="parents_residence" name="parent_resident"readonly><?php echo $pendingItem['parent_resident'] ?? ''; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="godparents">List Of GodParents</label>
-                    <textarea class="form-control" id="godparents" name="godparent"><?php echo $pendingItem['godparent'] ?? ''; ?></textarea>
+                    <textarea class="form-control" id="godparents" name="godparent"readonly><?php echo $pendingItem['godparent'] ?? ''; ?></textarea>
                 </div>
             </div>
         </div>
@@ -423,42 +423,23 @@ small {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Popper.js (required for Bootstrap 4) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Sweet Alert -->
   <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
+ <!-- jQuery Scrollbar -->
+ <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
     <!-- Datatables -->
     <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
 
 
     <!-- Kaiadmin JS -->
     <script src="../assets/js/kaiadmin.min.js"></script>
-
   </body>
 </html>

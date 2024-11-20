@@ -9,13 +9,15 @@
 
   
     <style>
-         .navbar .nav-link {
+       .navbar .nav-link {
     position: relative; /* Positioning for the pseudo-element */
     color: white; /* Ensure links are white */
     text-decoration: none; /* Remove default underline */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
+    
     z-index: 1000; /* Adjust this value if necessary */
 }
+
 
 .navbar .nav-link:after {
     position: absolute;
@@ -32,6 +34,7 @@
     z-index: -1; /* Keep it behind the text */
 
 }
+
 
 .navbar .nav-link:hover {
     color:white; /* Change text color on hover */
@@ -50,29 +53,84 @@
     }
 
 
+/* Ensure dropdown is hidden by default */
 .navbar .dropdown-menu {
-    background-color: black; /* Ensure dropdown has the same background */
+    display: none; /* Hide the dropdown */
+    position: absolute;
+    background-color: white; /* Ensure background color */
+    z-index: 1050; /* Ensure dropdown stays above other content */
+}
+
+.navbar .nav-item.dropdown .dropdown-menu {
+    display: none; /* Ensure it's hidden by default */
+}
+
+.navbar .nav-item.dropdown.show .dropdown-menu {
+    display: block; /* Show the dropdown when the 'show' class is added */
+}
+
+/* Optional: Add some spacing or padding for better dropdown appearance */
+.navbar .dropdown-menu {
+    margin-top: 0;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar {
+    position: relative;
+    z-index: 1050;
+}
+.collapse {
+    display: none;
+    transition: height 0.3s ease;
+}
+
+.collapse.show {
+    display: block;
+}   
+.navbar-brand img {
+        max-height:60px;
+    }
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 45px;
+    }
 }
 
     </style>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg bg-light" style="z-index: 1000;">
     <div class="container-fluid">
-        <a href="#" class="navbar-brand">
-            <img style="max-height: 60px; transition: 0.5s;" src="assets/img/argaochurch.png" alt="Logo" />
+        <!-- Brand Logo -->
+        <a href="../../index.php" class="navbar-brand" aria-label="Homepage"> 
+            <img src="../assets/img/argaochurch.png" alt="Logo" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <button 
+    class="navbar-toggler" 
+    type="button" 
+    aria-controls="navbarCollapse" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarCollapse"> 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Home Link -->
                 <li class="nav-item">
                     <a href="../../index.php" class="nav-link">Home</a>
                 </li>
+
+                <!-- About Us Dropdown -->
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a 
+                        href="#" 
+                        class="nav-link dropdown-toggle" 
+                        id="aboutDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
                         About Us
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
@@ -80,8 +138,16 @@
                         <li><a href="architecture.php" class="dropdown-item">Architecture</a></li>
                     </ul>
                 </li>
+
+                <!-- Services Dropdown -->
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a 
+                        href="#" 
+                        class="nav-link dropdown-toggle" 
+                        id="servicesDropdown" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
                         Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
@@ -93,21 +159,73 @@
                         <li><a href="eucharistic.php" class="dropdown-item">Eucharistic Masses</a></li>
                     </ul>
                 </li>
+
+                <!-- Vicinity Map -->
                 <li class="nav-item">
                     <a href="map.php" class="nav-link">Vicinity Map</a>
                 </li>
-                <li class="nav-item">
-                    <a href="ContactUs.php" class="nav-link">Contact Us</a>
-                </li>
+
+                <!-- Contact Us -->
+              
             </ul>
-            <div class="nav-btn"style="z-index:1000;">
-                <a href="signin.php" class="btn btn-primary py-2 px-4" >Signin</a>
+
+            <!-- Signin Button -->
+            <div class="nav-btn">
+                <a href="signin.php" class="btn btn-primary py-2 px-4">Signin</a>
             </div>
         </div>
     </div>
 </nav>
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const dropdowns = document.querySelectorAll('.navbar .nav-item.dropdown');
+
+        // Toggle the navbar collapse when the hamburger icon is clicked
+        navbarToggler.addEventListener("click", function () {
+            navbarCollapse.classList.toggle("show");
+        });
+
+        // Prevent dropdown from closing the navbar
+        dropdowns.forEach(function (dropdown) {
+            const toggle = dropdown.querySelector(".dropdown-toggle");
+
+            toggle.addEventListener("click", function (e) {
+                e.preventDefault();  // Prevent the default link behavior
+
+                // Stop propagation to avoid collapsing navbar when clicking the dropdown
+                e.stopPropagation();
+
+                // Toggle the 'show' class to control visibility
+                dropdown.classList.toggle("show");
+
+                // Close other dropdowns when one is opened
+                dropdowns.forEach(function (otherDropdown) {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove("show");
+                    }
+                });
+            });
+        });
+
+        // Close the navbar if clicking outside of it
+        document.addEventListener("click", function (e) {
+            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                navbarCollapse.classList.remove("show");
+            }
+        });
+
+        // Prevent clicks inside the collapse from closing it
+        navbarCollapse.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const currentPath = window.location.pathname.split('/').pop();
@@ -142,19 +260,6 @@
                     navbarCollapse.classList.remove('show');
                 }
             });
-        });
-    });
-</script>
-<script>
-    // Collapse the navbar when a nav item is clicked
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    const navbarCollapse = document.getElementById('navbarCollapse');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
-            }
         });
     });
 </script>

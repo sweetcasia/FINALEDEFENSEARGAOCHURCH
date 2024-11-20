@@ -108,7 +108,7 @@ $regId = $_SESSION['citizend_id'];
                 <div class="col-md-6 col-lg-4">
                   <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="text" class="form-control" id="email" value="<?php echo $email; ?>" <?php echo $status === 'Approved' ? '' : 'readonly'; ?> />
+                    <input type="text" class="form-control" id="email" value="<?php echo $emails; ?>" <?php echo $status === 'Approved' ? '' : 'readonly'; ?> />
                   </div>
                   <div class="form-group">
                     <label for="status">Birth Date:</label>
@@ -119,9 +119,16 @@ $regId = $_SESSION['citizend_id'];
                     <textarea class="form-control" id="address" <?php echo $status === 'Approved' ? '' : 'readonly'; ?>><?php echo $address; ?></textarea>
                   </div>
                   <div class="form-group">
-                    <label for="validId">Valid ID:</label>
-                    <img class="form-control" src="<?php echo !empty($validId) ? '../PageLanding/' . htmlspecialchars($validId) : 'img/default-placeholder.png'; ?>" alt="Valid ID" style="max-width: 200px; max-height: 200px; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal">
-                  </div>
+    <label for="validId">Valid ID:</label>
+    <img class="form-control" 
+         src="<?php echo !empty($validId) ? '../PageLanding/' . htmlspecialchars($validId) : 'img/default-placeholder.png'; ?>" 
+         alt="Valid ID" 
+         style="max-width: 200px; max-height: 200px; cursor: pointer;" 
+         data-bs-toggle="modal" 
+         data-bs-target="#imageModal"
+         onerror="this.onerror=null;this.src='img/default-placeholder.jpg';">
+</div>  
+
                 </div>
               </div>
 
@@ -151,13 +158,27 @@ $regId = $_SESSION['citizend_id'];
   <!-- Modal for viewing valid ID -->
   <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-body">
-        <img src="<?php echo !empty($validId) ? '../PageLanding/' . htmlspecialchars($validId) : 'img/default-placeholder.png'; ?>" alt="Valid ID">
-      </div>
+        <div class="modal-body">
+            <!-- Image inside the modal -->
+            <img id="modalImage" src="<?php echo !empty($validId) ? '../PageLanding/' . htmlspecialchars($validId) : 'img/default-placeholder.jpg'; ?>" alt="Valid ID" style="max-width: 100%; max-height: 400px;" 
+                 onerror="this.onerror=null;this.src='img/default-placeholder.jpg';">
+        </div>
     </div>
-  </div>
-
+</div>
   <script>
+     // Ensure that the image inside the modal is set correctly when the modal is shown
+  document.getElementById('imageModal').addEventListener('show.bs.modal', function (event) {
+    var image = event.relatedTarget; // This is the image clicked to open the modal
+    var modalImage = document.getElementById('modalImage');
+    
+    // Set the modal image source to the clicked image source
+    modalImage.src = image.src;
+
+    // Handle fallback for the modal image in case it's broken
+    modalImage.onerror = function() {
+      modalImage.src = 'img/default-placeholder.jpg';
+    };
+  });
  const editButton = document.getElementById('editButton');
 const fields = document.querySelectorAll('#fullname, #gender, #phone, #email, #status, #address');
 

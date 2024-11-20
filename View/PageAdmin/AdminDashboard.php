@@ -232,7 +232,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Total Baptism Done</p>
+                          <p class="card-category">Total Baptism Completed</p>
                           <h4 class="card-title"><?php echo $totalBaptisms; ?></h4>
                         </div>
                       </div>
@@ -254,7 +254,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
                         
-                          <p class="card-category">Total Confirmation Done</p>
+                          <p class="card-category">Total Confirmation Completed</p>
                           <h4 class="card-title"><?php echo $totalConfirmation; ?></h4>
                         </div>
                       </div>
@@ -275,7 +275,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Total Defuctom Done</p>
+                          <p class="card-category">Total Defuctom Completed</p>
                           <h4 class="card-title"><?php echo $totalDefunctorum; ?></h4>
                     </div>
                       </div>
@@ -297,7 +297,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                       
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Total Marriage Done</p>
+                          <p class="card-category">Total Marriage Completed</p>
                           <h4 class="card-title"><?php echo $totalWedding; ?></h4>
                         </div>
                       </div>
@@ -319,7 +319,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                      
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Total Donation Amount</p>
+                          <p class="card-category">Annual Donation Amount</p>
                           <h4 class="card-title"><span>&#8369;</span><?php echo number_format($totalDonationAmount, 2); ?></h4>
                     </div>
                       </div>
@@ -340,7 +340,7 @@ $totalAcknowledgementAmount = $modelInstance->getTotalPayableAmount();
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                        <p class="card-category">Total Acknowledgement Amount</p>
+                        <p class="card-category">Acknowledgement Amount</p>
 <h4 class="card-title"><span>&#8369;</span><?php echo number_format($totalAcknowledgementAmount, 2); ?></h4>
                       </div>
                     </div>

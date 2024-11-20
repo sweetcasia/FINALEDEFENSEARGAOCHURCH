@@ -22,26 +22,8 @@ class ExperimentalFeatures extends \Google\Model
   /**
    * @var bool
    */
-  public $protobufPythonicTypesEnabled;
-  /**
-   * @var bool
-   */
   public $restAsyncIoEnabled;
 
-  /**
-   * @param bool
-   */
-  public function setProtobufPythonicTypesEnabled($protobufPythonicTypesEnabled)
-  {
-    $this->protobufPythonicTypesEnabled = $protobufPythonicTypesEnabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getProtobufPythonicTypesEnabled()
-  {
-    return $this->protobufPythonicTypesEnabled;
-  }
   /**
    * @param bool
    */

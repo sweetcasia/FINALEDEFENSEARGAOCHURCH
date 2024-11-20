@@ -36,10 +36,6 @@ class ExecutionResult extends \Google\Collection
    * @var string
    */
   public $severity;
-  /**
-   * @var string
-   */
-  public $type;
   protected $violationDetailsType = ViolationDetails::class;
   protected $violationDetailsDataType = '';
   /**
@@ -116,20 +112,6 @@ class ExecutionResult extends \Google\Collection
   public function getSeverity()
   {
     return $this->severity;
-  }
-  /**
-   * @param string
-   */
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  /**
-   * @return string
-   */
-  public function getType()
-  {
-    return $this->type;
   }
   /**
    * @param ViolationDetails

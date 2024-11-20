@@ -364,12 +364,16 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <div class="card-action">
+        
         <div class="card-header">
             <div class="card-title">Priest</div>
         </div>
+        <div class="card-body">
+
+        <div class="row">
         <div class="col-md-6 col-lg-4">
             <div class="form-group">
-                <label for="dates">Select Seminar</label>
+                <label for="dates">Select Seminar Date</label>
                 <input type="date" class="form-control" id="dates" name="dates">
                 <span class="error" id="seminarError"></span>
             </div>
@@ -380,7 +384,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </select>
                 <span class="error" id="startTimesError"></span>
             </div>
-
+        </div>
+        <div class="col-md-6 col-lg-4">
             <div class="form-group">
                 <label for="end_times">Select End Time</label>
                 <select class="form-control" id="end_times" name="end_times">
@@ -394,7 +399,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input type="text" class="form-control" id="eventTitle1" name="eventspeaker" placeholder="Enter Amount">
                 <span class="error" id="speakerError"></span>
             </div>
-
+        </div>
+        <div class="col-md-6 col-lg-4">
             <div class="form-group">
                 <label for="priest_id">Select Priest</label>
                 <select class="form-control" id="priest_id" name="priest_id">
@@ -407,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </select>
                 <span class="error" id="priestError"></span>
             </div>
-
+        </div>
             <div class="card-action">
                 <button type="submit" class="btn btn-success">Submit</button>
                 <button type="button" class="btn btn-danger" onclick="window.location.href='your_cancel_url.php'">Cancel</button>

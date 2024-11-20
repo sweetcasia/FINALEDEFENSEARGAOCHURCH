@@ -310,17 +310,13 @@ if ($r_status === "Citizen") {
                       <li>
                         <div class="user-box">
                           <div class="avatar-lg">
-                            <img
-                              src="assets/img/profile.jpg"
-                              alt="image profile"
-                              class="avatar-img rounded"
-                            />
+                           
                           </div>
                           <div class="u-text">
                             <h4>Church Staff</h4>
-                            <p class="text-muted"><?php echo $email; ?></p>
+                            <p class="text-muted"><?php echo $loggedInUserEmail; ?></p>
                             <a
-                              href="profile.html"
+                              href="profile.php"
                               class="btn btn-xs btn-secondary btn-sm"
                               >View Profile</a
                             >
@@ -329,8 +325,7 @@ if ($r_status === "Citizen") {
                       </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">Account Setting</a>
+                        
                         <a class="dropdown-item" href="../../index.php?action=logout">Logout</a>
                       </li>
                     </div>

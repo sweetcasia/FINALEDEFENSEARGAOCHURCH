@@ -190,7 +190,7 @@ $pendingItems = $staff->getPendingCitizen();
                       $viewUrl = 'FillConfirmationForm.php';
                   }
                     ?>
-                    <a href="<?php echo htmlspecialchars($viewUrl . '?id=' . $item['id']); ?>" class="btn btn-primary btn-xs" style="background-color: #31ce36!important; border-color:#31ce36!important;">View</a>
+                    <a href="<?php echo htmlspecialchars($viewUrl . '?id=' . $item['id']); ?>" class="btn btn-secondary btn-xs" style="background-color: #31ce36!important; border-color:#31ce36!important;">View</a>
                   </td>
             </tr>
             <?php

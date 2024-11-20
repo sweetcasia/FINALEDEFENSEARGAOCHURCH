@@ -19,22 +19,22 @@ namespace Google\Service\BeyondCorp;
 
 class GoogleCloudBeyondcorpSecuritygatewaysV1Hub extends \Google\Model
 {
-  protected $internetGatewayType = GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway::class;
-  protected $internetGatewayDataType = '';
+  protected $natGatewayConfigType = GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig::class;
+  protected $natGatewayConfigDataType = '';
 
   /**
-   * @param GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway
+   * @param GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig
    */
-  public function setInternetGateway(GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway $internetGateway)
+  public function setNatGatewayConfig(GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig $natGatewayConfig)
   {
-    $this->internetGateway = $internetGateway;
+    $this->natGatewayConfig = $natGatewayConfig;
   }
   /**
-   * @return GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway
+   * @return GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig
    */
-  public function getInternetGateway()
+  public function getNatGatewayConfig()
   {
-    return $this->internetGateway;
+    return $this->natGatewayConfig;
   }
 }
 

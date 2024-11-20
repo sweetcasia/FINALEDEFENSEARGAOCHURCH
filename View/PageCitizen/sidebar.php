@@ -43,7 +43,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
   <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
       <div class="logo-header" data-background-color="dark">
-        <a href="index.php" class="logo">
+        <a href="CitizenPage.php" class="logo">
           <img src="../assets/img/argaochurch.png" alt="navbar brand" class="navbar-brand" height="46" />
         </a>
         <div class="nav-toggle">

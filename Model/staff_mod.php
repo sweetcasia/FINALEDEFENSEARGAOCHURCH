@@ -601,74 +601,73 @@ public function generateSeminarReport($eventType) {
     public function getRequestSchedule() {
         // Prepare SQL query with INNER JOIN and LEFT JOIN on three tables
         $query = "
-            SELECT 
+        SELECT 
             pa.pr_status AS approve_priest,
-                s.schedule_id, 
-                s.citizen_id, 
-                s.date, 
-                s.start_time, 
-                s.end_time, 
-                s.event_type, 
-                r.req_id AS req_id, 
-                r.req_name_pamisahan, 
-                r.req_address, 
-                r.req_category, 
-                r.req_person, 
-                r.req_pnumber, 
-                r.cal_date, 
-                r.req_chapel, 
-                r.status AS req_status, 
-                r.role, 
-                r.created_at, 
-                priest.fullname AS priest_name,
-                pa.pr_status
-                
-              
-                FROM 
+            s.schedule_id, 
+            s.citizen_id, 
+            s.date, 
+            s.start_time, 
+            s.end_time, 
+            s.event_type, 
+            r.req_id AS req_id, 
+            r.req_name_pamisahan, 
+            r.req_address, 
+            r.req_category, 
+            r.req_person, 
+            r.req_pnumber, 
+            r.cal_date, 
+            r.req_chapel, 
+            r.status AS req_status, 
+            r.role, 
+            r.created_at, 
+            priest.fullname AS priest_name,
+            pa.pr_status
+        FROM 
             schedule s
-        LEFT JOIN citizen c ON c.citizend_id = s.citizen_id 
-    
+        LEFT JOIN 
+            citizen c ON c.citizend_id = s.citizen_id 
         JOIN 
-           req_form r ON s.schedule_id = r.schedule_id
-           LEFT JOIN 
-           priest_approval pa ON pa.approval_id = r.approval_id
-       LEFT JOIN 
-           citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Priest' AND priest.r_status = 'Active'
-           WHERE 
-         r.status = 'Pending' AND
-         r.event_location = 'Inside'  OR r.event_location = 'Outside'
-         UNION ALL
-         SELECT 
-        NULL AS approve_priest,
-        NULL AS schedule_id, 
-             c.citizend_id, 
-             NULL AS date, 
-             NULL AS start_time, 
-             NULL AS end_time, 
-             NULL AS event_type, 
-             r.req_id AS req_id, 
-             r.req_name_pamisahan, 
-             r.req_address, 
-             r.req_category, 
-             r.req_person, 
-             r.req_pnumber, 
-             r.cal_date, 
-             r.req_chapel, 
-             r.status AS req_status, 
-             r.role, 
-             r.created_at, 
-             NULL AS priest_name,
-           NULL AS pr_status
-             
-           
-             FROM 
-             req_form r
-     LEFT JOIN citizen c ON c.citizend_id = r.citizen_id 
- 
-            WHERE 
-      r.status = 'Pending' AND 
-      r.event_location = ''
-         ";
+            req_form r ON s.schedule_id = r.schedule_id
+        LEFT JOIN 
+            priest_approval pa ON pa.approval_id = r.approval_id
+        LEFT JOIN 
+            citizen priest ON pa.priest_id = priest.citizend_id AND priest.user_type = 'Priest' AND priest.r_status = 'Active'
+        WHERE 
+            r.status = 'Pending' AND 
+            (r.event_location = 'Inside' OR r.event_location = 'Outside')
+    
+        UNION 
+    
+        SELECT 
+            NULL AS approve_priest,
+            NULL AS schedule_id, 
+            c.citizend_id, 
+            NULL AS date, 
+            NULL AS start_time, 
+            NULL AS end_time, 
+            NULL AS event_type, 
+            r.req_id AS req_id, 
+            r.req_name_pamisahan, 
+            r.req_address, 
+            r.req_category, 
+            r.req_person, 
+            r.req_pnumber, 
+            r.cal_date, 
+            r.req_chapel, 
+            r.status AS req_status, 
+            r.role, 
+            r.created_at, 
+            NULL AS priest_name,
+            NULL AS pr_status
+        FROM 
+            req_form r
+        LEFT JOIN 
+            citizen c ON c.citizend_id = r.citizen_id 
+        WHERE 
+            r.status = 'Pending' AND 
+            r.event_location = ''
+    ";
+    
     
         // Prepare and execute the query
         $stmt = $this->conn->prepare($query);
@@ -2828,8 +2827,8 @@ private function fetchAppointments($sql) {
                 b.role AS roles,
                 b.event_name AS Event_Name,
                 b.fullname AS citizen_name,
-                s.date AS schedule_date,
-                s.start_time AS schedule_time,
+                sc.date AS schedule_date,
+                sc.start_time AS schedule_time,
                 se.date AS appointment_schedule_date,
                 se.start_time AS appointment_schedule_start_time,
                 a.payable_amount AS payable_amount,
@@ -2844,9 +2843,9 @@ private function fetchAppointments($sql) {
             JOIN 
                 appointment_schedule a ON b.baptism_id = a.baptismfill_id
             JOIN 
-                schedule s ON an.schedule_id = s.schedule_id
+                schedule sc ON an.schedule_id = sc.schedule_id
                 JOIN 
-                schedule se ON an.seminar_id = s.schedule_id
+                schedule se ON an.seminar_id = se.schedule_id
             WHERE 
                 1 = 1";
         
@@ -2866,8 +2865,8 @@ private function fetchAppointments($sql) {
                 cf.role AS roles,
                 cf.event_name AS Event_Name,
                 cf.fullname AS citizen_name,
-                s.date AS schedule_date,
-                s.start_time AS schedule_time,
+                sc.date AS schedule_date,
+                sc.start_time AS schedule_time,
                 se.date AS appointment_schedule_date,
                 se.start_time AS appointment_schedule_start_time,
                 a.payable_amount AS payable_amount,
@@ -2882,9 +2881,9 @@ private function fetchAppointments($sql) {
             JOIN 
                 appointment_schedule a ON cf.confirmationfill_id = a.confirmation_id
             JOIN 
-                schedule s ON an.schedule_id = s.schedule_id
+                schedule sc ON an.schedule_id = sc.schedule_id
                 JOIN 
-                schedule se ON an.seminar_id = s.schedule_id
+                schedule se ON an.seminar_id = se.schedule_id
             WHERE 
                 1 = 1";
     
@@ -2901,8 +2900,8 @@ private function fetchAppointments($sql) {
                 mf.role AS roles,
                 mf.event_name AS Event_Name,
                 CONCAT(mf.groom_name, ' and ', mf.bride_name) AS citizen_name,
-                s.date AS schedule_date,
-                s.start_time AS schedule_time,
+                sc.date AS schedule_date,
+                sc.start_time AS schedule_time,
                 se.date AS appointment_schedule_date,
                 se.start_time AS appointment_schedule_start_time,
                 a.payable_amount AS payable_amount,
@@ -2917,7 +2916,7 @@ private function fetchAppointments($sql) {
             JOIN 
                 appointment_schedule a ON mf.marriagefill_id = a.marriage_id
             JOIN 
-                schedule s ON an.schedule_id = s.schedule_id
+                schedule sc ON an.schedule_id = sc.schedule_id
                 JOIN 
                 schedule se ON an.seminar_id = se.schedule_id
             WHERE 
@@ -2943,7 +2942,7 @@ private function fetchAppointments($sql) {
         while ($row = $result->fetch_assoc()) {
             $pendingMassCitizen[] = $row;
         }
-    
+        
         return $pendingMassCitizen;
     }
     

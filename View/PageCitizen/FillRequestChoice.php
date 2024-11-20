@@ -51,145 +51,90 @@ $regId = $_SESSION['citizend_id'];
     />
     <link rel="icon" href="../assets/img/mainlogo.jpg" type="image/x-icon"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- Fonts and icons -->
-    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
     <style>
-        .birthday-input {
-    font-family: Arial, sans-serif;
-    margin-bottom: 10px;
-}
-
-.birthday-input label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.birthday-selectors {
-    display: flex;
-    gap: 5px;
+           .text-center p{
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
 }
 
 
-.birthday-selectors select {
-    padding: 5px;
-    border: 1px solid #0a58ca;
-    border-radius: 5px;
-    width: 100px;
-    font-size: 14px;
-    color: #555;
-}
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        .gallery img {
+            width: 40%;
+            max-width: calc(25% - 1rem);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+float:right;       
+margin-right:110px;  
+margin-top:20px;  
 
-.birthday-selectors select:focus {
-    outline: none;
-    border-color: #0a58ca;
-}
+            padding: 0.5rem 1rem;
+            background-color: #0066a8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #004a80;
+        }
+        .schedule {
+float:left;       
+margin-LEFT:20px;  
 
-
-small {
-    display: block;
-    color: #555;
-    margin-top: 5px;
-}
-.error {
-        color: red;
-        font-size: 0.875em;
-        margin-top: 0.25em;
-    }
-    .form-control.error {
-        border: 1px solid red;
-    }
-
-
-    </style>
-    <script>
-      WebFont.load({
-        google: { families: ["Public Sans:300,400,500,600,700"] },
-        custom: {
-          families: [
-            "Font Awesome 5 Solid",
-            "Font Awesome 5 Regular",
-            "Font Awesome 5 Brands",
-            "simple-line-icons",
-          ],
-          urls: ["assets/css/fonts.min.css"],
-        },
-        active: function () {
-          sessionStorage.fonts = true;
-        },
-      });
-      
-
-
-      document.addEventListener('DOMContentLoaded', function() {
-    const selectedDate = sessionStorage.getItem('selectedDate');
-    const selectedTimeRange = sessionStorage.getItem('selectedTime');
-
-    if (selectedDate) {
-        document.getElementById('date').value = selectedDate;
-    }
-
-    if (selectedTimeRange) {
-        const [startTime, endTime] = selectedTimeRange.split('-');
-        document.getElementById('start_time').value = startTime;
-        document.getElementById('end_time').value = endTime;
-    }
-
-    // Optionally, clear the session storage if you don't want to persist the data
-  //   sessionStorage.removeItem('selectedDate');
-   //  sessionStorage.removeItem('selectedTime');
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.btn-info').addEventListener('click', function() {
-        // Select all input and textarea fields within the form
-        document.querySelectorAll('.form-control').forEach(function(element) {
-            console.log('Clearing element:', element.id, element.type, element.value); // Debug info
-            // Clear text inputs, textareas, and date inputs
-            if (element.type === 'text' || element.tagName === 'TEXTAREA' || element.type === 'date') {
-                if (element.id !== 'date' && element.id !== 'start_time' && element.id !== 'end_time') {
-                    element.value = ''; // Clear the value
-                }
-            } else if (element.type === 'radio' || element.type === 'checkbox') {
-                element.checked = false; // Uncheck radio and checkbox inputs
-            }
-        });
-    });
-});
-
-document.getElementById('baptismForm').addEventListener('submit', function(event) {
-    // Get the values of the first name, last name, and middle name
-    var firstname = document.getElementById('firstname').value.trim();
-    var lastname = document.getElementById('lastname').value.trim();
-    var middlename = document.getElementById('middlename').value.trim();
-
-    // Concatenate them into a full name
-    var fullname = firstname + ' ' + middlename + ' ' + lastname;
-
-    // Set the concatenated full name into the hidden fullname input
-    document.getElementById('fullname').value = fullname;
-});
-
-
-
-    </script>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
- integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-   <STYle>
-      .bg-breadcrumb {
+            padding: 10px;
+            color: #3b3b3b;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 12PX;
+            transition: background-color 0.3s ease;
+        }
+       
+        .schedule:hover{
+            color:wheat!important;
+        }
+      .baptismalreq i{
+            font-size:7px;
+            margin-right:15px;
+            color:black;
+        }
+        .bg-breadcrumb {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/funeral.jpeg);
+  url(../assets/img/baptismal1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -204,7 +149,159 @@ document.getElementById('baptismForm').addEventListener('submit', function(event
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
 }
-   </STYle>
+.baptismalreq p {
+    font-size: 1rem; /* Base font size for text */
+    line-height: 1.6; /* Improved line spacing */
+    text-indent: 1rem; /* Indent the first line */
+    margin-bottom: 10px; /* Space between paragraphs */
+    font-weight: 500;
+}
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
+}
+    </style>
   </head>
   
 <body>
@@ -218,29 +315,31 @@ document.getElementById('baptismForm').addEventListener('submit', function(event
     <!-- Navbar & Hero End -->
       
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+         <!-- Header Start -->
+         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">REQUEST OF MASSES
-
-</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">REQUEST OF MASSES</h4>
                   
             </div>
         </div>
         <!-- Header End -->
 <!-- Service Start -->
 
+
 <div class="container-fluid service py-5">
   
         <div class="container py-5" style="padding-top:0!important;">
         
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s">
-
-          <div class="gallery">
+        <div class="gallery">
             
+            <img src="../assets/img/req2.jpg" alt="Etymology Image" class="float-right"> 
+            <img src="../assets/img/req3.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/req4.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/eucha1.jpg" alt="Etymology Image" class="float-right">
+            </div>
          
-          </div>
-            <P style="TEXT-ALIGN: left;">Welcome to the Request of Masses page of the Argao Parish Church, Cebu. Here, we offer you the opportunity to request Masses for various occasions, both inside and outside our church, allowing you to celebrate special events in a way that best suits your needs. Whether you wish to mark a joyous occasion or need the comfort of prayer during a time of mourning, we are here to help facilitate your spiritual needs. This page will guide you through the process of requesting Masses for various services, ensuring that you can celebrate and commemorate your significant moments with our faith community.
+            <P style="">Welcome to the Request of Masses page of the Argao Parish Church, Cebu. Here, we offer you the opportunity to request Masses for various occasions, both inside and outside our church, allowing you to celebrate special events in a way that best suits your needs. Whether you wish to mark a joyous occasion or need the comfort of prayer during a time of mourning, we are here to help facilitate your spiritual needs. This page will guide you through the process of requesting Masses for various services, ensuring that you can celebrate and commemorate your significant moments with our faith community.
 </P>
             
 
@@ -251,62 +350,61 @@ document.getElementById('baptismForm').addEventListener('submit', function(event
 </h5>
         <br>
 
-        <h5 style="font-weight: BOLDER; padding-left:10px;">Inside Request Form
-            <br>
-       <p style="font-weight: normal;">For Masses to be held within the sacred walls of the Argao Parish Church, this option is for individuals or groups who wish to request a Mass to be celebrated within the church premises. This includes all types of Masses such as regular Sunday Masses, special feasts, and seasonal liturgies. The Argao Parish Church, with its beautiful ambiance and rich tradition, serves as a central place for community gatherings, and we are honored to host your special Masses. Whether it's for a wedding, a baptism, a special prayer intention, or simply a spiritual reflection, this form is intended for events within our church, where the congregation can gather in prayer and worship.
+        <h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Inside Request Form
+            <br><br>
+       <p >For Masses to be held within the sacred walls of the Argao Parish Church, this option is for individuals or groups who wish to request a Mass to be celebrated within the church premises. This includes all types of Masses such as regular Sunday Masses, special feasts, and seasonal liturgies. The Argao Parish Church, with its beautiful ambiance and rich tradition, serves as a central place for community gatherings, and we are honored to host your special Masses. Whether it's for a wedding, a baptism, a special prayer intention, or simply a spiritual reflection, this form is intended for events within our church, where the congregation can gather in prayer and worship.
 </p>
-<button  class="btn btn-primary btn-round" type="button" onclick="window.location.href='FillScheduleForm.php?type=RequestForm'">
-       Inside Request Form
-    </button>
+&ensp;&ensp;<a style="font-size:15px;" href="FillScheduleForm.php?type=RequestForm" class="btn btn-primary  py-2 px-4" role="button">
+    Inside Request Form
+</a>
+
     <BR></BR>
 <br>
-
-<h5 style="font-weight: BOLDER; padding-left:10px;">Outside Request Form
-    <br>
-       <p style="font-weight: normal;">This form is intended for those who wish to request a Mass to be held outside the Argao Parish Church, whether it be in homes, community gatherings, or at other locations within the parish area. Many of our parishioners seek to hold Masses at significant locations such as private residences, at a hospital for the sick, or even in cemeteries for the dearly departed. These Masses are equally important in our faith and allow us to bring the church’s presence and blessings wherever they are needed most. By choosing this form, you are ensuring that your requested Mass will be celebrated in a location outside of the church, bringing the sacredness of the liturgy to your chosen site.
+<h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Outside Request Form
+    <br><br>
+       <p >This form is intended for those who wish to request a Mass to be held outside the Argao Parish Church, whether it be in homes, community gatherings, or at other locations within the parish area. Many of our parishioners seek to hold Masses at significant locations such as private residences, at a hospital for the sick, or even in cemeteries for the dearly departed. These Masses are equally important in our faith and allow us to bring the church’s presence and blessings wherever they are needed most. By choosing this form, you are ensuring that your requested Mass will be celebrated in a location outside of the church, bringing the sacredness of the liturgy to your chosen site.
  
 </p>
-<button  class="btn btn-primary btn-round" type="button" onclick="window.location.href='FillRequestSchedule.php?type=RequestForm'">
-        Outside Request Form
-    </button>
+&ensp;&ensp;<a style="font-size:15px;" href="FillRequestSchedule.php?type=RequestForm" class="btn btn-primary  py-2 px-4" role="button">
+    Outside Request Form
+</a>
+<BR></BR>
+<br>
+<h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Special Request Form
+    <br><br>
+       <p >Special Request Formarry profound cultural and spiritual significance, with celebrations that frequently reach beyond church walls and involve the wider community. Among the most beloved of these is the Mass of Thanksgiving and Soul & Petition, cherished for its expressions of gratitude and requests for blessings, drawing people together in communal prayer and devotion.
+ 
+</p>
+&ensp;&ensp;<a style="font-size:15px;" href="FillRequestScheduleForm.php" class="btn btn-primary  py-2 px-4" role="button">
+Special Request Form
+</a>
 </div>
 
-<br>
 <BR>
-<h5 style="font-weight: BOLDER; padding-left:10px;">Special Request Form
-            <br>
-       <p style="font-weight: normal;">Special Masses carry profound cultural and spiritual significance, with celebrations that frequently reach beyond church walls and involve the wider community. Among the most beloved of these is the Mass of Thanksgiving and Soul & Petition, cherished for its expressions of gratitude and requests for blessings, drawing people together in communal prayer and devotion.
-</p>
-<button  class="btn btn-primary btn-round" type="button" onclick="window.location.href='FillRequestScheduleForm.php'">
-Special Request Form
-    </button>
-    <BR></BR>
-<br>
-<BR>
-<br>
+<br>    
 <div class="baptismalreq">
         <h5 style="font-weight: BOLDER; padding-left:10px;">AVAILABLE MASSES:</h5>
         <br>
-        <P>1.  &nbsp;
+        <P>&ensp;&ensp;1.  &nbsp;
        <STRong> Fiesta Mass: </STRong>Celebrate the feast of the patron saint with a special Mass.</P>
-        <P>2. &nbsp;
+        <P>&ensp;&ensp;2. &nbsp;
        <strong>Novena Mass:</strong>  A series of prayers and Masses leading up to a significant feast or event.</P>
-        <P>3.&nbsp;
+        <P>&ensp;&ensp;3.&nbsp;
         <strong> Wake Mass:</strong> A Mass offered in remembrance of the deceased.</P>
-        <P>4.&nbsp;
+        <P>&ensp;&ensp;4.&nbsp;
         <strong>Monthly Mass:</strong>  A recurring Mass held once every month for various intentions.</P>
-        <P>5.&nbsp;
+        <P>&ensp;&ensp;5.&nbsp;
         <strong>1st Friday Mass:</strong>  A special Mass offered on the first Friday of each month.</P>
-        <P>6.&nbsp;
+        <P>&ensp;&ensp;6.&nbsp;
         <strong>Cemetery Chapel Mass:</strong>  A Mass held at the cemetery chapel for the souls of the departed.</P>
-        <P>7.&nbsp;
+        <P>&ensp;&ensp;7.&nbsp;
         <strong>Baccalaureate Mass:</strong>  A Mass celebrated in honor of graduates as they mark a significant milestone.</P>
-        <P>8.&nbsp;
+        <P>&ensp;&ensp;8.&nbsp;
         <strong>Anointing of the Sick:</strong> A Mass and sacrament offering healing prayers for those in need.</P>
-        <P>9.&nbsp;
+        <P>&ensp;&ensp;9.&nbsp;
         <strong> Blessing:</strong> A special Mass to invoke blessings for a home, event, or individual.</P>
-        <P>10.&nbsp;
-        <strong>Special Request:</strong>  Custom Masses offered for unique occasions or intentions.</P>
+        <P>&ensp;&ensp;10.&nbsp;
+        <strong>Special Mass:</strong>  Custom Masses offered for unique occasions or intentions.</P>
      
       
         
@@ -407,22 +505,6 @@ function validateForm() {
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8auK+4szKfEFbpLHsTf7iJgD/+ub2oU" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-  
-    <!-- Kaiadmin JS -->
-    <script src="../assets/js/kaiadmin.min.js"></script>
 
   
     </script>

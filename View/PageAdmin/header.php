@@ -180,7 +180,7 @@ $initial = strtoupper(substr($loggedInUserName, 0, 1)); // Gets the first letter
                       <li>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="profile.php">My Profile</a>
-                        <a class="dropdown-item" href="#">Account Setting</a>
+                     
                         <a class="dropdown-item" href="../../index.php?action=logout">Logout</a>
                       </li>
                     </div>

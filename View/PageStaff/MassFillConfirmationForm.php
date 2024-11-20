@@ -185,18 +185,14 @@ small {
   </head>
   <body>
   
- <!-- Navbar & Hero Start -->
- <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-      <div class="container">
-       
      
-
-      </div>
-    </div>
-    <?php require_once 'header.php'?>   
-    <?php require_once 'sidebar.php'?>   
-  <div class="container">
-    <div class="page-inner">
+  <?php  require_once 'sidebar.php'?>
+      <div class="main-panel">
+      <?php  require_once 'header.php'?>
+        
+     
+        <div class="container">
+            <div class="page-inner">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

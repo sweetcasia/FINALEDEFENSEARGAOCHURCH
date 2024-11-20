@@ -22,8 +22,6 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
   protected $collection_key = 'claims';
   protected $citedChunksType = GoogleCloudDiscoveryengineV1FactChunk::class;
   protected $citedChunksDataType = 'array';
-  protected $citedFactsType = GoogleCloudDiscoveryengineV1CheckGroundingResponseCheckGroundingFactChunk::class;
-  protected $citedFactsDataType = 'array';
   protected $claimsType = GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim::class;
   protected $claimsDataType = 'array';
   /**
@@ -44,20 +42,6 @@ class GoogleCloudDiscoveryengineV1CheckGroundingResponse extends \Google\Collect
   public function getCitedChunks()
   {
     return $this->citedChunks;
-  }
-  /**
-   * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseCheckGroundingFactChunk[]
-   */
-  public function setCitedFacts($citedFacts)
-  {
-    $this->citedFacts = $citedFacts;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1CheckGroundingResponseCheckGroundingFactChunk[]
-   */
-  public function getCitedFacts()
-  {
-    return $this->citedFacts;
   }
   /**
    * @param GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim[]

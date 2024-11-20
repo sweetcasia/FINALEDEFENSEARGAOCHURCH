@@ -36,10 +36,6 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
   public $currentState;
   protected $customMetadataType = StorageDatabasecenterPartnerapiV1mainCustomMetadataData::class;
   protected $customMetadataDataType = '';
-  /**
-   * @var string
-   */
-  public $edition;
   protected $entitlementsType = StorageDatabasecenterPartnerapiV1mainEntitlement::class;
   protected $entitlementsDataType = 'array';
   /**
@@ -166,20 +162,6 @@ class StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata extends \Goo
   public function getCustomMetadata()
   {
     return $this->customMetadata;
-  }
-  /**
-   * @param string
-   */
-  public function setEdition($edition)
-  {
-    $this->edition = $edition;
-  }
-  /**
-   * @return string
-   */
-  public function getEdition()
-  {
-    return $this->edition;
   }
   /**
    * @param StorageDatabasecenterPartnerapiV1mainEntitlement[]

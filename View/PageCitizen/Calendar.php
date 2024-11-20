@@ -19,6 +19,20 @@
 </head>
 <body>
 <style> 
+.arrow {
+ 
+  margin-left: 61px!important;
+ 
+}
+.details {
+  position: relative;
+  height: 80px!important;
+  background: #ac0727a8;
+}
+
+body{
+  color: #ffffff!important;
+}
 .blue {
   background: rgba(156, 202, 235, 1);
 }
@@ -38,7 +52,7 @@
   background-color: grey;
 }
 </style>
-
+  
 <div class="container">
   <div id="calendar"></div>
   
@@ -439,22 +453,7 @@ try {
       }
     }
 
-    Calendar.prototype.drawLegend = function() {
-      var legend = createElement('div', 'legend');
-      var calendars = this.events.map(function(e) {
-        return e.calendar + '|' + e.color;
-      }).reduce(function(memo, e) {
-        if (memo.indexOf(e) === -1) {
-          memo.push(e);
-        }
-        return memo;
-      }, []).forEach(function(e) {
-        var parts = e.split('|');
-        var entry = createElement('span', 'entry ' + parts[1], parts[0]);
-        legend.appendChild(entry);
-      });
-      this.el.appendChild(legend);
-    }
+   
 
     Calendar.prototype.nextMonth = function() {
       this.current.add('months', 1);

@@ -25,23 +25,23 @@ use Twilio\Version;
 use Twilio\InstanceContext;
 use Twilio\Serialize;
 use Twilio\Rest\Conversations\V1\Conversation\ParticipantList;
-use Twilio\Rest\Conversations\V1\Conversation\MessageList;
 use Twilio\Rest\Conversations\V1\Conversation\WebhookList;
+use Twilio\Rest\Conversations\V1\Conversation\MessageList;
 
 
 /**
  * @property ParticipantList $participants
- * @property MessageList $messages
  * @property WebhookList $webhooks
+ * @property MessageList $messages
+ * @method \Twilio\Rest\Conversations\V1\Conversation\WebhookContext webhooks(string $sid)
  * @method \Twilio\Rest\Conversations\V1\Conversation\MessageContext messages(string $sid)
  * @method \Twilio\Rest\Conversations\V1\Conversation\ParticipantContext participants(string $sid)
- * @method \Twilio\Rest\Conversations\V1\Conversation\WebhookContext webhooks(string $sid)
  */
 class ConversationContext extends InstanceContext
     {
     protected $_participants;
-    protected $_messages;
     protected $_webhooks;
+    protected $_messages;
 
     /**
      * Initialize the ConversationContext
@@ -166,21 +166,6 @@ class ConversationContext extends InstanceContext
     }
 
     /**
-     * Access the messages
-     */
-    protected function getMessages(): MessageList
-    {
-        if (!$this->_messages) {
-            $this->_messages = new MessageList(
-                $this->version,
-                $this->solution['sid']
-            );
-        }
-
-        return $this->_messages;
-    }
-
-    /**
      * Access the webhooks
      */
     protected function getWebhooks(): WebhookList
@@ -193,6 +178,21 @@ class ConversationContext extends InstanceContext
         }
 
         return $this->_webhooks;
+    }
+
+    /**
+     * Access the messages
+     */
+    protected function getMessages(): MessageList
+    {
+        if (!$this->_messages) {
+            $this->_messages = new MessageList(
+                $this->version,
+                $this->solution['sid']
+            );
+        }
+
+        return $this->_messages;
     }
 
     /**

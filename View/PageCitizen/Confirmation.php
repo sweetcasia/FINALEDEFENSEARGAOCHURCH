@@ -73,8 +73,11 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
+        body{
+                font-family: 'Public Sans', sans-serif;
+            }
          .text-center p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -147,6 +150,155 @@ margin-LEFT:20px;
 
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
+} 
+.baptismalreq p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-indent: 1rem;
+        margin-bottom: 10px;
+    }@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
 }
 
     </style>
@@ -162,9 +314,8 @@ margin-LEFT:20px;
     </div>
     <!-- Navbar & Hero End -->
       
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+  <!-- Header Start -->
+  <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">CONFIRMATION</h4>
 
@@ -186,17 +337,16 @@ margin-LEFT:20px;
           <img src="../assets/img/con3.jpg" alt="Etymology Image" class="float-right">
           <img src="../assets/img/con4.jpg" alt="Etymology Image" class="float-right">
           </div>
-            <P>Confirmation holds a profound and essential place within the Christian faith, marking the deepening of a believer’s commitment to their spiritual journey. It is the sacrament that strengthens and affirms one's baptismal vows, empowering individuals to fully embrace and live out their faith with the guidance of the Holy Spirit. Through the sacred anointing and laying on of hands, recipients are spiritually enriched, becoming fully initiated members of the church with the strength to witness and serve in Christ's mission.
+          <P>Confirmation holds a profound and essential place within the Christian faith, marking the deepening of a believer’s commitment to their spiritual journey. It is the sacrament that strengthens and affirms one's baptismal vows, empowering individuals to fully embrace and live out their faith with the guidance of the Holy Spirit. Through the sacred anointing and laying on of hands, recipients are spiritually enriched, becoming fully initiated members of the church with the strength to witness and serve in Christ's mission.
 </P>
             <P>This sacrament is not only a religious milestone but also a cherished cultural tradition within families and communities. It brings people together in a celebration of faith, unity, and shared values. At St. Michael the Archangel Parish Church in Argao, Cebu, we uphold the sacredness of Confirmation, ensuring that each participant experiences a reverent and memorable ceremony as they take this significant step in their spiritual journey.
 </P>
-
         </div>
         <div class="baptismalreq">
         <h5 style="font-weight: BOLDER; padding-left:10px;">REQUIREMENTS</h5>
         <br>
 
-        <P>1. 
+        <P>&ensp;&ensp;1. 
         Birth certificate from either the National Statistics Office or Civil Registrar; 1 original and 1 photocopy</P>
 </div>
 <BR>
@@ -204,7 +354,7 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">SCHEDULE ONLINE</h5>
         <br>
 
-        <a class="btn btn-primary rounded-pill py-2 px-4" href="signup.php">Schedule Now</a>
+        &ensp;&ensp;  <a class="btn btn-primary py-2 px-4" href="FillScheduleForm.php?type=confirmation">Schedule Now</a>
         
     
 </div>
@@ -215,18 +365,19 @@ margin-LEFT:20px;
 <div class="baptismalreq">
         <h5 style="font-weight: BOLDER; padding-left:10px;">REMINDERS</h5>
        <br>
-        <P>1. 
+        <P>&ensp;&ensp;1. 
         Registration should be done one week before the actual date of baptism.
-                <P>2.
+                <P>&ensp;&ensp;2.
                 Observe punctuality
-                <P>3.
+                <P>&ensp;&ensp;3.
                 Candles for sponsors (godfathers and godmothers) can be bought for PHP 3.00 a piece.
 </P>
-<P>4.
-If there is a wedding on the scheduled time of baptism, it will be held inside the sacristy. Three sponsors (3 godfathers and 3 godmothers are allowed to join inside; others will stay in the garden)</P>
+<P>&ensp;&ensp;4.
+If there is a wedding on the scheduled time of baptism, it will be held inside the sacristy.</P>
 </div>
         </div>
     </div>
+
 
 
     <?php require_once 'footer.php'?>

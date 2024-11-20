@@ -198,28 +198,17 @@ function toggleChapelInput() {
                                         <span class="error" id="selectRequestError"></span>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="chapel">Chapel</label>
-                                        <input type="text" class="form-control" id="chapel" name="chapel" placeholder="Enter Chapel Name" />
-                                        <span class="error" id="chapelError"></span>
-                                    </div>
+                                  
 
                                     <div class="form-group">
                                         <label for="firstname">Firstname of Person Requesting</label>
                                         <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="" />
                                         <span id="firstnameError" class="error text-danger"></span>
                                     </div>
-
                                     <div class="form-group">
-                                        <label for="lastname">Last Name of Person Requesting</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="" />
-                                        <span id="lastnameError" class="error text-danger"></span>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="middlename">Middle Name of Person Requesting</label>
-                                        <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="" />
-                                        <span id="middlenameError" class="error text-danger"></span>
+                                        <label for="address">Address</label>
+                                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="" />
+                                        <span class="error" id="addressError"></span>
                                     </div>
                                 </div>
 
@@ -230,16 +219,18 @@ function toggleChapelInput() {
                 <input type="text" class="form-control" id="start_time" name="start_time" placeholder="" readonly />
               <span class="error" id="startTimeError"></span>
             </div>
-                                    <div class="form-group">
-                                        <label for="address">Address</label>
-                                        <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" value="" />
-                                        <span class="error" id="addressError"></span>
+            <div class="form-group">
+                                        <label for="chapel">Chapel</label>
+                                        <input type="text" class="form-control" id="chapel" name="chapel" placeholder="Enter Chapel Name" />
+                                        <span class="error" id="chapelError"></span>
                                     </div>
-
                                     <div class="form-group">
-    <label for="follow_up_date">Date to Follow up</label>
-    <input type="date" class="form-control" id="datetofollowup" name="datetofollowup" placeholder="" />
-        <span class="error" id="dobError"></span>
+                                        <label for="lastname">Last Name of Person Requesting</label>
+                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="" />
+                                        <span id="lastnameError" class="error text-danger"></span>
+                                    </div>
+                                
+
         <div class="form-group">
                                         <label for="cpnumber">Contact Number</label>
                                         <label for="cpnumber">Ex:09*********</label>
@@ -247,8 +238,7 @@ function toggleChapelInput() {
                                         <span id="cpnumberError" class="error text-danger"></span>
                                     </div>
 </div>
-                                </div>
-                                
+                            
 
                                 <div class="col-md-6 col-lg-4">
                                
@@ -258,18 +248,26 @@ function toggleChapelInput() {
                   <span class="error" id="endTimeError"></span>
             </div>
                                    
-                                 
-
-
-                                
-                                    
+       
+                                    <div class="form-group">
+    <label for="follow_up_date">Date to Follow up</label>
+    <input type="date" class="form-control" id="datetofollowup" name="datetofollowup" placeholder="" />
+        <span class="error" id="dobError"></span>      
+ 
                                 </div>
-                                
+                                <div class="form-group">
+                                        <label for="middlename">Middle Name of Person Requesting</label>
+                                        <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="" />
+                                        <span id="middlenameError" class="error text-danger"></span>
+                                    </div>    
+                                 <br>
                             </div>
+                  
                             <div class="card-action">
-    <div class="card-header">
-                        <div class="card-title">Seminar Schedule and Payableamount</div>
+                        <div class="card-title">Select Priest and Payable Amount</div>
                     </div>
+                 
+                    <div class="row">
     <div class="col-md-6 col-lg-4">
 
     <div class="form-group"> 
@@ -285,13 +283,15 @@ function toggleChapelInput() {
     </select>
     <span class="error" id="eventTypeError"></span>
 </div> 
-
+</div> 
+<div class="col-md-6 col-lg-4">
 <div class="form-group">
     <label for="pay_amount">Payable Amount</label>
     <input type="number" class="form-control" id="pay_amount" name="pay_amount" placeholder="Enter Payable Amount" />
     <span class="error" id="payAmountError"></span>
 </div>
- 
+ <br>
+ <br>
         </div>
             </div>
                         <div class="card-action">

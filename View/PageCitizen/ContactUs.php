@@ -72,7 +72,8 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-          body {
+         
+         body {
           font-family: "Public Sans", sans-serif!important;
         }
           .bg-breadcrumb {
@@ -95,8 +96,11 @@ $regId = $_SESSION['citizend_id'];
   color: var(--bs-white);
 }
 
-.text-center  p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+body{
+                font-family: 'Public Sans', sans-serif!important;
+            }
+         .text-center p{
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.7; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -122,7 +126,7 @@ margin-top:20px;
             font-size:7px;
             margin-right:15px;
             color:black;
-        }
+        } 
         .contact_us_green * {
             font-family: 'Public Sans', sans-serif;
         }
@@ -235,8 +239,10 @@ margin-top:20px;
 
 .contact_us_green .input,
 .contact_us_green .textinput {
-  border: none; /* Remove all borders initially */
-  border-bottom: 2.5px solid #0066a8; /* Add bottom border */
+  transition: all 0.2s ease;
+    border: none;
+    border: 1.5px solid #0066a8;
+    border-radius: 10px;
   font-size: 16px;
   padding: 10px 15px; /* Adjusted padding for comfort */
   width: 90%; /* Width for input fields */
@@ -245,7 +251,7 @@ margin-top:20px;
 
 .contact_us_green .input:focus,
 .contact_us_green .textinput:focus {
-  border-bottom-color: #ac0727cf; /* Change bottom border color on focus */
+  border:1px solid #ac0727cf; /* Change bottom border color on focus */
   box-shadow: 0 0 5px rgba(172, 7, 39, 0.5); /* Shadow with related red color on focus */
 }
 
@@ -702,7 +708,7 @@ body {
                 <p class="text-blk input-title">LAST NAME</p>
                 <input class="input" id="indfi-4" name="LastName" placeholder="Enter your last name" required>
               </div>
-              <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12" style="display:none;">
+              <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12" >
     <p class="text-blk input-title">EMAIL</p>
     <input class="input" id="ipmgh-6" name="Email" placeholder="example@gmail.com" required value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
 </div>
@@ -738,23 +744,23 @@ body {
               <div class="phone text-box">
               <i class="fas fa-map-marker-alt fa-2x" style="color: green;font-size: 2rem;padding-right: 20px;"></i>
               <p class="contact-text">
-                (032) 367 7442
-                </p>
+              Poblacion, Argao, Cebu
+              </p>
               </div>
               <div class="address text-box">
               <i class="fa fa-phone-alt fa-2x" style="color: darkblue;font-size: 2rem;padding-right: 20px;"></i>
               <p class="contact-text">
-                argaoparishchurchcebu@gmail.com
+              (032) 367 7442
                             </p>
               </div>
               <div class="mail text-box">
               <i class="fas fa-envelope fa-2x" style="color: red;font-size: 2rem;padding-right: 20px;"></i>
               <p class="contact-text">
-                Poblacion, Argao, Cebu
-                </p>
+              argaoparishchurchcebu@gmail.com
+              </p>
               </div>
             </div>
-           
+            
           </div>
         </div>
       </div>

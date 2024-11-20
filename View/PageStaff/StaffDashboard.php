@@ -3,7 +3,7 @@ require_once '../../Model/staff_mod.php';
 require_once '../../Model/db_connection.php';
 require_once '../../Model/citizen_mod.php';
 session_start();
-
+$nme = $_SESSION['fullname'];
 // Check if user is logged in
 if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
     header("Location: ../../index.php");
@@ -160,7 +160,46 @@ function navigateToEvent() {
 .info-user {
     text-align: center;
 }
+.card-list {
+    max-height: 500px; /* Set the maximum height as needed */
+    overflow-y: auto; /* Adds a vertical scrollbar if content exceeds max height */
+    padding: 10px; /* Adjust padding if necessary */
+    scrollbar-width: thin; /* For Firefox - makes the scrollbar thinner */
+    scrollbar-color: #0066a8 #f1f1f1; /* Scrollbar colors: thumb and track */
+}
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.card-list::-webkit-scrollbar {
+    width: 4px; /* Width of the scrollbar */
+}
 
+.card-list::-webkit-scrollbar-thumb {
+    background-color: #0066a8; /* Scrollbar thumb color */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.card-list::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.card-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background color of the scrollbar track */
+    border-radius: 4px; /* Rounded corners for the track */
+}
+.item-list {
+    padding: 10px !important;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
     </style>
   </head>
   <body>
@@ -257,48 +296,56 @@ function navigateToEvent() {
             >
               <div>
                 <h3 class="fw-bold mb-3">Staff Dashboard</h3>
-        
-                <button style="margin-right: 15px;" class="btn btn-primary " type="button" onclick="window.location.href='FillScheduleForm.php?type=RequestForm'">
-       Inside Request Form
+                <div class="d-flex align-items-center flex-wrap">
+  <!-- Request Options Dropdown -->
+  <div class="dropdown" style="margin-right: 5px;">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Request Options
     </button>
-    <button style="margin-right: 15px;" class="btn btn-primary " type="button" onclick="window.location.href='FillSpecialRequestScheduleForm.php'">
-       Special Masses
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li>
+        <a class="dropdown-item" href="FillScheduleForm.php?type=RequestForm">Inside Request Form</a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="FillSpecialRequestScheduleForm.php">Special Masses</a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="FillRequestSchedule.php?type=RequestForm">Outside Request Form</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Add Priest Button -->
+  <button class="btn btn-primary" style="margin-right: 5px;" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+    Add Priest for Mass
+  </button>
+
+  <!-- Generate Seminar Report Dropdown -->
+  <div class="dropdown" style="margin-right: 5px;">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="reportDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
+      Generate Seminar List
     </button>
-    
-             
-               <button style="margin-right: 15px;" class="btn btn-primary " type="button" onclick="window.location.href='FillRequestSchedule.php?type=RequestForm'">
-        Outside Request Form
+    <ul class="dropdown-menu" aria-labelledby="reportDropdownButton">
+      <li><a class="dropdown-item" href="generatereport.php">Baptism</a></li>
+      <li><a class="dropdown-item" href="weddinggeneratereport.php">Wedding</a></li>
+    </ul>
+  </div>
+
+  <!-- Add Walkin Schedule Dropdown -->
+  <div class="dropdown" style="margin-right: 5px;">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+      Add Walkin Schedule
     </button>
-    <button style="margin-right: 15px;"   type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
- Add Priest for Mass
-</button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+      <li><a class="dropdown-item" href="FillScheduleForm.php?type=baptism">Baptism</a></li>
+      <li><a class="dropdown-item" href="FillScheduleForm.php?type=confirmation">Confirmation</a></li>
+      <li><a class="dropdown-item" href="FillScheduleForm.php?type=Funeral">Funeral</a></li>
+      <li><a class="dropdown-item" href="FillScheduleForm.php?type=Wedding">Wedding</a></li>
+    </ul>
+  </div>
+</div>
+<br>
 
-    <button style="margin-right: 15px;" class="btn btn-primary  dropdown-toggle" type="button" id="reportDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Generate Seminar Report
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="reportDropdownButton">
-            <li><a class="dropdown-item" href="generatereport.php">Baptism</a></li>
-            <li><a class="dropdown-item" href="weddinggeneratereport.php">Wedding</a></li>
-            <!-- Add more items if needed -->
-        </ul>
-        <button style="margin-right: 15px;" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Add Walkin Schedule
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="FillScheduleForm.php?type=baptism">Baptism</a></li>
-            <li><a class="dropdown-item" href="FillScheduleForm.php?type=confirmation">Confirmation</a></li>
-            <li><a class="dropdown-item" href="FillScheduleForm.php?type=Funeral">Funeral</a></li>
-            <li><a class="dropdown-item" href="FillScheduleForm.php?type=Wedding">Wedding</a></li>
-
-        </ul>
-   
-
-              </div>
-            
-
-
-            </div>
-            
             <div class="row">
               <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-round">

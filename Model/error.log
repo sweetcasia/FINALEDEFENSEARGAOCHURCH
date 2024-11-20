@@ -2233,3 +2233,785 @@ Stack trace:
 [14-Nov-2024 15:39:46 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 326
 [14-Nov-2024 15:40:07 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 326
 [14-Nov-2024 15:40:33 Europe/Berlin] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 326
+[18-Nov-2024 03:17:20 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:20 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:22 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:23 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:51 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:52 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:17:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:18:16 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:18:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:18:36 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:18:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:28:56 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:28:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:28:57 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:28:57 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:29:31 Europe/Berlin] PHP Warning:  require(D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php): Failed to open stream: No such file or directory in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 03:29:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\xampp\htdocs\ArgaoChurch\Model/../vendor/autoload.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php:18
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\login_con.php(5): require_once()
+#1 D:\xampp\htdocs\ArgaoChurch\index.php(2): require_once('D:\\xampp\\htdocs...')
+#2 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 18
+[18-Nov-2024 04:10:44 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:10:44 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:10:44 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:10:44 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:10:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:10:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:10:53 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:10:53 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:11:39 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:12:44 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:12:44 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:12:44 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:12:44 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:12:45 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:12:45 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:12:45 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:12:45 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:13:42 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:13:42 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:13:42 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:13:42 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:14:52 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:14:52 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:14:52 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:14:52 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:16:08 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:16:08 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:16:08 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:16:08 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 94
+[18-Nov-2024 04:17:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:18 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:17:18 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:17:29 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:29 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:29 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:17:29 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:17:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:17:57 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:17:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:18:07 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:18:07 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:18:07 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:18:07 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:18:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:18:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:18:22 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:18:22 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:20:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:20:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:20:20 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:20:20 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:21:12 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:21:12 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:21:12 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:21:12 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:22:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:22:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:22:18 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:22:18 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:23:05 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:23:05 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:23:05 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:23:05 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:30:50 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:30:50 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:30:50 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 04:30:50 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 06:24:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:24:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:24:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:24:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:24:52 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 06:24:52 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Warning:  Undefined variable $addcalendar in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 06:50:18 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in D:\xampp\htdocs\ArgaoChurch\Calendar.php on line 108
+[18-Nov-2024 06:53:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:53:55 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:53:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:53:57 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:11 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:11 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:13 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:55:13 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:57:20 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:57:20 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:00:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:00:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:01:21 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:01:21 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:01:47 Europe/Berlin] PHP Warning:  Undefined variable $email in D:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 326
+[18-Nov-2024 07:01:57 Europe/Berlin] PHP Warning:  Undefined variable $email in D:\xampp\htdocs\ArgaoChurch\View\PageStaff\header.php on line 326
+[18-Nov-2024 07:02:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:02:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:02:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:02:24 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:03:32 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in D:\xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 07:04:06 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:04:06 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:04:48 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:04:48 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:04:52 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:04:52 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:01 Europe/Berlin] General Error: Credentials are required to create a Client
+[18-Nov-2024 07:05:01 Europe/Berlin] SMS failed to send to +639394524555
+[18-Nov-2024 07:05:01 Europe/Berlin] Citizen approved successfully for ID: 229
+[18-Nov-2024 07:05:02 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:02 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:05:10 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:06:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:06:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:06:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:06:19 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:20:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:20:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:20:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:20:53 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:28 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:28 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:28 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:28 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:28:51 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:29:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:29:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:29:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:29:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:30:16 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:30:16 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:32:27 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:32:27 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:32:31 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:32:31 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:33:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:33:22 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:33:27 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:33:27 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:52:59 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:52:59 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:53:01 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:53:01 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:06 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:06 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:35 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:35 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:35 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:35 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:05:32 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:05:32 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:05:32 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:05:32 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:32:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:32:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:33:10 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:33:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:34:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:34:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:34:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:28 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:28 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:41:46 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:08 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:08 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:15 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:42:15 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:43:46 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 03:43:46 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 03:59:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:01:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:01:56 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:01:56 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:03:22 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 04:03:22 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 04:13:27 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 04:13:27 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:19:14 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:19:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:23:56 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 04:23:56 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:27:28 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 04:27:28 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:32:00 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 04:32:00 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:34:10 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 04:37:30 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:39:14 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:39:47 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:44:25 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:45:16 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 04:50:40 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 04:59:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:01:48 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:02:18 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:03:46 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:04:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:06:56 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:07:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:09:47 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:10:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:17:31 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 05:17:31 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:25:52 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:28:16 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:40:13 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:41:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:43:12 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:50:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 05:52:28 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 05:52:28 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 05:58:39 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[18-Nov-2024 05:58:39 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 06:03:45 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 06:06:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:14:12 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:14:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:16:21 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:26:41 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 864
+[18-Nov-2024 06:27:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:28:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:28:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:30:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:30:23 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:32:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:32:52 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:20 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:34:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:35:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:37:14 Europe/Berlin] General Error: Credentials are required to create a Client
+[18-Nov-2024 06:37:14 Europe/Berlin] SMS failed to send to +639684346129
+[18-Nov-2024 06:37:14 Europe/Berlin] Citizen approved successfully for ID: 237
+[18-Nov-2024 06:37:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:39:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:54:12 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:54:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:54:51 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 06:54:51 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:20:07 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php:910
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\login_con.php(149): User->registerUsers(Array)
+#1 C:\Xampp\htdocs\ArgaoChurch\View\PageAdmin\Priest.php(2): require_once('C:\\Xampp\\htdocs...')
+#2 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 910
+[18-Nov-2024 07:20:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php:910
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\login_con.php(149): User->registerUsers(Array)
+#1 C:\Xampp\htdocs\ArgaoChurch\View\PageAdmin\Priest.php(2): require_once('C:\\Xampp\\htdocs...')
+#2 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 910
+[18-Nov-2024 07:21:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php:910
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\login_con.php(149): User->registerUsers(Array)
+#1 C:\Xampp\htdocs\ArgaoChurch\View\PageAdmin\Priest.php(2): require_once('C:\\Xampp\\htdocs...')
+#2 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 910
+[18-Nov-2024 07:22:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php:910
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\login_con.php(149): User->registerUsers(Array)
+#1 C:\Xampp\htdocs\ArgaoChurch\View\PageAdmin\Priest.php(2): require_once('C:\\Xampp\\htdocs...')
+#2 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 910
+[18-Nov-2024 07:24:38 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php:910
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\login_con.php(149): User->registerUsers(Array)
+#1 C:\Xampp\htdocs\ArgaoChurch\View\PageAdmin\Priest.php(2): require_once('C:\\Xampp\\htdocs...')
+#2 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 910
+[18-Nov-2024 07:36:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:36:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:40:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:44:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:44:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:51:35 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:51:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:56:39 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:03:16 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:03:16 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:09:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:09:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:18:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:18:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:19:19 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:19:45 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:19:58 Europe/Berlin] General Error: Credentials are required to create a Client
+[18-Nov-2024 08:19:58 Europe/Berlin] SMS failed to send to +639684346129
+[18-Nov-2024 08:19:58 Europe/Berlin] Citizen approved successfully for ID: 230
+[18-Nov-2024 08:20:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:24:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:24:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:24:18 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:24:43 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:24:55 Europe/Berlin] General Error: Credentials are required to create a Client
+[18-Nov-2024 08:24:55 Europe/Berlin] SMS failed to send to +639394245345
+[18-Nov-2024 08:24:55 Europe/Berlin] Citizen approved successfully for ID: 227
+[18-Nov-2024 08:24:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:29:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:13:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:39:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:39:46 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:39:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:40:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:40:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:40:53 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:41:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:41:20 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:41:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:41:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:42:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:42:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:43:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:43:34 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:43:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:44:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:44:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:44:45 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:45:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:45:46 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 11:50:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 12:47:30 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 12:47:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:09:04 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:09:04 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:09:04 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:10:18 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:11:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:11:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 13:12:20 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:01:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:01:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:05:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:00 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:00 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 104
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 106
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 107
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 108
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Undefined variable $config in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:04 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in C:\Xampp\htdocs\ArgaoChurch\Model\login_mod.php on line 111
+[18-Nov-2024 15:06:04 Europe/Berlin] Error sending email notification: Invalid address:  (From): 
+[18-Nov-2024 15:43:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:43:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:44:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:44:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:45:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 15:57:20 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:08:52 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:13:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:13:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:13:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:13:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:12 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:39 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:47 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 16:14:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:04:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:04:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:10:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:11:19 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:11:19 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:11:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:20:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:20:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:24:00 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:24:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:24:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:24:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:41:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:41:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:15:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:15:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:16:03 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[19-Nov-2024 05:20:38 Europe/Berlin] Input OTP: 901576, Stored OTP: 901576
+[19-Nov-2024 05:21:18 Europe/Berlin] Input OTP: qweweq, Stored OTP: 901576
+[19-Nov-2024 05:21:20 Europe/Berlin] Input OTP: qwewqe, Stored OTP: 901576
+[19-Nov-2024 05:21:21 Europe/Berlin] Input OTP: qweqweqe, Stored OTP: 901576
+[19-Nov-2024 05:21:35 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:37:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:37:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:38:04 Europe/Berlin] Error sending email notification: SMTP Error: Could not connect to SMTP host. Failed to connect to server
+[19-Nov-2024 05:38:04 Europe/Berlin] Email failed to send for citizen ID: 209
+[19-Nov-2024 05:51:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:51:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:52:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:52:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:53:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:53:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:54:00 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:54:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 05:54:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:37:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:37:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:45:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 07:46:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 07:46:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:30:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:30:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:30:55 Europe/Berlin] General Error: Credentials are required to create a Client
+[19-Nov-2024 08:30:55 Europe/Berlin] SMS failed to send to +639394245345
+[19-Nov-2024 08:30:55 Europe/Berlin] Citizen deleted successfully for ID: 209
+[19-Nov-2024 08:30:56 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:30:59 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:31:08 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:44:10 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:44:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:46:54 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:46:54 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:50:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:50:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:59:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:59:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:01:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:15:57 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:15:57 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:17:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:21:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:21:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:23:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:23:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:26:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:26:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:32:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:32:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:43:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:43:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:43:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:43:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:43:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 12:28:17 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 13:19:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 13:19:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 13:20:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 14:19:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 14:19:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 14:33:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 14:33:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:33:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:33:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:37:54 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:37:54 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:48:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:48:55 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:49:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:49:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:16:00 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:16:02 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:16:04 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:18:21 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:18:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:21:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:21:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:26:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:26:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:32:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:35:18 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:35:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:35:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:35:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:35:30 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:36:34 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 16:36:34 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:11:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:11:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:19:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:19:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:19:37 Europe/Berlin] General Error: Credentials are required to create a Client
+[19-Nov-2024 17:19:37 Europe/Berlin] SMS failed to send to +639394245345
+[19-Nov-2024 17:19:37 Europe/Berlin] Citizen deleted successfully for ID: 212
+[19-Nov-2024 17:19:43 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:19:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:19:46 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:23:16 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:23:20 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:23:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:24 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:50 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:52 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:54 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:56 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:24:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:04 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:07 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:35 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:25:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:26:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:26:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:05 Europe/Berlin] PHP Warning:  Undefined array key "emails" in C:\Xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php on line 47
+[19-Nov-2024 17:28:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:06 Europe/Berlin] PHP Warning:  Undefined array key "emails" in C:\Xampp\htdocs\ArgaoChurch\Controller\getCitizen_con.php on line 47
+[19-Nov-2024 17:28:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:23 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:27 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:29 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:30 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:28:34 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:33:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:33:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:34:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:59:41 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:59:57 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:59:57 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 18:00:01 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 18:01:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 02:35:47 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 02:51:00 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 02:53:37 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 02:54:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:09:56 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:09:56 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:09:59 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:10:02 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:10:05 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:10:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:10:13 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:13:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:14:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:21:30 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:22:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:25:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:25:42 Europe/Berlin] General Error: Credentials are required to create a Client
+[20-Nov-2024 05:25:42 Europe/Berlin] SMS failed to send to +639394245345
+[20-Nov-2024 05:25:42 Europe/Berlin] Citizen approved successfully for ID: 218
+[20-Nov-2024 05:25:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:33:10 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:33:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:39:42 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:39:43 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:40:07 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:40:07 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:49:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:49:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:50:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:50:44 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:52:23 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 06:08:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:33:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:33:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:37:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:37:49 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:40:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:40:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:46:50 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:50:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:50:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:50:43 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:54:06 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:54:31 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:54:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:55:53 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:58:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873

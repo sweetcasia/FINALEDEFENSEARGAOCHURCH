@@ -24,12 +24,8 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
    * @var bool
    */
   public $aclEnabled;
-  protected $advancedSiteSearchConfigType = GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig::class;
-  protected $advancedSiteSearchConfigDataType = '';
   protected $billingEstimationType = GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation::class;
   protected $billingEstimationDataType = '';
-  protected $cmekConfigType = GoogleCloudDiscoveryengineV1alphaCmekConfig::class;
-  protected $cmekConfigDataType = '';
   /**
    * @var string
    */
@@ -54,10 +50,6 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
    * @var string
    */
   public $industryVertical;
-  /**
-   * @var string
-   */
-  public $kmsKeyName;
   protected $languageInfoType = GoogleCloudDiscoveryengineV1alphaLanguageInfo::class;
   protected $languageInfoDataType = '';
   /**
@@ -66,7 +58,7 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
   public $name;
   protected $naturalLanguageQueryUnderstandingConfigType = GoogleCloudDiscoveryengineV1alphaNaturalLanguageQueryUnderstandingConfig::class;
   protected $naturalLanguageQueryUnderstandingConfigDataType = '';
-  protected $servingConfigDataStoreType = GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore::class;
+  protected $servingConfigDataStoreType = GoogleCloudDiscoveryengineV1alphaServingConfigDataStore::class;
   protected $servingConfigDataStoreDataType = '';
   /**
    * @var string[]
@@ -92,20 +84,6 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
     return $this->aclEnabled;
   }
   /**
-   * @param GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig
-   */
-  public function setAdvancedSiteSearchConfig(GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig $advancedSiteSearchConfig)
-  {
-    $this->advancedSiteSearchConfig = $advancedSiteSearchConfig;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig
-   */
-  public function getAdvancedSiteSearchConfig()
-  {
-    return $this->advancedSiteSearchConfig;
-  }
-  /**
    * @param GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation
    */
   public function setBillingEstimation(GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation $billingEstimation)
@@ -118,20 +96,6 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
   public function getBillingEstimation()
   {
     return $this->billingEstimation;
-  }
-  /**
-   * @param GoogleCloudDiscoveryengineV1alphaCmekConfig
-   */
-  public function setCmekConfig(GoogleCloudDiscoveryengineV1alphaCmekConfig $cmekConfig)
-  {
-    $this->cmekConfig = $cmekConfig;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1alphaCmekConfig
-   */
-  public function getCmekConfig()
-  {
-    return $this->cmekConfig;
   }
   /**
    * @param string
@@ -232,20 +196,6 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
     return $this->industryVertical;
   }
   /**
-   * @param string
-   */
-  public function setKmsKeyName($kmsKeyName)
-  {
-    $this->kmsKeyName = $kmsKeyName;
-  }
-  /**
-   * @return string
-   */
-  public function getKmsKeyName()
-  {
-    return $this->kmsKeyName;
-  }
-  /**
    * @param GoogleCloudDiscoveryengineV1alphaLanguageInfo
    */
   public function setLanguageInfo(GoogleCloudDiscoveryengineV1alphaLanguageInfo $languageInfo)
@@ -288,14 +238,14 @@ class GoogleCloudDiscoveryengineV1alphaDataStore extends \Google\Collection
     return $this->naturalLanguageQueryUnderstandingConfig;
   }
   /**
-   * @param GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore
+   * @param GoogleCloudDiscoveryengineV1alphaServingConfigDataStore
    */
-  public function setServingConfigDataStore(GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore $servingConfigDataStore)
+  public function setServingConfigDataStore(GoogleCloudDiscoveryengineV1alphaServingConfigDataStore $servingConfigDataStore)
   {
     $this->servingConfigDataStore = $servingConfigDataStore;
   }
   /**
-   * @return GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore
+   * @return GoogleCloudDiscoveryengineV1alphaServingConfigDataStore
    */
   public function getServingConfigDataStore()
   {

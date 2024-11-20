@@ -88,8 +88,9 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_type'])) {
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
+
         .text-center p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -163,7 +164,157 @@ margin-LEFT:20px;
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
 }
+.baptismalreq p {
+    font-size: 1rem; /* Base font size for text */
+    line-height: 1.6; /* Improved line spacing */
+    text-indent: 1rem; /* Indent the first line */
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
 
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
+}
     </style>
     </head>
 
@@ -178,6 +329,7 @@ margin-LEFT:20px;
     <!-- Navbar & Hero End -->
       
 
+     
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
@@ -211,7 +363,7 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">REQUIREMENTS</h5>
         <br>
 
-        <P>1. Birth certificate from either the National Statistics Office or Civil Registrar; 1 original and 1 photocopy <p>
+        <P>  &ensp;&ensp;1. Birth certificate from either the National Statistics Office or Civil Registrar; 1 original and 1 photocopy <p>
         
     
 </div>
@@ -220,7 +372,9 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">SCHEDULE ONLINE</h5>
         <br>
 
-        <a class="btn btn-primary rounded-pill py-2 px-4" href="signup.php">Schedule Now</a>
+        &ensp;&nbsp;     <button onclick="window.location.href='signup.php'" class="btn btn-primary py-2 px-4">
+    Schedule Now
+</button>
         
     
 </div>
@@ -231,17 +385,18 @@ margin-LEFT:20px;
         <h5 style="font-weight: BOLDER; padding-left:10px;">REMINDERS</h5>
        <br>
         <P>
-       1. Registration should be done one week before the actual date of baptism.<P>
+        &ensp;&ensp;1. Registration should be done one week before the actual date of baptism.<P>
                 <P>
-                2. Observe punctuality<P>
+                &ensp;&ensp;2. Observe punctuality<P>
                 <P>
-                3. Candles for sponsors (godfathers and godmothers) can be bought for PHP 3.00 a piece.
+                &ensp;&ensp;3. Candles for sponsors (godfathers and godmothers) can be bought for PHP 3.00 a piece.
 </P>
 <P>
-3. If there is a wedding on the scheduled time of baptism, it will be held inside the sacristy. Three sponsors (3 godfathers and 3 godmothers are allowed to join inside; others will stay in the garden)</P>
+&ensp;&ensp;4. If there is a wedding on the scheduled time of baptism, it will be held inside the sacristy. Three sponsors (3 godfathers and 3 godmothers are allowed to join inside; others will stay   &ensp;&ensp;in the garden)</P>
 </div>
         </div>
     </div>
+
 
 
     <?php require_once 'footer.php'?>

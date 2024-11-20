@@ -112,7 +112,6 @@ $pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
             <th>Appointment Time</th>
             <th>Seminar Date</th>
             <th>Seminar Time</th>
-            <th>Schedule Type</th>
             <th>Amount</th>
       
           
@@ -146,7 +145,6 @@ $pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
                 <td><?= htmlspecialchars($scheduleTime); ?></td>
                 <td><?= htmlspecialchars($seminarDate); ?></td>
                 <td><?= htmlspecialchars($seminarTime); ?></td>
-                <td><?= htmlspecialchars($appointment['roles']); ?></td>
                 <td>₱<?= htmlspecialchars($appointment['payable_amount']); ?></td>
                 
                 <td>

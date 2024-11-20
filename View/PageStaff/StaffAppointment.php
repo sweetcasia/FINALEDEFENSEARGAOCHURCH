@@ -53,6 +53,7 @@ $pendingItems = $staff->getPendingAppointments($statusFilter);
     <link rel="icon" href="../assets/img/mainlogo.jpg" type="image/x-icon"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
     <!-- Fonts and icons -->
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
     <script>
@@ -80,13 +81,39 @@ $pendingItems = $staff->getPendingAppointments($statusFilter);
     <link rel="stylesheet" href="../css/table.css" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="../assets/css/demo.css" />
+    <style>
+     .modal-body .row {
+    margin-bottom: 1rem; /* Space between rows */
+}
+
+.modal-body .col-md-4 p {
+    font-weight: bold; /* Highlights the labels */
+    margin: 0;
+    font-size: 1rem;
+}
+
+.modal-body .col-md-8 p {
+    background-color: #f8f9fa; /* Light gray background for input-like appearance */
+    padding: 0.5rem; /* Spacing to mimic input padding */
+    border: 1px solid #ced4da; /* Input-style border */
+    border-radius: 0.25rem; /* Rounded corners for better design */
+    margin: 0; /* Removes default margins */
+    font-size: 0.95rem; /* Adjust font size */
+    color: #495057; /* Text color */
+}
+.modal-open {
+    overflow: hidden;
+}.modal-body {
+    max-height: calc(100vh - 190px); /* Adjust the 200px as needed */
+}
+    </style>
   </head>
   <body>
   <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content shadow-lg rounded-3">
             <!-- Modal Header -->
-            <div class="modal-header bg-primary text-white border-0 rounded-top">
+            <div class="modal-header bg-secondary text-white border-0 rounded-top">
                 <h5 class="modal-title" id="viewModalLabel"><i class="fas fa-info-circle"></i> Appointment Details</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -96,22 +123,23 @@ $pendingItems = $staff->getPendingAppointments($statusFilter);
             <!-- Modal Body -->
             <div class="modal-body">
                 <!-- Use Bootstrap grid for a formal layout -->
-                <div class="row mb-4">
-                    <div class="col-md-4">
-                        <p><strong>Full Name:</strong></p>
+            <div class="row">          
+                <div class="col-md-6 col-lg-4">
+                <p><strong>Full Name:</strong></p>
                     </div>
                     <div class="col-md-8">
                         <p id="modalFullName" class="text-muted"></p>
                     </div>
-                </div>
-                <div class="row mb-4">
+                    </div>
+                    <div class="row mb-4">
                     <div class="col-md-4">
                         <p><strong>Event Name:</strong></p>
                     </div>
                     <div class="col-md-8">
                         <p id="modalEventName" class="text-muted"></p>
                     </div>
-                </div>
+                    </div>
+               
                 <div class="row mb-4">
                     <div class="col-md-4">
                         <p><strong>Schedule Date:</strong></p>
@@ -171,8 +199,8 @@ $pendingItems = $staff->getPendingAppointments($statusFilter);
             </div>
 
             <!-- Modal Footer -->
-            <div class="modal-footer bg-light border-0 rounded-bottom">
-                <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
+            <div class="modal-footer  border-0 rounded-bottom">
+                <button type="button" class="btn btn-secondary btn-m" data-dismiss="modal">
                     <i class="fas fa-times-circle"></i> Close
                 </button>
             </div>
@@ -307,7 +335,7 @@ $pendingItems = $staff->getPendingAppointments($statusFilter);
                                                         </form>
                                                     </td>
                                                     <td>
-   <button type="button" class="btn btn-primary view-details" 
+   <button type="button" class="btn btn-secondary view-details" 
             data-fullname="<?php echo htmlspecialchars($item['fullnames']); ?>" 
             data-eventname="<?php echo htmlspecialchars($item['Event_Name']); ?>" 
             data-scheduledate="<?php echo htmlspecialchars(date('Y/m/d', strtotime($item['schedule_date']))); ?>" 

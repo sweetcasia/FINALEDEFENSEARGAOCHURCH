@@ -40,8 +40,15 @@ $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
 $citizenInfo = new User ($conn);
 $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
+$citizenController = new Citizen($conn);
+$pendingAppointmentss = $citizenController->getPendingCitizenss(null, $regId);
+$totalPendingAppointments = is_array($pendingAppointmentss) ? count($pendingAppointmentss) : 0;
 
+$pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
+$totalSeminarAppointments = is_array($pendingAppointments) ? count($pendingAppointments) : 0;
 
+$pendingAppointmentsss = $citizenController->cgetPendingCitizens(null, $regId);
+$totalSeminarAppointmentsss = is_array($pendingAppointmentsss) ? count($pendingAppointmentsss) : 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -333,7 +340,7 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
   <div class="row g-3 mt-4">
   <!-- My Event Scheduling -->
   <div class="col-md-4 d-flex justify-content-center">
-    <div class="card p-3 d-flex align-items-center" onclick="window.location.href='history.php';" style="cursor: pointer;">
+    <div class="card p-3 d-flex align-items-center"  style="cursor: pointer;">
       <!-- Icon and Text Wrapper -->
       <div class="d-flex align-items-center">
         <!-- Icon with Background -->
@@ -342,16 +349,16 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
         </div>
         <!-- Text -->
         <div>
-          <h5 class="mt-2">My Event Scheduling</h5>
-          <p class="text-secondary">10</p>
-        </div>
+    <h5 class="mt-2">My Event Scheduling</h5>
+    <p class="text-secondary"><?php echo $totalPendingAppointments; ?></p>
+</div>
       </div>
     </div>
   </div>
 
   <!-- Seminar Appointment -->
   <div class="col-md-4 d-flex justify-content-center">
-    <div class="card p-3 d-flex align-items-center" onclick="window.location.href='seminar.php';" style="cursor: pointer;">
+    <div class="card p-3 d-flex align-items-center"  style="cursor: pointer;">
       <!-- Icon and Text Wrapper -->
       <div class="d-flex align-items-center">
         <!-- Icon with Background -->
@@ -360,16 +367,16 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
         </div>
         <!-- Text -->
         <div>
-          <h5 class="mt-2">Seminar Appointment</h5>
-          <p class="text-secondary">12</p>
-        </div>
+    <h5 class="mt-2">Seminar Appointment</h5>
+    <p class="text-secondary"><?php echo $totalSeminarAppointments; ?></p>
+</div>
       </div>
     </div>
   </div>
 
   <!-- My Booking History -->
   <div class="col-md-4 d-flex justify-content-center">
-    <div class="card p-3 d-flex align-items-center" onclick="window.location.href='another-page.php';" style="cursor: pointer;">
+    <div class="card p-3 d-flex align-items-center"  style="cursor: pointer;">
       <!-- Icon and Text Wrapper -->
       <div class="d-flex align-items-center">
         <!-- Icon with Background -->
@@ -379,7 +386,7 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
         <!-- Text -->
         <div>
           <h5 class="mt-2">My Booking History</h5>
-          <p class="text-secondary">5</p>
+          <p class="text-secondary"><?php echo$totalSeminarAppointmentsss; ?></p>
         </div>
       </div>
     </div>

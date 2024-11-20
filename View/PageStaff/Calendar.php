@@ -24,25 +24,38 @@
 </head>
 <body>
 <style> 
-.blue {
-  background: rgba(156, 202, 235, 1);
+.arrow {
+ 
+ margin-left: 105px!important;
+
 }
-.orange {
-  background: rgba(247, 167, 0, 1);
-}
-.green {
-  background: rgba(153, 198, 109, 1);
-}
-.yellow {
-  background: rgba(249, 233, 0, 1);
-}
-.pink {
-  background: rgba(255, 192, 203, 1);
-}
-.purple {
-  background-color: grey;
+.details {
+ position: relative;
+ height: 80px!important;
+ background: #ac0727a8;
 }
 
+body{
+ color: #ffffff!important;
+}
+.blue {
+ background: rgba(156, 202, 235, 1);
+}
+.orange {
+ background: rgba(247, 167, 0, 1);
+}
+.green {
+ background: rgba(153, 198, 109, 1);
+}
+.yellow {
+ background: rgba(249, 233, 0, 1);
+}
+.pink {
+ background: rgba(255, 192, 203, 1);
+}
+.purple {
+ background-color: grey;
+}
 </style>
 
 <div class="container">

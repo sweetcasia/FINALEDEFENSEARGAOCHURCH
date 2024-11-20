@@ -67,10 +67,6 @@ class GoogleCloudAiplatformV1DeployedModel extends \Google\Model
    * @var string
    */
   public $sharedResources;
-  /**
-   * @var string[]
-   */
-  public $systemLabels;
 
   /**
    * @param GoogleCloudAiplatformV1AutomaticResources
@@ -267,20 +263,6 @@ class GoogleCloudAiplatformV1DeployedModel extends \Google\Model
   public function getSharedResources()
   {
     return $this->sharedResources;
-  }
-  /**
-   * @param string[]
-   */
-  public function setSystemLabels($systemLabels)
-  {
-    $this->systemLabels = $systemLabels;
-  }
-  /**
-   * @return string[]
-   */
-  public function getSystemLabels()
-  {
-    return $this->systemLabels;
   }
 }
 

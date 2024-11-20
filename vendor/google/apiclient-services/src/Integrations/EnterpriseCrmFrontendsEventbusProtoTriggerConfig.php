@@ -36,8 +36,10 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
    * @var string
    */
   public $errorCatcherId;
-  protected $inputVariablesType = EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables::class;
-  protected $inputVariablesDataType = '';
+  /**
+   * @var string[]
+   */
+  public $inputVariables;
   /**
    * @var string
    */
@@ -46,8 +48,10 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
    * @var string
    */
   public $nextTasksExecutionPolicy;
-  protected $outputVariablesType = EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables::class;
-  protected $outputVariablesDataType = '';
+  /**
+   * @var string[]
+   */
+  public $outputVariables;
   /**
    * @var bool
    */
@@ -150,14 +154,14 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
     return $this->errorCatcherId;
   }
   /**
-   * @param EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+   * @param string[]
    */
-  public function setInputVariables(EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables $inputVariables)
+  public function setInputVariables($inputVariables)
   {
     $this->inputVariables = $inputVariables;
   }
   /**
-   * @return EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+   * @return string[]
    */
   public function getInputVariables()
   {
@@ -192,14 +196,14 @@ class EnterpriseCrmFrontendsEventbusProtoTriggerConfig extends \Google\Collectio
     return $this->nextTasksExecutionPolicy;
   }
   /**
-   * @param EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+   * @param string[]
    */
-  public function setOutputVariables(EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables $outputVariables)
+  public function setOutputVariables($outputVariables)
   {
     $this->outputVariables = $outputVariables;
   }
   /**
-   * @return EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+   * @return string[]
    */
   public function getOutputVariables()
   {

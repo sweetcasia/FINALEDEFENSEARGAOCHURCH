@@ -194,21 +194,21 @@ small {
                     <div class="form-group">
                         <label for="firstname">Firstname of Groom</label>
                         <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname"
-                        value="<?php echo htmlspecialchars($firstname); ?>" />
+                        value="<?php echo htmlspecialchars($firstname); ?>" readonly/>
                     </div>
 
                     <!-- Groom Lastname -->
                     <div class="form-group">
                         <label for="lastname">Last Name of Groom</label>
                         <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname"
-                        value="<?php echo htmlspecialchars($lastname); ?>" />
+                        value="<?php echo htmlspecialchars($lastname); ?>"readonly />
                     </div>
 
                     <!-- Groom Middlename -->
                     <div class="form-group">
                         <label for="middlename">Middle Name of Groom</label>
                         <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename"
-                        value="<?php echo htmlspecialchars($middlename); ?>" />
+                        value="<?php echo htmlspecialchars($middlename); ?>" readonly/>
                     </div>
 
                     <!-- Groom Date of Birth -->
@@ -253,19 +253,19 @@ small {
                     <!-- Groom Place of Birth -->
                     <div class="form-group">
                         <label for="address">Groom Place of Birth</label>
-                        <textarea class="form-control" id="address" name="groom_place_of_birth" placeholder="Enter Address"><?php echo htmlspecialchars($pendingItem['groom_place_of_birth'] ?? ''); ?></textarea>
+                        <textarea class="form-control" id="address" name="groom_place_of_birth" placeholder="Enter Address"readonly><?php echo htmlspecialchars($pendingItem['groom_place_of_birth'] ?? ''); ?></textarea>
                     </div>
 
                     <!-- Groom Citizenship -->
                     <div class="form-group">
                         <label for="groom_citizenship">Groom Citizenship</label>
-                        <input type="text" class="form-control" id="groom_citizenship" name="groom_citizenship" placeholder="Enter Groom Citizenship" value="<?php echo htmlspecialchars($pendingItem['groom_citizenship'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="groom_citizenship" name="groom_citizenship" placeholder="Enter Groom Citizenship" value="<?php echo htmlspecialchars($pendingItem['groom_citizenship'] ?? ''); ?>" readonly/>
                     </div>
 
                     <!-- Groom Address -->
                     <div class="form-group">
                         <label for="parents_residence">Groom Address</label>
-                        <textarea class="form-control" id="parents_residence" name="groom_address" placeholder="Enter Address"><?php echo htmlspecialchars($pendingItem['groom_address'] ?? ''); ?></textarea>
+                        <textarea class="form-control" id="parents_residence" name="groom_address" placeholder="Enter Address"readonly><?php echo htmlspecialchars($pendingItem['groom_address'] ?? ''); ?></textarea>
                     </div>
                 </div>
 
@@ -279,31 +279,31 @@ small {
                     <!-- Groom Religion -->
                     <div class="form-group">
                         <label for="groom_religion">Groom Religion</label>
-                        <input type="text" class="form-control" id="groom_religion" name="groom_religion" placeholder="Enter Groom Religion" value="<?php echo htmlspecialchars($pendingItem['groom_religion'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="groom_religion" name="groom_religion" placeholder="Enter Groom Religion" value="<?php echo htmlspecialchars($pendingItem['groom_religion'] ?? ''); ?>"readonly />
                     </div>
 
                     <!-- Groom Previously Married -->
                     <div class="form-group">
                         <label for="groom_previously_married">Groom Previously Married</label>
-                        <input type="text" class="form-control" id="groom_previously_married" name="groom_previously_married" placeholder="Enter Groom Previously Married" value="<?php echo htmlspecialchars($pendingItem['groom_previously_married'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="groom_previously_married" name="groom_previously_married" placeholder="Enter Groom Previously Married" value="<?php echo htmlspecialchars($pendingItem['groom_previously_married'] ?? ''); ?>" readonly/>
                     </div>
 
                     <!-- Bride Firstname -->
                     <div class="form-group">
                         <label for="firstnames">Firstname of Bride</label>
-                        <input type="text" class="form-control" id="firstnames" name="firstnames" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($firstnames); ?>" />
+                        <input type="text" class="form-control" id="firstnames" name="firstnames" placeholder="Enter Firstname" value="<?php echo htmlspecialchars($firstnames); ?>" readonly/>
                     </div>
 
                     <!-- Bride Lastname -->
                     <div class="form-group">
                         <label for="lastnames">Last Name of Bride</label>
-                        <input type="text" class="form-control" id="lastnames" name="lastnames" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($lastnames); ?>" />
+                        <input type="text" class="form-control" id="lastnames" name="lastnames" placeholder="Enter Lastname" value="<?php echo htmlspecialchars($lastnames); ?>" readonly/>
                     </div>
 
                     <!-- Bride Middlename -->
                     <div class="form-group">
                         <label for="middlenames">Middle Name of Bride</label>
-                        <input type="text" class="form-control" id="middlenames" name="middlenames" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middlenames); ?>" />
+                        <input type="text" class="form-control" id="middlenames" name="middlenames" placeholder="Enter Middlename" value="<?php echo htmlspecialchars($middlenames); ?>" readonly/>
                     </div>
 
                     <!-- Bride Date of Birth -->
@@ -349,13 +349,13 @@ small {
                     <!-- Bride Place of Birth -->
                     <div class="form-group">
                         <label for="bride_place_of_birth">Bride Place of Birth</label>
-                        <textarea class="form-control" id="bride_place_of_birth" name="bride_place_of_birth" placeholder="Enter Address"><?php echo htmlspecialchars($pendingItem['bride_place_of_birth'] ?? ''); ?></textarea>
+                        <textarea class="form-control" id="bride_place_of_birth" name="bride_place_of_birth" placeholder="Enter Address"readonly><?php echo htmlspecialchars($pendingItem['bride_place_of_birth'] ?? ''); ?></textarea>
                     </div>
 
                     <!-- Bride Citizenship -->
                     <div class="form-group">
                         <label for="bride_citizenship">Bride Citizenship</label>
-                        <input type="text" class="form-control" id="bride_citizenship" name="bride_citizenship" placeholder="Enter Bride Citizenship" value="<?php echo htmlspecialchars($pendingItem['bride_citizenship'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="bride_citizenship" name="bride_citizenship" placeholder="Enter Bride Citizenship" value="<?php echo htmlspecialchars($pendingItem['bride_citizenship'] ?? ''); ?>" readonly/>
                     </div>
                 </div>
 
@@ -369,13 +369,13 @@ small {
                     <!-- Bride Religion -->
                     <div class="form-group">
                         <label for="bride_religion">Bride Religion</label>
-                        <input type="text" class="form-control" id="bride_religion" name="bride_religion" placeholder="Enter Bride Religion" value="<?php echo htmlspecialchars($pendingItem['bride_religion'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="bride_religion" name="bride_religion" placeholder="Enter Bride Religion" value="<?php echo htmlspecialchars($pendingItem['bride_religion'] ?? ''); ?>" readonly/>
                     </div>
 
                     <!-- Bride Previously Married -->
                     <div class="form-group">
                         <label for="bride_previously_married">Bride Previously Married</label>
-                        <input type="text" class="form-control" id="bride_previously_married" name="bride_previously_married" placeholder="Enter Bride Previously Married" value="<?php echo htmlspecialchars($pendingItem['bride_previously_married'] ?? ''); ?>" />
+                        <input type="text" class="form-control" id="bride_previously_married" name="bride_previously_married" placeholder="Enter Bride Previously Married" value="<?php echo htmlspecialchars($pendingItem['bride_previously_married'] ?? ''); ?>" readonly/>
                     </div>
         </div>
                                 
@@ -466,8 +466,6 @@ small {
 <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Popper.js (required for Bootstrap 4) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
@@ -475,30 +473,14 @@ small {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <!-- Sweet Alert -->
   <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
-    <!--   Core JS Files   -->
-    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/core/popper.min.js"></script>
-    <script src="../assets/js/core/bootstrap.min.js"></script>
-
-    <!-- jQuery Scrollbar -->
-    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-
-    <!-- Chart JS -->
-    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
-
-    <!-- jQuery Sparkline -->
-    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Chart Circle -->
-    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
-
+ <!-- jQuery Scrollbar -->
+ <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
     <!-- Datatables -->
     <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
-
-
-    <!-- jQuery Vector Maps -->
-    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
 
 
     <!-- Kaiadmin JS -->

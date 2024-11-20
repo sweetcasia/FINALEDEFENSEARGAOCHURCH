@@ -97,10 +97,6 @@ class OfferClass extends \Google\Collection
   /**
    * @var string
    */
-  public $notifyPreference;
-  /**
-   * @var string
-   */
   public $provider;
   /**
    * @var string
@@ -522,20 +518,6 @@ class OfferClass extends \Google\Collection
   public function getMultipleDevicesAndHoldersAllowedStatus()
   {
     return $this->multipleDevicesAndHoldersAllowedStatus;
-  }
-  /**
-   * @param string
-   */
-  public function setNotifyPreference($notifyPreference)
-  {
-    $this->notifyPreference = $notifyPreference;
-  }
-  /**
-   * @return string
-   */
-  public function getNotifyPreference()
-  {
-    return $this->notifyPreference;
   }
   /**
    * @param string

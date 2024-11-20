@@ -75,32 +75,25 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-           
-     .float-left{
-        width:900px;
-     }
-        .back-button {
-float:right;       
-margin-right:110px;  
-margin-top:20px;  
-
-            padding: 0.5rem 1rem;
-            background-color: #0066a8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }  .back-button:hover {
-            background-color: #004a80;
-        }
+           body{
+            font-family: 'Public Sans', sans-serif;
+           }
+   
         .clearfix::after {
     content: "";
     display: table;
     clear: both;
-}.clearfix p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+}
+.clearfix h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.clearfix p {
+    color: #3b3b3b;
+    text-align: justify;
+    line-height: 1.6;
+    margin-top: 10px;
 }
 .bg-breadcrumb {
   position: relative;
@@ -113,14 +106,135 @@ margin-top:20px;
   padding: 60px 0 60px 0;
   transition: 0.5s;
 }
-
 .bg-breadcrumb .breadcrumb {
   position: relative;
 }
-
-.bg-breadcrumb .breadcrumb .breadcrumb-item a {
-  color: var(--bs-white);
+.bg-breadcrumb h4 {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: bold;
 }
+
+.breadcrumb .breadcrumb-item a {
+    color: #fff;
+    text-decoration: none;
+}
+.service {
+    padding: 40px 20px;
+}
+.right-aligned-image {
+  float: right;
+  margin-left: 15px;
+  width: 700px;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.small-right-aligned-image {
+  float: right;
+  margin-left: 15px;
+  width: 300px;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .bg-breadcrumb h4 {
+        font-size: 1.5rem;
+    }
+
+    .clearfix h4 {
+        font-size: 1.2rem;
+    }
+
+    .back-button {
+        float: none;
+        margin: 10px auto;
+        display: block;
+        text-align: center;
+    }
+    .right-aligned-image{
+        width: 530px;
+  height: auto;
+    }
+    .clearfix p{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg-breadcrumb h4 {
+        font-size: 1.5rem;
+    }
+
+    .clearfix h4 {
+        font-size: 1.2rem;
+    }
+
+ 
+    .right-aligned-image{
+        width: 340px;
+          height: auto;
+
+    }
+    .clearfix p{
+        font-size: 11px;
+    }   
+}
+
+@media (max-width: 425px) {
+    .bg-breadcrumb h4 {
+        font-size: 1.5rem;
+    }
+
+    .clearfix h4 {
+        font-size: 1.2rem;
+    }
+
+    .bg-breadcrumb{
+                padding:19px;
+            }
+    .right-aligned-image{
+        width: 340px;
+          height: auto;
+          float: none;
+          margin-left:0;
+
+    }
+    .small-right-aligned-image{
+        width: 240px;
+          height: auto;
+          float: none;
+          margin-left:0;
+    }
+    .clearfix p{
+        font-size: 11px;
+    }
+}
+    @media (max-width: 320px) {
+    .bg-breadcrumb h4 {
+        font-size: 1.5rem;
+    }
+
+    .clearfix h4 {
+        font-size: 1.2rem;
+    }
+
+  
+    .right-aligned-image{
+        width: 270px;
+          height: auto;
+          float: none;
+          margin-left:0;
+
+    }
+    .clearfix p{
+        font-size: 11px;
+    }
+}
+
 
     </style>
     </head>
@@ -136,11 +250,11 @@ margin-top:20px;
     <!-- Navbar & Hero End -->
       
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+         <!-- Header Start -->
+         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;padding-bottom:0!important;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">ARCHITECTURE</h4>
-               
+                 
             </div>
         </div>
         <!-- Header End -->
@@ -153,38 +267,30 @@ margin-top:20px;
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s">
 
          
-<div class="container-fluid service py-5"style="padding-bottom:0!important;" >
-  
-  <div class="container py-5" style="padding-top:0!important; margin-top:20px!important;padding-bottom:0!important;">
-  
-  <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="padding-bottom:0!important;" >
-
-    
+        
    
   <div class="clearfix">
       <h4 style="font-weight: BOLDER; float:left;padding-left:10px;">FOUNDATION OF THE CHURCH</h4>
       <br>
       <br>
-<p >
-  <img src="assets/img/outsidechurch.jpg" alt="Etymology Image" style="float: right; margin-left: 15px; width: 700px; height: auto; border: 1px solid #ddd;
-  padding: 5px;">
+      <img class="right-aligned-image" src="assets/img/outsidechurch.jpg" alt="Etymology Image">
+
+<p>
   The Archdiocesan Shrine of San Miguel Arcangel, also known as Argao Church, is a beautiful example of Spanish colonial architecture in the Philippines. Built in 1788, it stands as one of the oldest churches in Cebu, showcasing a blend of Baroque and Rococo styles, which were popular in Europe during the 18th century. The church was constructed using coral stones, which were abundant in the area, making the structure strong and resilient, especially against the tropical climate and occasional earthquakes.
 </p>
-<br>
+
 <p>One of the most striking features of Argao Church is its ornate façade. The front of the church is intricately carved with images of angels, saints, and floral patterns, which symbolize the Christian faith and the community's devotion. The entrance is framed by large pillars that support the arched doorway, leading into the main hall. Above the doorway, there are decorative niches housing statues of saints, adding to the church's grandeur and spiritual significance.</p>
-<br>
 <p>
 The bell tower, attached to the side of the church, is another prominent architectural feature. It is octagonal and stands several stories high, topped with a dome. The bell tower not only serves as a place to ring the bells for Mass and special occasions but also as a watchtower during the colonial period, protecting the town from potential invasions or attacks. Its sturdy structure and height provided a good vantage point over the surrounding area.
 </p>
 <br>
 <h4 style="font-weight: BOLDER; float:left; padding-left:10px;">FEATURES</h4>
 <br><br>
-<img src="assets/img/interior.jpg" alt="Etymology Image" style="float: right; margin-left: 15px; width: 300px; height: auto; border: 1px solid #ddd;
-  padding: 5px;">
+<img  class="small-right-aligned-image" src="assets/img/interior.jpg" alt="Etymology Image" >
 <P>The coral stone church is a two-level structure with an imposing, highly ornate pediment and double-pilaster columns on its facade. Together with its convent, the church was fortified to also serve as refuge during Moro raids in the 18th and 19th century. The facade contains articulate carvings depicting the patron saint displayed on its niche, flanked by oversized urn-like finials standing on rectangular bases at each corner of the pediment.</P>
 <p>The church follows the usual cruciform plan. The interior contains a single aisle with a double nave. Five retablos adorn its sanctuary and transept areas, with the main retablo (retablo mayor) containing 3 life-size statues of the three archangels: St. Michael, St. Raphael and St. Gabriel. The vaulted ceiling is made of wooden panels arranged longitudinally with details of seraphs protruding as corbels. Paintings depicting the life of the angels and archangels, plus several Biblical passages, adorn the ceiling surface—half of which were painted by the renowned master Cebuano painter Raymundo Francia, and the other half by an unknown Boholano artist.</p>
-<p>The bell tower has three levels supporting a single large bell on the second level, with 8 smaller bells on the third. The base of the belfry supports a square plan, while the second and third bases follow an octagonal plan, topped by a domed roof. The bell tower is connected to the church by a single-level baptistry.</p><img src="assets/img/ceiling.jpg" alt="Etymology Image" style="float: right; margin-left: 15px; width: 300px; height: auto;   border: 1px solid #ddd;
-  padding: 5px;">
+<p>The bell tower has three levels supporting a single large bell on the second level, with 8 smaller bells on the third. The base of the belfry supports a square plan, while the second and third bases follow an octagonal plan, topped by a domed roof. The bell tower is connected to the church by a single-level baptistry.</p>
+<img class="small-right-aligned-image" src="assets/img/ceiling.jpg" alt="Etymology Image">
 <p>The convent at the right side of the church served as a seminary during the early part of the 19th century. Today the convent serves as a home for the Pastors assigned in the parish. The basement or the 1st floor of the convent housed the parish office, and offices of the EMHC, Catechists and the Parish Youth Coordinating Council. Adjacent to the parish office is the Museo de la Parroquia de San Miguel, an ecclesiastical museum with a rich collection of artifacts which became a favorite of the balikbayans and tourists. At the left of the church structure is the site of the former town cemetery, which now serve as the church complex's Gethsemane garden.</p>
 <br>
 <h4 style="font-weight: BOLDER; float:left; padding-left:10px;">BALUARTE</h4>
@@ -196,8 +302,9 @@ The bell tower, attached to the side of the church, is another prominent archite
 <h4 style="font-weight: BOLDER; float:left; padding-left:10px;">CHURCH PLAZA</h4>
 
 <br><br>
-<p>The plaza in front of Argao Church is surrounded by a short wall made of coral stones. This wall marks the boundaries of the <img src="assets/img/plaza.jpg" alt="Etymology Image" style="float: right; margin-left: 15px; width: 300px; height: auto;   border: 1px solid #ddd;
-  padding: 5px;">plaza where religious and festive processions begin and end. The plaza is an important space for community events and celebrations. 
+<img class="small-right-aligned-image" src="assets/img/plaza.jpg" alt="Etymology Image">
+<p>The plaza in front of Argao Church is surrounded by a short wall made of coral stones. This wall marks the boundaries of the 
+    plaza where religious and festive processions begin and end. The plaza is an important space for community events and celebrations. 
 The plaza in front of Argao Church is surrounded by a short wall made of coral stones. This wall marks the boundaries of the plaza where religious and festive processions begin and end. The plaza is an important space for community events and celebrations.
 In the plaza, there are three statues placed on pedestals, each with light posts nearby to illuminate them at night. These statues add to the plaza’s charm and significance, serving as focal points during gatherings and ceremonies.</p>
 <p>Originally, the plaza had clay tiles covering the ground, which gave it a distinctive look. At the center of the plaza stood a large wooden cross, symbolizing the importance of evangelization in the community. This cross was a key feature of the plaza’s design. The coral stone walls of the plaza are decorated with 14 high reliefs of the Via Crucis, also known as the Stations of the Cross. These reliefs are unique because they use special symbols to represent each station. This artistic choice is quite rare and sets the plaza apart from other similar locations.
@@ -207,8 +314,9 @@ In the plaza, there are three statues placed on pedestals, each with light posts
 <h4 style="font-weight: BOLDER; float:left; padding-left:10px;">SITE OF THE FORMER PALACIO</h4>
 <br>
 <br>
-<p>The L-shaped building in Argao, Cebu, known as the Palacio, has a rich history.<img src="assets/img/placio.jpg" alt="Etymology Image" style="float: right; margin-left: 15px; width: 300px; height: auto;   border: 1px solid #ddd;
-  padding: 5px;">  It was originally used as a guesthouse where Spanish dignitaries and priests stayed during their visits to the town. This made it an important place for hosting important guests and organizing official events related to the church. During the American era, the building took on a new role as an elementary school. It became a center for education, serving the children of Argao and providing them with basic schooling. This change reflected the evolving needs of the community during that time.</p>
+<img class="small-right-aligned-image" src="assets/img/placio.jpg" alt="Etymology Image" >
+<p>The L-shaped building in Argao, Cebu, known as the Palacio, has a rich history.
+     It was originally used as a guesthouse where Spanish dignitaries and priests stayed during their visits to the town. This made it an important place for hosting important guests and organizing official events related to the church. During the American era, the building took on a new role as an elementary school. It became a center for education, serving the children of Argao and providing them with basic schooling. This change reflected the evolving needs of the community during that time.</p>
 <P>Unfortunately, the building suffered severe damage during the Second World War. Japanese forces burned it down, which led to the loss of this historic structure and disrupted its use as a school. The fire marked a difficult period in the building’s history.</P>
 <p>After the war, the building was rebuilt and repurposed once again. It was transformed into the Court of Justice, where legal matters and judicial proceedings are handled. This new role continued the building’s legacy of serving important functions in the community.</p>
 <p>Today, the Palacio stands as the Court of Justice, demonstrating its ability to adapt to different needs over time. Its history reflects the changes in Argao and highlights its ongoing importance in the town’s life.</p>

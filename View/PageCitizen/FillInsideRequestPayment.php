@@ -149,21 +149,38 @@ function toggleChapelInput() {
             <div class="col-md-12">
             <div class="card">
     <div class="card-header">
-        <div class="card-title">Check your Information </div>
-        <div class="stepper-wrapper">
-            <!-- Step 1 -->
-            <div class="step completed">
-           
-                <div class="step-label">
-                <p>Note please see this in a counter</p>
-                    <p>REFERENCE NUMBER</p>
-                   <p><?php echo $reference_number; ?></p>
-         
-                </div>
-            </div>
+    <div class="card-header bg-light border-bottom">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">Check Your Information</h4>
     
+    </div>
+</div>
+<div class="card-body">
+<div class="card border-light shadow-sm p-4 mb-4">
 
+        <div class="stepper-wrapper">
+            <!-- Step Details -->
+            <div class="step-info py-3">
+                <div class="alert alert-info">
+                    <strong>Note:</strong> Present this reference with the reference Code to the staff when you arrive in person to verify and assist with your event.
+                </div>
+
+                <div class="reference-info text-center mb-3">
+                    <h5 class="text-uppercase text-muted">Reference Code</h5>
+                    <p class="text-primary display-6 fw-bold"><?php echo $reference_number; ?></p>
+                </div>
+
+                <?php if (!empty($speaker_app)) : ?>
+                    <div class="speaker-info text-center mt-3">
+                        <p class="text-muted">Speaker for Seminar:</p>
+                        <p class="text-success fw-bold"><?php echo htmlspecialchars($speaker_app); ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
+ 
+
+  
     </div>
    
     <div class="card-body">
@@ -173,8 +190,15 @@ function toggleChapelInput() {
 <div class="row">
 <div class="col-md-6 col-lg-4">
 <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="text" class="form-control" id="date" name="date" placeholder="Select a date"  value="<?php echo $pendingItem['schedule_date'] ?? ''; ?>" readonly />
+<?php if (!empty($pendingItem['schedule_date'])): ?>
+    <label for="date">Date</label>
+    <input type="text" class="form-control" id="date" name="date" 
+        placeholder="Enter date"  
+        value="<?php echo htmlspecialchars($pendingItem['schedule_date']); ?>" 
+        readonly />
+<?php endif; ?>
+
+
                     <span class="error" id="dateError"></span>
                 </div>
 
@@ -191,7 +215,8 @@ function toggleChapelInput() {
                         <option <?php echo ($req_category === 'Baccalaureate Mass') ? 'selected' : ''; ?>>Baccalaureate Mass</option>
                         <option <?php echo ($req_category === 'Anointing of the Sick') ? 'selected' : ''; ?>>Anointing of the Sick</option>
                         <option <?php echo ($req_category === 'Blessing') ? 'selected' : ''; ?>>Blessing</option>
-                        <option <?php echo ($req_category === 'Special Mass') ? 'selected' : ''; ?>>Special Mass</option>
+                        <option <?php echo ($req_category === 'Thanksgiving') ? 'selected' : ''; ?>>Thanksgiving</option>
+                        <option <?php echo ($req_category === 'Soul & Petition') ? 'selected' : ''; ?>>Soul & Petition</option>
                     </select>
                     <span class="error" id="selectRequestError"></span>
                 </div>
@@ -223,11 +248,13 @@ function toggleChapelInput() {
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="start_time">Start Time</label>
-                    <input type="text" class="form-control" id="start_time" name="start_time" placeholder="" value="<?php echo htmlspecialchars($startTime); ?>" readonly />
-                    <span class="error" id="startTimeError"></span>
-                </div>
+            <div class="form-group" style="<?php echo empty($startTime) ? 'display: none;' : ''; ?>">
+    <label for="start_time">Start Time</label>
+    <input type="text" class="form-control" id="start_time" name="start_time" placeholder="" 
+        value="<?php echo htmlspecialchars($startTime); ?>" readonly />
+    <span class="error" id="startTimeError"></span>
+</div>
+
 
                 <div class="form-group">
                     <label for="address">Address</label>
@@ -251,11 +278,15 @@ function toggleChapelInput() {
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="end_time">End Time</label>
-                    <input type="text" class="form-control" id="end_time" name="end_time" placeholder="" value="<?php echo htmlspecialchars($endTime); ?>" readonly />
-                    <span class="error" id="endTimeError"></span>
-                </div>
+            <?php if (!empty($endTime)): ?>
+    <div class="form-group">
+        <label for="end_time">End Time</label>
+        <input type="text" class="form-control" id="end_time" name="end_time" placeholder="" 
+            value="<?php echo htmlspecialchars($endTime); ?>" readonly />
+        <span class="error" id="endTimeError"></span>
+    </div>
+<?php endif; ?>
+
 
                 <div class="form-group">
 <label for="firstnames">Firstname of Person (Pamisahan)</label>

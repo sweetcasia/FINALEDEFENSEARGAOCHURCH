@@ -2,6 +2,7 @@
 require_once '../../Model/staff_mod.php';
 require_once '../../Model/db_connection.php';
 $userManager = new Staff($conn);
+
 // Use $userManager to call the methods
 $recentCitizenUpdates = $userManager->getRecentCitizenUpdates();
 $recentBaptismFills = $userManager->getRecentBaptismFills(); 
@@ -14,8 +15,30 @@ $recentPriestConfirmationFormFills = $userManager->getRecentPriestConfirmationFi
 $recentPriestDefuctomFormFills = $userManager->getRecentPriestDefuctomFills();
 $recentPriestMarriageFills = $userManager->getRecentPriestMarriageFills();
 $recentPriestRequestFormFills = $userManager->getRecentPriestRequestFormFills();
-$allUpdates = array_merge($recentCitizenUpdates, $recentBaptismFills,$recentConfirmationFills,$recentDefuctomFills,$recentMarriageFills,$recentRequestFormFills,$recentPriestBaptismFormFills,$recentPriestConfirmationFormFills,$recentPriestDefuctomFormFills,$recentPriestMarriageFills,$recentPriestRequestFormFills); // Combine both arrays
+// Merge all updates from different categories
+$allUpdates = array_merge(
+  $recentCitizenUpdates, 
+  $recentBaptismFills,
+  $recentConfirmationFills,
+  $recentDefuctomFills,
+  $recentMarriageFills,
+  $recentRequestFormFills,
+  $recentPriestBaptismFormFills,
+  $recentPriestConfirmationFormFills,
+  $recentPriestDefuctomFormFills,
+  $recentPriestMarriageFills,
+  $recentPriestRequestFormFills
+);
+
+// Sort the merged updates by the timestamp in descending order
+usort($allUpdates, function($a, $b) {
+  // Ensure that you are comparing the correct timestamp field
+  return strtotime($b['c_current_time']) - strtotime($a['c_current_time']);
+});
+
+// Count the updates for display
 $updatesCount = count($allUpdates);
+
 
 // Check if user is logged in
 if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
@@ -51,6 +74,7 @@ if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
 // Assign session variables
 $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
+$email = $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,6 +134,11 @@ $regId = $_SESSION['citizend_id'];
     font-size: 12px;         /* Smaller font for timestamp */
     color: #888;             /* Lighter color for less emphasis */
 }
+/* This class will adjust the size of the notification icon */
+.notification-icon {
+    font-size: 20px; /* Adjust the size as needed */
+}
+
 </style>
     <!-- CSS Files -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
@@ -190,7 +219,8 @@ $regId = $_SESSION['citizend_id'];
                  <!-- start for notification bell -->
                  <li class="nav-item topbar-icon dropdown hidden-caret">
                     <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-bell"></i>
+                    <i class="fa fa-bell notification-icon"></i> <!-- Apply the custom class here -->
+
                         <span class="notification"><?php echo $updatesCount; ?></span>
                     </a>
                     <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
@@ -302,7 +332,7 @@ $initial = strtoupper(substr($loggedInUserName, 0, 1)); // Gets the first letter
 ?>
 
 <div class="avatar">
-  <span class="avatar-title rounded-circle border border-white bg-secondary">
+  <span class="avatar-title rounded-circle border border-white bg-primary">
     <?php echo $initial; ?>
   </span>
 </div>
@@ -316,7 +346,7 @@ $initial = strtoupper(substr($loggedInUserName, 0, 1)); // Gets the first letter
     <li>
       <div class="user-box">
       <div class="avatar-lg">
-  <div class="avatar-title rounded-circle border border-white bg-secondary text-white d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
+  <div class="avatar-title rounded-circle border border-white bg-primary text-white d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
     <?php echo $initial; ?>
   </div>
 
@@ -324,14 +354,12 @@ $initial = strtoupper(substr($loggedInUserName, 0, 1)); // Gets the first letter
         <div class="u-text">
           <h4>Church Staff</h4>
           <p class="text-muted"><?php echo $email; ?></p>
-          <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+          <a href="profile.php" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
         </div>
       </div>
     </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="profile.php">My Profile</a>
-                        <a class="dropdown-item" href="#">Account Setting</a>
                         <a class="dropdown-item" href="../../index.php?action=logout">Logout</a>
                       </li>
                     </div>

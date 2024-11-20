@@ -154,24 +154,37 @@ small {
             <div class="col-md-12">
             <div class="card">
     <div class="card-header">
-        <div class="card-title">Check your Information </div>
-        <div class="stepper-wrapper">
-            <!-- Step 1 -->
-            <div class="step completed">
-           
-                <div class="step-label">
-                <p>Note please see this in a counter</p>
-                    <p>REFERENCE NUMBER</p>
-                   <p><?php echo $reference_number; ?></p>
-                   <?php if (!empty($speaker_app)) : ?>
-    <p>This is the Speaker for Seminar: <?php echo htmlspecialchars($speaker_app); ?></p>
-<?php endif; ?>
-
-                </div>
-            </div>
+    <div class="card-header bg-light border-bottom">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">Check Your Information</h4>
     
+    </div>
+</div>
+<div class="card-body">
+<div class="card border-light shadow-sm p-4 mb-4">
 
+        <div class="stepper-wrapper">
+            <!-- Step Details -->
+            <div class="step-info py-3">
+                <div class="alert alert-info">
+                    <strong>Note:</strong> Present this reference with the reference Code to the staff when you arrive in person to verify and assist with your event.
+                </div>
+
+                <div class="reference-info text-center mb-3">
+                    <h5 class="text-uppercase text-muted">Reference Code</h5>
+                    <p class="text-primary display-6 fw-bold"><?php echo $reference_number; ?></p>
+                </div>
+
+                <?php if (!empty($speaker_app)) : ?>
+                    <div class="speaker-info text-center mt-3">
+                        <p class="text-muted">Speaker for Seminar:</p>
+                        <p class="text-success fw-bold"><?php echo htmlspecialchars($speaker_app); ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
+ 
+
   
     </div>
     <div class="card-body">
@@ -187,16 +200,16 @@ small {
             </div>
 
             <div class="form-group">
-    <label for="firstname">Firstname of person to be confirmation:</label>
+    <label for="firstname">Firstname</label>
     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter Firstname" value="<?php echo $firstname; ?>" />
 </div>
 
 <div class="form-group">
-    <label for="lastname">Last Name of person to be confirmation:</label>
+    <label for="lastname">Last Name </label>
     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Lastname" value="<?php echo $lastname; ?>" />
 </div>
 <div class="form-group">
-    <label for="middlename">Middle Name of person to be confirmation:</label>
+    <label for="middlename">Middle Name </label>
     <input type="text" class="form-control" id="middlename" name="middlename" placeholder="Enter Middlename" value="<?php echo $middlename; ?>" />
 </div>
 

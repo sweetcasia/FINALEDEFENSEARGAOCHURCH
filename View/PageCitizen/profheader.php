@@ -33,6 +33,7 @@ if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
 // Assign session variables
 $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
+$email = $_SESSION['email'];
 
 ?>
 <!DOCTYPE html>
@@ -214,7 +215,7 @@ $initial = strtoupper(substr($firstName, 0, 1)); // Gets the first letter of the
         </div>
         <div class="u-text">
           <h4><?php echo $nme; ?></h4>
-          <p class="text-muted"><?php echo $loggedInUserEmail; ?></p>
+          <p class="text-muted"><?php echo $email; ?></p>
           <a href="profile.php" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
         </div>
       </div>

@@ -3,7 +3,6 @@ require_once __DIR__ .'/../Model/db_connection.php';
 require_once __DIR__ .'/../Model/login_mod.php';
 session_start();
 
-$email = $_SESSION['email'];
 $nme = $_SESSION['fullname'];
 
 // Create User object
@@ -32,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['citizenId'])) {
 
 
 // Initialize variables to store user data
-$citizenId = $fullname = $gender = $phone = $email = $address = $validId = $status = '';
+$citizenId = $fullname = $gender = $phone = $emails = $address = $validId = $status = '';
 
 // Get citizen details if an ID is provided
 if (isset($_GET['id'])) {
@@ -45,7 +44,7 @@ if (isset($_GET['id'])) {
         $fullname = htmlspecialchars($userInfo['fullname']);
         $gender = htmlspecialchars($userInfo['gender']);
         $phone = htmlspecialchars($userInfo['phone']);
-        $email = htmlspecialchars($userInfo['email']);
+        $emails = htmlspecialchars($userInfo['email']);
         $address = htmlspecialchars($userInfo['address']);
         $validId = htmlspecialchars($userInfo['valid_id']);
         $c_date_birth = htmlspecialchars($userInfo['c_date_birth']);

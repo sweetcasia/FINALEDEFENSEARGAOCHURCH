@@ -1,40 +1,8 @@
 <?php
+$current_page = basename($_SERVER['PHP_SELF']);
 
-// Check if user is logged in
-if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
-    header("Location: ../../index.php");
-    exit();
-}
-
-// Redirect based on user type
-switch ($_SESSION['user_type']) {
-    case 'Priest':
-        // Allow access
-        break;
-    case 'Admin':
-        header("Location: ../PageAdmin/AdminDashboard.php");
-        exit();
-    case 'Staff':
-        header("Location: ../PageStaff/StaffDashboard.php");
-        exit();
-    case 'Citizen':
-        header("Location: ../PageCitizen/CitizenPage.php");
-        exit();
-    default:
-        header("Location: ../../index.php");
-        exit();
-}
-
-// Validate specific Citizen data
-if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
-    header("Location: ../../index.php");
-    exit();
-}
-
-// Assign session variables
-$nme = $_SESSION['fullname'];
-$regId = $_SESSION['citizend_id'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,6 +14,8 @@ $regId = $_SESSION['citizend_id'];
     />
     <link rel="icon" href="../assets/img/kaiadmin/favicon.ico" type="image/x-icon"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- Fonts and icons -->
     <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
@@ -106,30 +76,23 @@ $regId = $_SESSION['citizend_id'];
         </div>
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
-            <ul class="nav nav-secondary">
-              <li class="nav-item active">
-                <a href="index.php">
-                  <i class="fas fa-home"></i>
-                  <p>Schedule</p>
-                </a>
-                
-              </li>
-              <li class="nav-item ">
-                <a href="PriestDashboard.php">
-                  <i class="fas fa-home"></i>
-                  <p>Upcoming</p>
-                </a>
-              </li>
-              <li class="nav-item ">
-              <a href="PriestDashboard.php">
-                  <i class="fas fa-home"></i>
-                  <p>Completed</p>
-                </a>
-              </li>
-             
-            
-              
-            </ul>
+          <ul class="nav nav-secondary">
+          <li class="nav-item <?= ($current_page == 'index.php') ? 'active' : ''; ?>">
+            <a href="index.php">
+            <i class="fa-solid fa-calendar-day"></i>
+            <p>Today's Schedule</p>
+                      </a>
+          </li>
+          <li class="nav-item <?= ($current_page == 'priestdashboard.php') ? 'active' : ''; ?>">
+            <a href="priestdashboard.php">
+            <i class="fa-solid fa-calendar-week"></i>     
+            <p>Upcoming Schedule</p>          
+            </a>
+          </li>
+        
+         
+        
+        </ul>
           </div>
         </div>
       </div>

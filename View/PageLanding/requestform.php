@@ -87,8 +87,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['user_type'])) {
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-        .text-center  p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+           .text-center p{
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.6; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -138,7 +138,7 @@ margin-LEFT:20px;
         .schedule:hover{
             color:wheat!important;
         }
-        .baptismalreq i{
+      .baptismalreq i{
             font-size:7px;
             margin-right:15px;
             color:black;
@@ -147,7 +147,7 @@ margin-LEFT:20px;
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/funeral.jpeg);
+  url(../assets/img/baptismal1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -161,6 +161,158 @@ margin-LEFT:20px;
 
 .bg-breadcrumb .breadcrumb .breadcrumb-item a {
   color: var(--bs-white);
+}
+.baptismalreq p {
+    font-size: 1rem; /* Base font size for text */
+    line-height: 1.6; /* Improved line spacing */
+    text-indent: 1rem; /* Indent the first line */
+    margin-bottom: 10px; /* Space between paragraphs */
+    font-weight: 500;
+}
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
 }
     </style>
     </head>
@@ -179,7 +331,7 @@ margin-LEFT:20px;
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">FUNERAL</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">REQUEST OF MASSES</h4>
                   
             </div>
         </div>
@@ -192,12 +344,15 @@ margin-LEFT:20px;
         <div class="container py-5" style="padding-top:0!important;">
         
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s">
-
-          <div class="gallery">
+        <div class="gallery">
             
+            <img src="../assets/img/req2.jpg" alt="Etymology Image" class="float-right"> 
+            <img src="../assets/img/req3.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/req4.jpg" alt="Etymology Image" class="float-right">
+            <img src="../assets/img/eucha1.jpg" alt="Etymology Image" class="float-right">
+            </div>
          
-          </div>
-            <P style="TEXT-ALIGN: left;">Welcome to the Request of Masses page of the Argao Parish Church, Cebu. Here, we offer you the opportunity to request Masses for various occasions, both inside and outside our church, allowing you to celebrate special events in a way that best suits your needs. Whether you wish to mark a joyous occasion or need the comfort of prayer during a time of mourning, we are here to help facilitate your spiritual needs. This page will guide you through the process of requesting Masses for various services, ensuring that you can celebrate and commemorate your significant moments with our faith community.
+            <P style="">Welcome to the Request of Masses page of the Argao Parish Church, Cebu. Here, we offer you the opportunity to request Masses for various occasions, both inside and outside our church, allowing you to celebrate special events in a way that best suits your needs. Whether you wish to mark a joyous occasion or need the comfort of prayer during a time of mourning, we are here to help facilitate your spiritual needs. This page will guide you through the process of requesting Masses for various services, ensuring that you can celebrate and commemorate your significant moments with our faith community.
 </P>
             
 
@@ -208,49 +363,61 @@ margin-LEFT:20px;
 </h5>
         <br>
 
-        <h5 style="font-weight: BOLDER; padding-left:10px;">Inside Request Form
-            <br>
-       <p style="font-weight: normal;">For Masses to be held within the sacred walls of the Argao Parish Church, this option is for individuals or groups who wish to request a Mass to be celebrated within the church premises. This includes all types of Masses such as regular Sunday Masses, special feasts, and seasonal liturgies. The Argao Parish Church, with its beautiful ambiance and rich tradition, serves as a central place for community gatherings, and we are honored to host your special Masses. Whether it's for a wedding, a baptism, a special prayer intention, or simply a spiritual reflection, this form is intended for events within our church, where the congregation can gather in prayer and worship.
+        <h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Inside Request Form
+            <br><br>
+       <p >For Masses to be held within the sacred walls of the Argao Parish Church, this option is for individuals or groups who wish to request a Mass to be celebrated within the church premises. This includes all types of Masses such as regular Sunday Masses, special feasts, and seasonal liturgies. The Argao Parish Church, with its beautiful ambiance and rich tradition, serves as a central place for community gatherings, and we are honored to host your special Masses. Whether it's for a wedding, a baptism, a special prayer intention, or simply a spiritual reflection, this form is intended for events within our church, where the congregation can gather in prayer and worship.
 </p>
-<button  class="btn btn-primary btn-round" type="button" onclick="window.location.href='FillScheduleForm.php?type=RequestForm'">
-       Inside Request Form
-    </button>
+&ensp;&ensp;<a style="font-size:15px;" href="signup.php" class="btn btn-primary  py-2 px-4" role="button">
+    Inside Request Form
+</a>
+
     <BR></BR>
 <br>
-<h5 style="font-weight: BOLDER; padding-left:10px;">Outside Request Form
-    <br>
-       <p style="font-weight: normal;">This form is intended for those who wish to request a Mass to be held outside the Argao Parish Church, whether it be in homes, community gatherings, or at other locations within the parish area. Many of our parishioners seek to hold Masses at significant locations such as private residences, at a hospital for the sick, or even in cemeteries for the dearly departed. These Masses are equally important in our faith and allow us to bring the church’s presence and blessings wherever they are needed most. By choosing this form, you are ensuring that your requested Mass will be celebrated in a location outside of the church, bringing the sacredness of the liturgy to your chosen site.
+<h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Outside Request Form
+    <br><br>
+       <p >This form is intended for those who wish to request a Mass to be held outside the Argao Parish Church, whether it be in homes, community gatherings, or at other locations within the parish area. Many of our parishioners seek to hold Masses at significant locations such as private residences, at a hospital for the sick, or even in cemeteries for the dearly departed. These Masses are equally important in our faith and allow us to bring the church’s presence and blessings wherever they are needed most. By choosing this form, you are ensuring that your requested Mass will be celebrated in a location outside of the church, bringing the sacredness of the liturgy to your chosen site.
  
 </p>
-<button  class="btn btn-primary btn-round" type="button" onclick="window.location.href='FillRequestSchedule.php?type=RequestForm'">
-        Outside Request Form
-    </button>
+&ensp;&ensp;<a style="font-size:15px;" href="signup.php" class="btn btn-primary  py-2 px-4" role="button">
+    Outside Request Form
+</a>
+<BR></BR>
+<br>
+<h5 style="font-weight: BOLDER; padding-left:10px;">  &ensp;&ensp;Special Request Form
+<br><br>
+       <p >Special Request Formarry profound cultural and spiritual significance, with celebrations that frequently reach beyond church walls and involve the wider community. Among the most beloved of these is the Mass of Thanksgiving and Soul & Petition, cherished for its expressions of gratitude and requests for blessings, drawing people together in communal prayer and devotion.
+  
+</p>
+&ensp;&ensp;<a style="font-size:15px;" href="signup.php" class="btn btn-primary  py-2 px-4" role="button">
+Special Request Form
+</a>
 </div>
+
 
 <BR>
 <br>
 <div class="baptismalreq">
         <h5 style="font-weight: BOLDER; padding-left:10px;">AVAILABLE MASSES:</h5>
         <br>
-        <P>1.  &nbsp;
+        <P>&ensp;&ensp;1.  &nbsp;
        <STRong> Fiesta Mass: </STRong>Celebrate the feast of the patron saint with a special Mass.</P>
-        <P>2. &nbsp;
+        <P>&ensp;&ensp;2. &nbsp;
        <strong>Novena Mass:</strong>  A series of prayers and Masses leading up to a significant feast or event.</P>
-        <P>3.&nbsp;
+        <P>&ensp;&ensp;3.&nbsp;
         <strong> Wake Mass:</strong> A Mass offered in remembrance of the deceased.</P>
-        <P>4.&nbsp;
+        <P>&ensp;&ensp;4.&nbsp;
         <strong>Monthly Mass:</strong>  A recurring Mass held once every month for various intentions.</P>
-        <P>5.&nbsp;
+        <P>&ensp;&ensp;5.&nbsp;
         <strong>1st Friday Mass:</strong>  A special Mass offered on the first Friday of each month.</P>
-        <P>6.&nbsp;
+        <P>&ensp;&ensp;6.&nbsp;
         <strong>Cemetery Chapel Mass:</strong>  A Mass held at the cemetery chapel for the souls of the departed.</P>
-        <P>7.&nbsp;
+        <P>&ensp;&ensp;7.&nbsp;
         <strong>Baccalaureate Mass:</strong>  A Mass celebrated in honor of graduates as they mark a significant milestone.</P>
-        <P>8.&nbsp;
+        <P>&ensp;&ensp;8.&nbsp;
         <strong>Anointing of the Sick:</strong> A Mass and sacrament offering healing prayers for those in need.</P>
-        <P>9.&nbsp;
+        <P>&ensp;&ensp;9.&nbsp;
         <strong> Blessing:</strong> A special Mass to invoke blessings for a home, event, or individual.</P>
-        <P>10.&nbsp;
+        <P>&ensp;&ensp;10.&nbsp;
         <strong>Special Mass:</strong>  Custom Masses offered for unique occasions or intentions.</P>
      
       

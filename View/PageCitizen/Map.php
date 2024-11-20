@@ -73,27 +73,11 @@ $regId = $_SESSION['citizend_id'];
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
         <style>
-            .bg-breadcrumb {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
-  url(../assets/img/map.jpeg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 60px 0 60px 0;
-  transition: 0.5s;
-}
-
-.bg-breadcrumb .breadcrumb {
-  position: relative;
-}
-
-.bg-breadcrumb .breadcrumb .breadcrumb-item a {
-  color: var(--bs-white);
-}
-         p{
-    color:#3b3b3b; text-align: justify; text-justify: inter-word; font-size: 15px; line-height: 1.6; margin-top: 10px; margin-left: 10px;
+           body{
+                font-family: 'Public Sans', sans-serif;
+            }
+         .text-center p{
+    color:#3b3b3b; text-align: justify; text-justify: inter-word;  line-height: 1.7; margin-top: 10px; margin-left: 10px;
 }
 
 
@@ -110,23 +94,7 @@ $regId = $_SESSION['citizend_id'];
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-        .back-button {
-float:right;       
-margin-right:110px;  
-margin-top:20px;  
-
-            padding: 0.5rem 1rem;
-            background-color: #0066a8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            background-color: #004a80;
-        }
+     
         .schedule {
 float:left;       
 margin-LEFT:20px;  
@@ -190,6 +158,193 @@ margin-LEFT:20px;
     display: flex;
     justify-content: space-between;
 }
+.bg-breadcrumb {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(1, 94, 201, 0.616), rgba(0, 0, 0, 0.2)),
+  url(../assets/img/map.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0 60px 0;
+  transition: 0.5s;
+}
+
+.bg-breadcrumb .breadcrumb {
+  position: relative;
+}
+
+.bg-breadcrumb .breadcrumb .breadcrumb-item a {
+  color: var(--bs-white);
+}
+.map-container {
+    position: relative;
+    width: 100%; /* Full width */
+    padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio (height / width = 9/16 = 56.25%) */
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width: 1200px) {
+        .accordion {
+            font-size: 1.1rem;
+        }
+
+        .baptismalreq p {
+            font-size: 15px;
+        }
+
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 15px;
+
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .panel img {
+            width: 100%;
+            max-width: 50%;
+        }
+
+       
+        .text-center h1 {
+            font-size: 1.8rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+        }
+
+        .container.py-5 {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .mass-schedule {
+        max-width: 100%; /* Take full width on smaller screens */
+    }
+        .panel img {
+            width: 100%;
+            max-width: 80%;
+        }
+
+        .gallery img {
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 1.5rem;
+        }
+
+        .accordion {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+
+        .back-button {
+            font-size: 0.9rem;
+        }
+
+        .container.py-5 {
+            padding: 15px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .mass-schedule th, .mass-schedule td {
+        font-size: 12px; /* Adjust font size for small screens */
+        padding: 8px;
+    }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            .bg-breadcrumb{
+                padding:0;
+            }
+        .panel img {
+            width: 100%;
+        }
+
+        .gallery img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .accordion {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+
+        .text-center h1 {
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            font-size: 0.8rem;
+            margin-right: 50px;
+        }
+        .text-center p {
+            font-size: 12px;
+        }
+        .baptismalreq p{
+            font-size: 12px;
+        }
+        .container-fluid.service.py-5{
+        padding-top: 0.6rem !important;
+        padding-bottom: 0!important;
+       }
+
+        .text-center h1 {
+            font-size: 2rem;
+        }
+        .responsive-paragraph{
+            font-size: 12px;
+
+        }
+        .gallery{
+            margin-bottom:0!important;
+        }
+    }
+}
     </style>
     </head>
 
@@ -204,11 +359,11 @@ margin-LEFT:20px;
     <!-- Navbar & Hero End -->
       
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
+      <!-- Header Start -->
+      <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">MAP</h4>
-               
+                
             </div>
         </div>
         <!-- Header End -->
@@ -226,19 +381,22 @@ margin-LEFT:20px;
          
 
 <div class="card-body">
-<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3930.622300315624!2d123.60556722560331!3d9.88202052505255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sArchdiocesan%20Shrine%20and%20Parish%20of%20Saint%20Michael%20the%20Archangel%2C%20Argao%2C%20Cebu!5e0!3m2!1sen!2sph!4v1725941798155!5m2!1sen!2sph&z=20" 
-    width="900" 
-    height="500" 
-    style="border: 0; width: 100%"
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3930.622300315624!2d123.60556722560331!3d9.88202052505255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sArchdiocesan%20Shrine%20and%20Parish%20of%20Saint%20Michael%20the%20Archangel%2C%20Argao%2C%20Cebu!5e0!3m2!1sen!2sph!4v1725941798155!5m2!1sen!2sph&z=20" 
+            style="border: 0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
 </div>
 
-</div>
         </div>
     </div>
 
+    </div>
+    </div>
 
     <?php require_once 'footer.php'?>
 

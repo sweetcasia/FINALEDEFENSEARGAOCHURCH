@@ -273,24 +273,7 @@ margin: 20px;
                 margin: 0; /* Remove default margin */
             }
         }
-        @media print {
-    .certificate {
-        transform: scale(0.98); /* Scale to 98% */
-        transform-origin: top left; /* Ensures scaling starts from the top left */
-        width: 100%; /* Optional: ensures content still fills width */
-    }
-}
 
-        @media print {
-    @page {
-        size: letter; /* Set page size to Letter (8.5 x 11 inches) */
-        margin: 0.5in; /* Adjust margins as needed */
-    }
-
-    .certificate {
-        width: 100%; /* Make sure content uses full width */
-    }
-}
 
 
 </style>

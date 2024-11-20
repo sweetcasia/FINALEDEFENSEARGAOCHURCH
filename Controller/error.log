@@ -227,3 +227,349 @@ Stack trace:
 [14-Nov-2024 14:40:17 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
 [14-Nov-2024 14:40:17 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
 [14-Nov-2024 14:40:17 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in C:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 07:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massbaptismfillId declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $massweddingffill_id declared before required parameter $payableAmount is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 07:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 07:30:00 Europe/Berlin] PHP Deprecated:  Optional parameter $eventType declared before required parameter $regId is implicitly treated as a required parameter in D:\xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 07:30:06 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in D:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 D:\xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in D:\xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[18-Nov-2024 07:53:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 07:53:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 07:53:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 07:53:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 07:53:38 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[18-Nov-2024 08:04:52 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:04:52 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 08:04:52 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 08:04:52 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 08:05:50 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[18-Nov-2024 08:12:10 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:12:10 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 08:12:10 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 08:12:10 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 08:12:22 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[18-Nov-2024 08:22:07 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:22:07 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 08:22:07 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 08:22:07 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 08:22:15 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[18-Nov-2024 08:27:33 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[18-Nov-2024 08:27:33 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[18-Nov-2024 08:27:33 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[18-Nov-2024 08:27:33 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[18-Nov-2024 08:27:45 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 04:35:25 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:35:25 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 04:35:25 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 04:35:25 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 04:35:25 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 04:36:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:36:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 04:36:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 04:36:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 04:36:14 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(900): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 04:40:58 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:40:58 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 04:40:58 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 04:40:58 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 04:40:58 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 04:43:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:43:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 04:43:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 04:43:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 04:43:38 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 04:49:02 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 04:49:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 04:49:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 04:49:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 04:49:09 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:32:43 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:32:43 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:32:43 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:32:43 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:02 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:02 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:02 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:12 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:12 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:22 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:22 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:23 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:23 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:23 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:40 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:46 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:46 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:46 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:46 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:46 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:34:53 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:34:53 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:34:53 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:34:53 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:34:53 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:03 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:35:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:35:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:35:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:35:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:15 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:35:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:35:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:35:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:35:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:21 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:35:21 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:35:21 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:35:21 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:35:21 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:28 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:35:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:35:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:35:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:35:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:36 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 06:35:36 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 06:35:36 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 410
+[19-Nov-2024 06:35:36 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1314
+[19-Nov-2024 06:35:36 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1741
+[19-Nov-2024 06:35:53 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 08:28:32 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 08:28:32 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 08:28:32 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1339
+[19-Nov-2024 08:28:32 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1810
+[19-Nov-2024 09:20:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 09:20:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 09:20:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1339
+[19-Nov-2024 09:20:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1810
+[19-Nov-2024 09:20:57 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 13:23:56 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 13:23:56 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 13:23:56 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 13:23:56 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[19-Nov-2024 13:24:02 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 14:45:48 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 14:45:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 14:45:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 14:45:48 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[19-Nov-2024 14:45:53 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 15:00:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:00:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 15:00:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 15:00:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[19-Nov-2024 15:00:09 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(736): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 15:34:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:34:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 15:34:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 15:34:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[19-Nov-2024 15:34:17 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 15:42:12 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 15:42:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 15:42:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 15:42:12 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[19-Nov-2024 15:42:17 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(545): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[19-Nov-2024 17:14:09 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[19-Nov-2024 17:14:09 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[19-Nov-2024 17:14:09 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[19-Nov-2024 17:14:09 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[20-Nov-2024 02:53:26 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 02:53:26 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 02:53:26 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
+[20-Nov-2024 02:53:26 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[20-Nov-2024 02:53:32 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(353): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 03:39:28 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 03:39:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 03:39:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 03:39:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 03:39:35 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(233): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 05:52:38 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:52:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 05:52:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 05:52:38 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 05:52:44 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 05:54:03 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:54:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 05:54:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 05:54:03 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 05:54:09 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 05:54:27 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 05:54:27 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 05:54:27 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 05:54:28 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 05:54:33 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 06:02:40 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 06:02:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 06:02:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 06:02:40 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 06:02:45 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 06:03:14 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1874
+[20-Nov-2024 06:03:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 06:03:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 06:03:14 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 06:03:20 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(641): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 06:20:11 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:20:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 06:20:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 06:20:11 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[20-Nov-2024 06:20:16 Europe/Berlin] PHP Fatal error:  Uncaught Twilio\Exceptions\ConfigurationException: Credentials are required to create a Client in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php:70
+Stack trace:
+#0 C:\Xampp\htdocs\ArgaoChurch\Controller\addbaptism_con.php(125): Twilio\Base\BaseClient->__construct('', '')
+#1 {main}
+  thrown in C:\Xampp\htdocs\ArgaoChurch\vendor\twilio\sdk\src\Twilio\Base\BaseClient.php on line 70
+[20-Nov-2024 06:27:15 Europe/Berlin] PHP Deprecated:  Required parameter $payableAmount follows optional parameter $massbaptismfillId in C:\Xampp\htdocs\ArgaoChurch\Model\staff_mod.php on line 1873
+[20-Nov-2024 06:27:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
+[20-Nov-2024 06:27:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
+[20-Nov-2024 06:27:15 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953

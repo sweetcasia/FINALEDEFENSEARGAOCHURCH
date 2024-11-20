@@ -887,29 +887,7 @@ class GKEOnPrem extends \Google\Service
         'vmwareAdminClusters',
         [
           'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/vmwareAdminClusters',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'allowPreflightFailure' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'validateOnly' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-                'vmwareAdminClusterId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'enroll' => [
+            'enroll' => [
               'path' => 'v1/{+parent}/vmwareAdminClusters:enroll',
               'httpMethod' => 'POST',
               'parameters' => [

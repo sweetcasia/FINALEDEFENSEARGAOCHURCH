@@ -589,11 +589,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <?php  require_once 'header.php'?>
         
      
-        <div class="container">
-            <div class="page-inner">
+        <div class="container" style="height: 630px;  overflow: hidden;">
+            <div style="padding-left: 85px!important;"  class="page-inner">
             <form id="scheduleForm">
   <div class="container" style="height: 630px;
-    margin-top: 35px;">
+    ">
             <div class="col-sm-12">
                 <div class="calendar-container bg-light rounded p-4" >
         <h3  class="fw-bold mb-3">Select Date</h3>

@@ -271,6 +271,29 @@ $priestId = $regId; // Assuming the priest's ID is stored in session as 'citizen
                 margin-top: 10px; /* Adjust spacing */
             }
         }
+/* Style for the dot below the date */
+.schedule-dot {
+    display: block; /* Make sure the dot is a block element so it can sit below the date */
+    width: 8px; /* Size of the dot */
+    height: 8px; /* Size of the dot */
+    background-color: orange; /* Dot color */
+    border-radius: 50%; /* Makes the dot round */
+    margin: 0 auto; /* Center the dot horizontally */
+    margin-top: 4px; /* Space it slightly from the date */
+}
+
+/* Optional: hover effect for better interactivity */
+.schedule-dot:hover {
+    background-color: darkorange;
+}
+
+/* Additional style for marking the date with schedules (Optional) */
+.has-schedule {
+    font-weight: bold; /* Bold text to indicate schedule presence */
+}
+
+
+
     </style>
 </head>
 <body>
@@ -382,12 +405,35 @@ function renderCalendar() {
 
     const today = new Date();
 
-    // Fill in the actual days of the month
+    // Loop over all days in the month
     for (let i = 1; i <= daysInMonth; i++) {
         const dayElement = document.createElement('li');
         dayElement.textContent = i;
 
         const dayDate = new Date(currentYear, currentMonth, i);
+
+        // Fetch the priestId from PHP
+        const priestId = <?php echo json_encode($regId); ?>;
+        const formattedDate = dayDate.toLocaleDateString('en-CA'); // Format as YYYY-MM-DD
+
+        // Fetch schedule data from PHP backend
+        fetch('../../Controller/getPriestSched.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `date=${formattedDate}&priestId=${priestId}`,
+        })
+        .then(response => response.json())
+        .then(schedules => {
+            if (schedules && schedules.length > 0) {
+                // Add a dot at the bottom of the date
+                const scheduleDot = document.createElement('span');
+                scheduleDot.classList.add('schedule-dot');
+                dayElement.appendChild(scheduleDot); // Add the dot to the day element
+            }
+        })
+        .catch(error => console.error('Error checking schedule for date:', error));
 
         // Add click event listener for all dates
         dayElement.addEventListener('click', () => selectDate(dayElement));
@@ -401,6 +447,8 @@ function renderCalendar() {
         daysElement.appendChild(dayElement);
     }
 }
+
+
 
 // Initialize calendar on page load
 window.addEventListener('DOMContentLoaded', () => {
@@ -502,6 +550,46 @@ function formatTime(time) {
 
 
     </script>   
+            <!-- jQuery first -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Popper.js (required for Bootstrap 4) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Sweet Alert -->
+  <script src="../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="../assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="../assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="../assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="../assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+ 
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo.js"></script>
+    <script src="../assets/js/demo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>

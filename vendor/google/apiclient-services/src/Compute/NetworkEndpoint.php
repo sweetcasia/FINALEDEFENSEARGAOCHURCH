@@ -40,10 +40,6 @@ class NetworkEndpoint extends \Google\Model
    */
   public $ipAddress;
   /**
-   * @var string
-   */
-  public $ipv6Address;
-  /**
    * @var int
    */
   public $port;
@@ -117,20 +113,6 @@ class NetworkEndpoint extends \Google\Model
   public function getIpAddress()
   {
     return $this->ipAddress;
-  }
-  /**
-   * @param string
-   */
-  public function setIpv6Address($ipv6Address)
-  {
-    $this->ipv6Address = $ipv6Address;
-  }
-  /**
-   * @return string
-   */
-  public function getIpv6Address()
-  {
-    return $this->ipv6Address;
   }
   /**
    * @param int

@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="cs/rating.css">
     
     <style>
-      .days li{
+       .days li{
         padding: 20px!important;
       }
       
@@ -215,14 +215,11 @@
 }
 
 .col-md-6, .col-lg-6, .col-xl-3, .col-xl-4, .col-xl-5 {
-    flex: 1 1 calc(33.333% - 10px); /* 3 containers side by side with space */
-    margin-bottom: 20px;
+    flex: 1 1 calc( 9.333% - 6px); /* 3 containers side by side with space */
 }
 
 @media (max-width: 768px) {
-    .col-md-6, .col-lg-6, .col-xl-3, .col-xl-4, .col-xl-5 {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
+    
 }
 .text-container {
         text-align: left; /* Ensure text is aligned to the left */
@@ -238,47 +235,105 @@
 .footer .container,
 .footer .container-fluid {
     display: block !important;
+}.mail-us-wrapper {
+    display: flex; /* Ensures icon and text align horizontally */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center; /* Aligns icon and text vertically */
+    text-align: left; /* Ensures text alignment */
 }
 
+.mail-us-wrapper h5,
+.mail-us-wrapper p {
+    margin: 0; /* Removes extra margin between elements */
+    font-size: 16px; /* Sets a base font size */
+}
+
+@media (max-width: 768px) {
+    .mail-us-wrapper {
+        flex-direction: column; /* Stacks icon and text vertically */
+        text-align: center; /* Centers the text for smaller screens */
+    }
+
+    .mail-us-wrapper h5,
+    .mail-us-wrapper p {
+        font-size: 14px; /* Shrinks the font size */
+    }
+}
+
+@media (max-width: 576px) {
+  
+   .footer .footer-item p {
+        width: 100%; /* Make image responsive on small screens */
+text-align:center;
+    }
+    .d-flex .text-container {
+      text-align:center;
+    }
+    .mb-0 {
+      text-align:center;
+      FONT-SIZE: 12px;
+    }
+    .col-md-6{
+    }
+    .text-body{
+      font-size: 9px;
+    }
+    .py-4{
+      padding-top: .5rem !important;
+      padding-bottom: .5rem !important;
+    }
+    .footer-logo img {
+    width: 100px;
+    z-index: 1000;
+}
+    .links{
+margin-top:0!important;
+    }
+    .services{
+margin-top:0!important;
+    }
+}
+.footer-logo img{
+  width: 283px; z-index: 1000;
+}
     </style>
   </head>
 
   <body>
   <!--Footer Start -->
-<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s" style="padding: 0px 0 !important;">
+ <!--Footer Start -->
+ <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s" style="padding: 0px 0 !important;">
     <div class="container py-5" style="padding: 10px 0 !important;">
         <div class="row g-5" style="padding-bottom: 0!important; margin-bottom: 0 !important;">
           
-            <!-- Parish Office Hours -->
-            <div class="col-md-6 col-lg-6 col-xl-5">
-              
-                <div class="footer-item">
-                <a  class="p-0">
- <img src="img/argaochurch.png" alt="" style="width: 300px;z-index:1000;     margin-left: -80px;" />
-                        
-                    </a>
-                    <p class="text-white mb-4">
-                        <span style="font-weight: 700;">Parish Office Hours</span> <br>
-                        <span style="font-weight: 700;">Morning:</span> 8:00 AM - 12:00 PM <br>
-                        <span style="font-weight: 700;">Afternoon:</span> 1:30 PM - 5:00 PM
-                        
-                    </p>
-                </div>
-            </div>
+           <!-- Parish Office Hours -->
+<div class="col-md-6 col-lg-6 col-xl-5 d-flex justify-content-center">
+    <div class="footer-item text-center">
+        <a class="p-0 footer-logo" >
+            <img src="img/argaochurch.png" alt=""  />
+        </a>
+        <p class="text-white mb-4">
+            <span style="font-weight: 700;">Parish Office Hours</span> <br>
+            <span style="font-weight: 700;">Morning:</span> 8:00 AM - 12:00 PM <br>
+            <span style="font-weight: 700;">Afternoon:</span> 1:30 PM - 5:00 PM
+        </p>
+    </div>
+</div>
 
             <!-- Address, Phone, Email -->
-            <div class="col-md-6 col-lg-6 col-xl-4">
+            <div class="col-md-6 col-lg-6 col-xl-4 links">
                 <div class="footer-item">
                     <div class="row g-3">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center ">
                             <div class="text-container">
                                 <h5 class="text-white" style="font-weight: 700;">Quick Links</h5>
                                 <ul class="mb-0 text-white" style="list-style-type: none; padding-left: 0;">
-                                    <li><a href="#" class="text-white">Home</a></li>
-                                    <li><a href="#" class="text-white">About Us</a></li>
-                                    <li><a href="#" class="text-white">Services</a></li>
-                                    <li><a href="#" class="text-white">Vicinity Map</a></li>
-                                    <li><a href="#" class="text-white">Contact Us</a></li>
+                                    <li><a href="CitizenPage.php" class="text-white">Home</a></li>
+                                    <li><a href="History.php" class="text-white">History</a></li>
+                                    <li><a href="Architecture.php" class="text-white">Architecture</a></li>
+                                    <li><a href="Baptismal.php" class="text-white">Services</a></li>
+                                    <li><a href="Map.php" class="text-white">Vicinity Map</a></li>
+                                    <li><a href="Contactus.php" class="text-white">Contact Us</a></li>
                                    
                                 </ul>
                             </div>
@@ -288,18 +343,19 @@
             </div>
 
             <!-- Services Section -->
-            <div class="col-md-6 col-lg-6 col-xl-4">
+            <div class="col-md-6 col-lg-6 col-xl-4 services">
                 <div class="footer-item">
                     <div class="row g-3">
                         <div class="d-flex align-items-center">
                             <div class="text-container">
                                 <h5 class="text-white" style="font-weight: 700;">Services</h5>
                                 <ul class="mb-0 text-white" style="list-style-type: none; padding-left: 0;">
-                                    <li><a href="#" class="text-white">Baptism</a></li>
-                                    <li><a href="#" class="text-white">Confirmation</a></li>
-                                    <li><a href="#" class="text-white">Wedding</a></li>
-                                    <li><a href="#" class="text-white">Funeral</a></li>
-                                    <li><a href="#" class="text-white">Request Form</a></li>
+                                    <li><a href="Baptismal.php" class="text-white">Baptism</a></li>
+                                    <li><a href="Confirmation.php" class="text-white">Confirmation</a></li>
+                                    <li><a href="Wedding.php" class="text-white">Wedding</a></li>
+                                    <li><a href="Funeral.php" class="text-white">Funeral</a></li>
+                                    <li><a href="FillRequestChoice.php" class="text-white">Request Form</a></li>
+                                    <li><a href="Eucharistic.php" class="text-white">Eucharistic Masses</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -307,37 +363,13 @@
                 </div>
             </div>
 
-            <!-- Address, Phone, Email Section -->
-            <div class="col-md-6 col-lg-6 col-xl-3" style="padding: 0; margin: 0;">
-                <div class="footer-item" style="margin-top: 0;">
-                    <div class="d-flex align-items-center">
-                        <div class="btn-lg-square rounded-circle bg-white text-white p-4 me-4">
-                            <i class="fas fa-map-marker-alt fa-2x" style="color: green;font-size: 1.5rem;"></i>
-                        </div>
-                        <div class="text-container">
-                            <h5 class="text-white" style="line-height: 0;font-size:19px;">Address</h5>
-                            <p class="mb-0 text-white">Poblacion, Argao, Cebu</p>
-                        </div>
-                        <div class="btn-lg-square rounded-circle bg-white text-white p-4 me-4">
-                            <i class="fa fa-phone-alt fa-2x" style="color: darkblue;font-size: 1.5rem;"></i>
-                        </div>
-                        <div class="text-container">
-                            <h5 class="text-white" style="line-height: 0;font-size:19px;">Telephone</h5>
-                            <p class="mb-0 text-white">(032) 367 7442</p>
-                        </div>
-                        <div class="btn-lg-square rounded-circle bg-white text-white p-4 me-4">
-                            <i class="fas fa-envelope fa-2x" style="color: red;font-size: 1.5rem;"></i>
-                        </div>
-                        <div class="text-container">
-                            <h5 class="text-white" style="line-height: 0;font-size:19px;">Mail Us</h5>
-                            <p class="mb-0 text-white">argaochurchcebu@gmail.com</p>
-                        </div>
+         <!-- Contact Information -->
+   
+    </div>        </div>
                     </div>
                 </div>
             </div>
-            <!-- End of Section -->
-        </div>
-    </div>
+
 
 <!-- Footer End -->
 
@@ -354,6 +386,7 @@
             </span>
         </div>
     </div>
+<!-- Copyright End -->
 <!-- Copyright End -->
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

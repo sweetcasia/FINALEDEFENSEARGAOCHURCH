@@ -101,22 +101,23 @@ class User {
         try {
             $mail = new PHPMailer(true);
             $mail->isSMTP();
-            $mail->Host = $config['smtp']['host'];
+            $mail->Host = $this->config['smtp']['host'];
             $mail->SMTPAuth = true;
-            $mail->Username = $config['smtp']['username'];
-            $mail->Password = $config['smtp']['password'];
-            $mail->SMTPSecure = $config['smtp']['secure'];
-            $mail->Port = 587;
-           
-            $mail->setFrom($config['smtp']['username']);
+            $mail->Username = $this->config['smtp']['username'];
+            $mail->Password = $this->config['smtp']['password'];
+            $mail->SMTPSecure = $this->config['smtp']['secure'];
+            $mail->Port = $this->config['smtp']['port'];
+    
+            $mail->setFrom($this->config['smtp']['username']);
             $mail->addAddress($email);
             $mail->isHTML(true);
             $mail->Subject = $subject;
-            $mail->Body = "<div style='width: 100%; max-width: 400px; margin: auto; padding: 20px;'>
-                           <div style='background: rgba(255, 255, 255, 0.8); padding: 20px;width:100%;height:auto;'>
-                               {$body}
-                           </div>
-                       </div>";
+            $mail->Body = "<div style='width: 100%; max-width: 400px; margin: auto; background: url(cid:background_img) no-repeat center center; background-size: cover; padding: 20px;'>
+                               <div style='background: rgba(255, 255, 255, 0.8); padding: 20px;width:100%;height:auto;'>
+                                   {$body}
+                                   <img src='cid:signature_img' style='width: 200px; height: auto;'>
+                               </div>
+                           </div>";
             
             return $mail->send();
         } catch (Exception $e) {
@@ -892,32 +893,7 @@ if ($stmt->execute()) {
         $data['c_date_birth'] = "$year-$month-$day";
     
         // Sanitize input data
-        if (isset($_FILES['valid_id'])) {
-            $validIdError = $_FILES['valid_id']['error'];
-            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
-            $validIdName = $_FILES['valid_id']['name'];
-            $validIdUploadPath = 'img/' . $validIdName;
-    
-            // Proceed with file upload if no error
-            if ($validIdError === 0) {
-                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
-    
-                if (in_array($imageFileType, $allowedFileTypes)) {
-                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
-                    } else {
-                        return "Failed to upload valid ID image";
-                    }
-                } else {
-                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
-                }
-            } else {
-                return "Error uploading valid ID image";
-            }
-        } else {
-            return "No valid ID image uploaded";
-        }
+      
         $sanitizedData = $this->sanitizeData($data);
     
         // Calculate age
@@ -927,24 +903,23 @@ if ($stmt->execute()) {
         $sanitizedData['password'] = password_hash($sanitizedData['password'], PASSWORD_DEFAULT);
     
         // Prepare SQL query with placeholders
-        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password,valid_id) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, c_date_birth, age, email, phone, password) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?,  ?,?)";
     
         // Use prepared statements to prevent SQL injection
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param(
-            'sssssssssss',
+            'sssssssss',
             $sanitizedData['user_type'],
             $sanitizedData['r_status'],
             $sanitizedData['fullname'],
             $sanitizedData['address'],
-            $sanitizedData['gender'],
             $sanitizedData['c_date_birth'],
             $sanitizedData['age'],
             $sanitizedData['email'],
             $sanitizedData['phone'],
-            $sanitizedData['password'],
-            $sanitizedData['valid_id']
+            $sanitizedData['password']
+        
         );
     
         if ($stmt->execute()) {
@@ -971,28 +946,7 @@ if ($stmt->execute()) {
         $data['c_date_birth'] = "$year-$month-$day";
     
         // Sanitize input data
-        if (isset($_FILES['valid_id'])) {
-            $validIdError = $_FILES['valid_id']['error'];
-            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
-            $validIdName = $_FILES['valid_id']['name'];
-            $validIdUploadPath = 'img/' . $validIdName;
-    
-            // Proceed with file upload if no error
-            if ($validIdError === 0) {
-                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
-                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
-    
-                if (in_array($imageFileType, $allowedFileTypes)) {
-                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
-                    } else {
-                        return "Failed to upload valid ID image";
-                    }
-                } else {
-                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
-                }
-            } 
-        } 
+      
         $sanitizedData = $this->sanitizeData($data);
     
         // Calculate age
@@ -1002,13 +956,13 @@ if ($stmt->execute()) {
         $sanitizedData['password'] = password_hash($sanitizedData['password'], PASSWORD_DEFAULT);
     
         // Prepare SQL query with placeholders
-        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password,valid_id) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
         // Use prepared statements to prevent SQL injection
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param(
-            'sssssssssss',
+            'ssssssssss',
             $sanitizedData['user_type'],
             $sanitizedData['r_status'],
             $sanitizedData['fullname'],
@@ -1018,8 +972,7 @@ if ($stmt->execute()) {
             $sanitizedData['age'],
             $sanitizedData['email'],
             $sanitizedData['phone'],
-            $sanitizedData['password'],
-            $sanitizedData['valid_id']
+            $sanitizedData['password']
         );
     
         if ($stmt->execute()) {

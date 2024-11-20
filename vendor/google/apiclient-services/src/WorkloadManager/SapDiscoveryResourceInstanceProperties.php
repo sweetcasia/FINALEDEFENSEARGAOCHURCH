@@ -35,10 +35,6 @@ class SapDiscoveryResourceInstanceProperties extends \Google\Collection
    */
   public $instanceRole;
   /**
-   * @var bool
-   */
-  public $isDrSite;
-  /**
    * @var string
    */
   public $virtualHostname;
@@ -98,20 +94,6 @@ class SapDiscoveryResourceInstanceProperties extends \Google\Collection
   public function getInstanceRole()
   {
     return $this->instanceRole;
-  }
-  /**
-   * @param bool
-   */
-  public function setIsDrSite($isDrSite)
-  {
-    $this->isDrSite = $isDrSite;
-  }
-  /**
-   * @return bool
-   */
-  public function getIsDrSite()
-  {
-    return $this->isDrSite;
   }
   /**
    * @param string

@@ -23,10 +23,6 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
   protected $evOptionsType = GoogleMapsPlacesV1SearchTextRequestEVOptions::class;
   protected $evOptionsDataType = '';
   /**
-   * @var bool
-   */
-  public $includePureServiceAreaBusinesses;
-  /**
    * @var string
    */
   public $includedType;
@@ -93,20 +89,6 @@ class GoogleMapsPlacesV1SearchTextRequest extends \Google\Collection
   public function getEvOptions()
   {
     return $this->evOptions;
-  }
-  /**
-   * @param bool
-   */
-  public function setIncludePureServiceAreaBusinesses($includePureServiceAreaBusinesses)
-  {
-    $this->includePureServiceAreaBusinesses = $includePureServiceAreaBusinesses;
-  }
-  /**
-   * @return bool
-   */
-  public function getIncludePureServiceAreaBusinesses()
-  {
-    return $this->includePureServiceAreaBusinesses;
   }
   /**
    * @param string

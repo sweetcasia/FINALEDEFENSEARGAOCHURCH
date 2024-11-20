@@ -193,7 +193,26 @@ margin-top:20px;
 position: relative;
 gap:25px;
 }
+.input_boxlogin {
+  position: relative;
+  margin-top: 35px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+position: relative;
+gap:25px;
+}
 .input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border: none; /* Remove all borders initially */
+border: 1.5px solid #0066a8; /* Add bottom border */}
+.input_boxlogin input {
   height: 100%;
   width: 100%;
   border: none;
@@ -205,6 +224,10 @@ gap:25px;
 border: 1.5px solid #0066a8; /* Add bottom border */}
 
 .input_box input:focus {
+  border: 1px solid #ac0727cf; /* Change bottom border color on focus */
+  box-shadow: 0 0 5px rgba(172, 7, 39, 0.5); /* Shadow with related red color on focus */
+}
+.input_boxlogin input:focus {
   border: 1px solid #ac0727cf; /* Change bottom border color on focus */
   box-shadow: 0 0 5px rgba(172, 7, 39, 0.5); /* Shadow with related red color on focus */
 }
@@ -232,13 +255,28 @@ border: 1.5px solid #0066a8; /* Add bottom border */
   color: #707070;
   padding-left: 7px;
 }
-
+.input_boxlogin i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+  padding-left: 7px;
+}
 .input_box i.email,
 .input_box i.password {
   left: 0;
 }
 .input_box input:focus ~ i.email,
 .input_box input:focus ~ i.password {
+  color: #ac0727cf;
+}
+.input_boxlogin i.email,
+.input_boxlogin i.password {
+  left: 0;
+}
+.input_boxlogin input:focus ~ i.email,
+.input_boxlogin input:focus ~ i.password {
   color: #ac0727cf;
 }
 /* Style for all icons within .input_group when the input is focused */
@@ -253,6 +291,11 @@ i.uil {
 
 
 .input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+  padding-right: 7px;
+}.input_boxlogin i.pw_hide {
   right: 0;
   font-size: 18px;
   cursor: pointer;
@@ -339,11 +382,7 @@ i.uil {
   transition: all 0.2s ease; /* Smooth transition for focus effects */
   border: 1.5px solid #0066a8; /* Add bottom border */
   }
-  @media (max-width: 950px) {
-    .responsive-image {
-        display: none;
-    }
-}
+ 
 .signuphover {
   color: #0066a8; /* Initial text color */
   text-decoration: none; /* Remove default underline */
@@ -412,7 +451,109 @@ i.uil {
     visibility: visible;
     opacity: 1;
 }
+@media (max-width: 1200px) {
+    .responsive-image {
+        display: none;
+    }
+    .input_box {
+    display: block; /* Make the input box visible */
+    height: auto;   /* Adjust height to fit content */
+    width: 100%;    /* Make the input box take up the full width */
+    margin-top: 0;
 
+  }
+  .container1{
+    min-height: 100vh; 
+  }
+  /* Adjusting the .input-group */
+  .input-group {
+    margin-bottom: 10px;
+    margin: 10px 0; /* Adjust margins for spacing between input fields */
+  }
+  .input_box input{
+    margin: 10px; /* Adjust margins for spacing between input fields */
+  }
+  .input_box i{
+    padding-left: 16px;
+  } .input_box select{
+    margin: 10px; /* Adjust margins for spacing between input fields */
+  }
+  .birthday-selectors{
+    display:flex;
+   
+    justify-content: space-between;
+  }
+  .birthday-input label{
+    margin-bottom: -13px;
+    margin-top: 10px;    
+    margin-left: 13px;
+
+  }
+  .input_group input[type="file"]{
+    margin-top: 1px;
+  }
+  .input_group label {
+    margin-top: 27px;
+    margin-left: 13px;
+}
+} 
+@media (max-width: 950px) {
+    .responsive-image {
+        display: none;
+    }
+} 
+@media screen and (max-width: 768px) {
+      .right-panel {
+        display: none;
+      }  .left-panel {
+        display: none;
+      }
+      .right-panel {
+        height: 70%;     
+       }
+       .input_box {
+    display: block; /* Make the input box visible */
+    height: auto;   /* Adjust height to fit content */
+    width: 100%;    /* Make the input box take up the full width */
+    margin-top: 0;
+
+  }
+  
+  /* Adjusting the .input-group */
+  .input-group {
+    margin-bottom: 10px;
+    margin: 10px 0; /* Adjust margins for spacing between input fields */
+  }
+  .input_box input{
+    margin: 10px; /* Adjust margins for spacing between input fields */
+  }
+  .input_box i{
+    padding-left: 16px;
+  } .input_box select{
+    margin: 10px; /* Adjust margins for spacing between input fields */
+  }
+  .birthday-selectors{
+    display:flex;
+   
+    justify-content: space-between;
+  }
+  .birthday-input label{
+    margin-bottom: -12px;
+    margin-top: 10px;    
+    margin-left: 13px;
+
+  }
+  .input_group input[type="file"]{
+    margin-top: 1px;
+  }
+  .input_group label {
+   
+    margin-top: 26px;
+    margin-left: 13px;
+}
+
+
+    }
 /* Hover color for icons */
 
     </style>
@@ -451,10 +592,7 @@ i.uil {
               <i class="uil uil-eye-slash pw_hide"></i>
             </div>
             <div class="option_field">
-              <span class="checkbox">
-                <input type="checkbox" id="check" />
-                <label for="check">Remember me</label>
-              </span>
+              
               <a href="forgotstep1.php" class="forgot_pw">Forgot your password?</a> <!-- Updated link -->
             </div>
             <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Log In</button>
@@ -591,12 +729,14 @@ i.uil {
             <input type="password" class="form-control" id="passwords" name="password" placeholder="Password">
             <div class="error" id="password_error"></div>
             <i class="uil uil-lock password"></i>
+            <i class="uil uil-eye-slash pw_hide"></i>
             </div>
             <div class="input_group">
 
           <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
           <div class="error" id="confirmpassword_error"></div>
           <i class="uil uil-lock password"></i>
+          <i class="uil uil-eye-slash pw_hide"></i>
             </div>
 
             </div>

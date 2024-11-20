@@ -16,9 +16,7 @@
 
 namespace Twilio\Rest\Marketplace\V1;
 
-use Twilio\Exceptions\TwilioException;
 use Twilio\ListResource;
-use Twilio\Values;
 use Twilio\Version;
 
 
@@ -37,31 +35,19 @@ class ReferralConversionList extends ListResource
         // Path Solution
         $this->solution = [
         ];
-
-        $this->uri = '/ReferralConversion';
     }
 
     /**
-     * Create the ReferralConversionInstance
-     *
-     * @param CreateReferralConversionRequest $createReferralConversionRequest
-     * @return ReferralConversionInstance Created ReferralConversionInstance
-     * @throws TwilioException When an HTTP error occurs.
+     * Constructs a ReferralConversionContext
      */
-    public function create(CreateReferralConversionRequest $createReferralConversionRequest): ReferralConversionInstance
+    public function getContext(
+        
+    ): ReferralConversionContext
     {
-
-        $headers = Values::of(['Content-Type' => 'application/x-www-form-urlencoded' ]);
-        $data = $createReferralConversionRequest->toArray();
-        $headers['Content-Type'] = 'application/json';
-        $payload = $this->version->create('POST', $this->uri, [], $data, $headers);
-
-        return new ReferralConversionInstance(
-            $this->version,
-            $payload
+        return new ReferralConversionContext(
+            $this->version
         );
     }
-
 
     /**
      * Provide a friendly representation

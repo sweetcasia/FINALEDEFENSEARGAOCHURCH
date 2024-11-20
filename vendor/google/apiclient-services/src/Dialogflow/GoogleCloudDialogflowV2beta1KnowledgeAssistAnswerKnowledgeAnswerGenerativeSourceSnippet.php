@@ -20,10 +20,6 @@ namespace Google\Service\Dialogflow;
 class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerativeSourceSnippet extends \Google\Model
 {
   /**
-   * @var array[]
-   */
-  public $metadata;
-  /**
    * @var string
    */
   public $text;
@@ -36,20 +32,6 @@ class GoogleCloudDialogflowV2beta1KnowledgeAssistAnswerKnowledgeAnswerGenerative
    */
   public $uri;
 
-  /**
-   * @param array[]
-   */
-  public function setMetadata($metadata)
-  {
-    $this->metadata = $metadata;
-  }
-  /**
-   * @return array[]
-   */
-  public function getMetadata()
-  {
-    return $this->metadata;
-  }
   /**
    * @param string
    */

@@ -264,10 +264,7 @@ $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
       <div class="page-inner">
       <div class="card">
   <div class="card-header text-center">
-    <img src="../PageAdmin/<?php echo ($citizenDetails['valid_id']); ?>" 
-         alt="Profile Picture" 
-         class="profile-img rounded-circle" 
-         style="width: 150px; height: 150px; object-fit: cover; border: 5px solid #f8f9fa;">
+    
     <h4 class="card-title mt-3">Account Details</h4>
   </div>
 
