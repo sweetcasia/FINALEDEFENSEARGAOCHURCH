@@ -799,7 +799,7 @@ class User {
         }
     
         // Handle the valid ID upload
-        $validIdUploadResult = $this->handleFileUpload('valid_id', 'img');
+        $validIdUploadResult = $this->handleFileUpload('valid_id', '../../img/');
         if ($validIdUploadResult['error']) {
             return $validIdUploadResult['message'];
         }
