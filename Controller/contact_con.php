@@ -5,6 +5,7 @@ require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 require 'phpmailer/src/Exception.php';
 require __DIR__ . "/../vendor/autoload.php";
+$config = include('../config.php'); 
 error_reporting(0); // Disable all error reporting
 
 // Alternatively, if you only want to hide errors but log them
@@ -26,16 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = "argaoparishchurch@gmail.com";
-        $mail->Password   = "xomoabhlnrlzenur";
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+        $mail->Host = $config['smtp']['host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $config['smtp']['username'];
+        $mail->Password = $config['smtp']['password'];
+        $mail->SMTPSecure = $config['smtp']['secure'];
+        $mail->Port = $config['smtp']['port'];
 
         // Set up recipient
         $mail->setFrom($email, "$firstName $lastName");
-        $mail->addAddress('argaoparishchurch@gmail.com');
+        $mail->addAddress($config['smtp']['username']);
 
         // Email content
         $mail->isHTML(true);
