@@ -799,7 +799,7 @@ class User {
     
     // Check for valid ID image upload
 // Define the path to the uploads directory
-$validIdUploadDir = '../../Controller/img/'; // Ensure the uploads directory exists and is writable
+$validIdUploadDir = 'img/'; // Ensure the uploads directory exists and is writable
 
 // Check if the file is uploaded
 if (isset($_FILES['valid_id'])) {
