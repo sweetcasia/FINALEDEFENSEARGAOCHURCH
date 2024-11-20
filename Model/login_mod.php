@@ -798,25 +798,37 @@ class User {
         }
     
     // Check for valid ID image upload
+// Define the path to the uploads directory
+$validIdUploadDir = '../../Controller/img/'; // Ensure the uploads directory exists and is writable
+
+// Check if the file is uploaded
 if (isset($_FILES['valid_id'])) {
     $validIdError = $_FILES['valid_id']['error'];
     $validIdTmpName = $_FILES['valid_id']['tmp_name'];
     $validIdName = $_FILES['valid_id']['name'];
-    $validIdUploadPath = 'img/' . $validIdName;
+    $validIdUploadPath = $validIdUploadDir . $validIdName;
 
     // Proceed with file upload if no error
     if ($validIdError === 0) {
+        // Check if the uploads directory exists and is writable
+        if (!is_dir($validIdUploadDir)) {
+            mkdir($validIdUploadDir, 0777, true); // Create the directory if it doesn't exist
+        }
+
+        // Upload the file
         if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
-            $data['valid_id'] = $validIdUploadPath; // Save the file path in data
+            // Store the path of the uploaded file
+            $data['valid_id'] = $validIdUploadPath; 
         } else {
             return "Failed to upload valid ID image";
         }
     } else {
-        return "Error uploading valid ID image";
+        return "Error uploading valid ID image: " . $validIdError;
     }
 } else {
     return "No valid ID image uploaded";
 }
+
 
     
         // Sanitize input data
