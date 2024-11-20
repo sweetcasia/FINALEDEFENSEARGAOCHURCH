@@ -122,8 +122,20 @@ $pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
     <?php if (!empty($pendingAppointments)) {
         foreach ($pendingAppointments as $index => $appointment) {
             // Convert schedule times to 12-hour format
-            $scheduleStart = date('g:i A', strtotime($appointment['schedule_start_time']));
-            $scheduleEnd = date('g:i A', strtotime($appointment['schedule_end_time']));
+    // Check if schedule start time is available
+if (!empty($appointment['schedule_start_time'])) {
+  $scheduleStart = date('g:i A', strtotime($appointment['schedule_start_time']));
+} else {
+  $scheduleStart = 'No Time';  // Default message when start time is not set
+}
+
+// Check if schedule end time is available
+if (!empty($appointment['schedule_end_time'])) {
+  $scheduleEnd = date('g:i A', strtotime($appointment['schedule_end_time']));
+} else {
+  $scheduleEnd = 'No Time';  // Default message when end time is not set
+}
+
             $scheduleTime = $scheduleStart . ' - ' . $scheduleEnd;
 
             // Check if seminar details exist, otherwise set to "No seminar"
@@ -141,7 +153,19 @@ $pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
                 <td><?= $index + 1; ?></td>
                 <td><?= htmlspecialchars($appointment['citizen_name']); ?></td>
                 <td><?= htmlspecialchars($appointment['type']); ?></td>
-                <td><?= htmlspecialchars(date('F j, Y', strtotime($appointment['schedule_date']))); ?></td>
+                <td>
+    <?php
+        // Check if schedule_date is available
+        if (!empty($appointment['schedule_date'])) {
+            // Format and display the date
+            echo htmlspecialchars(date('F j, Y', strtotime($appointment['schedule_date'])));
+        } else {
+            // Display "No Date" if the date is not set
+            echo 'No Date';
+        }
+    ?>
+</td>
+
                 <td><?= htmlspecialchars($scheduleTime); ?></td>
                 <td><?= htmlspecialchars($seminarDate); ?></td>
                 <td><?= htmlspecialchars($seminarTime); ?></td>
