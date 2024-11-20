@@ -101,7 +101,7 @@
 <body>
 <nav class="navbar navbar-expand-lg" style="    z-index: 1000;" >
     <div class="container-fluid">
-        <a href="citizenpage.php" class="navbar-brand">
+        <a href="CitizenPage.php" class="navbar-brand">
             <img src="assets/img/argaochurch.png" alt="Logo" />
         </a>
 
@@ -154,7 +154,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="map.php" class="nav-link">Vicinity Map</a>
+                    <a href="Map.php" class="nav-link">Vicinity Map</a>
                 </li>
                 <li class="nav-item">
                     <a href="ContactUs.php" class="nav-link">Contact Us</a>

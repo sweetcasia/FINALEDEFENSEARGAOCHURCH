@@ -81,7 +81,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             </a>
           </li>
           <li class="nav-item <?= ($current_page == 'citizenpage.php') ? 'active' : ''; ?>">
-            <a href="citizenpage.php">
+            <a href="CitizenPage.php">
             <i class="fa-solid fa-circle-left"></i>
                           <p>Back to Landing Page</p>
             </a>
