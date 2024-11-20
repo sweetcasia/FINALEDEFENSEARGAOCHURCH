@@ -163,10 +163,16 @@ $pendingItems = $staff->getRequestSchedule();
     if ($item['pr_status'] == 'Pending') {
         echo 'Waiting for approval';
     } else {
-        echo htmlspecialchars($item['priest_name']);
+        // Check if $item['priest_name'] is null
+        if ($item['priest_name'] === null) {
+            echo 'Priest not set';
+        } else {
+            echo htmlspecialchars($item['priest_name']);
+        }
     }
     ?>
 </td>
+
 
                      <td><?php echo htmlspecialchars($item['req_status']); ?></td>
                      <td>

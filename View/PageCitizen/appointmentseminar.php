@@ -133,7 +133,7 @@ if (!empty($appointment['schedule_start_time'])) {
 if (!empty($appointment['schedule_end_time'])) {
   $scheduleEnd = date('g:i A', strtotime($appointment['schedule_end_time']));
 } else {
-  $scheduleEnd = 'No Time';  // Default message when end time is not set
+  $scheduleEnd = '';  // Default message when end time is not set
 }
 
             $scheduleTime = $scheduleStart . ' - ' . $scheduleEnd;
