@@ -1,7 +1,5 @@
 <?php
-session_start();
-$errorMessage = isset($_SESSION['errorMessage']) ? $_SESSION['errorMessage'] : '';
-unset($_SESSION['errorMessage']); // Clear the message after displaying it
+
 ?>
 
 <!DOCTYPE html>
