@@ -797,27 +797,25 @@ class User {
             return "Date of birth is incomplete";
         }
     
-// Check if the file is uploaded
-if (isset($_FILES['valid_id'])) {
-    $validIdError = $_FILES['valid_id']['error'];
-
-    // Proceed with file upload if no error
-    if ($validIdError === 0) {
-        // Get the file content and encode it as Base64
-        $fileTmpName = $_FILES['valid_id']['tmp_name'];
-        $fileData = file_get_contents($fileTmpName);
-        $base64File = base64_encode($fileData);
-
-        // Store the base64-encoded string in the database
-        $data['valid_id'] = $base64File;
-    } else {
-        return "Error uploading valid ID image: " . $_FILES['valid_id']['error'];
-    }
-} else {
-    return "No valid ID image uploaded.";
-}
-
-
+        // Check if the file is uploaded
+        if (isset($_FILES['valid_id'])) {
+            $validIdError = $_FILES['valid_id']['error'];
+    
+            // Proceed with file upload if no error
+            if ($validIdError === 0) {
+                // Get the file content and encode it as Base64
+                $fileTmpName = $_FILES['valid_id']['tmp_name'];
+                $fileData = file_get_contents($fileTmpName);
+                $base64File = base64_encode($fileData);
+    
+                // Store the base64-encoded string in the database
+                $data['valid_id'] = $base64File;
+            } else {
+                return "Error uploading valid ID image: " . $_FILES['valid_id']['error'];
+            }
+        } else {
+            return "No valid ID image uploaded.";
+        }
     
         // Sanitize input data
         $sanitizedData = $this->sanitizeData($data);
@@ -832,49 +830,46 @@ if (isset($_FILES['valid_id'])) {
         $currentTime = date("Y-m-d H:i:s");
     
         // Prepare SQL query with placeholders
-// Prepare SQL query with placeholders
-$query = "INSERT INTO citizen (user_type, fullname, address, gender, c_date_birth, age, email, valid_id, phone, password, r_status, c_current_time, otp_code) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
-
-// Generate and send OTP
-$otp = $this->generateOTP();
-$this->sendOTP($sanitizedData['email'], $otp);
-
-// Use prepared statements to prevent SQL injection
-$stmt = $this->conn->prepare($query);
-$stmt->bind_param(
-    'ssssssssssss', // Change this to match the number of columns
-    $sanitizedData['user_type'],
-    $sanitizedData['fullname'],
-    $sanitizedData['address'],
-    $sanitizedData['gender'],
-    $sanitizedData['c_date_birth'],
-    $sanitizedData['age'],
-    $sanitizedData['email'],
-    $sanitizedData['valid_id'],
-    $sanitizedData['phone'],
-    $sanitizedData['password'],
-    $currentTime,  // Store current time here
-    $otp            // Bind OTP here
-);
-
+        $query = "INSERT INTO citizen (user_type, fullname, address, gender, c_date_birth, age, email, valid_id, phone, password, r_status, c_current_time, otp_code) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '', ?, ?)";
     
-     // Execute the prepared statement
-if ($stmt->execute()) {
-    // On successful registration, set session variables
-    session_start(); // Make sure the session is started
-    $_SESSION['otp_code'] = $otp; // Store the generated OTP in session
-    $_SESSION['user_email'] = $sanitizedData['email']; // Store the user email in session
-    $_SESSION['c_current_time'] = time() + 300; // Set expiry time for OTP (5 minutes)
-
-    // Optionally, you could redirect or return a success message
-    return "Registration successful. An OTP has been sent to your email.";
-} else {
-    return "Error during registration: " . $stmt->error;
-}
-
+        // Generate and send OTP
+        $otp = $this->generateOTP();
+        $this->sendOTP($sanitizedData['email'], $otp);  // Send OTP regardless of email status
+    
+        // Use prepared statements to prevent SQL injection
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param(
+            'ssssssssssss', // Change this to match the number of columns
+            $sanitizedData['user_type'],
+            $sanitizedData['fullname'],
+            $sanitizedData['address'],
+            $sanitizedData['gender'],
+            $sanitizedData['c_date_birth'],
+            $sanitizedData['age'],
+            $sanitizedData['email'],
+            $sanitizedData['valid_id'],
+            $sanitizedData['phone'],
+            $sanitizedData['password'],
+            $currentTime,  // Store current time here
+            $otp            // Bind OTP here
+        );
+    
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            // On successful registration, set session variables
+            session_start(); // Make sure the session is started
+            $_SESSION['otp_code'] = $otp; // Store the generated OTP in session
+            $_SESSION['user_email'] = $sanitizedData['email']; // Store the user email in session
+            $_SESSION['c_current_time'] = time() + 300; // Set expiry time for OTP (5 minutes)
+    
+            // Redirect to the OTP page
+            header('Location: otp_view.php'); // Redirect to OTP page after registration
+            exit();  // Ensure that no further code is executed after redirect
+        } else {
+            return "Error during registration: " . $stmt->error;
+        }
     }
-    
     
     
     public function registerUsers($data) {
