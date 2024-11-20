@@ -121,13 +121,14 @@ $regId = $_SESSION['citizend_id'];
                   <div class="form-group">
     <label for="validId">Valid ID:</label>
     <img class="form-control" 
-         src="<?php echo !empty($validId) ? '../PageLanding/' . htmlspecialchars($validId) : 'img/default-placeholder.png'; ?>" 
+         src="<?php echo !empty($validId) ? 'data:image/jpeg;base64,' . htmlspecialchars($validId) : 'img/default-placeholder.png'; ?>" 
          alt="Valid ID" 
          style="max-width: 200px; max-height: 200px; cursor: pointer;" 
          data-bs-toggle="modal" 
          data-bs-target="#imageModal"
          onerror="this.onerror=null;this.src='img/default-placeholder.jpg';">
-</div>  
+</div>
+
 
                 </div>
               </div>
