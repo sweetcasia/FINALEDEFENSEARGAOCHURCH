@@ -487,8 +487,18 @@ We invite you to check back regularly to stay updated on the vibrant life of our
     <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"
       ><i class="fa fa-arrow-up"></i
     ></a>
-      <!-- JavaScript Libraries -->
-       <!-- JavaScript Libraries -->
+    <!-- Load libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha384-DnERQ94VuH5lkdrj4O22LTf5DvK1mvTxM7ekXpsWyIq+XUT2IjBXsdVxC2fMlpBZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqk8GQxG9eWqYsOeD1J3o0+1G+a26p6ef5e6EgP9glJ8Jo3o5SkF8" crossorigin="anonymous"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="js/main.js" defer></script>
 
         <script>
 function toggleAccordion(collapseId, button) {
@@ -681,17 +691,6 @@ function validateLoginForm() {
 
 </script>
   
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../PageLanding/lib/wow/wow.min.js"></script>
-    <script src="../PageLanding/lib/easing/easing.min.js"></script>
-    <script src="../PageLanding/lib/waypoints/waypoints.min.js"></script>
-    <script src="../PageLanding/lib/counterup/counterup.min.js"></script>
-    <script src="../PageLanding/lib/lightbox/js/lightbox.min.js"></script>
-    <script src="../PageLanding/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="../PageLanding/js/main.js"></script>
+ 
   </body>
 </html>

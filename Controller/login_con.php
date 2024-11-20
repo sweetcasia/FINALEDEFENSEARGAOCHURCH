@@ -124,7 +124,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Check if registration was successful
         if (strpos($registrationResult, "successful") !== false) {
-            // Redirect to OTP processing page
+            // Check if the email is valid
+            if (!filter_var($registrationData['email'], FILTER_VALIDATE_EMAIL)) {
+                // Display an alert for invalid email
+                echo '<script>alert("Registration successful, but the email provided is invalid. OTP was not sent.");</script>';
+            } else {
+                // Display an alert for valid email
+                echo '<script>alert("Registration successful. An OTP has been sent to your email.");</script>';
+            }
+
+            // Proceed to OTP page regardless of email validity
             header('Location:../../otp_view.php'); // Adjust path as necessary
             exit();
         } else {
@@ -138,6 +147,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+
+
 elseif (isset($_POST['signup_forms'])) {
     $errors = [];
     // Assuming further validation here
