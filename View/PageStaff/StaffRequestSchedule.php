@@ -165,7 +165,7 @@ $pendingItems = $staff->getRequestSchedule();
     } else {
         // Check if $item['priest_name'] is null
         if ($item['priest_name'] === null) {
-            echo 'Priest not set';
+            echo '';
         } else {
             echo htmlspecialchars($item['priest_name']);
         }

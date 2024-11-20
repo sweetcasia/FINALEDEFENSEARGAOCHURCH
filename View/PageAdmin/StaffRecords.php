@@ -97,7 +97,7 @@ $getpriest = $priest->getStaffAccount($statusFilter);
                 <!-- Dropdown Form to filter between Default and Archive -->
                
                 <div class="card-body">
-                <form method="GET" action="PriestRecords.php">
+                <form method="GET" action="StaffRecords.php">
                 <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             <?php 
@@ -108,8 +108,8 @@ $getpriest = $priest->getStaffAccount($statusFilter);
 
         <!-- Dropdown menu with filter options -->
         <ul class="dropdown-menu" aria-labelledby="statusDropdown">
-            <li><a class="dropdown-item" href="PriestRecords.php?status_filter=">Default</a></li>
-            <li><a class="dropdown-item" href="PriestRecords.php?status_filter=Unactive">Archive</a></li>
+            <li><a class="dropdown-item" href="StaffRecords.php?status_filter=">Default</a></li>
+            <li><a class="dropdown-item" href="StaffRecords.php?status_filter=Unactive">Archive</a></li>
             <!-- Add more options here if needed -->
         </ul>
     </div>
