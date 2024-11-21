@@ -2660,108 +2660,70 @@ private function generateReferenceNumber() {
     
         return $schedules;
     }
-   public function getAvailablePriests($selectedDate, $startTime, $endTime) {
-    // Query to fetch available priests excluding those already booked on the selected date and time
-    $sql = "
-    SELECT 
-        c.citizend_id,
-        c.fullname
-    FROM 
-        citizen c
-    WHERE 
-        c.user_type = 'Priest' AND c.r_status = 'Active'
+    public function getAvailablePriests($selectedDate, $startTime, $endTime) {
+        // List of event types and their corresponding table names
+        $eventTypes = [
+            'baptismfill' => 'b',
+            'confirmationfill' => 'cf',
+            'defuctomfill' => 'df',
+            'marriagefill' => 'mf',
+            'announcement' => 'ann',
+            'req_form' => 'r',
+            'mass_schedule' => 'ms'
+        ];
+    
+        // Prepare the SQL query dynamically using UNION ALL for each event type
+        $subQueries = [];
+        foreach ($eventTypes as $eventTable => $alias) {
+            $subQueries[] = "
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN {$eventTable} e ON s.schedule_id = e.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = e.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+            ";
+        }
+    
+        // Combine all the subqueries with UNION ALL
+        $sql = "
+        SELECT c.citizend_id, c.fullname
+        FROM citizen c
+        WHERE c.user_type = 'Priest' AND c.r_status = 'Active'
         AND NOT EXISTS (
-            -- Combine all event types that involve priests using UNION to check if the priest is busy
             SELECT 1
-            FROM (
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN baptismfill b ON s.schedule_id = b.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = b.approval_id
-                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN confirmationfill cf ON s.schedule_id = cf.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = cf.approval_id
-                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN defuctomfill df ON s.schedule_id = df.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = df.approval_id
-                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN marriagefill mf ON s.schedule_id = mf.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = mf.approval_id
-                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN announcement ann ON s.schedule_id = ann.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = ann.approval_id
-                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN req_form r ON s.schedule_id = r.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = r.approval_id
-                WHERE r.event_location = 'Inside'  OR r.event_location = 'Outside' AND s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-              
-                UNION ALL
-                
-                SELECT pa.priest_id
-                FROM schedule s
-                JOIN mass_schedule ms ON s.schedule_id = ms.schedule_id
-                LEFT JOIN priest_approval pa ON pa.approval_id = ms.approval_id
-                WHERE  s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-            ) AS events
+            FROM (" . implode(' UNION ALL ', $subQueries) . ") AS events
             WHERE events.priest_id = c.citizend_id
         )
-    ";
-
-    // Prepare the statement
-    $stmt = $this->conn->prepare($sql);
+        ";
     
-    // Bind the parameters for all event types
-    $stmt->bind_param(
-        "sssssssssssssssssssss",
-        $selectedDate, $endTime, $startTime,  // Baptism
-        $selectedDate, $endTime, $startTime,  // Confirmation
-        $selectedDate, $endTime, $startTime,  // Defuctom
-        $selectedDate, $endTime, $startTime,  // Marriage
-        $selectedDate, $endTime, $startTime,  // Announcement
-        $selectedDate, $endTime, $startTime,  // Mass
-        $selectedDate, $endTime, $startTime   // Req Form
-    );
-
-    // Execute the statement
-    $stmt->execute();
+        // Prepare the statement
+        $stmt = $this->conn->prepare($sql);
     
-    // Fetch results
-    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-
-    // Convert start_time and end_time to 12-hour format with AM/PM
-    foreach ($result as &$row) {
-        // Assuming the time fields are part of the fetched data
-        $row['start_time'] = $this->convertTo12HourFormat($startTime);
-        $row['end_time'] = $this->convertTo12HourFormat($endTime);
+        // Create the binding parameters array
+        $params = [];
+        for ($i = 0; $i < count($eventTypes); $i++) {
+            // Add parameters for each event type
+            array_push($params, $selectedDate, $endTime, $startTime);
+        }
+    
+        // Bind the parameters
+        $stmt->bind_param(str_repeat('sss', count($eventTypes)), ...$params);
+    
+        // Execute the statement
+        $stmt->execute();
+    
+        // Fetch results
+        $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    
+        // Convert start_time and end_time to 12-hour format with AM/PM (if needed)
+        foreach ($result as &$row) {
+            $row['start_time'] = $this->convertTo12HourFormat($startTime);
+            $row['end_time'] = $this->convertTo12HourFormat($endTime);
+        }
+    
+        return $result;
     }
-
-    return $result;
-}
+    
 
 // Helper function to convert time to 12-hour format
 private function convertTo12HourFormat($time) {
