@@ -207,28 +207,22 @@ function selectDate(dayElement) {
     const oneWeekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
 
  
+    // Make an AJAX request to fetch the schedule for the selected date
     fetch('../../Controller/getschedule_con.php', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: `date=${formattedDate}`,
-})
-.then(response => response.text()) // Check raw response text
-.then(responseText => {
-    console.log(responseText); // Inspect raw response
-    try {
-        const schedules = JSON.parse(responseText); // Try parsing the response as JSON
-        updateAvailableTimes(schedules, selectedDate, type === 'baptism');
-    } catch (error) {
-        console.error('Error parsing JSON:', error);
-    }
-})
-.catch(error => {
-    console.error('Error fetching schedule:', error);
-});
-
-
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `date=${formattedDate}`,
+    })
+    .then(response => response.json())
+    .then(schedules => {
+        console.log('Schedules:', schedules); // Debugging
+        updateAvailableTimes(schedules, selectedDate, type === 'baptism'); // Pass the event type as isBaptism
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 
 function updateAvailableTimes(schedules, selectedDate, isBaptism) {
@@ -371,7 +365,289 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     </script>
+         <style>
+          .unavailable {
+    color: grey; /* Grey out text for unavailable times */
+    cursor: not-allowed; /* Change cursor to indicate not clickable */
+    pointer-events: none; /* Prevent clicks */
+    text-decoration: line-through; /* Optional: add a line-through for extra emphasis */
+}
+   .past {
+    color: lightgray!important; /* Make past dates light gray */
+}
 
+.disabled {
+    color: gray!important; /* Make disabled dates gray */
+    cursor: no-drop; /* Change cursor to indicate not clickable */
+}
+   body {
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container-cal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .calendar {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+.schedule{
+  flex: 1;
+ 
+   
+}
+  .calendar h3,
+  .time h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+.month{
+  width:100%;
+}
+.month {
+    width: 100%;
+    text-align: center;
+  }
+
+  .month ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+
+  .month ul li {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+  }
+
+
+  .weekdays,
+  .days {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .days li,
+  .weekdays li {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .days li.active,
+  .days li.selected {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  
+       
+    .time-options {
+      display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-top: 5px;
+    }
+    .time-option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .time-selection button {
+        width: 50%;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    .time-selection button:hover {
+        background-color: #0056b3;
+    }
+      
+/* Style the radio button to be visible */
+.styled-radio {
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff;
+    cursor: pointer;
+  }
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.form-check-label.time-slot {
+  width: 150px; /* Set a fixed width for the time column */
+  text-align: left;
+}
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the label with border and background */
+.form-check-label {
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+
+
+/* Hover effect for radio button */
+.styled-radio:hover {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-check-label {
+  margin-right: 10px; /* Space between label and h6 */
+}
+
+/* Style for the h6 element beside the label */
+.time-status {
+    font-size: 14px;
+    color: green;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+.form-check input{
+  margin-top: 10px;
+}
+.col-sm-12{
+  display:flex!important;
+}
+
+
+        /* Calendar container styling */
+        .calendar-container {
+            width: 100%; /* Use full width */
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px; /* Reduce padding for a more compact appearance */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            height: 543px;
+        }
+.form-group{
+  background:white;     width: 100%; /* Use full width */
+            max-width: 500px;
+            height: 545px;
+
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+           padding-left:95px!important;
+            margin: auto;
+            padding-top: 75px;
+            padding-bottom:23px!important;
+            padding-right: 20px!important;
+}
+.form-check .form-group{
+  margin-bottom: 0;
+  padding: 0!important;
+}
+       .d-flex{
+        display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 11px;
+       }
+       @media (max-width: 768px) {
+    .container-cal {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar,
+    .schedule {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .weekdays li,
+    .days li {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .form-check-label {
+      font-size: 14px;
+    }
+
+    .time h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .weekdays li,
+    .days li {
+      font-size: 12px;
+      padding: 6px;
+    }
+
+    .form-check-label {
+      font-size: 12px;
+    }
+
+    .time h3 {
+      font-size: 1.25rem;
+    }
+    .col-sm-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex!important;
+        flex-direction: column!important;
+    }
+
+  }
+    </style>
    
 
   </head>
@@ -654,294 +930,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         
-         <style>
-.time-status {
-    display: block; /* Ensure it's displayed */
-    visibility: visible; /* Ensure it's visible */
-}
 
-          .unavailable {
-    color: grey; /* Grey out text for unavailable times */
-    cursor: not-allowed; /* Change cursor to indicate not clickable */
-    pointer-events: none; /* Prevent clicks */
-    text-decoration: line-through; /* Optional: add a line-through for extra emphasis */
-}
-   .past {
-    color: lightgray
-}
-
-.disabled {
-    color: gray
-    cursor: no-drop; /* Change cursor to indicate not clickable */
-}
-   body {
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-
-        .container-cal {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .calendar {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-.schedule{
-  flex: 1;
- 
-   
-}
-  .calendar h3,
-  .time h3 {
-    text-align: center;
-    font-size: 1.75rem;
-    color: #333;
-    margin-bottom: 20px;
-  }
-.month{
-  width:100%;
-}
-.month {
-    width: 100%;
-    text-align: center;
-  }
-
-  .month ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    list-style-type: none;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-
-  .month ul li {
-    font-size: 18px;
-    cursor: pointer;
-    color: #333;
-  }
-
-
-  .weekdays,
-  .days {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-  }
-
-  .days li,
-  .weekdays li {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: #555;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .days li.active,
-  .days li.selected {
-    background-color: #3498db;
-    color: #fff;
-  }
-
-  
-       
-    .time-options {
-      display: flex;
-    flex-direction: row;
-    gap: 60px;
-    margin-top: 5px;
-    }
-    .time-option {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .time-selection button {
-        width: 50%;
-        padding: 10px;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: white;
-        transition: background-color 0.3s;
-    }
-    .time-selection button:hover {
-        background-color: #0056b3;
-    }
-      
-/* Style the radio button to be visible */
-.styled-radio {
-    width: 20px;
-    height: 20px;
-    accent-color: #007bff;
-    cursor: pointer;
-  }
-
-.radio-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.form-check-label.time-slot {
-  width: 150px; /* Set a fixed width for the time column */
-  text-align: left;
-}
-.form-check {
-    display: flex;
-    align-items: center;
-}
-
-/* Style the label with border and background */
-.form-check-label {
-    margin-left: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #333;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-
-
-/* Hover effect for radio button */
-.styled-radio:hover {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.form-check-label {
-  margin-right: 10px; /* Space between label and h6 */
-}
-
-/* Style for the h6 element beside the label */
-.time-status {
-    font-size: 14px;
-    color: green;
-    margin-left: 10px;
-    white-space: nowrap;
-  }
-.form-check input{
-  margin-top: 10px;
-}
-.col-sm-12{
-  display:flex!important;
-}
-
-
-        /* Calendar container styling */
-        .calendar-container {
-            width: 100%; /* Use full width */
-            max-width: 500px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 10px; /* Reduce padding for a more compact appearance */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: auto;
-            height: 543px;
-        }
-.form-group{
-  background:white;     width: 100%; /* Use full width */
-            max-width: 500px;
-            height: 545px;
-
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-           padding-left:95px!important;
-            margin: auto;
-            padding-top: 75px;
-            padding-bottom:23px!important;
-            padding-right: 20px!important;
-}
-.form-check .form-group{
-  margin-bottom: 0;
-  padding: 0!important;
-}
-       .d-flex{
-        display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 11px;
-       }
-       @media (max-width: 768px) {
-    .container-cal {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .calendar,
-    .schedule {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .weekdays li,
-    .days li {
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    .d-flex {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .form-check-label {
-      font-size: 14px;
-    }
-
-    .time h3 {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .weekdays li,
-    .days li {
-      font-size: 12px;
-      padding: 6px;
-    }
-
-    .form-check-label {
-      font-size: 12px;
-    }
-
-    .time h3 {
-      font-size: 1.25rem;
-    }
-    .col-sm-12 {
-        flex: 0 0 auto;
-        width: 100%;
-        display: flex!important;
-        flex-direction: column!important;
-    }
-
-  }
-    </style>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
   </body>
