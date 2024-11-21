@@ -4,7 +4,8 @@ if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) {
     header("Location: otp_verification.php");
     exit();
 }
-
+$errorMessage = isset($_SESSION['errorMessage']) ? $_SESSION['errorMessage'] : '';
+unset($_SESSION['errorMessage']); // Clear the message after displaying it
 ?>
 <!DOCTYPE html>
 <html lang="en">

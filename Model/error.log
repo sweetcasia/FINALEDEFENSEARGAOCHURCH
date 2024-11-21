@@ -3044,3 +3044,5 @@ Stack trace:
 #1 C:\xampp\htdocs\Argao\View\PageStaff\StaffCitizenAccounts.php(3): require_once('C:\\xampp\\htdocs...')
 #2 {main}
   thrown in C:\xampp\htdocs\Argao\Model\db_connection.php on line 10
+[21-Nov-2024 14:10:52 Europe/Berlin] Input OTP: 987914, Stored OTP: 987914
+[21-Nov-2024 14:11:34 Europe/Berlin] Input OTP: 987914, Stored OTP: 987914
