@@ -1501,31 +1501,27 @@ public function generateSeminarReport($eventType) {
         return null;
     }
 }
-public function getScheduleDetails($baptismfill_id = null, $confirmationfill_id = null, $defuctom_id = null, $weddingffill_id = null, $announcement_id = null,$request_id =null) {
+public function getScheduleDetails($baptismfill_id = null, $confirmationfill_id = null, $defuctom_id = null, $weddingffill_id = null, $announcement_id = null, $request_id = null) {
     $query = "
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM baptismfill b
         JOIN schedule s ON b.schedule_id = s.schedule_id
-        WHERE b.baptism_id = ?
-
+        WHERE b.baptism_id = ? 
         UNION
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM confirmationfill cf
         JOIN schedule s ON cf.schedule_id = s.schedule_id
         WHERE cf.confirmationfill_id = ? 
-
         UNION
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM defuctomfill df
         JOIN schedule s ON df.schedule_id = s.schedule_id
         WHERE df.defuctomfill_id = ? 
-
         UNION
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM marriagefill mf
         JOIN schedule s ON mf.schedule_id = s.schedule_id
         WHERE mf.marriagefill_id = ? 
-
         UNION
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM announcement a
@@ -1535,20 +1531,26 @@ public function getScheduleDetails($baptismfill_id = null, $confirmationfill_id 
         SELECT s.date AS schedule_date, s.start_time AS schedule_start_time, s.end_time AS schedule_end_time 
         FROM req_form rf
         JOIN schedule s ON rf.schedule_id = s.schedule_id
-        WHERE rf.req_id = ? 
-        
+        WHERE rf.req_id = ?
     ";
 
+    // Prepare the statement
     $stmt = $this->conn->prepare($query);
 
-    // Bind the parameters correctly (there are 5 now, not 4)
-    $stmt->bind_param("iiiiii", $baptismfill_id, $confirmationfill_id, $defuctom_id, $weddingffill_id, $announcement_id,$request_id);
-    
+    // Dynamically bind parameters for each of the fields
+    $types = 'iiiiii'; // The types for binding (all integers in this case)
+    $params = [$baptismfill_id, $confirmationfill_id, $defuctom_id, $weddingffill_id, $announcement_id, $request_id];
+
+    // Dynamically bind the parameters
+    $stmt->bind_param($types, ...$params);
+
+    // Execute the statement
     $stmt->execute();
 
     // Return the results
     return $stmt->get_result()->fetch_assoc();
 }
+
 
 public function getScheduleId($baptismfill_id) {
     $sql = "SELECT `schedule_id` FROM `baptismfill` WHERE `baptism_id` = ?";
