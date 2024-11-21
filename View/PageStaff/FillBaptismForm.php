@@ -49,7 +49,7 @@ if (isset($_GET['id'])) {
     $scheduleDate = $scheduleDetails['schedule_date'];
     $startTime = $scheduleDetails['schedule_start_time'];
     $endTime = $scheduleDetails['schedule_end_time'];
-    $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime);
+    $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime,$scheduleDate, $startTime, $endTime);
     foreach ($priests as $priest) {
         $priestName = $priest['fullname'];
         echo "Available Priest: " . $priestName . "<br>";
