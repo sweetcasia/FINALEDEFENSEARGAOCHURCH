@@ -84,7 +84,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                       </a>
           </li>
           <li class="nav-item <?= ($current_page == 'priestdashboard.php') ? 'active' : ''; ?>">
-            <a href="priestdashboard.php">
+            <a href="PriestDashboard.php">
             <i class="fa-solid fa-calendar-week"></i>     
             <p>Upcoming Schedule</p>          
             </a>
