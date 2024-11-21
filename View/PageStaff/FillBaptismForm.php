@@ -50,9 +50,8 @@ if (isset($_GET['id'])) {
     $startTime = $scheduleDetails['schedule_start_time'];
     $endTime = $scheduleDetails['schedule_end_time'];
     $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime);
-} if (isset($scheduleDetails['schedule_date'])) {
-    echo "Schedule Date: " . $scheduleDetails['schedule_date']; // Debug
-}
+} 
+var_dump($priests); // Debugging available priests
 
 if ($baptismfill_id) {
     // Fetch schedule_id from baptismfill
