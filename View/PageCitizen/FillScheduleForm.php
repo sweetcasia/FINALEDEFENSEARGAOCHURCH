@@ -225,6 +225,12 @@ function selectDate(dayElement) {
     });
 }
 
+// Call this function whenever the user selects a new date
+function onDateSelect(selectedDate) {
+    fetchSchedules(selectedDate);
+}
+
+// Function to update the available times based on the fetched schedules
 function updateAvailableTimes(schedules, selectedDate, isBaptism) {
     const timeSlots = document.querySelectorAll('.time .form-check');
     const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, ..., 6 = Saturday
@@ -280,12 +286,11 @@ function updateAvailableTimes(schedules, selectedDate, isBaptism) {
 }
 
 
-function formatTime(timeString) {
-    const [hours, minutes] = timeString.split(':');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    const formattedHours = (hours % 12) || 12; // Convert 24-hour format to 12-hour format
-    return `${formattedHours}:${minutes} ${ampm}`;
+function formatTime(time) {
+    const [hours, minutes] = time.split(':');
+    return `${hours}:${minutes}`;
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const selectedRadioButton = document.querySelector('input[type="radio"]:checked');

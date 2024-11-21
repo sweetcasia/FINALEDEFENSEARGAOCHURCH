@@ -337,3 +337,9 @@
 [19-Nov-2024 16:12:50 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
 [19-Nov-2024 16:12:50 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1349
 [19-Nov-2024 16:12:50 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1838
+[21-Nov-2024 02:30:04 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
+[21-Nov-2024 02:42:51 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
+[21-Nov-2024 02:43:07 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
+[21-Nov-2024 02:43:15 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
+[21-Nov-2024 02:53:55 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
+[21-Nov-2024 02:54:21 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Argao\View\PageCitizen\FillScheduleForm.php on line 5
