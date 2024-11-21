@@ -161,7 +161,7 @@ th.sorting::after, th.sorting_asc::after, th.sorting_desc::after {
                             <th>Amount</th>
                             <th>Donated On </th>
                             <th>Description</th>
-                            <th>Action</th>
+                     
                           </tr>
                         </thead>
                       
@@ -173,10 +173,7 @@ th.sorting::after, th.sorting_asc::after, th.sorting_desc::after {
                     <td><span>&#8369;</span><?php echo htmlspecialchars($donation['amount']); ?></td>
                     <td><?php echo htmlspecialchars($donation['donated_on']); ?></td>
                     <td><?php echo htmlspecialchars($donation['description']); ?></td>
-                    <td>
-                        <button class="btn btn-primary btn-xs" style="background-color: #31ce36!important; border-color:#31ce36!important;"> Edit</button>
-                        <button class="btn btn-primary btn-xs"> Delete</button>
-                    </td>
+                    
                 </tr>
             <?php endforeach; ?>
         </tbody>

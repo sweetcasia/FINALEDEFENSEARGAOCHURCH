@@ -227,72 +227,58 @@ function selectDate(dayElement) {
 
 function updateAvailableTimes(schedules, selectedDate, isBaptism) {
     const timeSlots = document.querySelectorAll('.time .form-check');
+    const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, ..., 6 = Saturday
 
-    // Check the day of the selected date
-    const dayOfWeek = selectedDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
     const isSunday = dayOfWeek === 0;
     const isWeekday = dayOfWeek >= 1 && dayOfWeek <= 5; // Monday to Friday
-    const isTueThuFri = dayOfWeek === 2 || dayOfWeek === 4 || dayOfWeek === 5; // Tuesday, Thursday, Friday
+    const isTueThuFri = [2, 4, 5].includes(dayOfWeek); // Tuesday, Thursday, Friday
 
     timeSlots.forEach(slot => {
         const timeRange = slot.querySelector('label').textContent.trim();
         const [startTime, endTime] = timeRange.split(' - ');
 
         const isBooked = schedules.some(schedule => {
-            const dbStartTime = schedule.start_time.substring(0, 5); // Extract HH:MM from HH:MM:SS
-            const dbEndTime = schedule.end_time.substring(0, 5);     // Extract HH:MM from HH:MM:SS
+            const dbStartTime = schedule.start_time.substring(0, 5); // Extract HH:MM
+            const dbEndTime = schedule.end_time.substring(0, 5);
             return formatTime(dbStartTime) === startTime && formatTime(dbEndTime) === endTime;
         });
 
         const radioButton = slot.querySelector('input[type="radio"]');
         const statusText = slot.querySelector('h6');
+        const label = slot.querySelector('label');
 
-        // Handle Sunday availability
+        // Determine slot availability based on rules
         if (isSunday) {
-            if (isBaptism) {
+            if (isBaptism || (startTime !== '1:30 PM' || endTime !== '2:30 PM')) {
                 statusText.textContent = 'Mass Schedule';
+                label.style.color = 'gray';
                 statusText.style.color = 'gray';
-                slot.querySelector('label').style.color = 'gray'; // Time label turns gray
                 radioButton.disabled = true;
-            } else if (startTime === '1:30 PM' && endTime === '2:30 PM') {
-                statusText.textContent = isBooked ? 'Booked' : 'Available';
-                slot.querySelector('label').style.color = isBooked ? 'gray' : ''; // Gray if booked
-                statusText.style.color = isBooked ? 'red' : 'green';
-                radioButton.disabled = isBooked;
             } else {
-                statusText.textContent = 'Mass Schedule';
-                statusText.style.color = 'gray';
-                slot.querySelector('label').style.color = 'gray'; // Time label turns gray
-
-                radioButton.disabled = true;
+                statusText.textContent = isBooked ? 'Booked' : 'Available';
+                statusText.style.color = isBooked ? 'red' : 'green';
+                label.style.color = isBooked ? 'gray' : '';
+                radioButton.disabled = isBooked;
             }
-        } 
-        // Handle 4:30 PM - 5:30 PM slot for weekdays (Monday to Friday)
-        else if (isWeekday && startTime === '4:30 PM' && endTime === '5:30 PM') {
+        } else if (isWeekday && startTime === '4:30 PM' && endTime === '5:30 PM') {
             statusText.textContent = 'Mass Schedule';
+            label.style.color = 'gray';
             statusText.style.color = 'gray';
-            slot.querySelector('label').style.color = 'gray'; // Time label turns gray
-
             radioButton.disabled = true;
-        } 
-        // Handle Tuesday, Thursday, and Friday unavailability for 11:30 AM - 12:30 PM
-        else if (isTueThuFri && startTime === '11:30 AM' && endTime === '12:30 PM') {
+        } else if (isTueThuFri && startTime === '11:30 AM' && endTime === '12:30 PM') {
             statusText.textContent = 'Prayer Schedule';
+            label.style.color = 'gray';
             statusText.style.color = 'gray';
-            slot.querySelector('label').style.color = 'gray'; // Time label turns gray
-
             radioButton.disabled = true;
-        } 
-        // Default behavior for other slots
-        else {
+        } else {
             statusText.textContent = isBooked ? 'Booked' : 'Available';
             statusText.style.color = isBooked ? 'red' : 'green';
-            slot.querySelector('label').style.color = isBooked ? 'gray' : ''; // Gray if booked
-
+            label.style.color = isBooked ? 'gray' : '';
             radioButton.disabled = isBooked;
         }
     });
 }
+
 
 function formatTime(timeString) {
     const [hours, minutes] = timeString.split(':');
@@ -364,289 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     </script>
-         <style>
-          .unavailable {
-    color: grey; /* Grey out text for unavailable times */
-    cursor: not-allowed; /* Change cursor to indicate not clickable */
-    pointer-events: none; /* Prevent clicks */
-    text-decoration: line-through; /* Optional: add a line-through for extra emphasis */
-}
-   .past {
-    color: lightgray!important; /* Make past dates light gray */
-}
 
-.disabled {
-    color: gray!important; /* Make disabled dates gray */
-    cursor: no-drop; /* Change cursor to indicate not clickable */
-}
-   body {
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-
-        .container-cal {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .calendar {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-.schedule{
-  flex: 1;
- 
-   
-}
-  .calendar h3,
-  .time h3 {
-    text-align: center;
-    font-size: 1.75rem;
-    color: #333;
-    margin-bottom: 20px;
-  }
-.month{
-  width:100%;
-}
-.month {
-    width: 100%;
-    text-align: center;
-  }
-
-  .month ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    list-style-type: none;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-
-  .month ul li {
-    font-size: 18px;
-    cursor: pointer;
-    color: #333;
-  }
-
-
-  .weekdays,
-  .days {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-  }
-
-  .days li,
-  .weekdays li {
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    color: #555;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .days li.active,
-  .days li.selected {
-    background-color: #3498db;
-    color: #fff;
-  }
-
-  
-       
-    .time-options {
-      display: flex;
-    flex-direction: row;
-    gap: 60px;
-    margin-top: 5px;
-    }
-    .time-option {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .time-selection button {
-        width: 50%;
-        padding: 10px;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-        background-color: #007bff;
-        color: white;
-        transition: background-color 0.3s;
-    }
-    .time-selection button:hover {
-        background-color: #0056b3;
-    }
-      
-/* Style the radio button to be visible */
-.styled-radio {
-    width: 20px;
-    height: 20px;
-    accent-color: #007bff;
-    cursor: pointer;
-  }
-
-.radio-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.form-check-label.time-slot {
-  width: 150px; /* Set a fixed width for the time column */
-  text-align: left;
-}
-.form-check {
-    display: flex;
-    align-items: center;
-}
-
-/* Style the label with border and background */
-.form-check-label {
-    margin-left: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #333;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-
-
-
-/* Hover effect for radio button */
-.styled-radio:hover {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.form-check-label {
-  margin-right: 10px; /* Space between label and h6 */
-}
-
-/* Style for the h6 element beside the label */
-.time-status {
-    font-size: 14px;
-    color: green;
-    margin-left: 10px;
-    white-space: nowrap;
-  }
-.form-check input{
-  margin-top: 10px;
-}
-.col-sm-12{
-  display:flex!important;
-}
-
-
-        /* Calendar container styling */
-        .calendar-container {
-            width: 100%; /* Use full width */
-            max-width: 500px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 10px; /* Reduce padding for a more compact appearance */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: auto;
-            height: 543px;
-        }
-.form-group{
-  background:white;     width: 100%; /* Use full width */
-            max-width: 500px;
-            height: 545px;
-
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-           padding-left:95px!important;
-            margin: auto;
-            padding-top: 75px;
-            padding-bottom:23px!important;
-            padding-right: 20px!important;
-}
-.form-check .form-group{
-  margin-bottom: 0;
-  padding: 0!important;
-}
-       .d-flex{
-        display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 11px;
-       }
-       @media (max-width: 768px) {
-    .container-cal {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .calendar,
-    .schedule {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .weekdays li,
-    .days li {
-      padding: 8px;
-      font-size: 14px;
-    }
-
-    .d-flex {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .form-check-label {
-      font-size: 14px;
-    }
-
-    .time h3 {
-      font-size: 1.5rem;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .weekdays li,
-    .days li {
-      font-size: 12px;
-      padding: 6px;
-    }
-
-    .form-check-label {
-      font-size: 12px;
-    }
-
-    .time h3 {
-      font-size: 1.25rem;
-    }
-    .col-sm-12 {
-        flex: 0 0 auto;
-        width: 100%;
-        display: flex!important;
-        flex-direction: column!important;
-    }
-
-  }
-    </style>
    
 
   </head>
@@ -929,7 +633,289 @@ document.addEventListener('DOMContentLoaded', function() {
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         
+        <style>
+          .unavailable {
+    color: grey; /* Grey out text for unavailable times */
+    cursor: not-allowed; /* Change cursor to indicate not clickable */
+    pointer-events: none; /* Prevent clicks */
+    text-decoration: line-through; /* Optional: add a line-through for extra emphasis */
+}
+   .past {
+    color: lightgray!important; /* Make past dates light gray */
+}
 
+.disabled {
+    color: gray!important; /* Make disabled dates gray */
+    cursor: no-drop; /* Change cursor to indicate not clickable */
+}
+   body {
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container-cal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .calendar {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+.schedule{
+  flex: 1;
+ 
+   
+}
+  .calendar h3,
+  .time h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+.month{
+  width:100%;
+}
+.month {
+    width: 100%;
+    text-align: center;
+  }
+
+  .month ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+
+  .month ul li {
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+  }
+
+
+  .weekdays,
+  .days {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .days li,
+  .weekdays li {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .days li.active,
+  .days li.selected {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  
+       
+    .time-options {
+      display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-top: 5px;
+    }
+    .time-option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .time-selection button {
+        width: 50%;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    .time-selection button:hover {
+        background-color: #0056b3;
+    }
+      
+/* Style the radio button to be visible */
+.styled-radio {
+    width: 20px;
+    height: 20px;
+    accent-color: #007bff;
+    cursor: pointer;
+  }
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.form-check-label.time-slot {
+  width: 150px; /* Set a fixed width for the time column */
+  text-align: left;
+}
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the label with border and background */
+.form-check-label {
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+
+
+/* Hover effect for radio button */
+.styled-radio:hover {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-check-label {
+  margin-right: 10px; /* Space between label and h6 */
+}
+
+/* Style for the h6 element beside the label */
+.time-status {
+    font-size: 14px;
+    color: green;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+.form-check input{
+  margin-top: 10px;
+}
+.col-sm-12{
+  display:flex!important;
+}
+
+
+        /* Calendar container styling */
+        .calendar-container {
+            width: 100%; /* Use full width */
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px; /* Reduce padding for a more compact appearance */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            height: 543px;
+        }
+.form-group{
+  background:white;     width: 100%; /* Use full width */
+            max-width: 500px;
+            height: 545px;
+
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+           padding-left:95px!important;
+            margin: auto;
+            padding-top: 75px;
+            padding-bottom:23px!important;
+            padding-right: 20px!important;
+}
+.form-check .form-group{
+  margin-bottom: 0;
+  padding: 0!important;
+}
+       .d-flex{
+        display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 11px;
+       }
+       @media (max-width: 768px) {
+    .container-cal {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar,
+    .schedule {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .weekdays li,
+    .days li {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .form-check-label {
+      font-size: 14px;
+    }
+
+    .time h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .weekdays li,
+    .days li {
+      font-size: 12px;
+      padding: 6px;
+    }
+
+    .form-check-label {
+      font-size: 12px;
+    }
+
+    .time h3 {
+      font-size: 1.25rem;
+    }
+    .col-sm-12 {
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex!important;
+        flex-direction: column!important;
+    }
+
+  }
+    </style>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
   </body>
