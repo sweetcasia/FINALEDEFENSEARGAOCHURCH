@@ -2660,84 +2660,108 @@ private function generateReferenceNumber() {
     
         return $schedules;
     }
-    public function getAvailablePriests($selectedDate, $startTime, $endTime) {
-        // Query to fetch available priests excluding those already booked on the selected date and time
-        $sql = "
-        SELECT 
-            c.citizend_id,
-            c.fullname
-        FROM 
-            citizen c
-        WHERE 
-            c.user_type = 'Priest' AND c.r_status = 'Active'
-            AND NOT EXISTS (
-                -- Combine all event types that involve priests using UNION to check if the priest is busy
-                SELECT 1
-                FROM (
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN baptismfill b ON s.schedule_id = b.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = b.approval_id
-                    WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                    UNION ALL
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN confirmationfill cf ON s.schedule_id = cf.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = cf.approval_id
-                    WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                    UNION ALL
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN defuctomfill df ON s.schedule_id = df.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = df.approval_id
-                    WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                    UNION ALL
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN marriagefill mf ON s.schedule_id = mf.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = mf.approval_id
-                    WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                    UNION ALL
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN announcement ann ON s.schedule_id = ann.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = ann.approval_id
-                    WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                    UNION ALL
-                    SELECT pa.priest_id
-                    FROM schedule s
-                    JOIN req_form r ON s.schedule_id = r.schedule_id
-                    LEFT JOIN priest_approval pa ON pa.approval_id = r.approval_id
-                    WHERE r.event_location = 'Inside' OR r.event_location = 'Outside' AND s.date = ? AND (s.start_time < ? AND s.end_time > ?)
-                ) AS events
-                WHERE events.priest_id = c.citizend_id
-            )
-        ";
+   public function getAvailablePriests($selectedDate, $startTime, $endTime) {
+    // Query to fetch available priests excluding those already booked on the selected date and time
+    $sql = "
+    SELECT 
+        c.citizend_id,
+        c.fullname
+    FROM 
+        citizen c
+    WHERE 
+        c.user_type = 'Priest' AND c.r_status = 'Active'
+        AND NOT EXISTS (
+            -- Combine all event types that involve priests using UNION to check if the priest is busy
+            SELECT 1
+            FROM (
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN baptismfill b ON s.schedule_id = b.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = b.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+                
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN confirmationfill cf ON s.schedule_id = cf.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = cf.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+                
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN defuctomfill df ON s.schedule_id = df.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = df.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+                
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN marriagefill mf ON s.schedule_id = mf.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = mf.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+                
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN announcement ann ON s.schedule_id = ann.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = ann.approval_id
+                WHERE s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+                
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN req_form r ON s.schedule_id = r.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = r.approval_id
+                WHERE r.event_location = 'Inside'  OR r.event_location = 'Outside' AND s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+              
+                UNION ALL
+                
+                SELECT pa.priest_id
+                FROM schedule s
+                JOIN mass_schedule ms ON s.schedule_id = ms.schedule_id
+                LEFT JOIN priest_approval pa ON pa.approval_id = ms.approval_id
+                WHERE  s.date = ? AND (s.start_time < ? AND s.end_time > ?)
+            ) AS events
+            WHERE events.priest_id = c.citizend_id
+        )
+    ";
+
+    // Prepare the statement
+    $stmt = $this->conn->prepare($sql);
     
-        // Prepare the statement
-        $stmt = $this->conn->prepare($sql);
+    // Bind the parameters for all event types
+    $stmt->bind_param(
+        "sssssssssssssssssssss",
+        $selectedDate, $endTime, $startTime,  // Baptism
+        $selectedDate, $endTime, $startTime,  // Confirmation
+        $selectedDate, $endTime, $startTime,  // Defuctom
+        $selectedDate, $endTime, $startTime,  // Marriage
+        $selectedDate, $endTime, $startTime,  // Announcement
+        $selectedDate, $endTime, $startTime,  // Mass
+        $selectedDate, $endTime, $startTime   // Req Form
+    );
+
+    // Execute the statement
+    $stmt->execute();
     
-        // Bind the parameters
-        $stmt->bind_param(
-            "ssssssssssssssssssssss",  // 22 placeholders
-            $selectedDate, $endTime, $startTime,  // Baptism
-            $selectedDate, $endTime, $startTime,  // Confirmation
-            $selectedDate, $endTime, $startTime,  // Defuctom
-            $selectedDate, $endTime, $startTime,  // Marriage
-            $selectedDate, $endTime, $startTime,  // Announcement
-            $selectedDate, $endTime, $startTime,  // Mass
-            $selectedDate, $endTime, $startTime   // Req Form
-        );
-    
-        // Execute the statement
-        $stmt->execute();
-    
-        // Fetch results
-        $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-    
-        return $result;
+    // Fetch results
+    $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+    // Convert start_time and end_time to 12-hour format with AM/PM
+    foreach ($result as &$row) {
+        // Assuming the time fields are part of the fetched data
+        $row['start_time'] = $this->convertTo12HourFormat($startTime);
+        $row['end_time'] = $this->convertTo12HourFormat($endTime);
     }
-    
+
+    return $result;
+}
 
 // Helper function to convert time to 12-hour format
 private function convertTo12HourFormat($time) {

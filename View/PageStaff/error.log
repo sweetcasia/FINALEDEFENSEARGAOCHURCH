@@ -1944,3 +1944,104 @@ Stack trace:
 [20-Nov-2024 06:28:20 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 413
 [20-Nov-2024 06:28:20 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1464
 [20-Nov-2024 06:28:20 Europe/Berlin] PHP Deprecated:  Required parameter $regId follows optional parameter $eventType in C:\Xampp\htdocs\ArgaoChurch\Model\citizen_mod.php on line 1953
+[21-Nov-2024 12:43:05 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-27', '11:30:00', '12:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:43:06 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-27', '11:30:00', '12:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:43:12 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-27', '11:30:00', '12:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:43:13 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-27', '11:30:00', '12:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:43:17 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-29', '08:30:00', '09:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:43:18 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2721
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2721): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00', '2024-11-29', '09:30:00', '08:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-29', '08:30:00', '09:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2721
+[21-Nov-2024 12:45:16 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:17 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:18 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:18 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:27 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:29 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:29 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:54 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:57 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(736)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:45:59 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 1 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php on line 48 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(48): Staff->getScheduleDetails(731)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 12:46:02 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Staff::getScheduleDetails(), 2 passed in C:\xampp\htdocs\Argao\View\PageStaff\FillConfirmationForm.php on line 47 and exactly 6 expected in C:\xampp\htdocs\Argao\Model\staff_mod.php:1504
+Stack trace:
+#0 C:\xampp\htdocs\Argao\View\PageStaff\FillConfirmationForm.php(47): Staff->getScheduleDetails(NULL, 269)
+#1 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
