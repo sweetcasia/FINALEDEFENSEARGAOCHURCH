@@ -410,21 +410,21 @@ class Citizen {
     }
     
     
-    public function cgetPendingCitizens($eventType = null, $regId) {
+    public function cgetPendingCitizens($regId, $eventType = null) {
         switch ($eventType) {
             case 'Baptism':
                 return $this->cfetchBaptismFills($regId);
-                case 'MassBaptism':
+            case 'MassBaptism':
                 return $this->cfetchMassBaptismFills($regId);
-                case 'req_category':
-                    return $this->cfetchRequestFills($regId);
+            case 'req_category':
+                return $this->cfetchRequestFills($regId);
             case 'Confirmation':
                 return $this->cfetchConfirmationFills($regId);
-                case 'MassConfirmation':
+            case 'MassConfirmation':
                 return $this->cfetchMassConfirmationFills($regId);
             case 'Marriage':
                 return $this->cfetchMarriageFills($regId);
-                case 'MassMarriage':
+            case 'MassMarriage':
                 return $this->cfetchMassMarriageFills($regId);
             case 'Defuctom':
                 return $this->cfetchDefuctomFills($regId);
@@ -434,13 +434,14 @@ class Citizen {
                     $this->cfetchMassBaptismFills($regId),
                     $this->cfetchRequestFills($regId),
                     $this->cfetchConfirmationFills($regId),
-                   $this->cfetchMassConfirmationFills($regId),
+                    $this->cfetchMassConfirmationFills($regId),
                     $this->cfetchMarriageFills($regId),
                     $this->cfetchMassMarriageFills($regId),
                     $this->cfetchDefuctomFills($regId)
                 );
         }
     }
+    
     public function updateBaptismStatus($baptismId, $priestId) {
         // Start a transaction
         $this->conn->begin_transaction();
@@ -1461,7 +1462,7 @@ JOIN
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
     
-    public function getPendingCitizenss($eventType = null, $regId) {
+    public function getPendingCitizenss($regId,$eventType = null) {
         switch ($eventType) {
             case 'Baptism':
                 return $this->fetchBaptismFillss($regId);
@@ -1950,7 +1951,7 @@ public function fetchRequestFills($regId) {
     }
     
     
-    public function getPendingCitizens($eventType = null, $regId) {
+    public function getPendingCitizens( $regId,$eventType = null) {
         switch ($eventType) {
             case 'Baptism':
                 return $this->fetchBaptismFills($regId);

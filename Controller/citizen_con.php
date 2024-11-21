@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../Model/db_connection.php'; 
 require_once __DIR__ . '/../Model/citizen_mod.php';
 require_once __DIR__ . '/../Model/staff_mod.php';
-session_start();
+
 error_reporting(0); // Disable all error reporting
 
 // Alternatively, if you only want to hide errors but log them
