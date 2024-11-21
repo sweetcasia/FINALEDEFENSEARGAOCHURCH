@@ -247,7 +247,7 @@ function updateAvailableTimes(schedules, selectedDate, isBaptism) {
         const radioButton = slot.querySelector('input[type="radio"]');
         const statusText = slot.querySelector('h6');
 
-        // Handle Sunday availability (Mass Schedule)
+        // Handle Sunday availability
         if (isSunday) {
             if (isBaptism) {
                 statusText.textContent = 'Mass Schedule';
@@ -256,13 +256,14 @@ function updateAvailableTimes(schedules, selectedDate, isBaptism) {
                 radioButton.disabled = true;
             } else if (startTime === '1:30 PM' && endTime === '2:30 PM') {
                 statusText.textContent = isBooked ? 'Booked' : 'Available';
-                statusText.style.color = isBooked ? 'red' : 'green';
                 slot.querySelector('label').style.color = isBooked ? 'gray' : ''; // Gray if booked
+                statusText.style.color = isBooked ? 'red' : 'green';
                 radioButton.disabled = isBooked;
             } else {
                 statusText.textContent = 'Mass Schedule';
                 statusText.style.color = 'gray';
                 slot.querySelector('label').style.color = 'gray'; // Time label turns gray
+
                 radioButton.disabled = true;
             }
         } 
@@ -271,25 +272,28 @@ function updateAvailableTimes(schedules, selectedDate, isBaptism) {
             statusText.textContent = 'Mass Schedule';
             statusText.style.color = 'gray';
             slot.querySelector('label').style.color = 'gray'; // Time label turns gray
+
             radioButton.disabled = true;
         } 
-        // Handle Tuesday, Thursday, and Friday unavailability for 11:30 AM - 12:30 PM (Prayer Schedule)
+        // Handle Tuesday, Thursday, and Friday unavailability for 11:30 AM - 12:30 PM
         else if (isTueThuFri && startTime === '11:30 AM' && endTime === '12:30 PM') {
             statusText.textContent = 'Prayer Schedule';
             statusText.style.color = 'gray';
             slot.querySelector('label').style.color = 'gray'; // Time label turns gray
+
             radioButton.disabled = true;
         } 
         // Default behavior for other slots
         else {
-            statusText.textContent = isBooked ? 'Booked' : 'Available';
-            statusText.style.color = isBooked ? 'red' : 'green';
+          statusText.textContent = isBooked ? 'Booked' : 'Available';
+statusText.style.color = isBooked ? 'red' : 'green';
+
             slot.querySelector('label').style.color = isBooked ? 'gray' : ''; // Gray if booked
+
             radioButton.disabled = isBooked;
         }
     });
 }
-
 
 function formatTime(timeString) {
     const [hours, minutes] = timeString.split(':');
@@ -645,6 +649,11 @@ document.addEventListener('DOMContentLoaded', function() {
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         
          <style>
+.time-status {
+    display: block; /* Ensure it's displayed */
+    visibility: visible; /* Ensure it's visible */
+}
+
           .unavailable {
     color: grey; /* Grey out text for unavailable times */
     cursor: not-allowed; /* Change cursor to indicate not clickable */
@@ -652,11 +661,11 @@ document.addEventListener('DOMContentLoaded', function() {
     text-decoration: line-through; /* Optional: add a line-through for extra emphasis */
 }
    .past {
-    color: lightgray!important; /* Make past dates light gray */
+    color: lightgray
 }
 
 .disabled {
-    color: gray!important; /* Make disabled dates gray */
+    color: gray
     cursor: no-drop; /* Change cursor to indicate not clickable */
 }
    body {
