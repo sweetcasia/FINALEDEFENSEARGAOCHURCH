@@ -214,21 +214,20 @@ function selectDate(dayElement) {
     },
     body: `date=${formattedDate}`,
 })
-.then(response => {
-    return response.text(); // Read response as text first
-})
+.then(response => response.text()) // Check raw response text
 .then(responseText => {
-    console.log(responseText); // Check the response to see if it's valid JSON or an HTML error page
+    console.log(responseText); // Inspect raw response
     try {
-        const schedules = JSON.parse(responseText); // Attempt to parse JSON
+        const schedules = JSON.parse(responseText); // Try parsing the response as JSON
         updateAvailableTimes(schedules, selectedDate, type === 'baptism');
     } catch (error) {
-        console.error('Invalid JSON response:', error);
+        console.error('Error parsing JSON:', error);
     }
 })
 .catch(error => {
-    console.error('Error:', error);
+    console.error('Error fetching schedule:', error);
 });
+
 
 }
 

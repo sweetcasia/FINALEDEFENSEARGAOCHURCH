@@ -2608,7 +2608,7 @@ private function generateReferenceNumber() {
             
             SELECT s.`start_time`, s.`end_time`
             FROM `schedule` s
-            INNER JOIN `mass_Schedule` ms ON s.`schedule_id` = ms.`schedule_id`
+            INNER JOIN `mass_schedule` ms ON s.`schedule_id` = ms.`schedule_id`
             WHERE s.`date` = ?
         ";
     
