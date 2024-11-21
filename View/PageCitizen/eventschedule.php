@@ -38,7 +38,7 @@ if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
 $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
 $citizenController = new Citizen($conn);
-$pendingAppointments = $citizenController->getPendingCitizenss(null, $regId);
+$pendingAppointments = $citizenController->getPendingCitizenss($regId,null);
 
 
 ?>

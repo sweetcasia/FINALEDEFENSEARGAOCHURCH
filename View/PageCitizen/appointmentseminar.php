@@ -39,7 +39,7 @@ $nme = $_SESSION['fullname'];
 $regId = $_SESSION['citizend_id'];
 $citizenController = new Citizen($conn);
 
-$pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
+$pendingAppointments = $citizenController->getPendingCitizens($regId,null);
 ?>
 
 
