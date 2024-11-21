@@ -173,14 +173,13 @@ $initial = strtoupper(substr($loggedInUserName, 0, 1)); // Gets the first letter
         <div class="u-text">
           <h4>Church Admin</h4>
           <p class="text-muted">argaochurch@gmail.com</p>
-          <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+          <a href="profile.php" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
         </div>
       </div>
     </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="profile.php">My Profile</a>
-                     
+
                         <a class="dropdown-item" href="../../index.php?action=logout">Logout</a>
                       </li>
                     </div>
