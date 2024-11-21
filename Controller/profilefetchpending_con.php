@@ -12,7 +12,7 @@ $eventName = '';
 
 if (isset($_GET['appointment_id'])) {
     $id = $_GET['appointment_id'];
-    $pendingItems = $staff->getPendingCitizens(null, $regId);
+    $pendingItems = $staff->getPendingCitizens($regId,null);
 
     // Find the specific item with the provided ID
     foreach ($pendingItems as $item) {
