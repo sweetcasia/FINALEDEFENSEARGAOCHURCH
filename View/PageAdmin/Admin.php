@@ -368,11 +368,7 @@ function validateForm() {
             isValid = false;
         }
 
-        const validID = document.getElementById("valid_id").files;
-    if (validID.length === 0) {
-        showError("valid_id", "Valid ID is required");
-        isValid = false;
-    }
+      
 
 
         return isValid;
