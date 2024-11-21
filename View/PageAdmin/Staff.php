@@ -146,7 +146,7 @@ small {
                         <div class="card-title">Staff Registration Account</div>
                     </div>
                     <div class="card-body">
-                    <form method="POST" action=""  enctype="multipart/form-data" onsubmit="return validateForm()"class="sign-up-form">
+                    <form method="POST" action=""   onsubmit="return validateForm()"class="sign-up-form">
                     
                     <input type="hidden" name="signup_formss" value="3">
     <div class="row">
