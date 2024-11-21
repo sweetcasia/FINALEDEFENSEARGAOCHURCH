@@ -52,6 +52,7 @@ if (isset($_GET['id'])) {
     $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime);
 } 
 var_dump($priests); // Debugging available priests
+var_dump($scheduleDate, $startTime, $endTime);
 
 if ($baptismfill_id) {
     // Fetch schedule_id from baptismfill
