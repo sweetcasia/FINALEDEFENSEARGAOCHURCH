@@ -114,7 +114,7 @@ $email = $_SESSION['email'];
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover" id="multi-filter-select">
+                    <table  id="multi-filter-select" class="display table table-striped table-hover">
                       <thead>
                         <tr>
                           <th scope="col">ID No.</th>
@@ -268,51 +268,62 @@ document.addEventListener('DOMContentLoaded', function() {
      
     </script>
        <script>
-     $(document).ready(function () {
-    // Initialize the basic DataTable with sorting enabled only for the first column
-    $("#basic-datatables").DataTable({
-        searching: false, // Disable global search
-        columnDefs: [
-            { orderable: true, targets: 0 },  // Enable sorting for the first column
-            { orderable: false, targets: "_all" }, // Disable sorting for all other columns
-        ],
-    });
 
-    // Initialize the multi-filter table without filtering and sorting only on the first column
-    $("#multi-filter-select").DataTable({
-        pageLength: 5,
-        searching: false, // Disable global search
-        columnDefs: [
-            { orderable: true, targets: 0 },  // Enable sorting for the first column
-            { orderable: false, targets: "_all" }, // Disable sorting for all other columns
-        ],
-    });
+$(document).ready(function () {
+        $("#basic-datatables").DataTable({});
 
-    // Add Row functionality
-    $("#add-row").DataTable({
-        pageLength: 5,
-        searching: false, // Disable global search
-        columnDefs: [
-            { orderable: true, targets: 0 },  // Enable sorting for the first column
-            { orderable: false, targets: "_all" }, // Disable sorting for all other columns
-        ],
-    });
+        $("#multi-filter-select").DataTable({
+          pageLength: 5,
+          initComplete: function () {
+            this.api()
+              .columns()
+              .every(function () {
+                var column = this;
+                var select = $(
+                  '<select class="form-select"><option value=""></option></select>'
+                )
+                  .appendTo($(column.footer()).empty())
+                  .on("change", function () {
+                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
 
-    var action =
-        '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+                    column
+                      .search(val ? "^" + val + "$" : "", true, false)
+                      .draw();
+                  });
 
-    $("#addRowButton").click(function () {
-        $("#add-row")
+                column
+                  .data()
+                  .unique()
+                  .sort()
+                  .each(function (d, j) {
+                    select.append(
+                      '<option value="' + d + '">' + d + "</option>"
+                    );
+                  });
+              });
+          },
+        });
+
+        // Add Row
+        $("#add-row").DataTable({
+          pageLength: 5,
+        });
+
+        var action =
+          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+        $("#addRowButton").click(function () {
+          $("#add-row")
             .dataTable()
             .fnAddData([
-                $("#addName").val(),
-                $("#addPosition").val(),
-                $("#addOffice").val(),
-                action,
+              $("#addName").val(),
+              $("#addPosition").val(),
+              $("#addOffice").val(),
+              action,
             ]);
-        $("#addRowModal").modal("hide");
-    });
-});
+          $("#addRowModal").modal("hide");
+        });
+      });
     </script>
   </body>
 </html>
