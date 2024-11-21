@@ -150,40 +150,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-elseif(isset($_POST['signup_forms']) && $_POST['signup_forms'] == 1) {
+elseif (isset($_POST['signup_forms'])) {
+    $errors = [];
+    // Assuming further validation here
 
-    // Collect form data
-    $data = [
-        'first_name' => $_POST['first_name'],
-        'last_name' => $_POST['last_name'],
-        'middle_name' => $_POST['middle_name'],
-        'address' => $_POST['address'],
-        'month' => $_POST['month'],
-        'day' => $_POST['day'],
-        'year' => $_POST['year'],
-        'phone' => $_POST['phone'],
-        'email' => $_POST['email'],
-        'password' => $_POST['password'],
-        'confirmpassword' => $_POST['confirmpassword']
-    ];
+    if (empty($errors)) {
+        // Instantiate Registration class
+        $registration = new User($conn);
+        $registrationData = $_POST; // Perform further validation if necessary
+        $registrationResult = $registration->registerUsers($registrationData);
 
-    // Create an instance of the Staff model
-    $registration = new User($conn);  // Assuming 'StaffModel' is the name of your model class and '$conn' is your DB connection
-
-    // Call the registerUsers method to handle registration logic
-    $result = $registration->registerUsers($data);
-
-    // Check if registration was successful and set the session message
-    if ($result === "Registration successful") {
-        $_SESSION['message'] = "Registration was successful!";
-        // Redirect to a success page or show a success message
-        header("Location: success_page.php");
-        exit;
+        // Check if registration was successful
+        if ($registrationResult === "Registration successful") {
+            // Redirect to success page or login page
+            $_SESSION['status'] = "success";
+            header('Location: ../PageAdmin/AdminDashboard.php');
+            exit();
+        } else {
+            // Display error message
+            echo '<script>alert("' . $registrationResult . '");</script>';
+        }
     } else {
-        $_SESSION['message'] = "Registration failed: " . $result;
-        // Optionally, redirect back to the registration page or show an error message
-        header("Location: registrationpriest.php");
-        exit;
+        // Display error messages
+        foreach ($errors as $error) {
+            echo '<script>alert("' . $error . '");</script>';
+        }
     }
 }
 elseif (isset($_POST['signup_formss'])) {

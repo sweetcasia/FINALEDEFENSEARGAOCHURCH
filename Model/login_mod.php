@@ -998,7 +998,33 @@ if ($stmt->execute()) {
         
         $data['c_date_birth'] = "$year-$month-$day";
     
-  
+        // Sanitize input data
+        if (isset($_FILES['valid_id'])) {
+            $validIdError = $_FILES['valid_id']['error'];
+            $validIdTmpName = $_FILES['valid_id']['tmp_name'];
+            $validIdName = $_FILES['valid_id']['name'];
+            $validIdUploadPath = 'img/' . $validIdName;
+    
+            // Proceed with file upload if no error
+            if ($validIdError === 0) {
+                $imageFileType = strtolower(pathinfo($validIdName, PATHINFO_EXTENSION));
+                $allowedFileTypes = ['jpg', 'jpeg', 'png', 'gif'];
+    
+                if (in_array($imageFileType, $allowedFileTypes)) {
+                    if (move_uploaded_file($validIdTmpName, $validIdUploadPath)) {
+                        $data['valid_id'] = $validIdUploadPath; // Save the image path in data
+                    } else {
+                        return "Failed to upload valid ID image";
+                    }
+                } else {
+                    return "Only JPG, JPEG, PNG, and GIF files are allowed for valid ID";
+                }
+            } else {
+                return "Error uploading valid ID image";
+            }
+        } else {
+            return "No valid ID image uploaded";
+        }
         $sanitizedData = $this->sanitizeData($data);
     
         // Calculate age
@@ -1008,13 +1034,13 @@ if ($stmt->execute()) {
         $sanitizedData['password'] = password_hash($sanitizedData['password'], PASSWORD_DEFAULT);
     
         // Prepare SQL query with placeholders
-        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO citizen (user_type, r_status, fullname, address, gender, c_date_birth, age, email, phone, password,valid_id) 
+                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
     
         // Use prepared statements to prevent SQL injection
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param(
-            'ssssssssss',
+            'sssssssssss',
             $sanitizedData['user_type'],
             $sanitizedData['r_status'],
             $sanitizedData['fullname'],
@@ -1024,8 +1050,8 @@ if ($stmt->execute()) {
             $sanitizedData['age'],
             $sanitizedData['email'],
             $sanitizedData['phone'],
-            $sanitizedData['password']
-          
+            $sanitizedData['password'],
+            $sanitizedData['valid_id']
         );
     
         if ($stmt->execute()) {

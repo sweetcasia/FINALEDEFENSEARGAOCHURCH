@@ -1,40 +1,7 @@
 <?php
 require_once '../../Controller/login_con.php';
 
-// Check if user is logged in
-if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
-    header("Location: ../../index.php");
-    exit();
-}
 
-// Redirect based on user type
-switch ($_SESSION['user_type']) {
-    case 'Admin':
-        // Allow access
-        break;
-    case 'Staff':
-        header("Location: ../PageStaff/StaffDashboard.php");
-        exit();
-    case 'Priest':
-        header("Location: ../PagePriest/PriestDashboard.php");
-        exit();
-    case 'Citizen':
-        header("Location: ../PageCitizen/CitizenPage.php");
-        exit();
-    default:
-        header("Location: ../../index.php");
-        exit();
-}
-
-// Validate specific Citizen data
-if (!isset($_SESSION['fullname']) || !isset($_SESSION['citizend_id'])) {
-    header("Location: ../../index.php");
-    exit();
-}
-
-// Assign session variables
-$nme = $_SESSION['fullname'];
-$regId = $_SESSION['citizend_id'];
 ?>
 
 <!DOCTYPE html>
