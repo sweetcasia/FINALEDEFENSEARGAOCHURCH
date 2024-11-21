@@ -3,7 +3,6 @@ require_once '../../Model/staff_mod.php';
 require_once '../../Model/db_connection.php';
 require_once '../../Model/citizen_mod.php';
 session_start();
-$nme = $_SESSION['fullname'];
 // Check if user is logged in
 if (!isset($_SESSION['email']) || !isset($_SESSION['user_type'])) {
     header("Location: ../../index.php");
