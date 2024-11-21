@@ -164,7 +164,7 @@ if ($baptismfill_id) {
         $appointment = new Staff($conn);
     
         // Attempt to insert the mass appointment
-        $insertResult = $appointment->insertMassAppointment($massbaptismfillId, NULL, $payableAmount);
+        $insertResult = $appointment->insertMassAppointment($payableAmount,$massbaptismfillId, NULL);
     
         // If insert is successful, then attempt to approve the baptism
         if ($insertResult) {
@@ -393,7 +393,7 @@ if ($baptismfill_id) {
  }
 
  $appointment = new Staff($conn);
- $insertResult = $appointment->insertMassAppointment(null,$massweddingffill_id, $payableAmount);
+ $insertResult = $appointment->insertMassAppointment($payableAmount,$massweddingffill_id,NULL);
 
  if ($insertResult) {
     $approvalResult = $appointment->approveWedding($massweddingffill_id);
