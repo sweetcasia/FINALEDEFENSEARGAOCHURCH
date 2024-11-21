@@ -2592,12 +2592,10 @@ private function generateReferenceNumber() {
             
             UNION ALL
             
-            SELECT 
-            s.start_time, 
-            s.end_time
-        FROM schedule s
-        INNER JOIN req_form rf ON s.schedule_id = rf.schedule_id
-        WHERE rf.event_location = 'Inside' AND s.date = ?
+            SELECT s.`start_time`, s.`end_time`
+            FROM `schedule` s
+            INNER JOIN `req_form` rf ON s.`schedule_id` = rf.`schedule_id`
+            WHERE rf.`event_location` = 'Inside' AND s.`date` = ?
             
             UNION ALL
             
@@ -2605,7 +2603,7 @@ private function generateReferenceNumber() {
             FROM `schedule` s
             INNER JOIN `announcement` a ON s.`schedule_id` = a.`schedule_id`
             WHERE s.`date` = ?
-
+            
             UNION ALL
             
             SELECT s.`start_time`, s.`end_time`
@@ -2614,15 +2612,32 @@ private function generateReferenceNumber() {
             WHERE s.`date` = ?
         ";
     
+        // Prepare the statement
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sssssss", $date, $date, $date, $date, $date, $date, $date); // Bind the date parameter six times for each SELECT
-        $stmt->execute();
+        if ($stmt === false) {
+            // Handle error
+            throw new Exception("Failed to prepare statement: " . $this->conn->error);
+        }
+    
+        // Bind parameters
+        $stmt->bind_param("sssssss", $date, $date, $date, $date, $date, $date, $date);
+    
+        // Execute the query
+        if (!$stmt->execute()) {
+            // Handle execution error
+            throw new Exception("Execute failed: " . $stmt->error);
+        }
+    
+        // Get the result and fetch it into an associative array
         $result = $stmt->get_result();
         $schedules = $result->fetch_all(MYSQLI_ASSOC);
+        
+        // Close the statement
         $stmt->close();
     
         return $schedules;
     }
+    
     
     public function requestgetSchedule($date) {
         $sql = "

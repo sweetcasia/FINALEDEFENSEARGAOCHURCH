@@ -207,22 +207,29 @@ function selectDate(dayElement) {
     const oneWeekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
 
  
-    // Make an AJAX request to fetch the schedule for the selected date
     fetch('../../Controller/getschedule_con.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `date=${formattedDate}`,
-    })
-    .then(response => response.json())
-    .then(schedules => {
-        console.log('Schedules:', schedules); // Debugging
-        updateAvailableTimes(schedules, selectedDate, type === 'baptism'); // Pass the event type as isBaptism
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `date=${formattedDate}`,
+})
+.then(response => {
+    return response.text(); // Read response as text first
+})
+.then(responseText => {
+    console.log(responseText); // Check the response to see if it's valid JSON or an HTML error page
+    try {
+        const schedules = JSON.parse(responseText); // Attempt to parse JSON
+        updateAvailableTimes(schedules, selectedDate, type === 'baptism');
+    } catch (error) {
+        console.error('Invalid JSON response:', error);
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+
 }
 
 function updateAvailableTimes(schedules, selectedDate, isBaptism) {
