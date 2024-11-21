@@ -41,13 +41,13 @@ $regId = $_SESSION['citizend_id'];
 $citizenInfo = new User ($conn);
 $citizenDetails = $citizenInfo->getCitizenDetails($citizenId);
 $citizenController = new Citizen($conn);
-$pendingAppointmentss = $citizenController->getPendingCitizenss(null, $regId);
+$pendingAppointmentss = $citizenController->getPendingCitizenss($regId,null);
 $totalPendingAppointments = is_array($pendingAppointmentss) ? count($pendingAppointmentss) : 0;
 
-$pendingAppointments = $citizenController->getPendingCitizens(null, $regId);
+$pendingAppointments = $citizenController->getPendingCitizens($regId,null);
 $totalSeminarAppointments = is_array($pendingAppointments) ? count($pendingAppointments) : 0;
 
-$pendingAppointmentsss = $citizenController->cgetPendingCitizens(null, $regId);
+$pendingAppointmentsss = $citizenController->cgetPendingCitizens($regId,null);
 $totalSeminarAppointmentsss = is_array($pendingAppointmentsss) ? count($pendingAppointmentsss) : 0;
 ?>
 <!DOCTYPE html>
