@@ -2045,3 +2045,21 @@ Stack trace:
 #0 C:\xampp\htdocs\Argao\View\PageStaff\FillConfirmationForm.php(47): Staff->getScheduleDetails(NULL, 269)
 #1 {main}
   thrown in C:\xampp\htdocs\Argao\Model\staff_mod.php on line 1504
+[21-Nov-2024 13:10:26 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2739
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2739): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillInsideRequestForm.php(54): Citizen->getAvailablePriests('2024-11-20', '01:30:00', '02:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2739
+[21-Nov-2024 13:10:27 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2739
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2739): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00', '2024-11-20', '02:30:00', '01:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillInsideRequestForm.php(54): Citizen->getAvailablePriests('2024-11-20', '01:30:00', '02:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2739
+[21-Nov-2024 13:10:31 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in C:\xampp\htdocs\Argao\Model\citizen_mod.php:2739
+Stack trace:
+#0 C:\xampp\htdocs\Argao\Model\citizen_mod.php(2739): mysqli_stmt->bind_param('sssssssssssssss...', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00', '2024-11-27', '12:30:00', '11:30:00')
+#1 C:\xampp\htdocs\Argao\View\PageStaff\FillBaptismForm.php(52): Citizen->getAvailablePriests('2024-11-27', '11:30:00', '12:30:00')
+#2 {main}
+  thrown in C:\xampp\htdocs\Argao\Model\citizen_mod.php on line 2739
