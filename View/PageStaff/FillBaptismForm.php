@@ -50,7 +50,10 @@ if (isset($_GET['id'])) {
     $startTime = $scheduleDetails['schedule_start_time'];
     $endTime = $scheduleDetails['schedule_end_time'];
     $priests = $citizen->getAvailablePriests($scheduleDate, $startTime, $endTime);
-} 
+} if (isset($scheduleDetails['schedule_date'])) {
+    echo "Schedule Date: " . $scheduleDetails['schedule_date']; // Debug
+}
+
 if ($baptismfill_id) {
     // Fetch schedule_id from baptismfill
     $scheduleId = $staff->getScheduleId($baptismfill_id);
@@ -229,8 +232,9 @@ small {
         <?php if (!empty($priests)): ?>
             <?php foreach ($priests as $priest): ?>
                 <option value="<?php echo htmlspecialchars($priest['citizend_id']); ?>">
-                    <?php echo htmlspecialchars($priest['fullname']); ?>
-                </option>
+    <?php echo htmlspecialchars($priest['fullname']); ?>
+</option>
+
             <?php endforeach; ?>
         <?php else: ?>
             <option value="" disabled>No priests available for the selected time</option>
